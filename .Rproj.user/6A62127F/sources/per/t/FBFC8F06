@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3124421113",
+    "hash" : "1592809893",
     "id" : "FBFC8F06",
-    "lastKnownWriteTime" : 1581968184,
-    "last_content_update" : 1581968184699,
+    "lastKnownWriteTime" : 1582015354,
+    "last_content_update" : 1582015354952,
     "path" : "F:/qgis-course/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "49,55",
-        "scrollLine" : "41"
+        "cursorPosition" : "47,100",
+        "scrollLine" : "22"
     },
     "read_only" : false,
     "read_only_alternatives" : [

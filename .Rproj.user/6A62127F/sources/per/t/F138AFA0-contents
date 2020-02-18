@@ -3,7 +3,7 @@ chapter_name: "Упражнение "
 output_dir: docs
 rmd_files:
     - "index.Rmd"
-    - "Ex01_MapGeneral.md"
+    - "Ex01_MapGeneral.Rmd"
 delete_merged_file: true
 language:
   label:

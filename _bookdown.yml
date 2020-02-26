@@ -4,6 +4,8 @@ output_dir: docs
 rmd_files:
     - "index.Rmd"
     - "Ex01_MapGeneral.Rmd"
+    - "Ex02_MapQuaternary.Rmd"
+    - "Man00_DataFormats.Rmd"
 delete_merged_file: true
 language:
   label:

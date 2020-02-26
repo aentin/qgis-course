@@ -1,3 +1,5 @@
+# (PART) Основы работы с QGIS {-}
+
 # Создание общегеографической карты {#map-design-general}
 
 ## Введение {#map-design-general-intro}

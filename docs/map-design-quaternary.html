@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Основы геоинформатики: практикум (QGIS)</title>
+  <title>Упражнение 2 Создание карты четвертичных отложений | Основы геоинформатики: практикум (QGIS)</title>
   <meta name="description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Основы геоинформатики: практикум (QGIS)" />
+  <meta property="og:title" content="Упражнение 2 Создание карты четвертичных отложений | Основы геоинформатики: практикум (QGIS)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tsamsonov/arcgis-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Основы геоинформатики: практикум (QGIS)" />
+  <meta name="twitter:title" content="Упражнение 2 Создание карты четвертичных отложений | Основы геоинформатики: практикум (QGIS)" />
   
   <meta name="twitter:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="map-design-general.html"/>
+<link rel="prev" href="map-design-general.html"/>
+<link rel="next" href="manual-catalog.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -118,34 +118,37 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Основы геоинформатики: практикум (QGIS)</h1>
-<p class="author"><em>Андрей Энтин, Тимофей Самсонов</em></p>
-<p class="date"><em>2020-02-26</em></p>
-</div>
-<div id="введение" class="section level1 unnumbered">
-<h1>Введение</h1>
-<p>Практикум разрабатывается для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова. Упражнения выполяются в свободно распространяемом ГИС-пакете <a href="https://www.qgis.org/ru/site/forusers/download.html">QGIS версии 3.4</a>. На занятиях вы можете пользоваться стационарными компьютерами в аудитории 1903, а для выполнения домашних работ вам нужно будет установить QGIS на ваши личные машины.</p>
-<p>Сдавать отчёты и домашние работы мы будем через <a href="https://classroom.google.com">Google Classroom</a>. Для того, чтобы присоединиться к курсу, нужно:</p>
-<ol style="list-style-type: decimal">
-<li>Зарегистрировать аккаунт Google. Для этого не обязательно создавать почтовый ящик в Google Mail, можно воспользоваться любой имеющейся почтой.</li>
-<li>Зайти на главную страницу Google Classroom (<a href="https://classroom.google.com" class="uri">https://classroom.google.com</a>)</li>
-<li>Присоединиться к курсу по коду <strong><code>glb5hvb</code></strong>.</li>
-</ol>
-<p>Практиум находится в разработке, поэтому вы неизбежно столкнётесь с ошибками в данных, процедурах и текстах упражнений. О любых найденных ошибках, опечатках и выявленных проблемах с программным обеспечением прошу немедленно сообщать преподавателю одним из следующих способов: через систему учёта ошибок GitHub (Issues), через Classroom, по <a href="mailto:aentin@geogr.msu.ru">электронной почте</a>.</p>
-<p><em>Сейчас практикум доступен только в формате HTML, возможность его использования в других форматах (PDF, EPUB) будет реализована позже.</em></p>
-<p><strong>Перед выполнением практикума необходимо внимательно ознакомиться с регламентом и тщательно придерживаться его при выполнении заданий.</strong></p>
-<div id="регламент" class="section level2 unnumbered">
-<h2>Регламент</h2>
-<p>Вы можете выполнять упражнения как на своих личных компьютерах, так и на стационарных компьютерах, которые имеются в аудитории 1903. Если вы пользуетесь личным компьютером, рекомендую создать папку <code>GIS</code> в корне одного из дисков и помещать материалы упражнений туда. Если вы работаете на компьютерах в 1903, соблюдайте следующие требования:</p>
+<div id="map-design-quaternary" class="section level1">
+<h1><span class="header-section-number">Упражнение 2</span> Создание карты четвертичных отложений</h1>
+<div id="map-design-quaternary-intro" class="section level2">
+<h2><span class="header-section-number">2.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — закрепление навыков загрузки и визуализации данных в QGIS.</p>
+<p><strong>Цель задания</strong> — знакомство с моделями пространственных объектов и базой пространственных данных. Визуализация данных на карте. Оформление легенды и компоновки карты.</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> модели пространственных данных, модели пространственных объектов, базы пространственных объектов, картографические проекции.</p>
+<p><strong>Необходимая практическая подготовка:</strong> в объёме упражнения 1.</p>
+<p><strong>Исходные данные:</strong> база геоданных ESRI на территорию Сатинского учебного полигона, Калужская область.</p>
+<p><strong>Ожидаемый результат:</strong> карта четвертичных отложений Сатинского полигона М 1:35 000</p>
+<div id="map-design-general-checklist" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Контольный лист</h3>
 <ul>
-<li><p><strong>Ваша личная рабочая директория должна иметь адрес</strong></p>
-<p><code>D:\GIS\&lt;ваша кафедра&gt;\&lt;фамилия&gt;</code></p>
-<p>Например, студент 207 группы Петров хранит результаты своей работы в каталоге <code>D:\GIS\207_CAR\Petrov</code>. Если в группе есть несколько человек с одинаковой фамилией, добавляйте к фамилии первые буквы имени и отчества, например: <code>D:\GIS\207_CAR\PetrovIS</code></p></li>
-<li><p><strong>Каждое задание вы начинаете с того, что копируете соответствующую папку в свою директорию на локальном диске D.</strong></p>
-<p>Исходные данные для выполнения упражнений размещаются в виде файлового архива в Google Classroom. Вы скачиваете этот архив и распаковываете его в свою директорию</p></li>
-<li><p><strong>Отчётные файлы по упражнениям сдаются только через Classroom.</strong></p></li>
+<li>Добавить на карту источники пространственных данных</li>
+<li>Импортировать символику</li>
+<li>Настроить подписи объектов</li>
+<li>Создать компоновку карты и легенду</li>
+<li>Экспортировать результат в графический файл</li>
 </ul>
+</div>
+</div>
+<div id="map-design-quaternary-begin" class="section level2">
+<h2><span class="header-section-number">2.2</span> Начало работы</h2>
+<p><a href="map-design-quaternary.html#map-design-quaternary">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Скачайте архив с исходными данными для упражнения и распакуйте его в свою рабочую директорию.</p>
+<p>В вашей рабочей директории появилась «папка» <code>Satino.gdb</code>. Зайдя в неё с помощью проводника или Finder’a, вы увидите множество файлов с различными расширениями (<em>.spx, </em>.gdbtable, *.gdbtablx и др.). Ничего не редактируйте в этой «папке».</p></li>
+<li><p>Запустите <strong>QGIS</strong> и сразу сохраните проект в своей рабочей директории, на одном иерархическом уровне с <code>Satino.gdb</code>. Назовите его по шаблону <code>Ex02_%Фамилия.qgz%</code>.</p></li>
+<li><p>Откройте Менеджер источников данных и разверните содержимое базы Satino.gdb</p>
+<p><img src="images/Ex02/ArcGIS_GDB.png" /></p></li>
+</ol>
 
 </div>
 </div>
@@ -157,8 +160,8 @@
           </div>
         </div>
       </div>
-
-<a href="map-design-general.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="map-design-general.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manual-catalog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

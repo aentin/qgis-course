@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Основы геоинформатики: практикум (QGIS)</title>
+  <title>A Форматы пространственных данных | Основы геоинформатики: практикум (QGIS)</title>
   <meta name="description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
   <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Основы геоинформатики: практикум (QGIS)" />
+  <meta property="og:title" content="A Форматы пространственных данных | Основы геоинформатики: практикум (QGIS)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tsamsonov/arcgis-course" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Основы геоинформатики: практикум (QGIS)" />
+  <meta name="twitter:title" content="A Форматы пространственных данных | Основы геоинформатики: практикум (QGIS)" />
   
   <meta name="twitter:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="map-design-quaternary.html"/>
 
-<link rel="next" href="map-design-general.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -118,47 +118,26 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Основы геоинформатики: практикум (QGIS)</h1>
-<p class="author"><em>Андрей Энтин, Тимофей Самсонов</em></p>
-<p class="date"><em>2020-02-26</em></p>
+<div id="manual-catalog" class="section level1">
+<h1><span class="header-section-number">A</span> Форматы пространственных данных</h1>
+<div id="шейп-файлы" class="section level2">
+<h2><span class="header-section-number">A.1</span> Шейп-файлы</h2>
 </div>
-<div id="введение" class="section level1 unnumbered">
-<h1>Введение</h1>
-<p>Практикум разрабатывается для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова. Упражнения выполяются в свободно распространяемом ГИС-пакете <a href="https://www.qgis.org/ru/site/forusers/download.html">QGIS версии 3.4</a>. На занятиях вы можете пользоваться стационарными компьютерами в аудитории 1903, а для выполнения домашних работ вам нужно будет установить QGIS на ваши личные машины.</p>
-<p>Сдавать отчёты и домашние работы мы будем через <a href="https://classroom.google.com">Google Classroom</a>. Для того, чтобы присоединиться к курсу, нужно:</p>
-<ol style="list-style-type: decimal">
-<li>Зарегистрировать аккаунт Google. Для этого не обязательно создавать почтовый ящик в Google Mail, можно воспользоваться любой имеющейся почтой.</li>
-<li>Зайти на главную страницу Google Classroom (<a href="https://classroom.google.com" class="uri">https://classroom.google.com</a>)</li>
-<li>Присоединиться к курсу по коду <strong><code>glb5hvb</code></strong>.</li>
-</ol>
-<p>Практиум находится в разработке, поэтому вы неизбежно столкнётесь с ошибками в данных, процедурах и текстах упражнений. О любых найденных ошибках, опечатках и выявленных проблемах с программным обеспечением прошу немедленно сообщать преподавателю одним из следующих способов: через систему учёта ошибок GitHub (Issues), через Classroom, по <a href="mailto:aentin@geogr.msu.ru">электронной почте</a>.</p>
-<p><em>Сейчас практикум доступен только в формате HTML, возможность его использования в других форматах (PDF, EPUB) будет реализована позже.</em></p>
-<p><strong>Перед выполнением практикума необходимо внимательно ознакомиться с регламентом и тщательно придерживаться его при выполнении заданий.</strong></p>
-<div id="регламент" class="section level2 unnumbered">
-<h2>Регламент</h2>
-<p>Вы можете выполнять упражнения как на своих личных компьютерах, так и на стационарных компьютерах, которые имеются в аудитории 1903. Если вы пользуетесь личным компьютером, рекомендую создать папку <code>GIS</code> в корне одного из дисков и помещать материалы упражнений туда. Если вы работаете на компьютерах в 1903, соблюдайте следующие требования:</p>
-<ul>
-<li><p><strong>Ваша личная рабочая директория должна иметь адрес</strong></p>
-<p><code>D:\GIS\&lt;ваша кафедра&gt;\&lt;фамилия&gt;</code></p>
-<p>Например, студент 207 группы Петров хранит результаты своей работы в каталоге <code>D:\GIS\207_CAR\Petrov</code>. Если в группе есть несколько человек с одинаковой фамилией, добавляйте к фамилии первые буквы имени и отчества, например: <code>D:\GIS\207_CAR\PetrovIS</code></p></li>
-<li><p><strong>Каждое задание вы начинаете с того, что копируете соответствующую папку в свою директорию на локальном диске D.</strong></p>
-<p>Исходные данные для выполнения упражнений размещаются в виде файлового архива в Google Classroom. Вы скачиваете этот архив и распаковываете его в свою директорию</p></li>
-<li><p><strong>Отчётные файлы по упражнениям сдаются только через Classroom.</strong></p></li>
-</ul>
+<div id="geopackage" class="section level2">
+<h2><span class="header-section-number">A.2</span> GeoPackage</h2>
+</div>
+<div id="базы-геоданных-esri" class="section level2">
+<h2><span class="header-section-number">A.3</span> Базы геоданных ESRI</h2>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
+<a href="map-design-quaternary.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="map-design-general.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

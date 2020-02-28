@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-02-26" />
+<meta name="date" content="2020-02-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -88,9 +88,11 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>2</b> Создание карты четвертичных отложений</a><ul>
 <li class="chapter" data-level="2.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+<li class="chapter" data-level="2.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>2.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>2.4</b> Добавление данных в проект</a></li>
 </ul></li>
 <li class="appendix"><span><b>Справочные сведения</b></span></li>
 <li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
@@ -128,7 +130,7 @@
 <p><strong>Необходимая практическая подготовка:</strong> в объёме упражнения 1.</p>
 <p><strong>Исходные данные:</strong> база геоданных ESRI на территорию Сатинского учебного полигона, Калужская область.</p>
 <p><strong>Ожидаемый результат:</strong> карта четвертичных отложений Сатинского полигона М 1:35 000</p>
-<div id="map-design-general-checklist" class="section level3">
+<div id="map-design-quaternary-checklist" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Контольный лист</h3>
 <ul>
 <li>Добавить на карту источники пространственных данных</li>
@@ -146,8 +148,41 @@
 <li><p>Скачайте архив с исходными данными для упражнения и распакуйте его в свою рабочую директорию.</p>
 <p>В вашей рабочей директории появилась «папка» <code>Satino.gdb</code>. Зайдя в неё с помощью проводника или Finder’a, вы увидите множество файлов с различными расширениями (<em>.spx, </em>.gdbtable, *.gdbtablx и др.). Ничего не редактируйте в этой «папке».</p></li>
 <li><p>Запустите <strong>QGIS</strong> и сразу сохраните проект в своей рабочей директории, на одном иерархическом уровне с <code>Satino.gdb</code>. Назовите его по шаблону <code>Ex02_%Фамилия.qgz%</code>.</p></li>
-<li><p>Откройте Менеджер источников данных и разверните содержимое базы Satino.gdb</p>
-<p><img src="images/Ex02/ArcGIS_GDB.png" /></p></li>
+<li><p>Откройте Менеджер источников данных и разверните содержимое базы <code>Satino.gdb</code></p>
+<p><img src="images/Ex02/ArcGIS_GDB.png" /></p>
+<p>Вы видите список наборов пространственных данных, хранящихся в базе <code>Satino.gdb</code>. Это векторные наборы различной геометрии (точечной, линейной и полигональной).</p>
+<blockquote>
+<p>База геоданных ESRI (*.gdb) — основной формат, используемый линейкой программных продуктов ArcGIS. В базах геоданных могут храниться как векторные, так и растровые программные данные. Кроме того, базы геоданных поддерживают специальные возможности (подтипы, доменты) и структуры данных (топологические и сетевые наборы).</p>
+</blockquote>
+<blockquote>
+<p>QGIS способен получать доступ к базам геоданных ESRI в режиме чтения, но не в режиме редактирования. И даже эти возможности ограничены: QGIS «видит» векторные наборы пространственных данных, но «не считывает» структуру базы (классы и наборы пространственных объектов), растровые наборы, топологию и другие элементы, специфические для ArcGIS. В частности, набор DEM, который отображается в браузере как векторный полигональный набор данных, на самом деле является растровым набором.</p>
+</blockquote></li>
+</ol>
+</div>
+<div id="map-design-quaternary-data" class="section level2">
+<h2><span class="header-section-number">2.3</span> Добавление данных в проект</h2>
+<p><a href="map-design-quaternary.html#map-design-quaternary">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте на карту наборы <code>WaterLine</code>, <code>WaterPolygon</code> и <code>QDeposit</code>.</p>
+<p><strong>Вопрос:</strong> какая система координат присвоена для каждого набора данных? Какая проекция используется для этой системы координат? К какому виду относится эта проекция по характеру искажений? Для чего она применяется?<br />
+<strong>Вопрос:</strong> какая система координат присвоена проекту QGIS после добавления набора данных?</p></li>
+<li><p>Настройте визуализацию слоёв <code>WaterLine</code> и <code>WaterPolygon</code>, используя условные знаки из библиотеки QGIS. Окно QGIS должно принять вид, аналогичный рисунку ниже:</p>
+<p><img src="images/Ex02/Example1.png" /></p></li>
+<li><p>Откройте таблицу атрибутов слоя <code>QDeposit</code>.</p>
+<p><img src="images/Ex02/AttributeTable.png" /></p>
+<p>Вы видите индексы и текстовые описания четвертичных отложений. Далее вы визуализируете слой QDeposit таким образом, что каждому типу отложений (<code>Deposit</code>) будет сопоставлен уникальный условный знак.</p></li>
+</ol>
+</div>
+<div id="map-design-quaternary-classification" class="section level2">
+<h2><span class="header-section-number">2.4</span> Добавление данных в проект</h2>
+<p><a href="map-design-quaternary.html#map-design-quaternary">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Откройте свойства слоя <code>QDeposit</code>.</p></li>
+<li><p>На вкладке «Стиль» измените тип отображения на <em>Уникальные значения</em> и настройте классификацию по полю <code>Index</code> c использованием случайных цветов (<em>Random colors</em>). Закройте свойства слоя и оцените результат.</p>
+<p><strong>Скриншот 1:</strong> результат классификации — отображение каждого типа отложений уникальным цветом.</p></li>
+<li><p>Изображение стало более «пёстрым», но не стало более читаемым. Человеческому глазу трудно распознать два десятка уникальных оттенков цвета. Кроме того, исходя из географической логики, родственным категориям должны быть присвоены схожие цвета.</p>
+<p>Разработка цветовых решений для сложных, комплексных карт является отдельной научной задачей. В этом упражнении вы будете использовать готовые наборы стилей.</p></li>
+<li><p>В нижнем</p></li>
 </ol>
 
 </div>

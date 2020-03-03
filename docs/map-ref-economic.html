@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 3 Привязка и цифрование административной карты | Основы геоинформатики: практикум (QGIS)</title>
+  <meta name="description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 3 Привязка и цифрование административной карты | Основы геоинформатики: практикум (QGIS)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="github-repo" content="tsamsonov/arcgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 3 Привязка и цифрование административной карты | Основы геоинформатики: практикум (QGIS)" />
+  
+  <meta name="twitter:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2020-03-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="map-design-quaternary.html"/>
+<link rel="next" href="manual-catalog.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Введение</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#регламент"><i class="fa fa-check"></i>Регламент</a></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a><ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>2</b> Создание карты четвертичных отложений</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>2.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>2.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>2.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>2.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-ref-economic.html"><a href="map-ref-economic.html"><i class="fa fa-check"></i><b>3</b> Привязка и цифрование административной карты</a><ul>
+<li class="chapter" data-level="3.1" data-path="map-ref-economic.html"><a href="map-ref-economic.html#map-ref-economic-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="map-ref-economic.html"><a href="map-ref-economic.html#map-ref-economic-control"><i class="fa fa-check"></i><b>3.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-ref-economic.html"><a href="map-ref-economic.html#map-ref-economic-basemap"><i class="fa fa-check"></i><b>3.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="3.3" data-path="map-ref-economic.html"><a href="map-ref-economic.html#map-ref-economic-referencing"><i class="fa fa-check"></i><b>3.3</b> Привязка карты</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#шейп-файлы"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум (QGIS)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="map-ref-economic" class="section level1">
+<h1><span class="header-section-number">Упражнение 3</span> Привязка и цифрование административной карты</h1>
+<div id="map-ref-economic-intro" class="section level2">
+<h2><span class="header-section-number">3.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — знакомство с привязкой, трансформированием и цифрованием геоизображений, элементами базовых технологий ГИС (оверлей, пространственные запросы).</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> Системы координат и проекции карт, привязка геоизображений, трансформирование геоизображений, цифрование геоизображений. Методы трансформации: аффинное, проективное, полиномиальное, метод резинового листа (сплайны). Пространственные запросы, атрибутивные запросы, оверлей.</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, панель слоёв, фрейм карты, окно настройки компоновки). Добавление источников пространственных данных в проект. Настройка символики и подписей объектов. Создание макета, добавление карты и зарамочного оформления, экспорт макета.</p>
+<p><strong>Исходные данные:</strong> Cлои картографической основы OpenStreetMap, растровая карта избирательных округов г. Белгорода.</p>
+<p><strong>Результат:</strong> Набор пространственных данных с избирательными округами г. Белгорода и статистикой по застройке в пределах округов. Картодиаграммы по количеству домов и степени застроенности. Картографическое изображение.</p>
+<div id="map-ref-economic-control" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Контрольный лист</h3>
+<ul>
+<li>Привязать растровую карту к опорным данным</li>
+<li>Создать класс избирательных округов путем цифрования растровой карты</li>
+<li>Добавить номера районов в таблицу атрибутов</li>
+<li>Определить (путем применения серии пространственных запросов) структуру застройки в каждом округе</li>
+<li>Построить картодиаграммы по полученным значениям</li>
+<li>Подготовить проект карты с компоновкой</li>
+</ul>
+</div>
+</div>
+<div id="map-ref-economic-basemap" class="section level2">
+<h2><span class="header-section-number">3.2</span> Добавление базовых данных</h2>
+<p><a href="map-ref-economic.html#map-ref-economic">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Скачайте архив и распакуйте его в свою рабочую директорию.</p></li>
+<li><p>Создайте проект QGIS и сохраните его в распакованную папку (<em>Ex05_RefAdm</em>) в своей рабочей директории.</p></li>
+<li><p>В менеджере источников данных найдите расположение проекта и разверните содержимое базы <code>belgorod.gpkg</code>.</p>
+<p><img src="images/Ex05/GeoPackage_structure.png" /></p>
+<blockquote>
+<p>Формат <a href="http://www.geopackage.org/">GeoPackage</a> был предложен в середине 2010-х как открытая <a href="https://imgs.xkcd.com/comics/standards.png">альтернатива существующим форматам</a> хранения пространственных данных: <a href="http://switchfromshapefile.org/#shapefileisbad">шейп-файлу</a> и базам геоданных ESRI. GeoPackage представляет собой базу данных SQLite, внутри которой содержатся таблицы с данными и таблицы с метаданными. Такой подход аналогичен базе геоданных ESRI. Однако, в отличие от базы геоданных и от шейп-файлов, GeoPackage хранит всю необходимую информацию в одном файле (*.gpkg). Это позиционируется как одно из главных преимуществ формата.</p>
+</blockquote></li>
+<li><p>Добавьте все наборы из базы <code>belgorod.gpkg</code> на карту.</p>
+<blockquote>
+<p><em>Примечание: проще всего сделать это через менеджер источников данных. Другой вариант — перетащить файл из окна системного файлового менеджера.</em></p>
+</blockquote></li>
+<li><p>Разместите слои в следующем порядке и настройте их символику:</p>
+<ul>
+<li><strong>железные дороги:</strong> тёмно-серые линии толщиной 0,4 мм;</li>
+<li><strong>автодороги:</strong> светло-оранжевые линии толщиной 0,26 мм;</li>
+<li><strong>здания и сооружения:</strong> заливка светло-серого цвета без обводки;</li>
+<li><strong>водоёмы:</strong> используйте стиль <code>topo water</code>;</li>
+<li><strong>водотоки:</strong> синие линии толщиной 0,26 мм;</li>
+<li><strong>административные границы:</strong> иcпользуйте стиль <code>outline red</code>.</li>
+</ul>
+<p>Задайте слоям русскоязычные названия</p></li>
+<li><p>Отобразите карту в охвате слоя границ.</p>
+<p><strong>Скриншот 1:</strong> окно QGIS после завершения настройки символики</p>
+<p><strong>Вопрос 1:</strong> какая система координат используется в проекте? Для чего обычно применяется эта система координат?</p></li>
+</ol>
+</div>
+<div id="map-ref-economic-referencing" class="section level2">
+<h2><span class="header-section-number">3.3</span> Привязка карты</h2>
+<p><a href="map-ref-economic.html#map-ref-economic">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Для привязки растров в QGIS имеется модуль «Привязка растров (GDAL)». Чтобы запустить его, выберите «Растр» — «Привязка растров…». Откроется окно модуля привязки.</p>
+<blockquote>
+<p>Примечание: Если в меню «Растр» нет нужного пункта, следует зайти в меню «Модули» — «Управление модулями…» и в разделе «Установленные» включить модуль «Привязка растров (GDAL)». «Привязка растров» — модуль, который входит в ядро QGIS, он обязательно устанавливается вместе с основной программой.</p>
+</blockquote></li>
+<li><p>В окне привязки нажмите кнопку «Открыть растр» и откройте файл <code>ElectionMap.jpg</code>, который находится в вашей рабочей директории. При загрузке QGIS попросит вас указать систему координат для добавляемого растра. Выбирайте ту же систему координат, которая используется в проекте.</p></li>
+<li><p>Расположите окно модуля привязки таким образом, чтобы оно не закрывало основной фрейм карты. Выключите панели инструментов QGIS, если они вам мешают.</p>
+<p><img src="images/Ex05/Reference1.png" /></p>
+<p>Обратите внимание, что растровое изображение выглядит искажённым («сплюснутым») по сравнению с изображением в основном окне QGIS. Если вы откроете растр в какой-либо программе просмотра изображений, вы убедитесь, что растр действительно будто бы «сжат» по вертикали.</p></li>
+<li><p>Перемещаясь по карте, найдите соответствующие точки на изображении и в основном окне QGIS</p>
+<p><img src="images/Ex05/Reference2.png" /></p></li>
+<li><p>Используя инструмент «Добавить точку» в окне модуля привязки, установите первую точку на растровом изображении (щелчком левой кнопки мыши). QGIS выдаст запрос на ввод координат:</p>
+<p><img src="images/Ex05/Reference3.png" /></p></li>
+<li><p>В некоторых случаях можно ввести координаты вручную, но нам будет проще «снять их с карты», то есть указать соответственную точку в основном окне QGIS. Нажмите кнопку «С карты». Окна модуля привязки при этом свернутся.</p></li>
+<li><p>Щёлкните левой кнопкой мыше в соответствующей точке основного окна QGIS. Программа автоматически считает координаты точки и подставит их в форму:</p>
+<p><img src="images/Ex05/Reference4.png" /></p></li>
+<li><p>Нажмите OK, чтобы добавить первую опорную точку.</p>
+<blockquote>
+<p>Примечание: счёт опорных точек в QGIS начинается с нуля, поэтому первая точка получит индекс «0», вторая — «1» и так далее.</p>
+</blockquote></li>
+<li><p><strong>Найдите и расставьте ещё 7-8 опорных точек.</strong>. Точки должны быть равномерно распределены по полю карты и не находиться на одной линии.</p></li>
+<li><p>Откройте окно параметров трансформации (<img src="images/Ex05/parameters.png" />)</p></li>
+</ol>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="map-design-quaternary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manual-catalog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

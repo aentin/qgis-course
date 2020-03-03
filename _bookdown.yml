@@ -5,6 +5,7 @@ rmd_files:
     - "index.Rmd"
     - "Ex01_MapGeneral.Rmd"
     - "Ex02_MapQuaternary.Rmd"
+    - "Ex05_RefAdm.Rmd"
     - "Man00_DataFormats.Rmd"
 delete_merged_file: true
 language:

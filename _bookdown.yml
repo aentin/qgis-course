@@ -6,6 +6,7 @@ rmd_files:
     - "Ex01_MapGeneral.Rmd"
     - "Ex02_MapQuaternary.Rmd"
     - "Ex05_RefAdm.Rmd"
+    - "Ex06_VectorOverlay.Rmd"
     - "Man00_DataFormats.Rmd"
 delete_merged_file: true
 language:

@@ -53,9 +53,31 @@ toc_float:
 
 ## macOS {-}
 
-Пользователи mac OS: используйте альтернативную сборку версии [3.4.12](https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg)
+По состоянию на `r Sys.Date()` для прохождения практикума рекомендуется использовать альтернативную сборку версии [3.4.12](https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg). Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска  на компьютер (можно разрешить его сразу открыть средствами _DiskImageMounter_):
 
-Пользователи Linux: воспользуйтесь инструкциями по [этой ссылке](https://qgis.org/ru/site/forusers/alldownloads.html#linux).
+![](images/installation_instruction_mac/mac01.png)
+
+После того как образ загрузится и будет открыт, необходимо последовательно запустить три установщика, выделенные на снимке экрана ниже (именно в том порядке, в котором они пронумерованы!):
+
+![](images/installation_instruction_mac/mac02.png)
+
+Установщики __GDAL Complete__ и __QGIS 3 LTR__ необходимо запускать через контекстное меню и выбирать пункт "Открыть":
+
+![](images/installation_instruction_mac/mac03.png)
+
+В появившемся диалоговом окне необходимо нажать "Открыть", чтобы разрешить установку:
+
+![](images/installation_instruction_mac/mac04.png)
+
+Все опции при установке каждой компоненты приложения оставляйте по умолчанию, ничего не меняйте и нажимайте в диалоговых окнах "Продолжить", пока не запустится установщик.
+
+После того как последняя компонента — __QGIS__ — будет установлена, вы сможете найти приложение и запустить его из каталога _Программы_ macOS:
+
+![](images/installation_instruction_mac/mac05.png)
+
+## Linux {-}
+
+Воспользуйтесь инструкциями по [этой ссылке](https://qgis.org/ru/site/forusers/alldownloads.html#linux).
 
 Дополнительную информацию по установке можно найти на [https://qgis.org/ru/site/forusers/download.html](https://qgis.org/ru/site/forusers/download.html).
 

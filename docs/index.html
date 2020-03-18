@@ -72,6 +72,7 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
 </ul></li>
 <li class="part"><span><b>I Основы работы с QGIS</b></span></li>
 <li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a><ul>
@@ -175,8 +176,21 @@
 </div>
 <div id="macos" class="section level2 unnumbered">
 <h2>macOS</h2>
-<p>Пользователи mac OS: используйте альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a></p>
-<p>Пользователи Linux: воспользуйтесь инструкциями по <a href="https://qgis.org/ru/site/forusers/alldownloads.html#linux">этой ссылке</a>.</p>
+<p>По состоянию на 2020-03-18 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
+<p><img src="images/installation_instruction_mac/mac01.png" /></p>
+<p>После того как образ загрузится и будет открыт, необходимо последовательно запустить три установщика, выделенные на снимке экрана ниже (именно в том порядке, в котором они пронумерованы!):</p>
+<p><img src="images/installation_instruction_mac/mac02.png" /></p>
+<p>Установщики <strong>GDAL Complete</strong> и <strong>QGIS 3 LTR</strong> необходимо запускать через контекстное меню и выбирать пункт “Открыть”:</p>
+<p><img src="images/installation_instruction_mac/mac03.png" /></p>
+<p>В появившемся диалоговом окне необходимо нажать “Открыть”, чтобы разрешить установку:</p>
+<p><img src="images/installation_instruction_mac/mac04.png" /></p>
+<p>Все опции при установке каждой компоненты приложения оставляйте по умолчанию, ничего не меняйте и нажимайте в диалоговых окнах “Продолжить”, пока не запустится установщик.</p>
+<p>После того как последняя компонента — <strong>QGIS</strong> — будет установлена, вы сможете найти приложение и запустить его из каталога <em>Программы</em> macOS:</p>
+<p><img src="images/installation_instruction_mac/mac05.png" /></p>
+</div>
+<div id="linux" class="section level2 unnumbered">
+<h2>Linux</h2>
+<p>Воспользуйтесь инструкциями по <a href="https://qgis.org/ru/site/forusers/alldownloads.html#linux">этой ссылке</a>.</p>
 <p>Дополнительную информацию по установке можно найти на <a href="https://qgis.org/ru/site/forusers/download.html">https://qgis.org/ru/site/forusers/download.html</a>.</p>
 <!-- # Введение{-} -->
 <!-- Практикум разрабатывается для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова. Упражнения выполяются в свободно распространяемом ГИС-пакете [QGIS](https://www.qgis.org/ru/site/forusers/download.html). На занятиях вы можете пользоваться стационарными компьютерами в аудитории 1903, а для выполнения домашних работ вам нужно будет установить QGIS на ваши личные машины. -->

@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-03-18" />
+<meta name="date" content="2020-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -69,10 +69,13 @@
 <li><a href="./">Основы геоинформатики</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Материалы курса</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#материалы-лекций"><i class="fa fa-check"></i>Материалы лекций</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>I Основы работы с QGIS</b></span></li>
 <li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a><ul>
@@ -152,13 +155,34 @@
 <div id="header">
 <h1 class="title">Основы геоинформатики: практикум (QGIS)</h1>
 <p class="author"><em>Андрей Энтин, Тимофей Самсонов</em></p>
-<p class="date"><em>2020-03-18</em></p>
+<p class="date"><em>2020-03-20</em></p>
 </div>
-<div id="программное-обеспечение-для-работы" class="section level1 unnumbered">
-<h1>Программное обеспечение для работы</h1>
+<div id="материалы-курса" class="section level1 unnumbered">
+<h1>Материалы курса</h1>
+<div id="материалы-лекций" class="section level2 unnumbered">
+<h2>Материалы лекций</h2>
+<p><strong>Технологии пространственного моделирования (20 марта, 27 марта): <a href="https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU">презентация</a></strong></p>
+<p>Темы занятия:</p>
+<ol style="list-style-type: decimal">
+<li>Задачи пространственного моделирования</li>
+<li>Способы моделирования</li>
+<li>Подготовка исходных данных для создания модели</li>
+<li>Методы интерполяции</li>
+<li>Геостатистическая интерполяция и кригинг</li>
+<li>Сопоставление методов</li>
+<li>Применение пространственных моделей</li>
+</ol>
+<p>Материалы для изучения в онлайн-режиме:</p>
+<ul>
+<li>Лурье И.К. Геоинформационное картографирование. Методы геоинформатики и цифровой обработки космических снимков: Учебник для вузов. 2-е изд. – М.: КДУ — § 5.2</li>
+<li><a href="https://istina.msu.ru/download/45821659/1ej66u:uSUtcUS-XmdMMyRRpC-yflDmCv8/">Лурье И.К. , Самсонов Т.Е. Информатика с основами геоинформатики. Часть 2. Основы геоинформатики. учебное пособие. Москва. Изд-во МГУ, 2016</a> — раздел 5, § 5.1</li>
+</ul>
+</div>
+<div id="программное-обеспечение-для-работы" class="section level2 unnumbered">
+<h2>Программное обеспечение для работы</h2>
 <p>Для работы вам потребуется скачать и установить на свои компьютеры геоинформационное приложение QGIS. Это свободно распространяемое программное обеспечение, для его установки не требуется покупка или регистрация.</p>
-<div id="windows" class="section level2 unnumbered">
-<h2>Windows</h2>
+<div id="windows" class="section level3 unnumbered">
+<h3>Windows</h3>
 <p>Скачайте с официального сайта последнюю стабильную версию QGIS (3.10). Выберите версию в зависимости от разрядности вашей системы: <a href="https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86_64.exe">64 bit</a>, <a href="https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86.exe">32 bit</a>.</p>
 <p>Когда исполняемый файл загрузится, запустите его. Если потребуется, разрешите приложению вносить изменения на вашем устройстве.</p>
 <p>Будет показано приветственное окно мастера установки.</p>
@@ -174,9 +198,9 @@
 <p>После окончания установки ярлыки QGIS будут добавлены в меню “Пуск” и в отдельную папку QGIS на рабочем столе.</p>
 <p><img src="images/installation_instruction_win/win05.png" /></p>
 </div>
-<div id="macos" class="section level2 unnumbered">
-<h2>macOS</h2>
-<p>По состоянию на 2020-03-18 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
+<div id="macos" class="section level3 unnumbered">
+<h3>macOS</h3>
+<p>По состоянию на 2020-03-20 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
 <p><img src="images/installation_instruction_mac/mac01.png" /></p>
 <p>После того как образ загрузится и будет открыт, необходимо последовательно запустить три установщика, выделенные на снимке экрана ниже (именно в том порядке, в котором они пронумерованы!):</p>
 <p><img src="images/installation_instruction_mac/mac02.png" /></p>
@@ -188,8 +212,8 @@
 <p>После того как последняя компонента — <strong>QGIS</strong> — будет установлена, вы сможете найти приложение и запустить его из каталога <em>Программы</em> macOS:</p>
 <p><img src="images/installation_instruction_mac/mac05.png" /></p>
 </div>
-<div id="linux" class="section level2 unnumbered">
-<h2>Linux</h2>
+<div id="linux" class="section level3 unnumbered">
+<h3>Linux</h3>
 <p>Воспользуйтесь инструкциями по <a href="https://qgis.org/ru/site/forusers/alldownloads.html#linux">этой ссылке</a>.</p>
 <p>Дополнительную информацию по установке можно найти на <a href="https://qgis.org/ru/site/forusers/download.html">https://qgis.org/ru/site/forusers/download.html</a>.</p>
 <!-- # Введение{-} -->
@@ -210,6 +234,7 @@
 <!--     Исходные данные для выполнения упражнений размещаются в виде файлового архива в Google Classroom. Вы скачиваете этот архив и распаковываете его в свою директорию -->
 <!-- - __Отчётные файлы по упражнениям сдаются только через Classroom.__ -->
 
+</div>
 </div>
 </div>
 

@@ -21,7 +21,7 @@ toc_float:
 
 ## Материалы лекций {-}
 
-**Технологии пространственного моделирования (20 марта, 27 марта): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU)**
+**Технологии пространственного моделирования (20 марта, 27 марта): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU), [методические рекомендации](https://1drv.ms/w/s!AmtmZDq3JgxHgZYMXt7uP_OrshkRPw?e=B6PtAx)**
 
 Темы занятия:
 

@@ -1,6 +1,6 @@
 # Анализ пространственных взаимосвязей {#overlay}
 
-[Скачать данные и файл отчета](http://autolab.geogr.msu.ru/gis/data/Ex10.zip)
+[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZYNAX886rcJmcJoiw?e=70M3MA)
 
 ## Введение {#overlay-intro}
 

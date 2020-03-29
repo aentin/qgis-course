@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 5 Оптимизация местоположения | Основы геоинформатики: практикум (QGIS)</title>
+  <meta name="description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 5 Оптимизация местоположения | Основы геоинформатики: практикум (QGIS)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="github-repo" content="tsamsonov/arcgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 5 Оптимизация местоположения | Основы геоинформатики: практикум (QGIS)" />
+  
+  <meta name="twitter:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2020-03-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="overlay.html"/>
+<link rel="next" href="manual-catalog.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Материалы курса</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#материалы-лекций"><i class="fa fa-check"></i>Материалы лекций</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a><ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>2</b> Создание карты четвертичных отложений</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>2.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>2.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>2.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>2.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>3</b> Привязка и цифрование административной карты</a><ul>
+<li class="chapter" data-level="3.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>3.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>3.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="3.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>3.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="3.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>3.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="3.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>3.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="3.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>3.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="3.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>3.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="3.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>3.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>II Векторный анализ</b></span></li>
+<li class="chapter" data-level="4" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>4</b> Анализ пространственных взаимосвязей</a><ul>
+<li class="chapter" data-level="4.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>4.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="4.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>4.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>4.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="4.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>4.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="4.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>4.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="4.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>4.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="4.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>4.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="4.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>4.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="4.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>4.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>III Растровый анализ</b></span></li>
+<li class="chapter" data-level="5" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>5</b> Оптимизация местоположения</a><ul>
+<li class="chapter" data-level="5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="5.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>5.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="5.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>5.1.3</b> Добавление исходных данных</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>5.2</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>5.3</b> Расчет расстояний</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>5.3.1</b> Дороги</a></li>
+<li class="chapter" data-level="5.3.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>5.3.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>5.4</b> Переклассификация наборов данных</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>5.4.1</b> Переклассификация растра крутизны</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-rasterize"><i class="fa fa-check"></i><b>5.5</b> Преобразование слоя типов землепользования в растровое представление</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init1"><i class="fa fa-check"></i><b>5.5.1</b> Добавление исходных данных</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#шейп-файлы"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум (QGIS)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="weighted-overlay" class="section level1">
+<h1><span class="header-section-number">Упражнение 5</span> Оптимизация местоположения</h1>
+<div id="weighted-overlay-intro" class="section level2">
+<h2><span class="header-section-number">5.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — овладеть основами растрового анализа в ГИС на примере решения задачи поиска оптимального местоположения для размещения объектов.</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> Растровая модель пространственных данных, вычисление евклидова расстояния на плоскости, методы классификации числовых рядов, оверлей с весовыми коэффициентами (взвешенный оверлей).</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер компоновок). Работа с различными форматами источников пространственных данных . Настройка символики и подписей объектов. Владение базовыми ГИС-технологиями.</p>
+<p><strong>Исходные данные:</strong> База данных ГИС «Сатино», цифровая модель рельефа Сатинского полигона</p>
+<p><strong>Результат:</strong> Набор пространственных данных, содержащий участок, оптимальный по совокупности критериев для размещения объектов.</p>
+<div id="weighted-overlay-control" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Контрольный лист</h3>
+<ul>
+<li>Конвертировать слой землепользования в растровое представление</li>
+<li>Построить и классифицировать растр углов наклона рельефа</li>
+<li>Построить и классифицировать растры расстояний до водотоков и домов</li>
+<li>Осуществить взвешенный оверлей полученных растров</li>
+<li>Конвертировать класс с максимальной суммой баллов в векторное представление и выбрать участок, удовлетворяющий критерию минимальной площади.</li>
+</ul>
+</div>
+<div id="weighted-overlay-annotation" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Аннотация</h3>
+<p>В предыдущих заданиях вы познакомились с редактированием векторных данных. Для ряда практических задач более удобным оказывается растровое представление. Оно хорошо подходит для анализа географического пространства, которое обладает постоянно меняющимися характеристиками среды. Растровая модель топологически неразрывна, что позволяет моделировать различные поля и перенос вещества в пространстве из одной ячейки в другую. В силу своей регулярности растровая модель проста в обработке, поскольку все операции можно унифицировать, ориентируясь на матрицу ячеек. В частности, к растровым слоям удобно применять операции алгебры карт, такие как сложение, вычитание, суммирование — что и используется данном задании.</p>
+<p>Вам предстоит решить задачу выбора оптимального местоположения участка для строительства производственного объекта. Критерии выбора следующие:</p>
+<ul>
+<li><p>предельный угол наклона рельефа — <em>12,5°</em>;</p></li>
+<li><p>участок должен располагаться вблизи автомобильных дорог;</p></li>
+<li><p>участок должен располагаться вблизи крупных водотоков, поскольку требуется водоснабжение;</p></li>
+<li><p>оптимальные зоны для размещения — открытые пространства, такие как выгоны, пустыри, луга, вырубки и т.д;</p></li>
+<li><p>необходимая площадь участка — не менее <em>30 000 м<sup>2</sup></em>.</p></li>
+</ul>
+</div>
+<div id="weighted-overlay-init" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Добавление исходных данных</h3>
+<p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Скопируйте папку с исходными данными в вашу рабочую директорию и создайте в ней новый проект QGIS.</p></li>
+<li><p>Создайте в этой же папке вложенную папку <code>processing</code>. Вы будете использовать её для хранения промежуточных результатов.</p></li>
+<li><p>Добавьте в проект цифровую модель рельефа (ЦРМ, файл <code>DEM.tif</code>).</p>
+<p><img src="images/Ex12/dem.png" /></p></li>
+<li><p>Откройте свойства слоя ЦМР и перейдите на вкладку «Информация». Изучите характеристики файла ЦМР.</p></li>
+</ol>
+<blockquote>
+<p>Для описания геометрии растрового набора данных обязательно задаются следующие характеристики: число строк, число столбцов, шаг сетки (размер ячейки), начальные координаты. Некоторые форматы хранения растровых данных (в том числе GeoTIFF) поддерживают многоканальность; в этом случае указывается также число каналов. Наконец, некоторые В разном программном обеспечении эти параметры могут называться немного по-разному.</p>
+</blockquote>
+<p><strong>Вопрос 1</strong>: впишите в отчётный файл основные характеристики ЦМР.</p>
+</div>
+</div>
+<div id="weighted-overlay-slopes" class="section level2">
+<h2><span class="header-section-number">5.2</span> Расчет углов наклона</h2>
+<p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
+<p>В QGIS имеется ряд инструментов для создания и анализа поверхностей, представленных в растровой форме. Изучите список доступных инструментов в меню «Растр» — «Анализ».</p>
+<blockquote>
+<p>Создание, анализ и визуализация поверхностей (в том числе поверхности рельефа) — большая область исследований на стыке геоинформатики, физической географии и ряда других наук. В зарубежной традиции её принято называть геоморфометрией (англ. <em>geomorphometry</em>). Создание и использование алгоритмов расчёта морфометрических характеристик поверхности, таких как крутизна и экспозиция склона — одна из многих задач, решаемых геоморфометрией.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Откройте интерфейс инструмента «Крутизна…» из группы «Растр» — «Анализ».</p></li>
+<li><p>Задайте DEM в качестве исходного слоя, все остальные параметры сохраните по умолчанию. Сверните блок «Дополнительные параметры» — в этом упражнении они не требуются.</p></li>
+<li><p>Укажите путь к выходному файлу. По умолчанию QGIS предлагает вам сохранять результат во временный файл, но мы запишем результат явно. Для этого нажмите на многоточие <code>...</code> справа от поля «Крутизна» в нижней части формы и выберите опцию «Сохранить в файл». Укажите, что файл следует сохранить в папку <code>processing</code> под именем <code>slope.tif</code>.</p>
+<p>В итоге интерфейс настройки инструмента «Крутизна…» будет выглядеть, как показано на рисунке ниже:</p>
+<p><img src="images/Ex12/slope_settings.png" /></p></li>
+<li><p>Убедитесь, что опция «Открыть выходной файл после исполнения алгоритма» включена. ЦЗапустите инструмент. Дождитесь, пока результат расчёта добавится в проект. Присвойте добавленному слою имя «Крутизна», слой цифровой модели рельефа отключите.</p></li>
+</ol>
+<p><strong>Скриншот 1:</strong> рассчитанный растр крутизны склона</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Изучите свойства рассчитанного набора данных.</p>
+<p>Обратите внимание, что геометрия полученного растра (число строк и столбцов, размер ячейки) полностью совпадает с геометрией исходной ЦМР.</p>
+<blockquote>
+<p>Для любознательных: если вы увеличите изображение до края полученного растра и одновременно включите обратно слой ЦМР, вам может показаться, что растр ЦМР «шире», чем растр крутизны. Это на самом деле не так: просто краевым ячейкам растра крутизны присвоены значения «нет данных». При желании можно этого избежать, включив опцию «Обрабатывать краевые ячейки» в настройках инструмента расчёта крутизны.</p>
+</blockquote>
+<p>Далее мы получим ещё несколько растровых наборов данных, но уже не на основе ЦМР. Однако нам придётся следить, чтобы все растры имели одинаковую геометрию. В некоторых программных продуктах (GRASS, SAGA) это требование соблюдается автоматически, в других (ArcGIS) можно заранее задать необходимые настройки. QGIS в настоящее время не поддерживает такие опции на уровне проекта, поэтому геометрию растра придётся задавать каждый раз отдельно.</p></li>
+<li><p>Закройте свойства слоя «Крутизна».</p></li>
+</ol>
+</div>
+<div id="weighted-overlay-distances" class="section level2">
+<h2><span class="header-section-number">5.3</span> Расчет расстояний</h2>
+<p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
+<div id="weighted-overlay-roads" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Дороги</h3>
+<p>Чтобы определить участки, наиболее подходящие с точки зрения транспортной доступности, можно построить растр, в каждой ячейке которого будет содержится расстояние (евклидово) от центра этой ячейки до ближайшей дороги. Такое представление имитирует непрерывное поле расстояний.</p>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте на карту слой дорог <code>Roads</code> из базы геоданных <code>Satino</code>.</p></li>
+<li><p>Изучите таблицу атрибутов слоя.</p>
+<p><strong>Вопрос 2</strong>: как соотносятся записи в поле <code>Type</code> и поле <code>Description</code>? Какие значения поля <code>Type</code> имеют асфальтированные и просёлочные дороги?</p>
+<p>Для того, чтобы построить растр расстояний, мы сначала конвертируем данные о дорогах в растровое представление</p></li>
+<li><p>Конвертируйте слой дорог в растр. Для этого запустите инструмент «Растр» — «Преобразование» — «Растеризация (вектор в растр)…». Настройте параметры инструмента, как описано ниже:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Исходный набор данных: <code>Roads</code>;</p></li>
+<li><p>Поле, содержащее значение для затемнения: <code>Type</code>. Название опции переведено некорректно — на самом деле здесь задаётся столбец таблицы атрибутов, значения из которого будут записаны в результирующий растр. Большинство растровых форматов не поддерживают запись строковых переменных в ячейки растра, поэтому система позволяет использовать только атрибуты «числовых» типов.</p></li>
+<li><p>Единицы измерения выходного растра: единицы, используемые при геопривязке;</p></li>
+<li><p>Ширина/горизонтальное разрешение: 5;</p></li>
+<li><p>Высота/вертикальное разрешение: 5;</p></li>
+<li><p>Целевой охват: нажмите на многоточие справа, выберите опцию «Использовать охват слоя…» и используйте охват слоя DEM;</p></li>
+<li><p>Целевой растр: сохраните растр под названием <code>roads.tif</code> в папку <code>processing</code>;</p></li>
+</ol>
+<p>Интерфейс настройки инструмента примет вид, как показано на рисунке ниже</p>
+<p><img src="images/Ex12/distance_settings.png" /></p>
+<p><em><strong>Важное замечание</strong>: настройки c — f в списке выше отвечают за геометрию растра. Мы задали их таким образом, чтобы конфигурация создаваемого растра соответствовала тем растрам, которые уже есть в проекте.</em></p></li>
+<li><p>Рассчитайте евклидово расстояние до дорог. Для этого запустите инструмент «Растр» — «Анализ» — «Близость (расстояния в растре)…».</p></li>
+<li><p>Настройте инструмент следующим образом:</p>
+<ul>
+<li><p>Исходный слой: растровый слой дорог;</p></li>
+<li><p>Список значений пикселов в исходном изображении…: перечислите через запятую те значения, которые соответствуют асфальтированным и просёлочным дорогам.</p></li>
+<li><p>Единицы расстояния: координаты геопривязки</p></li>
+</ul>
+<p>Остальные параметры оставьте по умолчанию. Сохраните результат в папку <code>processing</code> под именем <code>distance_to_roads.tif</code>. Убедитесь, что включена настройка добавления результата в проект после окончания расчёта.</p></li>
+<li><p>Когда слой добавится в проект, переименуйте его в «Расстояние до дорог».</p></li>
+<li><p>Измените символику слоя:</p>
+<ul>
+<li>Стиль: одноканальное псевдоцветное»</li>
+<li>Минимальное значение: 0</li>
+<li>Максимальное значение: 2500</li>
+<li>Тип интерполяции: дискретная</li>
+<li>Градиент: Magma (после установки градиента нажмите на него правой кнопкой мыши и используйте опцию «Инвертировать градиент»)</li>
+<li>Мода: «равные интервалы»</li>
+<li>Число классов: 25</li>
+</ul>
+<p>В некоторых версиях QGIS может потребоваться нажать кнопку «Классифицировать», чтобы применить заданные настройки. Итоговый результат должен выглядеть как послойная окраска изолиний. В случае затруднений с настройкой символики обратитесь к преподавателю.</p></li>
+<li><p>Разместите растровый слой дорог над слоем расстояний до дорог. Сделайте скриншот окна QGIS.</p></li>
+</ol>
+<p><strong>Скриншот 2:</strong> рассчитанный растр расстояний до дорог</p>
+</div>
+<div id="weighted-overlay-streams" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Водотоки</h3>
+<ol style="list-style-type: decimal">
+<li><p>Отключите все слои.</p></li>
+<li><p>Добавьте на карту слой «площадных» объектов гидрографии <code>WaterPolygon</code> из базы геоданных <code>Satino</code>.</p></li>
+<li><p>Выберите (любым способом) объекты, соответствующие р. Протве и р. Исьме.</p></li>
+<li><p>Растеризуйте выбранные объекты. Самостоятельно установите настройки инструмента растеризации таким образом, чтобы использовать только выделенные объекты. Ячейкам растра, соответствующим объектам гидрографии, должно быть присвоено фиксированное значение 1 (атрибутивные поля не используются). Кроме того, геометрия получаемого растра должна быть аналогична всем остальным растрам в проекте. Сохраните растр в папку <code>processing</code> под именем <code>water.tif</code>.</p>
+<p><em>Примечание: в некоторых версиях QGIS после активации опции «Только выделенные объекты» выдаётся сообщение об ошибке, как на рисунке ниже. <strong>Сообщение об ошибке можно игнорировать.</strong></em></p>
+<p><img src="images/Ex12/rasterize_problem.png" /></p></li>
+<li><p>Рассчитайте евклидово расстояние до водотоков аналогично тому, как вы рассчитывали евклидово расстояние до дорог. Назовите выходной файл <code>distance_to_water.tif</code>.</p></li>
+<li><p>Когда новый слой добавится в проект, переименуйте его в «Расстояние до водотоков».</p></li>
+<li><p>Скопируйте символику из слоя «Расстояние до дорог» (контекстное меню слоя — «Стили» — «Копировать стиль») в слой «Расстояние до водотоков» (контекстное меню слоя — «Стили» — «Вставить стиль»).</p></li>
+</ol>
+<p>Расположите векторный слой объектов гидрографии над растром расстояния до водотоков и отключите все остальные слои. Сделайте скриншот окна QGIS</p>
+<p><strong>Скриншот 3:</strong> рассчитанный растр расстояний до водотоков</p>
+</div>
+</div>
+<div id="weighted-overlay-reclass" class="section level2">
+<h2><span class="header-section-number">5.4</span> Переклассификация наборов данных</h2>
+<p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
+<p>Мы подготовили три набора данных, характеризующих различные критерии пригодности участков для строительства. Два их них измеряются в метрах, ещё один — в градусах. Для того, чтобы иметь возможность сопоставлять величины, измеренные в разных единицах, можно использовать нормирование или перейти от точных значений к баллам благоприятности. В последнем случае говорят о <strong>переклассификации</strong> числового ряда. Мы определим балльную оценку на основе имеющихся значений растров.</p>
+<p>В большинстве программных средств ГИС существуют специальные инструменты для переклассификации значении растров. Они называются Reclass, Reclassify или другим аналогичным образом. QGIS — исключение. Штатный способ сделать переклассификацию в QGIS предполагает использование <em>Калькулятора растров</em>. Это инструмент, который позволяет применять алгебраические выражения к значениям исходных растров и получать производные растры с рассчитанными значениями.</p>
+<div id="weighted-overlay-reclass-slope" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Переклассификация растра крутизны</h3>
+</div>
+</div>
+<div id="weighted-overlay-rasterize" class="section level2">
+<h2><span class="header-section-number">5.5</span> Преобразование слоя типов землепользования в растровое представление</h2>
+<p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
+<div id="weighted-overlay-init1" class="section level3">
+<h3><span class="header-section-number">5.5.1</span> Добавление исходных данных</h3>
+<p>Скопируйте папку с исходными данными в вашу рабочую директорию и создайте в ней новый проект QGIS.</p>
+<p>Добавьте в проект следующие наборы данных:</p>
+<ul>
+<li><p>Цифровую модель рельефа (<code>DEM.tif</code>);</p></li>
+<li><p>Набор данных о дорожной сети (<code>LandUse</code>) из базы данных <code>Satino.gdb</code>.</p></li>
+<li><p>Набор полигональных данных об объектах гидрографии (<code>LandUse</code>) из базы данных <code>Satino.gdb</code>.</p></li>
+<li><p>Набор данных о землепользовании (<code>LandUse</code>) из базы данных <code>Satino.gdb</code>.</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="overlay.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manual-catalog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

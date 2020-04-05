@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-03-29" />
+<meta name="date" content="2020-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,15 +136,16 @@
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>5.2</b> Расчет углов наклона</a></li>
 <li class="chapter" data-level="5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>5.3</b> Расчет расстояний</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>5.3.1</b> Дороги</a></li>
+<li class="chapter" data-level="5.3.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>5.3.1</b> Расстояния до дорог</a></li>
 <li class="chapter" data-level="5.3.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>5.3.2</b> Водотоки</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>5.4</b> Переклассификация наборов данных</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>5.4.1</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="5.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>5.4.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="5.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>5.4.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="5.4.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>5.4.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-rasterize"><i class="fa fa-check"></i><b>5.5</b> Преобразование слоя типов землепользования в растровое представление</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init1"><i class="fa fa-check"></i><b>5.5.1</b> Добавление исходных данных</a></li>
-</ul></li>
+<li class="chapter" data-level="5.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>5.5</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="5.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>5.6</b> Окончательный выбор участка</a></li>
 </ul></li>
 <li class="appendix"><span><b>Справочные сведения</b></span></li>
 <li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
@@ -241,6 +242,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

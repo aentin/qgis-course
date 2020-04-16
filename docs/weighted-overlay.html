@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-04-11" />
+<meta name="date" content="2020-04-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -519,8 +519,9 @@ END</code></pre>
 <p>C: Классы расстояний до водотоков</p>
 <p>D: Классы благоприятности по землепользованию</p>
 <p>Для каждого растра укажите канал, из которого будут браться значения для расчёта. Во всех случаях это первый канал (<em>Gray</em>).</p></li>
-<li><p>Задайте формулу для выполнения взвешенного оверлея. Формула будет иметь вид <span class="math display">\[\sum_{i=1}^n A_i \cdot w_i\]</span>,</p></li>
+<li><p>Задайте формулу для выполнения взвешенного оверлея. Формула будет иметь вид</p></li>
 </ol>
+<p><span class="math display">\[\sum_{i=1}^n A_i \cdot w_i,\]</span></p>
 <p>где <span class="math inline">\(A_i\)</span> — фактор, а <span class="math inline">\(w_i\)</span> — весовой коэффициент. В качестве факторов используются значения классифицированных растров. Веса задаются таким образом, чтобы их сумма была равна <span class="math inline">\(1\)</span>. Задайте веса в соответствии с таблицей:</p>
 <table>
 <thead>

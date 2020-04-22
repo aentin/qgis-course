@@ -8,6 +8,7 @@ rmd_files:
     - "Ex05_RefAdm.Rmd"
     - "Ex06_VectorOverlay.Rmd"
     - "Ex12_RasterOverlay.Rmd"
+    - "Ex13_HydroDEM.Rmd"
     - "Man00_DataFormats.Rmd"
 delete_merged_file: true
 language:

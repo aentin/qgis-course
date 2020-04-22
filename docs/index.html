@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-04-16" />
+<meta name="date" content="2020-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -148,6 +148,16 @@
 <li class="chapter" data-level="5.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>5.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
 <li class="chapter" data-level="5.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>5.7</b> Окончательный выбор участка</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>6</b> Гидрологическое моделирование на основе ЦМР</a><ul>
+<li class="chapter" data-level="6.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="6.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>6.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>6.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="6.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>6.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="6.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>6.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="6.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>6.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
 <li class="appendix"><span><b>Справочные сведения</b></span></li>
 <li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
 <li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#шейп-файлы"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
@@ -177,7 +187,7 @@
 <div id="header">
 <h1 class="title">Основы геоинформатики: практикум (QGIS)</h1>
 <p class="author"><em>Андрей Энтин, Тимофей Самсонов</em></p>
-<p class="date"><em>2020-04-16</em></p>
+<p class="date"><em>2020-04-22</em></p>
 </div>
 <div id="материалы-курса" class="section level1 unnumbered">
 <h1>Материалы курса</h1>
@@ -235,7 +245,7 @@
 </div>
 <div id="macos" class="section level3 unnumbered">
 <h3>macOS</h3>
-<p>По состоянию на 2020-04-16 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
+<p>По состоянию на 2020-04-22 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
 <p><img src="images/installation_instruction_mac/mac01.png" /></p>
 <p>После того как образ загрузится и будет открыт, необходимо последовательно запустить три установщика, выделенные на снимке экрана ниже (именно в том порядке, в котором они пронумерованы!):</p>
 <p><img src="images/installation_instruction_mac/mac02.png" /></p>

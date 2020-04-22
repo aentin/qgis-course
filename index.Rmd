@@ -21,6 +21,8 @@ toc_float:
 
 ## Материалы лекций {-}
 
+**Заключительная лекция (24 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y)**
+
 **Программное обеспечение ГИС (17 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L), [обзор программных средств ГИС](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu)**
 + учебник, глава 3
 

@@ -1,5 +1,5 @@
 --- 
-title: "Основы геоинформатики: практикум (QGIS)"
+title: "Основы геоинформатики: практикум в QGIS"
 author: "Андрей Энтин, Тимофей Самсонов"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -17,45 +17,34 @@ toc_float:
   smooth_scroll: true
 ---
 
-# Материалы курса {-}
+# Общие сведения {-}
 
-## Учебник и пособие {-}
+## Учебные материалы {-}
 
-* [Лурье И.К. Геоинформационное картографирование. Методы геоинформатики и цифровой обработки космических снимков: Учебник для вузов. 2-е изд. – М.: КДУ, 2010](https://www.dropbox.com/s/e0tgodl3tnuaqi0/Lurie_2010_2.pdf?dl=0)
-* [Лурье И.К. , Самсонов Т.Е. Информатика с основами геоинформатики. Часть 2. Основы геоинформатики. учебное пособие. Москва. Изд-во МГУ, 2016](https://istina.msu.ru/download/45821659/1ej66u:uSUtcUS-XmdMMyRRpC-yflDmCv8/)
+- __Учебник__: Лурье И. К. _Геоинформационное картографирование. Методы геоинформатики и цифровой обработки космических снимков: Учебник для вузов._ 2-е изд. – М.: КДУ, 2010. [__PDF__](https://istina.msu.ru/download/295728157/1jUpeD:roxrGk69x0LxZCpC5w_KNV0o390/)
 
+- __Пособие__: Лурье И. К., Самсонов Т. Е. _Информатика с основами геоинформатики. Часть 2. Основы геоинформатики. Учебное пособие._ Москва. Изд-во МГУ, 2016. [__PDF__](https://istina.msu.ru/download/45821659/1ej66u:uSUtcUS-XmdMMyRRpC-yflDmCv8/)
 
-## Презентации и материалы лекций {-}
+- __Практикум в ArcGIS__: Самсонов Т. Е. _Основы геоинформатики: практикум в ArcGIS_. — Географический факультет МГУ Москва, 2018. — 460 с. DOI: 10.5281/zenodo.1167857. [__Website__](https://tsamsonov.github.io/arcgis-course/)
 
-**Презентация по фундаментальным понятиям геоинформатики (дополнительно): [PDF](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0)**
+- __Практикум в QGIS__: Энтин А. Л., Самсонов Т. Е. _Основы геоинформатики: практикум в QGIS_. [__Website__](https://aentin.github.io/qgis-course/)
 
-**Презентация «Географическая информация: виды, направления использования и производные технологии» (дополнительно): [PDF](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0)**
+- __Презентации__:
+  - *Фундаментальные понятия геоинформатики*: [__PDF__](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0)
+  - *Географическая информация*: [__PDF__](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0)
+  - *Программное обеспечение ГИС (17 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L)
+  - *Обзор программных средств ГИС (17 апреля)*: [__PPT__](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu)
+  - *Технологии пространственного моделирования (20 марта, 27 марта)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU)
+  - *Основные этапы развития ГИС. Типы ГИС (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D)
+  - *Проектирование ГИС. Разработка ГИС-проекта (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU)
+  - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y)
 
-**Заключительная лекция (24 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y)**
+## Программа зачета {-}
 
-**Программное обеспечение ГИС (17 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L), [обзор программных средств ГИС](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu)**
-+ учебник, глава 3
-
-На зачёте могут быть заданы вопросы по следующим пунктам:
-
-- Основные характеристики ПО ГИС
-
-    * модель данных (растровая, векторная, интегрированная);
-
-    * пользовательский интерфейс;
-
-    * функциональные возможности.
-
-
-**Основные этапы развития ГИС. Типы ГИС (10 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D)** 
-+ учебник, раздел 1.4
-
-**Проектирование ГИС. Разработка ГИС-проекта (10 апреля): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU)** 
-+ учебник, глава 6
-
-
-**Технологии пространственного моделирования (20 марта, 27 марта): [презентация](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU), [методические рекомендации](https://1drv.ms/w/s!AmtmZDq3JgxHgZYMXt7uP_OrshkRPw?e=B6PtAx)**
-
+```{r, out.width = "690px", echo=FALSE}
+# tab = googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing")
+knitr::include_url('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false', height = '1938px')
+```
 
 <!-- Темы занятия: -->
 
@@ -131,9 +120,6 @@ toc_float:
 Воспользуйтесь инструкциями по [этой ссылке](https://qgis.org/ru/site/forusers/alldownloads.html#linux).
 
 Дополнительную информацию по установке можно найти на [https://qgis.org/ru/site/forusers/download.html](https://qgis.org/ru/site/forusers/download.html).
-
-
-
 
 <!-- # Введение{-} -->
 

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 1 Зачет по курсу | Основы геоинформатики: практикум (QGIS)</title>
+  <meta name="description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 1 Зачет по курсу | Основы геоинформатики: практикум (QGIS)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  <meta name="github-repo" content="tsamsonov/arcgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 1 Зачет по курсу | Основы геоинформатики: практикум (QGIS)" />
+  
+  <meta name="twitter:description" content="Упражнения по курсу «Основы геоинформатики» для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2020-05-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="map-design-general.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="1" data-path="зачет-по-курсу.html"><a href="зачет-по-курсу.html"><i class="fa fa-check"></i><b>1</b> Зачет по курсу</a><ul>
+<li class="chapter" data-level="" data-path="зачет-по-курсу.html"><a href="зачет-по-курсу.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
+<li class="chapter" data-level="" data-path="зачет-по-курсу.html"><a href="зачет-по-курсу.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="зачет-по-курсу.html"><a href="зачет-по-курсу.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="зачет-по-курсу.html"><a href="зачет-по-курсу.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="2" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>2</b> Создание общегеографической карты</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>2.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>2.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>2.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>2.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>2.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>2.8</b> Подписи</a></li>
+<li class="chapter" data-level="2.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>2.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a><ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>4</b> Привязка и цифрование административной карты</a><ul>
+<li class="chapter" data-level="4.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>4.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>4.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="4.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>4.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="4.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>4.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="4.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>4.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="4.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>4.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="4.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>4.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="4.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>4.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>II Векторный анализ</b></span></li>
+<li class="chapter" data-level="5" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>5</b> Анализ пространственных взаимосвязей</a><ul>
+<li class="chapter" data-level="5.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="5.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>5.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>5.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="5.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>5.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="5.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>5.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="5.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>5.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="5.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>5.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="5.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>5.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="5.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>5.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>III Растровый анализ</b></span></li>
+<li class="chapter" data-level="6" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>6</b> Оптимизация местоположения</a><ul>
+<li class="chapter" data-level="6.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="6.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>6.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="6.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>6.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>6.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="6.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>6.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="6.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>6.4</b> Расчет расстояний</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>6.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="6.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>6.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>6.5</b> Переклассификация наборов данных</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>6.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="6.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>6.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="6.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>6.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>6.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="6.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>6.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>7</b> Гидрологическое моделирование на основе ЦМР</a><ul>
+<li class="chapter" data-level="7.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="7.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>7.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>7.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="7.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>7.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="7.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>7.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="7.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>7.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#шейп-файлы"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум (QGIS)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="зачет-по-курсу" class="section level1">
+<h1><span class="header-section-number">Упражнение 1</span> Зачет по курсу</h1>
+<!-- Темы занятия: -->
+<!-- 1. Задачи пространственного моделирования -->
+<!-- 2. Способы моделирования -->
+<!-- 3. Подготовка исходных данных для создания модели -->
+<!-- 4. Методы интерполяции -->
+<!-- 5. Геостатистическая интерполяция и кригинг -->
+<!-- 2. Сопоставление методов -->
+<!-- 3. Применение пространственных моделей -->
+<div id="программное-обеспечение-для-работы" class="section level2 unnumbered">
+<h2>Программное обеспечение для работы</h2>
+<p>Для работы вам потребуется скачать и установить на свои компьютеры геоинформационное приложение QGIS. Это свободно распространяемое программное обеспечение, для его установки не требуется покупка или регистрация.</p>
+<div id="windows" class="section level3 unnumbered">
+<h3>Windows</h3>
+<p>Скачайте с официального сайта последнюю стабильную версию QGIS (3.10). Выберите версию в зависимости от разрядности вашей системы: <a href="https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86_64.exe">64 bit</a>, <a href="https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86.exe">32 bit</a>.</p>
+<p>Когда исполняемый файл загрузится, запустите его. Если потребуется, разрешите приложению вносить изменения на вашем устройстве.</p>
+<p>Будет показано приветственное окно мастера установки.</p>
+<p><img src="images/installation_instruction_win/win01.png" /></p>
+<p>Нажмите «Далее», чтобы перейти на следующий шаг</p>
+<p>На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки.</p>
+<p><img src="images/installation_instruction_win/win02.png" /></p>
+<p>Нажмите «Принимаю».</p>
+<p>На следующем шаге выберите папку для установки. По возможности используйте расположение, предлагаемое по умолчанию.</p>
+<p><img src="images/installation_instruction_win/win03.png" /></p>
+<p>На следующем шаге предлагается выбрать дополнительные компоненты для установки. Снимите все флажки, кроме QGIS, и нажмите «Установить»</p>
+<p><img src="images/installation_instruction_win/win04.png" /></p>
+<p>После окончания установки ярлыки QGIS будут добавлены в меню “Пуск” и в отдельную папку QGIS на рабочем столе.</p>
+<p><img src="images/installation_instruction_win/win05.png" /></p>
+</div>
+<div id="macos" class="section level3 unnumbered">
+<h3>macOS</h3>
+<p>По состоянию на 2020-05-02 для прохождения практикума рекомендуется использовать альтернативную сборку версии <a href="https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg">3.4.12</a>. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами <em>DiskImageMounter</em>):</p>
+<p><img src="images/installation_instruction_mac/mac01.png" /></p>
+<p>После того как образ загрузится и будет открыт, необходимо последовательно запустить три установщика, выделенные на снимке экрана ниже (именно в том порядке, в котором они пронумерованы!):</p>
+<p><img src="images/installation_instruction_mac/mac02.png" /></p>
+<p>Установщики <strong>GDAL Complete</strong> и <strong>QGIS 3 LTR</strong> необходимо запускать через контекстное меню и выбирать пункт “Открыть”:</p>
+<p><img src="images/installation_instruction_mac/mac03.png" /></p>
+<p>В появившемся диалоговом окне необходимо нажать “Открыть”, чтобы разрешить установку:</p>
+<p><img src="images/installation_instruction_mac/mac04.png" /></p>
+<p>Все опции при установке каждой компоненты приложения оставляйте по умолчанию, ничего не меняйте и нажимайте в диалоговых окнах “Продолжить”, пока не запустится установщик.</p>
+<p>После того как последняя компонента — <strong>QGIS</strong> — будет установлена, вы сможете найти приложение и запустить его из каталога <em>Программы</em> macOS:</p>
+<p><img src="images/installation_instruction_mac/mac05.png" /></p>
+</div>
+<div id="linux" class="section level3 unnumbered">
+<h3>Linux</h3>
+<p>Воспользуйтесь инструкциями по <a href="https://qgis.org/ru/site/forusers/alldownloads.html#linux">этой ссылке</a>.</p>
+<p>Дополнительную информацию по установке можно найти на <a href="https://qgis.org/ru/site/forusers/download.html">https://qgis.org/ru/site/forusers/download.html</a>.</p>
+<!-- # Введение{-} -->
+<!-- Практикум разрабатывается для студентов кафедры картографии и геоинформатики географического факультета МГУ имени М.В. Ломоносова. Упражнения выполяются в свободно распространяемом ГИС-пакете [QGIS](https://www.qgis.org/ru/site/forusers/download.html). На занятиях вы можете пользоваться стационарными компьютерами в аудитории 1903, а для выполнения домашних работ вам нужно будет установить QGIS на ваши личные машины. -->
+<!-- Сдавать отчёты и домашние работы мы будем через [Google Classroom](https://classroom.google.com). Для того, чтобы присоединиться к курсу, нужно: -->
+<!-- 1. Зарегистрировать аккаунт Google. Для этого не обязательно создавать почтовый ящик в Google Mail, можно воспользоваться любой имеющейся почтой. -->
+<!-- 2. Зайти на главную страницу Google Classroom (https://classroom.google.com) -->
+<!-- 3. Присоединиться к курсу по коду **`glb5hvb`**. -->
+<!-- Практиум находится в разработке, поэтому вы неизбежно столкнётесь с ошибками в данных, процедурах и текстах упражнений. О любых найденных ошибках, опечатках и выявленных проблемах с программным обеспечением прошу немедленно сообщать преподавателю одним из следующих способов: через систему учёта ошибок GitHub (Issues), через Classroom, по [электронной почте](mailto:aentin@geogr.msu.ru). -->
+<!-- *Сейчас практикум доступен только в формате HTML, возможность его использования в других форматах (PDF, EPUB) будет реализована позже.* -->
+<!-- **Перед выполнением практикума необходимо внимательно ознакомиться с регламентом и тщательно придерживаться его при выполнении заданий.** -->
+<!-- ## Регламент{-} -->
+<!-- Вы можете выполнять упражнения как на своих личных компьютерах, так и на стационарных компьютерах, которые имеются в аудитории 1903. Если вы пользуетесь личным компьютером, рекомендую создать папку `GIS` в корне одного из дисков и помещать материалы упражнений туда. Если вы работаете на компьютерах в 1903, соблюдайте следующие требования: -->
+<!-- - __Ваша личная рабочая директория должна иметь адрес__ -->
+<!--     `D:\GIS\<ваша кафедра>\<фамилия>` -->
+<!--     Например, студент 207 группы Петров хранит результаты своей работы в каталоге `D:\GIS\207_CAR\Petrov`. Если в группе есть несколько человек с одинаковой фамилией, добавляйте к фамилии первые буквы имени и отчества, например: `D:\GIS\207_CAR\PetrovIS` -->
+<!-- - __Каждое задание вы начинаете с того, что копируете соответствующую папку в свою директорию на локальном диске D.__ -->
+<!--     Исходные данные для выполнения упражнений размещаются в виде файлового архива в Google Classroom. Вы скачиваете этот архив и распаковываете его в свою директорию -->
+<!-- - __Отчётные файлы по упражнениям сдаются только через Classroom.__ -->
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="map-design-general.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

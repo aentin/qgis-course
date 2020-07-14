@@ -9,7 +9,7 @@ biblio-style: apalike
 link-citations: yes
 description: "Основы геоинформатики: практикум в QGIS"
 colorlinks: true
-github-repo: tsamsonov/arcgis-course
+github-repo: aentin/qgis-course
 fontsize: 12pt
 mainfont: PT Serif
 toc_float:

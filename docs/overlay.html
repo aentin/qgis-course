@@ -13,7 +13,7 @@
   
   
   <meta property="og:description" content="Упражнение 4 Анализ пространственных взаимосвязей | Основы геоинформатики: практикум в QGIS" />
-  <meta name="github-repo" content="tsamsonov/arcgis-course" />
+  <meta name="github-repo" content="aentin/qgis-course" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Упражнение 4 Анализ пространственных взаимосвязей | Основы геоинформатики: практикум в QGIS" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-07-14" />
+<meta name="date" content="2020-09-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="map-ref-districts.html"/>
 <link rel="next" href="weighted-overlay.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -70,18 +70,22 @@
 <li><a href="./">Основы геоинформатики</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#программа-зачета"><i class="fa fa-check"></i>Программа зачета</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>I Основы работы с QGIS</b></span></li>
-<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a><ul>
-<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a><ul>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
@@ -93,8 +97,10 @@
 <li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
 <li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>2</b> Создание карты четвертичных отложений</a><ul>
-<li class="chapter" data-level="2.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a><ul>
+<li class="chapter" data-level="2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>2</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
@@ -103,8 +109,10 @@
 <li class="chapter" data-level="2.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>2.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
 <li class="chapter" data-level="2.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>2.6</b> Оформление карты</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>3</b> Привязка и цифрование административной карты</a><ul>
-<li class="chapter" data-level="3.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a><ul>
+<li class="chapter" data-level="3" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>3</b> Привязка и цифрование административной карты</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>3.1.1</b> Контрольный лист</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>3.2</b> Добавление базовых данных</a></li>
@@ -116,8 +124,10 @@
 <li class="chapter" data-level="3.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>3.8</b> Оформление итоговой схемы</a></li>
 </ul></li>
 <li class="part"><span><b>II Векторный анализ</b></span></li>
-<li class="chapter" data-level="4" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>4</b> Анализ пространственных взаимосвязей</a><ul>
-<li class="chapter" data-level="4.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a><ul>
+<li class="chapter" data-level="4" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>4</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>4.1.1</b> Контрольный лист</a></li>
 <li class="chapter" data-level="4.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>4.1.2</b> Аннотация</a></li>
 </ul></li>
@@ -130,19 +140,23 @@
 <li class="chapter" data-level="4.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>4.8</b> Вычисление результирующих значений показателя связи</a></li>
 </ul></li>
 <li class="part"><span><b>III Растровый анализ</b></span></li>
-<li class="chapter" data-level="5" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>5</b> Оптимизация местоположения</a><ul>
-<li class="chapter" data-level="5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a><ul>
+<li class="chapter" data-level="5" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>5</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
 <li class="chapter" data-level="5.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>5.1.2</b> Аннотация</a></li>
 <li class="chapter" data-level="5.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>5.1.3</b> Прежде чем начать…</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>5.2</b> Добавление исходных данных</a></li>
 <li class="chapter" data-level="5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>5.3</b> Расчет углов наклона</a></li>
-<li class="chapter" data-level="5.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>5.4</b> Расчет расстояний</a><ul>
+<li class="chapter" data-level="5.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>5.4</b> Расчет расстояний</a>
+<ul>
 <li class="chapter" data-level="5.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>5.4.1</b> Расстояния до дорог</a></li>
 <li class="chapter" data-level="5.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>5.4.2</b> Водотоки</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>5.5</b> Переклассификация наборов данных</a><ul>
+<li class="chapter" data-level="5.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>5.5</b> Переклассификация наборов данных</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>5.5.1</b> Переклассификация растров расстояний</a></li>
 <li class="chapter" data-level="5.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>5.5.2</b> Переклассификация растра крутизны</a></li>
 <li class="chapter" data-level="5.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>5.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
@@ -150,8 +164,10 @@
 <li class="chapter" data-level="5.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>5.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
 <li class="chapter" data-level="5.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>5.7</b> Окончательный выбор участка</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>6</b> Гидрологическое моделирование на основе ЦМР</a><ul>
-<li class="chapter" data-level="6.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a><ul>
+<li class="chapter" data-level="6" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>6</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
 <li class="chapter" data-level="6.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>6.1.2</b> Аннотация</a></li>
 </ul></li>
@@ -161,7 +177,8 @@
 <li class="chapter" data-level="6.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>6.5</b> Определение границ бассейна р. Оскол</a></li>
 </ul></li>
 <li class="appendix"><span><b>Справочные сведения</b></span></li>
-<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a><ul>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
 <li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#шейп-файлы"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
 <li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
 <li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
@@ -187,17 +204,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="overlay" class="section level1">
+<div id="overlay" class="section level1" number="4">
 <h1><span class="header-section-number">Упражнение 4</span> Анализ пространственных взаимосвязей</h1>
 <p><a href="https://1drv.ms/u/s!AmtmZDq3JgxHgZYNAX886rcJmcJoiw?e=70M3MA">Архив с данными и файлом отчёта</a></p>
-<div id="overlay-intro" class="section level2">
+<div id="overlay-intro" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Введение</h2>
 <p><strong>Цель задания</strong> — научиться определять пространственную приуроченность двух явлений на основе процента взаимного покрытия их площадей (методом оверлея).</p>
 <p><strong>Необходимая теоретическая подготовка:</strong> Оверлей пространственных объектов, геометрическое определение вероятности как отношения мер (площадей), соединение таблиц в реляционных базах данных, внешний и внутренний ключ соединения.</p>
 <p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер компоновок). Работа с различными форматами источников пространственных данных . Настройка символики и подписей объектов. Владение базовыми ГИС-технологиями.</p>
 <p><strong>Исходные данные:</strong> База данных ГИС «Сатино».</p>
 <p><strong>Результат:</strong> Таблица взаимного покрытия площадей типов рельефа и подтипов почв.</p>
-<div id="overlay-control" class="section level3">
+<div id="overlay-control" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Контрольный лист</h3>
 <ul>
 <li>Добавить на карту слои типов почв и рельефа, оформить их</li>
@@ -206,7 +223,7 @@
 <li>Подсчитать процент покрытия площадей</li>
 </ul>
 </div>
-<div id="overlay-annotation" class="section level3">
+<div id="overlay-annotation" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Аннотация</h3>
 <p>Задание посвящено знакомству с пространственным анализом на основе векторных данных. Векторная модель представляет объекты в виде отдельных геометрических фигур с набором атрибутов. Она является объектно-ориентированной и удобна для анализа формы, размеров объектов, их взаимной конфигурации в пространстве. Одним из широко используемых методов анализа на основе векторных данных является оверлей.</p>
 <blockquote>
@@ -215,7 +232,7 @@
 <p>С помощью оверлея можно, например, установить, к каким генетическим типам рельефа приурочены различные типы и подтипы почв. В общем случае оверлей позволяет установить, какие комбинации объектов встречаются в пространстве. В задании предлагается исследовать методом оверлея взаимосвязь типов рельефа и типов и подтипов почв.</p>
 </div>
 </div>
-<div id="overlay-vectors" class="section level2">
+<div id="overlay-vectors" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Визуальный анализ векторных слоев</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <p>В первую очередь при анализе данных следует провести их визуальную оценку, которая может натолкнуть на отыскание закономерностей во взаимном расположении объектов.</p>
@@ -235,7 +252,7 @@
 <p><strong>Вопрос 1:</strong> Есть ли какие-то совпадения или подобия рисунков контуров типов рельефа и подтипов почв в пределах речных долин, междуречий, малых эрозионных форм?</p>
 <p>Когда данные исследованы визуально и путем идентификации, можно перейти к их анализу с помощью оверлея.</p>
 </div>
-<div id="overlay-intersect" class="section level2">
+<div id="overlay-intersect" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Оверлей слоев методом пересечения</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <p>Инструменты векторного оверлея, а также некоторые родственные им инструменты в QGIS размещаются в меню «Вектор — Геообработка». Также эти инструменты доступны из панели инструментов анализа.</p>
@@ -268,7 +285,7 @@
 </ol>
 <p><strong>Вопрос 5</strong>: Какие поля содержатся в атрибутивной таблице полученного слоя?</p>
 </div>
-<div id="overlay-merge" class="section level2">
+<div id="overlay-merge" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Слияние результатов пересечения с целью получения показателя пространственной связи</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <p>Поскольку каждый полигон в оверлейном слое содержит значение типа/подтипа почвы и типа рельефа, появляется возможность установить приуроченность типов и подтипов почв к определенным типам рельефа.</p>
@@ -297,7 +314,7 @@
 <li><p>Отключите этот слой в таблице содержания.</p></li>
 </ol>
 </div>
-<div id="overlay-sumarea-subtypes" class="section level2">
+<div id="overlay-sumarea-subtypes" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Объединение подтипов почв для подсчёта суммарной площади</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <ol style="list-style-type: decimal">
@@ -310,7 +327,7 @@
 <li><p>Отключите этот слой в таблице содержания.</p></li>
 </ol>
 </div>
-<div id="overlay-fieldcalc" class="section level2">
+<div id="overlay-fieldcalc" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Расчёт площадей объектов</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <p>В отличие от ArcGIS, QGIS не умеет автоматически пересчитывать площади объектов при изменении их геометрии. А изменения, которые мы произвели в процессе объединения по признаку, достаточно велики. Далее мы рассчитаем площади каждого объекта в «объединённых» слоях, затем выполним соединение атрибутивных таблиц и рассчитаем показатель связи на основе соотношения площадей.</p>
@@ -327,7 +344,7 @@
 <li><p>Проделайте аналогичную операцию для слоя <em>Слияние подтипов почв</em>. <strong>Важно:</strong> используйте другое имя для поля площади, например, <code>AREA_HA_SOILS</code>, чтобы избежать ошибки на следующем шаге.</p></li>
 </ol>
 </div>
-<div id="overlay-join" class="section level2">
+<div id="overlay-join" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Соединение таблиц по названию подтипа почв</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <p>Для расчета пространственной взаимосвязи необходимо поделить площадь каждой комбинации на площадь соответствующего подтипа почв. Эти площади находятся сейчас в разных таблицах — <em>Слияние подтипов почв</em> и <em>Слияние комбинаций почвы-рельеф</em>. Их можно соединить по полю подтипа почв.</p>
@@ -344,7 +361,7 @@
 <p><strong>Вопрос 7</strong>: Что изменилось в таблице атрибутов после создания связи?</p></li>
 </ol>
 </div>
-<div id="overlay-resulting" class="section level2">
+<div id="overlay-resulting" class="section level2" number="4.8">
 <h2><span class="header-section-number">4.8</span> Вычисление результирующих значений показателя связи</h2>
 <p><a href="overlay.html#overlay">В начало упражнения ⇡</a></p>
 <ol style="list-style-type: decimal">

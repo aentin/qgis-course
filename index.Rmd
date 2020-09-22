@@ -19,11 +19,11 @@ toc_float:
 
 # Общие сведения {-}
 
-Вторая пересдача по курсу «Основы геоинформатики» назначена на пятницу 11 сентября, 17:00 по московскому времени. Зачёт будет проведён в форме устного собеседования в дистанционном режиме на платформе Zoom: [ссылка](https://us02web.zoom.us/j/87114028549?pwd=OEVacURRTXYrMkZLbTNoWkdvRExrQT09)
- 
-Учебные материалы и вопросы для подготовки размещены на странице ниже. 
+<!-- Вторая пересдача по курсу «Основы геоинформатики» назначена на пятницу 11 сентября, 17:00 по московскому времени. Зачёт будет проведён в форме устного собеседования в дистанционном режиме на платформе Zoom: [ссылка](https://us02web.zoom.us/j/87114028549?pwd=OEVacURRTXYrMkZLbTNoWkdvRExrQT09) -->
 
-Обращаем ваше внимание, что для получения зачёта необходимо выполнить все практические работы. Преподаватели, которые вели у вас практические занятия в весеннем семестре, больше не будут принимать отчёты о практических работах. Вместо них отчёты следует направлять инженеру кафедры картографии А.Л. Энтину на электронную почту [aentin@geogr.msu.ru](mailto:aentin@geogr.msu.ru), в теме письма обязательно указывайте "основы геоинформатики", а также вашу фамилию.
+<!-- Учебные материалы и вопросы для подготовки размещены на странице ниже.  -->
+
+<!-- Обращаем ваше внимание, что для получения зачёта необходимо выполнить все практические работы. Преподаватели, которые вели у вас практические занятия в весеннем семестре, больше не будут принимать отчёты о практических работах. Вместо них отчёты следует направлять инженеру кафедры картографии А.Л. Энтину на электронную почту [aentin@geogr.msu.ru](mailto:aentin@geogr.msu.ru), в теме письма обязательно указывайте "основы геоинформатики", а также вашу фамилию. -->
 
 
 > Если вы ищете практикум на основе __ArcGIS__, то он находится [__тут__](https://tsamsonov.github.io/arcgis-course/).
@@ -48,15 +48,15 @@ toc_float:
   - *Проектирование ГИС. Разработка ГИС-проекта (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU)
   - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y)
 
-## Программа зачета {-}
+<!-- ## Программа зачета {-} -->
 
-Для подготовки к зачету следует использовать перечень вопросов, представленный ниже. Данный перечень можно также [__просмотреть__](https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing) непосредственно в _Google Docs_ или [__скачать__](https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pub?output=xlsx) в формате _Microsoft Excel_.
+<!-- Для подготовки к зачету следует использовать перечень вопросов, представленный ниже. Данный перечень можно также [__просмотреть__](https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing) непосредственно в _Google Docs_ или [__скачать__](https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pub?output=xlsx) в формате _Microsoft Excel_. -->
 
-```{r, out.width = "690px", echo=FALSE}
-# tab = googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing")
-knitr::include_url('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false', height = '1938px')
-```
-Темы для подготовки составлены И. К. Лурье (лектор) и Т. Е. Самсоновым.
+<!-- ```{r, out.width = "690px", echo=FALSE} -->
+<!-- # tab = googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing") -->
+<!-- knitr::include_url('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false', height = '1938px') -->
+<!-- ``` -->
+<!-- Темы для подготовки составлены И. К. Лурье (лектор) и Т. Е. Самсоновым. -->
 
 <!-- Темы занятия: -->
 

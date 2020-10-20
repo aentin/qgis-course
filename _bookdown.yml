@@ -5,6 +5,7 @@ rmd_files:
     - "index.Rmd"
     - "Ex01_MapGeneral.Rmd"
     - "Ex02_MapQuaternary.Rmd"
+    - "Ex03_MapHumanGeography.Rmd"
     - "Ex05_RefAdm.Rmd"
     - "Ex06_VectorOverlay.Rmd"
     - "Ex12_RasterOverlay.Rmd"

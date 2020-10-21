@@ -1,5 +1,7 @@
 # Создание социально-экономической карты {#map-design-population}
 
+[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZkCX20q_RZQo7SXWQ?e=k0InAb)
+
 ## Введение {#map-design-quaternary-intro}
 
 **Цель задания** — закрепление навыков загрузки и визуализации данных в QGIS.

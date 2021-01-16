@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 6 Оптимизация местоположения | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 6 Оптимизация местоположения | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 6 Оптимизация местоположения | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2020-10-28" />
+<meta name="date" content="2021-01-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="overlay.html"/>
 <link rel="next" href="hydrodem.html"/>
-<script src="libs/header-attrs-2.4/header-attrs.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -110,7 +110,7 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>3</b> Создание социально-экономической карты</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<li class="chapter" data-level="3.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
 </ul></li>
@@ -243,7 +243,7 @@
 <p>В предыдущих заданиях вы познакомились с редактированием векторных данных. Для ряда практических задач более удобным оказывается растровое представление. Оно хорошо подходит для анализа географического пространства, которое обладает постоянно меняющимися характеристиками среды. Растровая модель топологически неразрывна, что позволяет моделировать различные поля и перенос вещества в пространстве из одной ячейки в другую. В силу своей регулярности растровая модель проста в обработке, поскольку все операции можно унифицировать, ориентируясь на матрицу ячеек. В частности, к растровым слоям удобно применять операции алгебры карт, такие как сложение, вычитание, суммирование — что и используется данном задании.</p>
 <p>Вам предстоит решить задачу выбора оптимального местоположения участка для строительства производственного объекта. Критерии выбора следующие:</p>
 <ul>
-<li><p>предельный угол наклона рельефа — <em>12,5°</em>;</p></li>
+<li><p>участок должен располагаться на горизонтальном участке или участе с небольшим уклоном. Площадки с крутизной склона более <em>18°</em> запрещены для строительства;</p></li>
 <li><p>участок должен располагаться вблизи автомобильных дорог;</p></li>
 <li><p>участок должен располагаться вблизи крупных водотоков, поскольку требуется водоснабжение;</p></li>
 <li><p>оптимальные зоны для размещения — открытые пространства, такие как выгоны, пустыри, луга, вырубки и т.д;</p></li>
@@ -605,7 +605,7 @@ END</code></pre>
 <div id="weighted-overlay-final-decision" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> Окончательный выбор участка</h2>
 <p><a href="weighted-overlay.html#weighted-overlay">В начало упражнения ⇡</a></p>
-<p>В качестве потенциальных мест на размещение площадки следует выбрать 10-балльные участки. При этом необходимо выбрать участки, площадь которых превышает 1 га. Для применения этого критерия удобнее представить результат взвешенного оверлея в виде векторного полигонального набора данных.</p>
+<p>В качестве потенциальных мест на размещение площадки следует выбрать 10-балльные участки. При этом необходимо выбрать участки, площадь которых превышает 2,5 га. Для применения этого критерия удобнее представить результат взвешенного оверлея в виде векторного полигонального набора данных.</p>
 <ol style="list-style-type: decimal">
 <li><p>Преобразуйте растр комбинации факторов в векторное представление. Для этого используйте инструмент «Растр» — «Преобразование» — «Создание полигонов (растр в вектор)…». Этот инструмент объединит смежные ячейки растра с одинаковыми значениями в единый полигон. Значение растра будет сохранено в поле с названием, которое вы указываете в инструмента. Запишите векторный набор данных в новый GeoPackage, назвав файл по шаблону %Фамилия%_%№упражнения%.gpkg, а слой в нём — <code>parcels</code>.</p></li>
 <li><p>Рассчитайте площади полученных полигонов.</p></li>

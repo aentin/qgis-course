@@ -9,6 +9,16 @@ map-design-general-vector
 map-design-general-attributes
 map-design-general-labels
 map-design-general-layout
+map-design-world
+map-design-world-intro
+map-design-world-checklist
+map-design-world-begin
+map-design-world-input-data
+map-design-world-qgis-project
+map-design-world-crs
+map-design-world-colorbrewer
+map-design-world-other-layers
+map-design-world-layout
 map-design-quaternary
 map-design-quaternary-intro
 map-design-quaternary-checklist
@@ -73,7 +83,7 @@ hydrodem-preprocessing
 hydrodem-flowacc
 hydrodem-basin
 manual-catalog
-шейп-файлы
+manual-dataformats-shapefile
 geopackage
 базы-геоданных-esri
 mastertest

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 9 {r, echo = FALSE} # library(htmltools) # # shiny::actionButton("show_table_button", # label = "Для самопроверки", # onclick = "button_handler()") # # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) # | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2021-02-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-1.html"/>
+<link rel="next" href="section-2.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli-4-i.html"><a href="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli-4-i.html"><i class="fa fa-check"></i><b>3</b> <code>{r, echo = FALSE} # library(htmltools) #  # shiny::actionButton("show_table_button",  #                     label = "Для самопроверки",  #                     onclick = "button_handler()") #  # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;в папке должен быть только один набор. Если у вас больше наборов, значит, вы не удалили лишние файлы на шаге 4 предыдущего пункта&lt;/i&gt;")) #</code></a></li>
+<li class="chapter" data-level="4" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>4</b> </a></li>
+<li class="chapter" data-level="5" data-path="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false.html"><a href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false.html"><i class="fa fa-check"></i><b>5</b> <code>{js, echo = FALSE} # function button_handler() { #   document.getElementById('resultContainer').hidden = false; # } #</code></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false.html"><a href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false.html#map-design-world-crs"><i class="fa fa-check"></i><b>5.1</b> Настройка системы координат проекта</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli-1681-1687-i.html"><a href="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli-1681-1687-i.html"><i class="fa fa-check"></i><b>6</b> <code>{r, echo = FALSE} # library(htmltools) #  # shiny::actionButton("show_table_button",  #                     label = "Для самопроверки",  #                     onclick = "button_handler()") #  # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;от 168,1° до 168,7° з.д.&lt;/i&gt;")) #</code></a></li>
+<li class="chapter" data-level="7" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i><b>7</b> </a></li>
+<li class="chapter" data-level="8" data-path="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-1.html"><a href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-1.html"><i class="fa fa-check"></i><b>8</b> <code>{js, echo = FALSE} # function button_handler() { #   document.getElementById('resultContainer').hidden = false; # } #</code></a></li>
+<li class="chapter" data-level="9" data-path="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli115i.html"><a href="r-echo-false-libraryhtmltools-shinyactionbuttonshow-table-button-label-onclick-button-handler-divid-resultcontainer-hidden-true-htmli115i.html"><i class="fa fa-check"></i><b>9</b> <code>{r, echo = FALSE} # library(htmltools) #  # shiny::actionButton("show_table_button",  #                     label = "Для самопроверки",  #                     onclick = "button_handler()") #  # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) #</code></a></li>
+<li class="chapter" data-level="10" data-path="section-2.html"><a href="section-2.html"><i class="fa fa-check"></i><b>10</b> </a></li>
+<li class="chapter" data-level="11" data-path="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-2.html"><a href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-2.html"><i class="fa fa-check"></i><b>11</b> <code>{js, echo = FALSE} # function button_handler() { #   document.getElementById('resultContainer').hidden = false; # } #</code></a></li>
+<li class="chapter" data-level="12" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>12</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>12.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>12.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>12.2</b> Начало работы</a></li>
+<li class="chapter" data-level="12.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>12.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="12.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>12.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="12.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>12.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="12.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>12.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>13</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>13.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>13.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>13.2</b> Начало работы</a></li>
+<li class="chapter" data-level="13.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>13.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="13.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>13.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="13.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>13.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="13.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>13.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="13.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>13.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="13.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>13.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="14" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>14</b> Привязка и цифрование административной карты</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>14.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>14.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>14.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="14.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>14.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="14.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>14.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="14.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>14.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="14.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>14.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="14.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>14.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="14.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>14.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="15" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>15</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>15.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>15.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="15.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>15.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>15.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="15.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>15.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="15.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>15.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="15.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>15.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="15.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>15.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="15.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>15.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="15.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>15.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="16" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>16</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>16.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>16.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="16.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>16.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="16.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>16.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>16.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="16.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>16.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="16.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>16.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>16.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="16.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>16.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="16.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>16.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>16.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="16.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>16.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="16.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>16.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="16.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>16.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="16.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>16.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>17</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>17.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>17.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="17.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>17.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>17.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="17.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>17.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="17.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>17.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="17.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>17.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>B</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-echo-false-libraryhtmltools-shinyactionbuttonshow_table_button-label-для-самопроверки-onclick-button_handler-divid-resultcontainer-hidden-true-htmli115i" class="section level1" number="9">
+<h1><span class="header-section-number">Упражнение 9</span> <code>{r, echo = FALSE} # library(htmltools) #  # shiny::actionButton("show_table_button",  #                     label = "Для самопроверки",  #                     onclick = "button_handler()") #  # div(id = "resultContainer", hidden = "true", HTML("&lt;i&gt;11,5°&lt;/i&gt;")) #</code></h1>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="js-echo-false-function-button-handler-document-getelementbyidresultcontainer-hidden-false-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

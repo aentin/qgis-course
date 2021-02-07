@@ -4,6 +4,7 @@ output_dir: docs
 rmd_files:
     - "index.Rmd"
     - "Ex01_MapGeneral.Rmd"
+    - "Ex02_MapWorld.Rmd"
     - "Ex02_MapQuaternary.Rmd"
     - "Ex03_MapHumanGeography.Rmd"
     - "Ex05_RefAdm.Rmd"

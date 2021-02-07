@@ -2,7 +2,7 @@
 
 # Форматы пространственных данных {#manual-catalog}
 
-## Шейп-файлы
+## Шейп-файлы {#manual-dataformats-shapefile}
 
 ## GeoPackage
 

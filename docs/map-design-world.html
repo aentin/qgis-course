@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2021-02-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="map-design-general.html"/>
+<link rel="next" href="map-design-quaternary.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-crs"><i class="fa fa-check"></i><b>2.5</b> Настройка системы координат проекта</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-colorbrewer"><i class="fa fa-check"></i><b>2.6</b> Окраска стран в разные цвета</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-other-layers"><i class="fa fa-check"></i><b>2.7</b> Добавление других слоёв на карту</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-layout"><i class="fa fa-check"></i><b>2.8</b> Создание компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>4</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>4.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>4.2</b> Начало работы</a></li>
+<li class="chapter" data-level="4.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>4.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="4.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>4.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="4.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>4.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="4.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>4.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="4.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>4.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="4.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>4.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="5" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>5</b> Привязка и цифрование административной карты</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>5.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="5.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>5.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="5.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>5.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="5.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>5.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="5.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>5.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="5.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>5.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="5.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>5.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="6" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>6</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="6.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>6.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>6.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="6.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>6.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="6.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>6.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="6.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>6.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="6.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>6.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="6.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>6.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="6.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>6.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="7" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>7</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="7.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>7.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="7.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>7.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>7.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="7.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>7.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="7.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>7.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>7.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="7.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>7.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>7.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>7.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="7.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>7.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="7.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>7.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>7.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="7.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>7.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>8</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>8.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>8.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="8.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>8.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="8.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>8.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="8.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>8.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="8.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>8.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>B</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="map-design-world" class="section level1" number="2">
+<h1><span class="header-section-number">Упражнение 2</span> Создание политической карты мира</h1>
+<p><a href="">Файл отчёта</a></p>
+<div id="map-design-world-intro" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — закрепление навыков загрузки и визуализации данных в QGIS.</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> модели пространственных данных, модели пространственных объектов, базы пространственных объектов, картографические проекции.</p>
+<p><strong>Необходимая практическая подготовка:</strong> в объёме курса «Картография» или упражнения 1 этого практикума.</p>
+<p><strong>Исходные данные:</strong> <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</p>
+<p><strong>Ожидаемый результат:</strong> политическая карта мира М 1:130 000 000</p>
+<div id="map-design-world-checklist" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Контольный лист</h3>
+<ul>
+<li>Добавить на карту источники пространственных данных</li>
+<li>Создать определение проекции</li>
+<li>Настроить отображение объектов на карте различными цветами в соответствии с данными в таблице атрибутов</li>
+<li>Скомпоновать картографическое изображение</li>
+<li>Применить опции блокировки слоёв</li>
+<li>Создать множество компоновок</li>
+<li>Экспортировать результаты в графические файлы</li>
+</ul>
+</div>
+</div>
+<div id="map-design-world-begin" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Начало работы</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<p>Работа с пространственными данными обычно подразумевает одновременное использование множества файлов и баз данных, которые могут располагаться как на вашем локальном компьютере, так и в локальной сети или в Интернете. Хотя в реальной практике использования ГИС обычно применяется сетевое размещение ресурсов, в этом упражнении и далее в курсе геоинформатики вы, как правило, будете организовывать все ресурсы ваших ГИС-проекты в локальных директориях.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте или выберите директорию (папку) для упражнений по геоинформатике на вашем рабочем компьютере. Например, для компьютеров под управлением ОС Windows: <code>D:\GIS\207_CAR\Ivanov</code>. Мы настоятельно рекомендуем, чтобы полный путь к рабочей директории не содержал символов русского алфавита, диакритики или других специальных символов.</p></li>
+<li><p>В рабочей директории создайте папку для текущего упражнения, например, <code>Ex02</code>. Все данные, относящиеся к этому упражнению, будут находиться здесь.</p></li>
+<li><p>В папке для текущего упражнения создайте ещё одну вложенную папку. Назовите её <code>data</code>. В эту папку вы будете помещать пространственные данные, которые получите на последующих этапах.</p></li>
+</ol>
+</div>
+<div id="map-design-world-input-data" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Загрузка исходных данных</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<p>Работа в ГИС — это в первую очередь работа с пространственными данными. Пространственные данные могут иметь различную форму представления, уровень детализации, назначение и лицензионные ограничения на использование. В этом упражнении мы воспользуемся данными ресурса <a href="https://www.naturalearthdata.com/">Natural Earth</a>. Это наборы пространственных данных низкой детализации, предназначенные для создания карт мелкого масштаба (1:10 000 000, 1:50 000 000, 1:110 000 000). Важно, что все данные находятся в свободном доступе — вы можете использовать их без ограничений как в учебных и научных задачах, так и в коммерческих проектах. Посмотрите вкладку <em>About</em>, чтобы узнать больше о Natural Earth.</p>
+<ol style="list-style-type: decimal">
+<li><p>Перейдите на страницу загрузок Natural Earth (<a href="https://www.naturalearthdata.com/downloads/" class="uri">https://www.naturalearthdata.com/downloads/</a>). На этой странице перейдите в раздел Cultural, соответствующий самому мелкому масштабу.</p>
+<p><img src="images/Ex01_WorldMap/NaturalEarthDownloadPage.png" /></p></li>
+<li><p>Скачайте набор данных <code>Admin 0 – Countries</code>. На ваш компьютер будет загружен архив в формате <a href="https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT">ZIP</a>. Этот формат поддерживается большинством современных программ для архивирования и разархивирования файлов.</p></li>
+<li><p>Распакуйте содержимое архива в папку <code>data</code>, созданную на предыдущем шаге. Сам архив можно удалить.</p>
+<p>Содержимое архива составляют пространственные данные в виде <a href="manual-catalog.html#manual-dataformats-shapefile">шейп-файла ESRI</a>, а также несколько сопроводительных файлов</p>
+<p><img src="images/Ex01_WorldMap/Shapefile.png" /></p>
+<blockquote>
+<p>Шейп-файлы были базовым форматом ГИС-пакета ArcView и за счёт этого получили очень широкое распространение. Шейп-файлы не такие функциональные, как базы геоданных ESRI (современный базовый формат для продуктов линейки ArcGIS) или GeoPackage, но тем не менее их продолжают активно использовать. Многие особенности шейп-файлов обусловлены спецификой и возможностями компьютеров начала 90-х гг. В частности, геометрия набора данных хранится отдельно (в файле <code>.shp</code>), семантика — отдельно (в формате <a href="https://en.wikipedia.org/wiki/DBase">dBase</a>, <code>.dbf</code>), а для связи между ними используется индекс-файл (<code>.shx</code>). Эти три файла — обязательные компоненты шейп-файла. Помимо них, отдельно могут быть записаны сведения о проекции (<code>.prj</code>), кодировке (<code>.cpg</code>) и многое другое. Основным файлом, тем не менее, считается <code>.shp</code>, а все остальные на компьютерном сленге называются <a href="https://en.wikipedia.org/wiki/Sidecar_file"><em>sidecar</em>-файлами</a>. Все файлы в составе шейп-файла имеют одинаковые имена, но разные расширения.</p>
+</blockquote></li>
+<li><p>Изучите содержимое папки после разархивирования. Удалите файлы, которые не входят в состав шейп-файла. Определите назначение остальных файлов.</p></li>
+</ol>
+</div>
+<div id="map-design-world-qgis-project" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Создание ГИС-проекта и загрузка данных в проект</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Запустите QGIS.</p>
+<blockquote>
+<p>Для запуска можно воспользоваться ярлыком QGIS Desktop &lt;…&gt; или QGIS Desktop &lt;…&gt; with GRASS &lt;…&gt;. Второй ярлык одновременно с QGIS запускает сессию GRASS, что позволяет задействовать инструменты GRASS изнутри QGIS. В этом упражнении вы не будете использовать инструменты GRASS, поэтому можно воспользоваться любым ярлыком для запуска.</p>
+</blockquote></li>
+<li><p>Сохраните проект в папку с материалами текущего упражнения (в нашем примере — <code>Ex02</code>) под именем <code>Ex02_*Surname*</code> (вместо surname вставьте вашу фамилию в латинской транслитерации). Чтобы сохранить проект, воспользуйтесь опцией «Сохранить» из меню «Проект» или кнопкой <img src="images/Ex01_WorldMap/save.png" /> на панели инструментов проекта. Проект QGIS версии 3 имеет расширение <code>*.qgz</code>.</p>
+<blockquote>
+<p>Для самопроверки: проект QGIS (файл <code>*.qgz</code>) должен располагаться в том же каталоге, что и папка <code>data</code>.</p>
+</blockquote></li>
+<li><p>Откройте <strong>Менеджер источников данных</strong>. Это можно сделать из меню «Слой», с помощью кнопки <img src="images/Ex01_WorldMap/dataSourceManagerButton.png" /> на специальной панели (которая так и называется — панель менеджера источников данных) или нажав комбинацию клавиш <code>Ctlr</code>+<code>L</code>. Откроется окно Менеджера источников данных</p></li>
+<li><p>Если вы впервые пользуетесь QGIS, то окно Менеджера откроется на вкладке «Обозреватель», вид которого аналогичен проводнику файловой системы. Если Менеджер источников данных открылся на другой вкладке, перейдите на вкладку «Обозреватель»</p></li>
+<li><p>Найдите в списке папок «Размещение по умолчанию для проекта» и раскройте его.</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/dataSourceManagerWindowDefault.png" /></p>
+<pre><code>«Размещение по умолчанию для проекта» — это каталог, в котором находится ваш файл проекта. Если бы мы не сохранили проект на предыдущем шаге, этого пункта в проводнике не было бы. Размещение по умолчанию облегчает доступ к файлам проекта, если вы поддерживаете структуру ГИС-проекта в порядке.</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Разверните содержимое папки <code>data</code>. Сколько наборов пространственных данных находится в этой папке?</p></li>
+<li><p>Добавьте набор <code>ne_110m_admin_0_countries.shp</code> в проект. Для этого дважды щёлкните по его названию левой клавишей мыши или воспользуйтесь опцией «Добавить слой в проект» из контекстного меню.</p></li>
+<li><p>Закройте Менеджер источников данных. Окно QGIS примет вид, аналогичный представленному ниже.</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/Stage1.png" /></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Сохраните проект QGIS.</li>
+</ol>
+<p><kbd><strong>Снимок экрана №1.</strong> Окно QGIS после загрузки набора данных</kbd></p>
+</div>
+<div id="map-design-world-crs" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Настройка системы координат проекта</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<p>В правом нижнем углу окна QGIS вы видите надпись <img src="images/Ex01_WorldMap/EPSG4326.png" alt="EPSG:4326" />. Нажмите на эту надпись, чтобы открыть интерфейс выбора системы координат проекта.</p>
+<blockquote>
+<p>Примечание: в тот же интерфейс можно попасть, выбрав «Проект» — «Свойства», и в открывшемся окне перейдя на вкладку «Система координат».</p>
+</blockquote>
+<p>В открывшемся окне вы видите более подробную информацию об используемой системе координат. Код <code>EPSG:4326</code> соответствует системе географических координат <strong>WGS 84</strong>. Термин «географическая система координат» (<em>geographic coordinate systems</em>) в ГИС означает, что координаты объектов и линейные параметры растров хранятся в виде широты и долготы. Альтернативный подход — проецированные системы координат (<em>projected coordinate systems</em>), где плановые координаты измеряются в метрических единицах.</p>
+<p>Система координат проекта была импортирована из первого (в нашем случае — пока единственного) загруженного источника пространственных данных. Система координат WGS 84, как правило, не используется для картографирования, поэтому мы изменим систему координат проекта. Поскольку проект предназначен для создания карты мира, мы выберем систему координат, использующую подходящую проекцию — например, <a href="https://en.wikipedia.org/wiki/Robinson_projection">проекцию Робинсона</a></p>
+<ol style="list-style-type: decimal">
+<li>В строке «Фильтр» в верхней части интерфейса выбора системы координат проекта начните вводить <code>robinson</code>, чтобы отфильтровать доступные системы координат по названию. Ниже, в блоке «Предустановленные системы координат», будет выведен список систем координат, в название которых входит введённая совокупность символов.</li>
+</ol>
+<p><img src="images/Ex01_WorldMap/Robinson_presets.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Выберите ту из систем координат, где в качестве вспомогательной поверхности используется эллипсоид вращения</p>
+<blockquote>
+<p>Примечание: на карте общемирового охвата различия между системами координат, использующих одну проекцию, но разные геодезические даты (датумов), несущестенно. Но в общем случае использование разных геодезических дат (датумов) может приводить к изменению положений контуров на сотни метров.</p>
+</blockquote></li>
+<li><p>Примените изменения и закройте окно свойств проекта</p></li>
+</ol>
+<p>Сейчас ваша карта выглядит приблизительно так, как показано на иллюстрации ниже:</p>
+<p><img src="images/Ex01_WorldMap/map_robinson0.png" /></p>
+<p>Это изображение уже больше похоже на «приличную» карту мира, но у него есть ряд заметных недостатков. Главный из них — разрыв вдоль 180-го меридиана, из-за которого Чукотка оказывается «оторванной» от основной территории Российской Федерации и переносится в северо-западный угол карты.</p>
+<p>Чтобы избавиться от этого эффекта, мы изменим один из параметров системы координат — центральный меридиан проекции. Изменение центрального меридиана приведёт к тому, что картографическое изображение «сдвинется», как лента конвейера. В результате Чукотка окажется в восточной части карты и не будет оторвана от Евразии. Но сначала нам нужно определить, на какую величину нужно сдвинуть центральный меридиан.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Верните проекту исходную систему координат (<code>WGS 84</code>) и увеличьте изображение Берингова пролива. Обратите внимание, что воображаемые линии меридианов в некотором диапазоне не пересекают сушу</li>
+</ol>
+<p><img src="images/Ex01_WorldMap/bering.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Подводя курсор узлам полигонов, ближайшим к «разрыву», определите диапазон долгот более точно, до десятых долей градуса.</p></li>
+<li><p>В найденном диапазоне выберите меридиан, долгота которого будет кратна 0,5°</p></li>
+<li><p>Теперь вычислите разность между 180° и найденной долготой. Это и будет искомое смещение центрального меридиана проекции. Запомните или запишите его.</p></li>
+<li><p>Вернитесь в интерфейс выбора системы координат и снова выберите систему координат с проекцией Робинсона.</p></li>
+<li><p>В блоке определений системы координат скопируйте описание системы координат в формате WKT. Копируйте строки, показанные ниже:</p>
+<p><img src="images/Ex01_WorldMap/Robinson_WKT.png" /></p>
+<p>Для удобства можете сохранить скопированные строки в отдельный текстовый файл</p></li>
+<li><p>Закройте интерфейс выбора системы координат.</p></li>
+<li><p>Откройте меню настройки новых систем координат («Установки» — «Пользовательские проекции…»).</p></li>
+<li><p>Нажмите зелёную клавишу с изображением знака «+», чтобы начать добавление новой системы координат.</p></li>
+<li><p>В строке «Параметр» введите имя для вашей новой системы координат. Для удобства дальнейшей работы имя должно быть коротким и информативным, например <code>Robinson_shift</code>. Можно также вписать в имя конкретное значение параметра, которое вы собираетесь изменить.</p></li>
+<li><p>Убедитесь, что опция «Формат» установлена в значение <code>WKT (Recommended)</code>. Вы скопировали параметры системы координат в формате WKT, поэтому данная опция вам подходит.</p></li>
+<li><p>В блок «Параметры» вставьте определение системы координат, скопированный ранее на шаге 9.</p></li>
+<li><p>Измените параметры системы координат следующим образом:</p></li>
+</ol>
+<ul>
+<li>Параметр <em>Longitude of natural origin</em>: вместо 0 установите значение, найденное на шаге 7. В качестве разделителя целой и дробной части используйте точку!</li>
+<li>Параметр <em>ID</em> в самом конце списка: удалите запись <code>ID["ESRI",54030]</code>, а также запятую, которая находится перед ней в строке выше. Обратите внимание, что удалить нужно только одну квадратную скобку — вторая относится к более крупному блоку описания! Если вы всё сделали правильно, описание системы координат будет оканчиваться <strong>тремя</strong> квадратными скобками.</li>
+</ul>
+<ol start="17" style="list-style-type: decimal">
+<li><p>Нажмите кнопку «Validate», чтобы проверить синтаксическую корректность введённого определения координат. Если система выдаст сообщеине «The WKT projection definition is valid», то вы всё сделали правильно. В противном случае вернитесь на шаг 15.</p></li>
+<li><p>Если определение успешно прошло валидацию, нажмите ОК, чтобы сохранить введённые параметры. На этом этапе система также может выдать ошибку, если введённые параметры совпадают с определением, которое уже есть в базе. В этом случае вернитесь на шаг 16.</p></li>
+<li><p>Теперь снова откройте окно выбора системы координат. Задайте проекту систему координат, которую вы только что ввели.</p></li>
+</ol>
+<p>Увеличьте изображение так, чтобы видеть северо-восточную оконечность Евразии. Ваше изображение должно выглядеть аналогично показанному ниже:</p>
+<p><img src="images/Ex01_WorldMap/Chukotka.png" /></p>
+<p>Также обратите внимание на изображение Антарктиды. <strong>Из-за смещения центрального меридиана этот континет отрисовывается с ошибками</strong>, но в рамках данного упражнения мы их проигнорируем.</p>
+<ol start="20" style="list-style-type: decimal">
+<li>Отобразите набор данных в полном охвате (<code>Ctrl+Shift+F</code> или кнопка <img src="images/Ex01_WorldMap/fullExtentButton.png" /> на панели навигации) и сделайте снимок экрана.</li>
+</ol>
+<p><kbd><strong>Снимок экрана №2.</strong> Окно QGIS после настройки системы координат</kbd></p>
+<p>Вы настроили систему координат проекта (проекцию для будущей карты). Теперь вы начнёте работать с визуализацией слоя государств.</p>
+</div>
+<div id="map-design-world-colorbrewer" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Окраска стран в разные цвета</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Переименуйте слой <code>ne_110m_admin_0_countries</code>. Назовите его <code>Страны</code>.</p></li>
+<li><p>Откройте таблицу атрибутов слоя <code>Страны</code>. Для этого нажмите правой кнопкой мыши на название слоя в таблице слоёв и выберите пункт «Открыть таблицу атрибутов».</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/attributetable.png" /></p>
+<p>Таблица атрибутов является представлением базы данных, сопоставленной набору пространственных данных. Каждый объект на карте имеет массу семантической (атрибутивной) информации. Например, в том наборе, который вы сейчас используете, есть названия стран на различных языках, текстовые характеристики уровня экономического развития и многое другое. Но сейчас нас интересуют столбцы с названием <code>MAPCOLOR</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Изучите столбец <code>MAPCOLOR7</code>. Сколько различных уникальных значений присвоено объектам в полях этого столбца?</li>
+</ol>
+<p>В настоящий момент все страны обозначены в окне проекта при помощи одного и того же условного знака. На политических картах различные территории обычно отображаются различными цветами, причём цвета могут повторяться. Столбец <code>MAPCOLOR7</code> (и соседние с ним столбцы) специально созданы разработчиками Natural Earth, чтобы закодировать отображение стран разными цветами. При этом цифры в столбце не означают какой-то конкретный цвет — это просто условные «коды», которыми ГИС-специалист может пользоваться для присвоения различных условных знаков. Мы изменим способ визуализации слоя таким образом, чтобы каждому уникальному значению поля <code>MAPCOLOR7</code> соответствовал свой цвет. Но сначала подберём нужную палитру цветов.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Перейдите на сайт <a href="https://colorbrewer2.org/">ColorBrewer</a>. Выясните, для чего он предназначен, каким функционалом обладает.</p>
+<blockquote>
+<p>Примечание: ColorBrewer — это палитры цветов, широко применяемые в картографии и смежных задачах. Палитры ColorBrewer интегрированы в различное популярное программное обеспечение, в том числе в QGIS. Сайт <a href="https://colorbrewer2.org/">ColorBrewer</a> предоставляет удобный интерфейс для выбора нужной палитры.</p>
+</blockquote>
+<p><img src="images/Ex01_WorldMap/colorbrewer.png" /></p></li>
+<li><p>Подберите палитру, исходя из следующих соображений:</p></li>
+</ol>
+<ul>
+<li>Число цветов: по числу уникальных значений в поле <code>MAPCOLOR7</code>;</li>
+<li>Тип данных, к которым применяется палитра: качественные (<em>qualitative</em>);</li>
+<li>Из доступных вариантов выберите палитру мягких, так называемых «пастельных» цветов.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Запомните или запишите название выбранной палитры. Сделайте снимок экрана.</li>
+</ol>
+<p><kbd><strong>Снимок экрана №3.</strong> Окно браузера с выбранной палитрой ColorBrewer</kbd></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Вернитесь в QGIS. Откройте окно свойств слоя <code>Страны</code>. Для этого дважды щёлкните левой кнопкой мыши по названию слоя или нажмите на него правой кнопкой мыши, а в контекстном меню выберите «Свойства…»</p></li>
+<li><p>Основная вкладка для настройки визуализации слоя — это вкладка «Оформление». Как видите, сейчас для слоя применён стиль «Обычный знак». Это значит, что все объекты слоя изображаются на карте при помощи одного и того же условного знака.</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/style.png" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Измените способ визуализации с «Обычный знак» на «Уникальные значения». Внешний вид окна сильно изменится.</p></li>
+<li><p>Ниже, в поле «Значение», выберите из выпадающего списка поле <code>MAPCOLOR7</code>. Мы возьмём значения из этого поля и каждому из них присвоим свой условный знак.</p></li>
+<li><p>Найдите кнопку «Классифицировать» в нижней части окна и нажмите на неё. QGIS автоматически выберет все уникальные значения из столбца и присвоит им случайные цвета. Окно настройки примет вид, аналогичный этому:</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/Map_classes.png" /></p>
+<p>Обратите внимание, что в таблице значений больше записей, чем уникальных значений в поле <code>MAPCOLOR7</code>. QGIS автоматически добавляет строку «<em>все другие значения</em>» на случай, если после редактирования слоя в столбец добавляют новые, не встречавшиеся ранее значения. Без специального знака «<em>все другие значения</em>» объекты с новыми значениями прост не будут отображаться на карте.</p>
+<ol start="10" style="list-style-type: decimal">
+<li>Примените изменения, закройте окно свойств слоя, сохраните проект и сделайте снимок экрана.</li>
+</ol>
+<p><kbd><strong>Снимок экрана №4.</strong> Окно QGIS с визуализацией стран с помощью случайно заданных цветов</kbd>.</p>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Вновь откройте окно свойст слоя на вкладке «Оформление».</p></li>
+<li><p>В таблице значений удалите запись «<em>все другие значения</em>». Мы не будем редактировать слой, а значит, можем быть уверены, что никаких новых значений не появится.</p></li>
+<li><p>Измените палитру цветов. Для этого щёлкните правой кнопкой мыши на выпадающем меню «Градиент» и выберите пункт «Создать новый градиент»</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/gradient.png" /></p>
+<ol start="14" style="list-style-type: decimal">
+<li><p>В открывшемся окне выберите тип градиента: «Каталог: ColorBrewer» и нажмите OK.</p></li>
+<li><p>В новом открывшемся окне введите два параметра:</p></li>
+</ol>
+<ul>
+<li>Имя схемы: название палитры, которое вы запомнили на шаге 4;</li>
+<li>Цвета: необходимое число цветов</li>
+</ul>
+<p>Выбранные настройки палитры будут автоматически применены к слою. Картографическое изображение примет вид, аналогичный представленному ниже:</p>
+<p><img src="images/Ex01_WorldMap/Stage2.png" /></p>
+<ol start="16" style="list-style-type: decimal">
+<li>Последний штрих к изображению стран — удаление обводки. На следующих шагах мы добавим другие слои, с помощью которых изобразим береговую линию и границы государств, поэтому обводка полигонов слоя государств будет нам только мешать. Чтобы удалить обводку, вернитесь в свойства слоя на вкладку «Оформление», нажмите на поле «Знак», выберите слой <em>Simple Fill</em> в перечне слоёв знака и установите для параметра «Стиль обводки» значение «Без обводки».</li>
+</ol>
+<p><img src="images/Ex01_WorldMap/outline.gif" /></p>
+<p><kbd><strong>Снимок экрана №5.</strong> Окно QGIS с визуализацией стран с помощью специально заданной палитры</kbd>.</p>
+</div>
+<div id="map-design-world-other-layers" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Добавление других слоёв на карту</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li>Загрузите с сайта Natural Earth следующие наборы данных, соответствующие детальности вашей карты:</li>
+</ol>
+<ul>
+<li>береговую линию (<em>Coastline</em>)</li>
+<li>сухопутные границы (<em>Boundary Lines</em>)</li>
+<li>Населённые пункты (<em>Populated Places</em>)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Распакуйте содержимое архивов в ту же директорию, где находится шейп-файл государств. Удалите лишние файлы.</p></li>
+<li><p>Добавьте загруженные наборы данных в ваш проект QGIS. Переименуйте их следующим образом: «Береговая линия», «Границы», «Населённые пункты».</p></li>
+<li><p>Расставьте слои в следующем порядке:</p></li>
+</ol>
+<ul>
+<li>Населённые пункты</li>
+<li>Береговая линия</li>
+<li>Границы</li>
+<li>Страны</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Примените следующие настройки визуализации слоёв линейной геометрии</li>
+</ol>
+<ul>
+<li>Береговая линия: линии синего цвета толщиной 0,26 мм</li>
+<li>Границы государств: линии серого цвета толщиной 0,26 мм</li>
+</ul>
+<p>Самостоятельно изучите интерфейс настройки цвета в QGIS</p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Примените следующие настройки для слоя населённых пунктов: условный знак <code>city</code> из библиотеки QGIS, размер 1,2 мм.</p></li>
+<li><p>Помимо добавленных слоёв, нам необходим слой для изображения океанов. К сожалению, из-за несовершенства QGIS вы не можете воспользоваться для этой цели набором данных с Natural Earth. Загрузите шейп-файл океанов по <a href="">этой ссылке</a>. Распакуйте шейп-файл в папку с другими шей-файлами и добавьте его в проект.</p></li>
+<li><p>Переименуйте добавленный слой в «Океан» и расположите его в самом низу таблицы слоёв.</p></li>
+<li><p>Задайте для слоя «Океан» условный знак в виде заливки светло-голубого цвета без обводки.</p></li>
+<li><p>Сохраните проект и сделайте снимок экрана.</p></li>
+</ol>
+<p><kbd><strong>Снимок экрана №6.</strong> Окно QGIS с визуализацией стран с помощью специально заданной палитры</kbd>.</p>
+</div>
+<div id="map-design-world-layout" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Создание компоновки карты</h2>
+<p><a href="map-design-world.html#map-design-world">В начало упражнения ⇡</a></p>
+<p>Изображение, которое вы создали — ещё не карта. Нужно создать компоновку карты — разместить картографическое изображение на листе бумаги, добавить название, масштабную линейку и другие элементы зарамочного оформления.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте новый макет (<code>Ctrl+P</code> или «Проект» — «Создать макет…»). В небольшом диалоговом окне, появляющемся при создании макета, введите его название — свою фамилию на русском языке. Нажмите ОК.</p></li>
+<li><p>На экране откроется отдельное окно настройки компоновки. В центре его — белый прямоугольник, имитирующий лист бумаги. Панели по краям экрана предназначены для добавления и настройки элементов макета.</p></li>
+<li><p>Найдите и активируйте инструмент добавления карты к макету <img src="images/Ex01_WorldMap/addMapTool.png" />.</p></li>
+<li><p>Продумайте, как будет расположена карта на вашем листе. Обязательно запланируйте отступ 2–2,5 см от края листа с каждой стороны.</p></li>
+<li><p>Переместите курсор на лист в положение, соответствующее планируемому положению северо-западного угла карты.</p></li>
+<li><p>Зажав левую кнопку мыши, ведите курсор к планируемому положению юго-восточного угла карты.</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/addMap.gif" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Пока элемент карты выбран, в правой части окна компоновки отображается панель свойств элемента. Найдите в нём раздел «Положение и размер» и установите размер карты равным 260×130 мм</p></li>
+<li><p>В той же панели задайте знаменатель масштаба картографического изображения равным 130 000 000.</p></li>
+<li><p>Пользуясь инструментом перемещения содержимого элемента (<img src="images/Ex01_WorldMap/moveElementButton.png" />), измените положение изображения карты так, чтобы вписать её в рамки</p></li>
+</ol>
+<p><img src="images/Ex01_WorldMap/moveMap.gif" /></p>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Добавьте к макету текст и напишите в нём название карты. Подберите форму и размер шрифта. Расположите название над картой.</p></li>
+<li><p>Добавьте к карте масштабную линейку.</p></li>
+<li><p>Добавьте к карте текст и укажите в нём автора карты.</p></li>
+<li><p>Экспортируйте изображение в формат PNG</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="map-design-general.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="map-design-quaternary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

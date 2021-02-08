@@ -37,6 +37,14 @@ map-design-population-symbols
 map-design-population-labels
 map-design-population-basemap
 map-design-population-layout
+raster-reference
+raster-reference-intro
+raster-reference-control
+raster-reference-input
+raster-reference-basemap
+raster-reference-accuracy
+raster-reference-frommap
+raster-reference-linear
 map-ref-districts
 map-ref-districts-intro
 map-ref-economic-control

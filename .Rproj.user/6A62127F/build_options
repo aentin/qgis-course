@@ -1,1 +1,1 @@
-website_output_format="bookdown::pdf_book"
+website_output_format="bookdown::gitbook"

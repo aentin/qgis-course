@@ -2,7 +2,7 @@
 
 # Оптимизация местоположения {#weighted-overlay}
 
-[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZYOUyfdqKq93AamtA?e=JgHKi2)
+[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZwUYSXODVsWhT8Cog?e=dTJpZD){target="_blank"}
 
 ## Введение {#weighted-overlay-intro}
 

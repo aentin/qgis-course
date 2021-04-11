@@ -13,6 +13,7 @@ rmd_files:
     - "Ex06_VectorOverlay.Rmd"
     - "Ex12_RasterOverlay.Rmd"
     - "Ex13_HydroDEM.Rmd"
+    - "Ex11_Networks.Rmd"
     - "Man00_DataFormats.Rmd"
     - "instruction.Rmd"
 delete_merged_file: true

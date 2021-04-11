@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 11 Анализ транспортных сетей | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2021-04-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="hydrodem.html"/>
+<link rel="next" href="manual-catalog.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-crs"><i class="fa fa-check"></i><b>2.5</b> Настройка системы координат проекта</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-colorbrewer"><i class="fa fa-check"></i><b>2.6</b> Окраска стран в разные цвета</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-other-layers"><i class="fa fa-check"></i><b>2.7</b> Добавление других слоёв на карту</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-layout"><i class="fa fa-check"></i><b>2.8</b> Создание компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>4</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>4.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>4.2</b> Начало работы</a></li>
+<li class="chapter" data-level="4.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>4.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="4.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>4.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="4.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>4.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="4.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>4.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="4.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>4.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="4.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>4.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="5" data-path="raster-reference.html"><a href="raster-reference.html"><i class="fa fa-check"></i><b>5</b> Привязка графических материалов</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-input"><i class="fa fa-check"></i><b>5.2</b> Привязка растра по известным координатам</a></li>
+<li class="chapter" data-level="5.3" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-basemap"><i class="fa fa-check"></i><b>5.3</b> Добавление базовой карты</a></li>
+<li class="chapter" data-level="5.4" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-accuracy"><i class="fa fa-check"></i><b>5.4</b> Оценка точности привязки</a></li>
+<li class="chapter" data-level="5.5" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-frommap"><i class="fa fa-check"></i><b>5.5</b> Использование координат с карты</a></li>
+<li class="chapter" data-level="5.6" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-linear"><i class="fa fa-check"></i><b>5.6</b> Привязка с использованием линейной трансформации</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="digitizing-districts.html"><a href="digitizing-districts.html"><i class="fa fa-check"></i><b>6</b> Векторизация карты избирательных округов</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-basedata"><i class="fa fa-check"></i><b>6.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="6.3" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-new-geopackage"><i class="fa fa-check"></i><b>6.3</b> Создание набора пространственных данных</a></li>
+<li class="chapter" data-level="6.4" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-drawing"><i class="fa fa-check"></i><b>6.4</b> Векторизация избирательных округов</a></li>
+<li class="chapter" data-level="6.5" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-query"><i class="fa fa-check"></i><b>6.5</b> Пространственные и атрибутивные запросы</a></li>
+<li class="chapter" data-level="6.6" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-diagrams"><i class="fa fa-check"></i><b>6.6</b> Визуализация слоя при помощи картодиаграмм</a></li>
+<li class="chapter" data-level="6.7" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-layout"><i class="fa fa-check"></i><b>6.7</b> Создание и экспорт макета компоновки</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>7</b> Привязка и цифрование административной карты</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>7.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="7.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>7.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="7.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>7.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="7.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>7.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="7.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>7.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="7.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>7.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="7.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>7.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="8" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>8</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>8.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>8.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="8.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>8.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="8.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>8.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="8.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>8.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="8.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>8.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="8.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>8.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="8.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>8.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="8.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>8.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="9" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>9</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>9.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>9.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="9.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>9.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="9.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>9.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>9.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="9.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>9.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="9.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>9.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>9.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="9.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>9.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>9.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>9.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="9.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>9.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="9.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>9.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>9.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="9.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>9.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>10</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>10.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>10.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="10.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>10.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>10.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="10.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>10.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="10.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>10.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="10.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>10.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>11</b> Анализ транспортных сетей</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="networks.html"><a href="networks.html#networks-intro"><i class="fa fa-check"></i><b>11.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="networks.html"><a href="networks.html#networks-control"><i class="fa fa-check"></i><b>11.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="11.1.2" data-path="networks.html"><a href="networks.html#networks-annotation"><i class="fa fa-check"></i><b>11.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="networks.html"><a href="networks.html#networks-init"><i class="fa fa-check"></i><b>11.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="11.3" data-path="networks.html"><a href="networks.html#networks-query"><i class="fa fa-check"></i><b>11.3</b> Выбор элементов дорожной сети</a></li>
+<li class="chapter" data-level="11.4" data-path="networks.html"><a href="networks.html#networks-route"><i class="fa fa-check"></i><b>11.4</b> Построение маршрута</a></li>
+<li class="chapter" data-level="11.5" data-path="networks.html"><a href="networks.html#networks-isochrones"><i class="fa fa-check"></i><b>11.5</b> Расчёт изохрон</a></li>
+<li class="chapter" data-level="11.6" data-path="networks.html"><a href="networks.html#networks-matrix"><i class="fa fa-check"></i><b>11.6</b> Работа с матрицей «источник-назначение»</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>B</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="networks" class="section level1" number="11">
+<h1><span class="header-section-number">Упражнение 11</span> Анализ транспортных сетей</h1>
+<p><a href="https://1drv.ms/u/s!AmtmZDq3JgxHgZ0j1tgKv_d1ElUpow?e=s0gsKz">Архив с данными и файл отчёта</a></p>
+<div id="networks-intro" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — научиться решать простые задачи сетевого анализа в ГИС</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> Понятие о сетевой модели данных, граф дорожной сети. Сетевой анализ и его основные задачи: поиск кратчайшего маршрута, определение границ зон обслуживания и ближайшего пункта обслуживания, размещение-распределение. Матрица источник-назначение.</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер макетов). Выделение объектов на карте. Пространственные и атрибутивные запросы.</p>
+<p><strong>Исходные данные:</strong> наборы пространственных данных о дорожной сети, созданные на основе выгрузки с OpenStreetMap на территорию г. Рязань.</p>
+<p><strong>Результат:</strong> Маршрут между двумя точками назначения. Схема изохрон относительно выбранных стартовых точек. Матрица источник-назначение для складов и точек продажи. Схема зонирования территории по принадлежности к складам.</p>
+<div id="networks-control" class="section level3" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Контрольный лист</h3>
+<ul>
+<li>Добавить на карту слой дорожной сети, слой зданий и сооружений</li>
+<li>Выбрать из слоя дорожной сети объекты, подходящие для создания графа дорожной сети</li>
+<li>Построить маршрут между двумя точками</li>
+<li>Выполнить анализ дорожной сети для расчёта изохрон</li>
+<li>Рассчитать матрицу источник-назначение, определить ближайшие источники для каждого назначения</li>
+<li>Очертить зоны обслуживания</li>
+</ul>
+</div>
+<div id="networks-annotation" class="section level3" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> Аннотация</h3>
+<p>Задание посвящено знакомству с сетевым анализом. Задачи, предлагаемые в задании, связаны с определением оптимальных маршрутов, построением зон обслуживания, определением ближайших сервисных точек, размещением сервисных точек. Данные задачи активно используются в логистике — оптимизации перевозок, а также в геомаркетинге и оптимизации местоположения пунктов обслуживания (магазинов, складов, пожарных депо и т.д.).</p>
+<p>В основе решения этих задач лежит сетевая модель данных, являющаяся частным случаем векторной модели. В сетевой модели дорожная сеть представляется в виде графа.</p>
+</div>
+</div>
+<div id="networks-init" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Добавление исходных данных</h2>
+<p><a href="networks.html#networks">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Скопируйте материалы к упражнению (файл GeoPackage) в свою рабочую директорию</p></li>
+<li><p>Создайте проект QGIS и сохраните его в свою рабочую директорию</p></li>
+<li><p>Добавьте в проект слои <em>RyazanRoadNetwork</em> (улично-дорожная сеть) и <em>RyazanBuildings</em> (здания и сооружения). Оба этих слоя подготовлены на основе данных OpenStreetMap</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/load_data.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Задайте следующие настройки отображения слоёв:</li>
+</ol>
+<ul>
+<li>Улично-дорожная сеть — линии серого цвета (60 % светлоты) толщиной 0,26 мм;</li>
+<li>Здания и сооружения — полигоны серого цвета (80 % насыщенности) без обводки</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Задайте подписи слоёв. Для этого откройте свойства соответствующего слоя, перейдите на вкладку «Подписи» и измените стиль подписей с <em>No labels</em> на <em>Single labels</em>. Изучите доступные настройки подписей.</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/labels_settings.png" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Задайте следующие параметры подписей:</li>
+</ol>
+<ul>
+<li>Для слоя дорожной сети: подписи по полю <code>Name</code>, кегль (размер) шрифта — 8 типографских пунктов, остальные параметры по умолчанию;</li>
+<li>Для слоя зданий и сооружений: подписи по полю <code>addr:housenumber</code>, кегль (размер) шрифта — 6 типографских пунктов, остальные параметры по умолчанию.</li>
+</ul>
+<blockquote>
+<p>Примечание: в некоторых версиях QGIS в интерфейсе настройки подписей некорректно переведено название единиц измерения — вместо правильного «Пункты» написано «Точки». Как правило, эти единицы используются по умолчанию, поэтому даже в случае некорректного перевода у вас не должно возникнуть проблем.</p>
+</blockquote>
+<ol start="7" style="list-style-type: decimal">
+<li>Увеличьте масштаб изображения до 1:5000 и сделайте снимок экрана. Изображение фрейма карты должно быть похож на изображение ниже.</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/visualization.png" /></p>
+<p><kbd><strong>Снимок экрана №1.</strong> Окно QGIS после завершения настройки символов и подписей</kbd></p>
+<p><strong>Вопрос 1</strong>: сколько объектов содержится в слое объектов улично-дорожной сети?</p>
+</div>
+<div id="networks-query" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Выбор элементов дорожной сети</h2>
+<p><a href="networks.html#networks">В начало упражнения ⇡</a></p>
+<p>В рамках этого упражнения мы будем решать задачи логистики на примере движения автомобилей. Однако набор данных об улично-дорожной сети, предоставленный вам в качестве исходных данных, содержит не только действующие автомобильные дороги, но и другие типы объектов. Тип объекта хранится в поле <code>highway</code>. В таблице ниже перечислены значения атрибута <code>highway</code> для тех объектов, которые не должны участвовать в анализе.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Значения атрибута <code>highway</code></th>
+<th align="left">Пояснение</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">construction</td>
+<td align="left">строящиеся дороги</td>
+</tr>
+<tr class="even">
+<td align="left">cycleway</td>
+<td align="left">велодорожки</td>
+</tr>
+<tr class="odd">
+<td align="left">footway, pedestrian</td>
+<td align="left">пешеходные дороги и тротуары</td>
+</tr>
+<tr class="even">
+<td align="left">path</td>
+<td align="left">тропы</td>
+</tr>
+<tr class="odd">
+<td align="left">proposed</td>
+<td align="left">планируемые дороги</td>
+</tr>
+<tr class="even">
+<td align="left">raceway</td>
+<td align="left">гоночные треки</td>
+</tr>
+<tr class="odd">
+<td align="left">steps</td>
+<td align="left">лестницы</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Составьте запрос, чтобы выбрать в слое <em>RyazanRoadNetwork</em> все объекты, <strong>кроме</strong> перечисленных выше. Это можно сделать разными способами: с использованием оператора <code>&lt;&gt;</code> (не равно) или оператора <code>IN</code> (содержит).</p></li>
+<li><p>Сохраните выборку в новый набор данных формата GeoPackage (правой кнопкой мыши на слой — «Экспорт…» — «Сохранить выбранные объекты как…»). Сохраните новый GeoPackage в вашу рабочую директорию и присвойте ему имя по шаблону <code>RoadNetwork_%Фамилия%</code>. Укажите, что слой необходимо добавить в проект после сохранения</p></li>
+<li><p>Когда новый слой будет добавлен к проекту, измените настройки его визуализации: установите толщину линий равной 0,26 мм, а цвет — любой, кроме того, который уже используется для улично-дорожной сети.</p></li>
+<li><p>Сделайте снимок экрана.</p></li>
+</ol>
+<p><kbd><strong>Снимок экрана №2.</strong> Окно QGIS после сохранения выбранных дорог в отдельный набор</kbd></p>
+</div>
+<div id="networks-route" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Построение маршрута</h2>
+<p><a href="networks.html#networks">В начало упражнения ⇡</a></p>
+<p>Существует несколько подключаемых модулей для QGIS, которые позволяют решать задачи сетевого анализа. Мы воспользуемся одним из самых простых — модулем <a href="https://root676.github.io/">QNEAT3</a>.</p>
+<p>В отличие от «продвинутых» программных продуктов, таких, как ArcGIS, большинство модулей для сетевого анализа в QGIS не требуют представления графа дорожной сети в виде отдельной сущности. Вместо этого такой граф создаётся непосредственно в процессе работы инструментов на основе векторного линейного набора объектов.</p>
+<ol style="list-style-type: decimal">
+<li><p>Установите модуль QNEAT3.</p></li>
+<li><p>Откройте панель инструментов анализа и убедитесь, что в неё добавилась группа инструментов QNEAT3.</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/qneat3_instruments.png" /></p>
+<p>Теперь мы попробуем построить маршрут между двумя точками. Для решения этой задачи используется инструмент <strong>Shortest path (point to point)</strong> из группы <em>Routing</em> набора QNEAT3</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Найдите здание вокзала <strong>Рязань-1</strong> (Вокзальная улица, 26А) и <strong>Музыкальный колледж</strong> (улица Дзержинского, 42). Запомните расположение этих зданий.</li>
+</ol>
+<blockquote>
+<p>Подсказка: названия зданий и их адреса могут быть указаны в таблице атрибутов.</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li>Запустите инструмент <strong>Shortest path (point to point)</strong>. Откроется интерфейс настройки инструмента.</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/qneat3_interface.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>В качестве слоя дорожной сети (<em>Network Layer</em>) укажите набор данных, который вы создали на предыдущем шаге.</p></li>
+<li><p>Чтобы указать начальную точку маршрута, нажмите многоточие справа от поля ввода <em>Start point</em>. Интерфейс настройки инструмента будет свёрнут, а курсор в окне QGIS примет вид мишени. Найдите здание вокзала Рязань-1 и щёлкните левой кнопкой мыши в произвольном месте внутри здания. Координаты курсора будут считаны и введены в поле <em>Start point</em>.</p></li>
+<li><p>Аналогичным образом укажите конечную точку маршрута в пределах здания музыкального колледжа.</p></li>
+<li><p>Проверьте, что в качестве критерия оптимизации указано <em>Shortest Path</em> (кратчайшее расстояние), а выходной набор данных сохраняется во временный файл.</p></li>
+<li><p>Запустите инструмент. Дождитесь, пока будет рассчитан кратчайший маршрут, и не закрывайте интерфейс инструмента — мы воспользуемся им снова, но изменим параметры.</p></li>
+<li><p>Построенный кратчайший маршрут появится в таблице слоёв как временный слой с названием <em>Shortest Path Layer</em>. Измените стиль этого слоя на линию красного цвета толщиной 1 мм. Отобразите карту в охвате слоя <em>Shortest Path Layer</em>.</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/shortestpath1.png" /></p>
+<p>Обратите внимание, что при построении этого маршрута учитывались только длины сегментов пути, но не учитывались характерные скорости и разрешённые направления движения. На следующих шагах мы внесём соответствующие коррективы.</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Откройте таблицу атрибутов слоя дорожной сети и изучите её содержимое.</li>
+</ol>
+<p><strong>Вопрос 1</strong>: какие характеристики дорожной сети записаны в таблице атрибутов?</p>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Вернитесь в интерфейс инструмента <strong>Shortest path (point to point)</strong> (напомним, что его не нужно было закрывать).</p></li>
+<li><p>Измените критерий оптимизации с кратчайшего пути на наиболее быстрый путь.</p></li>
+<li><p>В настройке <em>Direction field</em> укажите, в каком поле содержится информация о разрешённых направлениях движения. В следующих полях введите значения, соответствующие разрешённым направлениям: <code>yes</code> для движения только в прямом направлении, <code>-1</code> для движения только в обратном направлении, <code>no</code> для разрешения движения в обоих направлениях.</p></li>
+<li><p>В настройке <em>Speed field</em> укажите, из какого поля следует взять разрешённую скорость движения.</p></li>
+<li><p>Снова запустите расчёт пути. Дождитесь, пока инструмент завершит работу, и новый временный слой будет добавлен в проект. После этого окно инструмента можно закрыть.</p></li>
+<li><p>Переименуйте добавленный слой в <em>Fastest Path Layer</em> и измените его отображение на линию синего цвета толщиной 1 мм.</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/shortest_vs_fastest.png" /></p>
+<ol start="18" style="list-style-type: decimal">
+<li>Самостоятельно повторите расчёт маршрутов по кратчайшему расстоянию и скорейшему времени для одной из пар «источник-назначение», приведённых в таблице ниже. Сохраняйте построенные пути в «постоянные» наборы данных.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">№ п/п</th>
+<th align="right">Источник</th>
+<th align="right">Адрес</th>
+<th align="right">Назначение</th>
+<th align="right">Адрес</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">ДК Станкозавода</td>
+<td align="right">Октябрьская улица, 5</td>
+<td align="right">Соборная колокольня</td>
+<td align="right">улица Кремль, 10</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">ДК Станкозавода</td>
+<td align="right">Октябрьская улица, 5</td>
+<td align="right">Рязанский цирк</td>
+<td align="right">Лево-Лыбедская улица, 34</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">ДК Станкозавода</td>
+<td align="right">Октябрьская улица, 5</td>
+<td align="right">Вознесенский храм</td>
+<td align="right">Вознесенская улица, 26А</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">ДК Станкозавода</td>
+<td align="right">Октябрьская улица, 5</td>
+<td align="right">Рязанский городской центр детского творчества улица</td>
+<td align="right">Есенина, 46</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="right">Рязань-1</td>
+<td align="right">Вокзальная улица, 26А</td>
+<td align="right">Рязанский государственный радиотехничекий университет</td>
+<td align="right">улица Гагарина, 59/1</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="right">Рязань-1</td>
+<td align="right">Вокзальная улица, 26А</td>
+<td align="right">ТЦ “Полетаевский”</td>
+<td align="right">улица Гагарина, 164</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="right">Муниципальный культурный центр</td>
+<td align="right">Первомайский проспект, 68/2</td>
+<td align="right">Рязанский театр драмы</td>
+<td align="right">Театральная площадь, 7</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="right">Муниципальный культурный центр</td>
+<td align="right">Первомайский проспект, 68/2</td>
+<td align="right">Театр кукол</td>
+<td align="right">улица Есенина, 27</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="right">Муниципальный культурный центр</td>
+<td align="right">Первомайский проспект, 68/2</td>
+<td align="right">РИРО</td>
+<td align="right">улица Урицкого, 2А</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="right">Муниципальный культурный центр</td>
+<td align="right">Первомайский проспект, 68/2</td>
+<td align="right">НИИ газоразрядных приборов «Плазма»</td>
+<td align="right">улица Циолковского, 17</td>
+</tr>
+</tbody>
+</table>
+<ol start="18" style="list-style-type: decimal">
+<li>Создайте карту-схему построенных путей с масштабной линейкой и легендой. Вставьте эту схему в отчётный файл</li>
+</ol>
+<blockquote>
+<p>Примечание: перед тем, как оформлять схему, отключите подписи номеров домов</p>
+</blockquote>
+<p><kbd><strong>Изображение №3.</strong> Схема маршрутов</kbd></p>
+</div>
+<div id="networks-isochrones" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Расчёт изохрон</h2>
+<p><a href="networks.html#networks">В начало упражнения ⇡</a></p>
+<p>Модуль QNEAT3 комбинирует собственные алгоритмы анализа и базовый функционал QGIS для создания представления расстояний (или времени достижения) от определённых точек в виде изохрон. Для этого вычисляется расстояние (или время движения) от стартовой точки до ближайших узлов графа дорожной сети, а затем выполняется линейная интерполяция вычисленной величины между узлами, в результате чего создаётся поверхность расстояния (времени достижения) в растровом представлении. На основе растра создаётся изолинейное представление — в виде изолиний либо в виде полигонов, представляющих послойную окраску. Эта задача решается с использованием библиотеки <code>matplotlib</code>.</p>
+<p>За расчёт изолиний отвечают инструменты группы <code>Iso-Areas</code>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Найдите на карте Автовокзал Центральный (Московское шоссе, 31). Мы будем рассчитывать время, которое затрачивается на проезд от этой точки на автотранспорте.</p></li>
+<li><p>Запустите инструмент <em>Iso-Area as Interpolation (from Point)</em>. Используйте дорожную сеть, которую вы применяли на предыдущем шаге, и укажите здание автовокзала в качестве стартовой точки для расчёта изохрон.</p></li>
+<li><p>Размер области расчёта, или предельное расстояние/время, устанавливается либо в метрах, либо в секундах. Интерпретация величины зависит от того, какой критерий оптимизации был выбран. Установите в переменной <em>Size of Iso-Area</em> значение 900, а критерий оптимизации — по времени. В этом случае значение переменной будет прочитано как время в секундах.</p></li>
+<li><p>Размер ячейки целевого растра интерполяции — оставьте 10 м, как предлагается по умолчанию.</p></li>
+<li><p>Установите дополнительные настройки расчёта таким образом, чтобы при расчёте учитвались скорость и разрешённые направления движения (как на предыдущем шаге).</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/isoarea1.png" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Запустите расчёт. Дождитесь, пока растр времени достижения (временный набор данных) будет добавлен к проекту QGIS</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/isoarea2.png" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Переместите построенный растр на последнее место в списке слоёв.</p></li>
+<li><p>Измените настройки визуализации растра следующим образом</p></li>
+</ol>
+<ul>
+<li>Тип визуализации: одноканальное псевдоцветное;</li>
+<li>Минимум: 0</li>
+<li>Максимум: 900</li>
+<li>Интерполяция: дискретная</li>
+<li>Градиент: Magma, инвертировать градиент</li>
+<li>Число знаков после запятой в легенде (<em>Label Precision</em>): 0</li>
+<li>Мода: равные интервалы</li>
+<li>Число классов: 15</li>
+</ul>
+<p><img src="images/Ex11_RoadNetwork/isoarea3.png" /></p>
+<p>Кроме того, задайте на вкладке «Прозрачность» значение 66 %.</p>
+<p>В результате окно QGIS будет выглядеть, как показано ниже</p>
+<p><img src="images/Ex11_RoadNetwork/isoarea4.png" /></p>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Добавьте на карту слой складов (<em>Warehouses</em>) из базы <em>RyazanNetworkData.gpkg</em>.</p></li>
+<li><p>С помощью инструмента <em>Iso-Area as Interpolation (from Layer)</em> рассчитайте изохроны для движения от складов. Используйте параметры, аналогичные применённым ранее. Также укажите, что результат интерполяции должен быть сохранён в вашу рабочую директорию как файл TIFF.</p></li>
+<li><p>Когда файл будет создан и добавлен к проекту, примените к нему те же настройки визуализации, которые вы использовали для предыдущего аналогичного растра.</p></li>
+<li><p>Создайте карту-схему с масштабной линейкой и легендой на основе созданного слоя и вставьте её в отчётный файл.</p></li>
+</ol>
+<p><kbd><strong>Изображение №4.</strong> Время достижения точек местности при движении от складов</kbd></p>
+</div>
+<div id="networks-matrix" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> Работа с матрицей «источник-назначение»</h2>
+<p><a href="networks.html#networks">В начало упражнения ⇡</a></p>
+<p>При расчёте изохрон для каждой точки местности рассчитывается расстояние до «источника». При этом, если источников несколько, расстояние рассчитывается только до ближайшего из них, причём сам источник никак не идентифицируется. Однако расчёт кратчайших путей можно делать таким образом, что пути будут построены для каждой пары источник-назначение. Результат такого вычисления удобно представлять в виде матрицы: матрица «источник-назначение» отражает стоимость пути между каждой точкой-источником и каждой точкой-назначением. Под стоимостью здесь может пониматься любая величина, которую необходимо минимизировать: длина маршрута, продолжительность поездки, денежная стоимость.</p>
+<p>Если в задаче дано <span class="math inline">\(M\)</span> точек-источников и <span class="math inline">\(N\)</span> точек-назначений, то результирующая матрица будет иметь размер <span class="math inline">\(M \times N\)</span>. В практике геоинформационного анализа такое представление по ряду причин не очень удобно, поэтому чаще применяют форму представления не в виде матрицы, а в виде списка из трёх столбцов, где в первом столбце указывается идентификатор источника, во втором — идентификатор назначения, в третьем — рассчитанная стоимость маршрута.</p>
+<blockquote>
+<p>Примечание: такой список в математике и анализе данных называется «вектор», а процедура трансформации матрицы в вектор — «векторизация». В геоинформатике оба этих термина имеют несколько другое значение.</p>
+</blockquote>
+<p>QNEAT3 позволяет создавать матрицы источник-назначение на основе одного или двух наборов точечных данных и представлять их в виде списка. Опционально строкам списка могут быть сопоставлены линейные векторные объекты, связывающие источник и назначение по прямой линии. Мы воспользуемся матрицей источник-назначение, чтобы определить источник, ближайший к каждой точке назначения и рассчитать границы «зоны обслуживания» (<em>service area</em>) для каждого источника. Для этого мы:</p>
+<ul>
+<li>Создадим точечный слой, представляющий пункты назначений;</li>
+<li>Построим матрицу источник-назначение в виде таблицы;</li>
+<li>Для каждой строки назначения определим путь с наименьшей стоимостью и выберем строку, соответствующую этому пути;</li>
+<li>Удалим все невыбранные строки;</li>
+<li>Присоединим матрицу источник-назначение к точечному слою пунктов назначений, таким образом “приписав” к каждому назначению идентификатор источника;</li>
+<li>Построим диаграмму Вороного (полигоны Тиссена) на пунктах назначений;</li>
+<li>Объединим построенные полигоны по признаку.</li>
+</ul>
+<p>В качестве исходных точек мы возьмём известные положения складов, с которыми вы работали в предыдущей части упражнения. В качестве точек назначения мы будем использовать центры полигонов зданий и сооружений. Однако этот набор данных содержит почти 25 тыс. объектов — избыточно много для учебного упражнения. Поэтому сначала мы уменьшим это количество путём случайной выборки.</p>
+<p><strong>Прежде, чем вы приступите к этой части упражнения</strong>: все инструменты, указанные ниже, по умолчанию сохраняют выходные данные как временные файлы. Временные файлы удаляются после закрытия проекта QGIS, поэтому, если вы планируете надолго прерваться при выполнении упражнения, при запуске каждого инструмента явно указывайте, куда и в каком виде следует сохранить результирующий набор данных. Это требование не будет упоминаться далее в инструкции.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте случайную выборку объектов в слое зданий и сооружений. Для этого воспользуйтесь инструментом «Вектор» — «Выбор» — «Выбрать случайно…». Выберите в слое <em>RyazanBuildings</em> 1500 объектов и закройте интерфейс инструмента.</p></li>
+<li><p>Рассчитайте положения центральных точек (центроидов) для выбранных объектов. Для этого воспользуйтесь инструментом «Вектор» — «Обработка геометрии» — «Центроиды…». Создайте центроиды только для выбранных объектов, при этом игнорируйте составную геометрию (не создавайте отдельный центроид для каждой части полигона).</p></li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/centroids.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Рассчитайте матрицу источник-назначение при помощи инструмента <em>OD Matrix from Layers as Table (m:n)</em>. Самостоятельно укажите, какой слой должен использоваться в качестве источника, а какой — в качестве назначения. Уникальными идентификаторами в обоих случаях лучше назначить поле <code>fid</code>. Настройки поиска оптимальных маршрутов установите следующим образом: искать самый быстрый маршрут с учётом направления движения (вы уже неоднократно устанавливали такие настройки). Подождите, пока инструмент рассчитает матрицу — на это потребуется несколько минут, в зависимости от мощности компьютера.</p></li>
+<li><p>Откройте рассчитанную матрицу источник-назначение как таблицу атрибутов. Обратите внимание, что в каждой строке этой таблицы указан идентификатор источника, идентификатор назначения и несколько характеристик стоимости пути. Нас интересует последняя из них — полная стоимость, <code>total_cost</code>.</p></li>
+</ol>
+<p><strong>Вопрос 3</strong>: сколько всего записей в открывшейся таблице? Почему их именно столько?</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Теперь вам нужно выбрать в этой таблице строки, соответствующие минимальным расстояниям для каждого пункта назначения. Для этого откройте интерфейс выборки по условию и введите следующее выражение:</li>
+</ol>
+<p><code>"total_cost" = minimum("total_cost", "destination_id")</code></p>
+<p>Это выражение устроено следующим образом. Функция <code>minimum</code> ищет минимальное значение в столбце, указанном в качестве первого её аргумента. Второй аргумент используется как критерий группировки: в данном случае он указывает, что нужно искать не единое минимальное значение по всему столбцу, а сгруппировать минимальные значения, соответствующие разным идентификаторам пунктов назначений. Как мы помним, логическое выражение в целом применяется только к текущей строке таблицы атрибутов, поэтому функция <code>minimum</code> выдаст то минимальное значение, которое найдено для группы строк с тем же значением <code>destination_id</code>, что и у текущей строки. Соответственно, логическое выражение в целом будет истинным для строк с минимальной стоимостью проезда для данного пункта назначения и ложным для всех остальных строк того же пункта.</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Нажмите кнопку «Выбрать объекты» и подождите несколько минут, пока QGIS реализует введённый запрос.</li>
+</ol>
+<p><strong>Вопрос 4</strong>: сколько всего записей было выбрано? Почему именно столько?</p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Включите режим редактирования для таблицы</p></li>
+<li><p>Инвертируйте выборку. Для этого нажмите кнопку <img src="images/Ex11_RoadNetwork/button_invertsSelection.png" /> «Инвертировать выделение» или <code>Ctrl+R</code> на клавиатуре. Таким образом вы выделите те записи, где время достижения не является минимальным для данных точек назначения.</p></li>
+<li><p>Удалите выбранные строки, сохраните правки и выключите режим редактирования.</p></li>
+</ol>
+<blockquote>
+<p>Примечание: после этой операции в таблице должно остаться столько строк, сколько было исходных центроидов. Если у вас другое количество строк, удалите таблицу и выполните заново часть инструкции, начиная с расчёта матрицы источник-назначение.</p>
+</blockquote>
+<ol start="10" style="list-style-type: decimal">
+<li>Теперь мы должны соединить то, что осталось от матрицы источник-назначение, с исходным слоем центроидов, чтобы сопоставить каждому центроиду идентификатор соответствующего склада. Присоедините таблицу к слою центроидов. Из всех столбцов таблицы можно присоединить только один — идентификатор источника.</li>
+</ol>
+<blockquote>
+<p>примечание: если вы забыли, как выполняется присоединение таблиц в ГИС, обратитесь к соответствующему разделу <a href="overlay.html#overlay-join">упражнения 8</a></p>
+</blockquote>
+<p>После того, как вы осуществите присоединение, таблица атрибутов слоя центроидов примет следующий вид:</p>
+<p><img src="images/Ex11_RoadNetwork/centroids_attrTable.png" /></p>
+<p>Теперь мы создадим диаграмму Вороного (<em>Voronoy diagram</em>) точек центроидов. Диаграмма Вороного разбивает пространство вокруг точек на полигоны, причём каждый полигон ограничивает область пространства, более близких к одной из исходных точек, чем к остальным точкам. Поскольку каждый полигон диаграммы Вороного унаследует атрибуты исходных точек и поскольку в атрибутах точек содержится идентификатор ближайшего склада, мы сможем выделить области пространства, ближайшие к каждому складу при движении по сети автодорог.</p>
+<p>Полигоны диаграммы Вороного иногда называют полигонами Тиссена (<em>Thiessen polygons</em>). Распространено также некорректное название «полигоны Вороного» — именно оно используется в QGIS.</p>
+<ol start="11" style="list-style-type: decimal">
+<li>Откройте интерфейс инструмента построения диаграммы Вороного («Вектор» — «Обработка геометрии» — «Полигоны Вороного…»). Задайте исходный слой для построения, оставьте параметр «Буферная область» по умолчанию и запустите расчёт. Результат будет выглядеть аналогично представленному на рисунке ниже:</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/VoronoyDiagram.png" /></p>
+<ol start="12" style="list-style-type: decimal">
+<li>Объедините полигоны с одинаковыми идентификаторами источников. Для этого воспользуйтесь уже знакомой вам функцией <a href="overlay.html#overlay-merge">объединения по признаку</a>. Полученные полигоны представляют зоны обслуживания (<em>service areas</em>) для каждой из исходных точек.</li>
+</ol>
+<p><img src="images/Ex11_RoadNetwork/VoronoyDiagram2.png" /></p>
+<ol start="13" style="list-style-type: decimal">
+<li>Создайте карту-схему зон обслуживания и вставьте её в отчётный документ. На карте-схеме должны быть показаны положения складов и границы зон обслуживания, соответствующих им. Желательно использовать цветовой фон для изображения разных складов и зон. Также схема должна иметь необходимую географическую основу (можно пользоваться базовой картой из Интернета), название и масштабную линейку. Добавлять легенду не обязательно.</li>
+</ol>
+<p><kbd><strong>Изображение №5.</strong> Зоны обслуживания</kbd></p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hydrodem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manual-catalog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -99,6 +99,15 @@ hydrodem-init
 hydrodem-preprocessing
 hydrodem-flowacc
 hydrodem-basin
+networks
+networks-intro
+networks-control
+networks-annotation
+networks-init
+networks-query
+networks-route
+networks-isochrones
+networks-matrix
 manual-catalog
 manual-dataformats-shapefile
 geopackage

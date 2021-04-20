@@ -2,7 +2,7 @@
 
 # Анализ транспортных сетей {#networks}
 
-[Архив с данными и файл отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZ0j1tgKv_d1ElUpow?e=s0gsKz)
+[Архив с данными и файл отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZ0j1tgKv_d1ElUpow?e=s0gsKz){target="_blank"}
 
 ## Введение {#networks-intro}
 

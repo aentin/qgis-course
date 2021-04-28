@@ -33,23 +33,23 @@ favicon: images/favicon.ico
 
 ## Учебные материалы {-}
 
-- __Учебник__: Лурье И. К. _Геоинформационное картографирование. Методы геоинформатики и цифровой обработки космических снимков: Учебник для вузов._ 2-е изд. – М.: КДУ, 2010. [__PDF__](https://istina.msu.ru/download/295728157/1jUpeD:roxrGk69x0LxZCpC5w_KNV0o390/)
+<!-- - __Учебник__: Лурье И. К. _Геоинформационное картографирование. Методы геоинформатики и цифровой обработки космических снимков: Учебник для вузов._ 2-е изд. – М.: КДУ, 2010. [__PDF__](https://istina.msu.ru/download/295728157/1jUpeD:roxrGk69x0LxZCpC5w_KNV0o390/) -->
 
-- __Пособие__: Лурье И. К., Самсонов Т. Е. _Информатика с основами геоинформатики. Часть 2. Основы геоинформатики. Учебное пособие._ Москва. Изд-во МГУ, 2016. [__PDF__](https://istina.msu.ru/download/45821659/1ej66u:uSUtcUS-XmdMMyRRpC-yflDmCv8/)
+<!-- - __Пособие__: Лурье И. К., Самсонов Т. Е. _Информатика с основами геоинформатики. Часть 2. Основы геоинформатики. Учебное пособие._ Москва. Изд-во МГУ, 2016. [__PDF__](https://istina.msu.ru/download/45821659/1ej66u:uSUtcUS-XmdMMyRRpC-yflDmCv8/) -->
 
-- __Практикум в ArcGIS__: Самсонов Т. Е. _Основы геоинформатики: практикум в ArcGIS_. — Географический факультет МГУ Москва, 2018. — 460 с. DOI: 10.5281/zenodo.1167857. [__Website__](https://tsamsonov.github.io/arcgis-course/)
+<!-- - __Практикум в ArcGIS__: Самсонов Т. Е. _Основы геоинформатики: практикум в ArcGIS_. — Географический факультет МГУ Москва, 2018. — 460 с. DOI: 10.5281/zenodo.1167857. [__Website__](https://tsamsonov.github.io/arcgis-course/) -->
 
-- __Практикум в QGIS__: Энтин А. Л., Самсонов Т. Е. _Основы геоинформатики: практикум в QGIS_. [__Website__](https://aentin.github.io/qgis-course/)
+<!-- - __Практикум в QGIS__: Энтин А. Л., Самсонов Т. Е. _Основы геоинформатики: практикум в QGIS_. [__Website__](https://aentin.github.io/qgis-course/) -->
 
-- __Презентации__:
-  - *Фундаментальные понятия геоинформатики*: [__PDF__](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0)
-  - *Географическая информация*: [__PDF__](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0)
-  - *Программное обеспечение ГИС (17 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L)
-  - *Обзор программных средств ГИС (17 апреля)*: [__PPT__](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu)
-  - *Технологии пространственного моделирования (20 марта, 27 марта)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU)
-  - *Основные этапы развития ГИС. Типы ГИС (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D)
-  - *Проектирование ГИС. Разработка ГИС-проекта (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU)
-  - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y)
+<!-- - __Презентации__: -->
+<!--   - *Фундаментальные понятия геоинформатики*: [__PDF__](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0) -->
+<!--   - *Географическая информация*: [__PDF__](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0) -->
+<!--   - *Программное обеспечение ГИС (17 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L) -->
+<!--   - *Обзор программных средств ГИС (17 апреля)*: [__PPT__](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu) -->
+<!--   - *Технологии пространственного моделирования (20 марта, 27 марта)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU) -->
+<!--   - *Основные этапы развития ГИС. Типы ГИС (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D) -->
+<!--   - *Проектирование ГИС. Разработка ГИС-проекта (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU) -->
+<!--   - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y) -->
 
 <!-- ## Программа зачета {-} -->
 

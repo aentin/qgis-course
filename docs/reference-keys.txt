@@ -112,4 +112,5 @@ manual-catalog
 manual-dataformats-shapefile
 geopackage
 базы-геоданных-esri
+manual-crs
 mastertest

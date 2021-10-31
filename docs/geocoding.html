@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 12 Геокодирование | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
+
+
+<meta name="date" content="2021-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="networks.html"/>
+<link rel="next" href="manual-catalog.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление изображения рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-crs"><i class="fa fa-check"></i><b>2.5</b> Настройка системы координат проекта</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-colorbrewer"><i class="fa fa-check"></i><b>2.6</b> Окраска стран в разные цвета</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-other-layers"><i class="fa fa-check"></i><b>2.7</b> Добавление других слоёв на карту</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-layout"><i class="fa fa-check"></i><b>2.8</b> Создание компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>4</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>4.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>4.2</b> Начало работы</a></li>
+<li class="chapter" data-level="4.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>4.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="4.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>4.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="4.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>4.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="4.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>4.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="4.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>4.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="4.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>4.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="5" data-path="raster-reference.html"><a href="raster-reference.html"><i class="fa fa-check"></i><b>5</b> Привязка графических материалов</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-input"><i class="fa fa-check"></i><b>5.2</b> Привязка растра по известным координатам</a></li>
+<li class="chapter" data-level="5.3" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-basemap"><i class="fa fa-check"></i><b>5.3</b> Добавление базовой карты</a></li>
+<li class="chapter" data-level="5.4" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-accuracy"><i class="fa fa-check"></i><b>5.4</b> Оценка точности привязки</a></li>
+<li class="chapter" data-level="5.5" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-frommap"><i class="fa fa-check"></i><b>5.5</b> Использование координат с карты</a></li>
+<li class="chapter" data-level="5.6" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-linear"><i class="fa fa-check"></i><b>5.6</b> Привязка с использованием линейной трансформации</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="digitizing-districts.html"><a href="digitizing-districts.html"><i class="fa fa-check"></i><b>6</b> Векторизация карты избирательных округов</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-basedata"><i class="fa fa-check"></i><b>6.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="6.3" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-new-geopackage"><i class="fa fa-check"></i><b>6.3</b> Создание набора пространственных данных</a></li>
+<li class="chapter" data-level="6.4" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-drawing"><i class="fa fa-check"></i><b>6.4</b> Векторизация избирательных округов</a></li>
+<li class="chapter" data-level="6.5" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-query"><i class="fa fa-check"></i><b>6.5</b> Пространственные и атрибутивные запросы</a></li>
+<li class="chapter" data-level="6.6" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-diagrams"><i class="fa fa-check"></i><b>6.6</b> Визуализация слоя при помощи картодиаграмм</a></li>
+<li class="chapter" data-level="6.7" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-layout"><i class="fa fa-check"></i><b>6.7</b> Создание и экспорт макета компоновки</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="map-ref-districts.html"><a href="map-ref-districts.html"><i class="fa fa-check"></i><b>7</b> Привязка и цифрование административной карты</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-economic-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-basemap"><i class="fa fa-check"></i><b>7.2</b> Добавление базовых данных</a></li>
+<li class="chapter" data-level="7.3" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-referencing"><i class="fa fa-check"></i><b>7.3</b> Привязка карты</a></li>
+<li class="chapter" data-level="7.4" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-creation"><i class="fa fa-check"></i><b>7.4</b> Создание слоя избирательных округов</a></li>
+<li class="chapter" data-level="7.5" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-stats"><i class="fa fa-check"></i><b>7.5</b> Расчет статистики по округам</a></li>
+<li class="chapter" data-level="7.6" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-diagrams"><i class="fa fa-check"></i><b>7.6</b> Построение картодиаграмм</a></li>
+<li class="chapter" data-level="7.7" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-wms"><i class="fa fa-check"></i><b>7.7</b> Использование базовых слоёв из сети Интернет</a></li>
+<li class="chapter" data-level="7.8" data-path="map-ref-districts.html"><a href="map-ref-districts.html#map-ref-districts-result"><i class="fa fa-check"></i><b>7.8</b> Оформление итоговой схемы</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="8" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>8</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>8.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>8.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="8.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>8.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="8.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>8.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="8.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>8.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="8.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>8.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="8.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>8.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="8.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>8.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="8.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>8.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="9" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>9</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>9.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>9.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="9.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>9.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="9.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>9.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>9.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="9.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>9.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="9.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>9.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>9.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="9.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>9.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>9.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>9.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="9.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>9.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="9.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>9.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>9.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="9.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>9.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>10</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>10.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>10.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="10.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>10.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>10.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="10.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>10.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="10.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>10.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="10.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>10.5</b> Определение границ бассейна р. Оскол</a></li>
+</ul></li>
+<li class="part"><span><b>V Сетевой анализ</b></span></li>
+<li class="chapter" data-level="11" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>11</b> Анализ транспортных сетей</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="networks.html"><a href="networks.html#networks-intro"><i class="fa fa-check"></i><b>11.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="networks.html"><a href="networks.html#networks-control"><i class="fa fa-check"></i><b>11.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="11.1.2" data-path="networks.html"><a href="networks.html#networks-annotation"><i class="fa fa-check"></i><b>11.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="networks.html"><a href="networks.html#networks-init"><i class="fa fa-check"></i><b>11.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="11.3" data-path="networks.html"><a href="networks.html#networks-query"><i class="fa fa-check"></i><b>11.3</b> Выбор элементов дорожной сети</a></li>
+<li class="chapter" data-level="11.4" data-path="networks.html"><a href="networks.html#networks-route"><i class="fa fa-check"></i><b>11.4</b> Построение маршрута</a></li>
+<li class="chapter" data-level="11.5" data-path="networks.html"><a href="networks.html#networks-isochrones"><i class="fa fa-check"></i><b>11.5</b> Расчёт изохрон</a></li>
+<li class="chapter" data-level="11.6" data-path="networks.html"><a href="networks.html#networks-matrix"><i class="fa fa-check"></i><b>11.6</b> Работа с матрицей «источник-назначение»</a></li>
+</ul></li>
+<li class="part"><span><b>VI Геокодирование</b></span></li>
+<li class="chapter" data-level="12" data-path="geocoding.html"><a href="geocoding.html"><i class="fa fa-check"></i><b>12</b> Геокодирование</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="geocoding.html"><a href="geocoding.html#geoding-intro"><i class="fa fa-check"></i><b>12.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="geocoding.html"><a href="geocoding.html#geocoding-control"><i class="fa fa-check"></i><b>12.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="12.1.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-annotation"><i class="fa fa-check"></i><b>12.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-input"><i class="fa fa-check"></i><b>12.2</b> Получение исходных данных</a></li>
+<li class="chapter" data-level="12.3" data-path="geocoding.html"><a href="geocoding.html#geocoding-debug"><i class="fa fa-check"></i><b>12.3</b> Тестирование работы сервиса геокодирования</a></li>
+<li class="chapter" data-level="12.4" data-path="geocoding.html"><a href="geocoding.html#geocoding-import"><i class="fa fa-check"></i><b>12.4</b> Импорт списка адресов в QGIS</a></li>
+<li class="chapter" data-level="12.5" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch-install"><i class="fa fa-check"></i><b>12.5</b> Установка модуля пакетного геокодирования</a></li>
+<li class="chapter" data-level="12.6" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch"><i class="fa fa-check"></i><b>12.6</b> Пакетное геокодирование</a></li>
+<li class="chapter" data-level="12.7" data-path="geocoding.html"><a href="geocoding.html#geocoding-mapping"><i class="fa fa-check"></i><b>12.7</b> Картографирование плотности объявлений</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="manual-crs.html"><a href="manual-crs.html"><i class="fa fa-check"></i><b>B</b> Форматы описания систем координат</a></li>
+<li class="chapter" data-level="C" data-path="manual-plugins.html"><a href="manual-plugins.html"><i class="fa fa-check"></i><b>C</b> Установка модулей в QGIS</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-install"><i class="fa fa-check"></i><b>C.1</b> Установка модулей</a></li>
+<li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
+<li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>D</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geocoding" class="section level1" number="12">
+<h1><span class="header-section-number">Упражнение 12</span> Геокодирование</h1>
+<div id="geoding-intro" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Введение</h2>
+<p><strong>Цель задания</strong> — научиться создавать новые наборы пространственных данных с использованием геокодирования</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> модели пространственных данных, модели пространственных объектов, базы пространственных объектов, системы координат, геокодирование, адресное геокодирование.</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер компоновок). Работа с различными форматами источников пространственных данных . Настройка символики и подписей объектов. Владение базовыми ГИС-технологиями.</p>
+<p><strong>Исходные данные:</strong> отсутствуют (вся необходимая информация загружается в процессе работы)</p>
+<p><strong>Результат:</strong> геокодированные точки объявлений о продаже недвижимости, карта плотности объявлений</p>
+<div id="geocoding-control" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Контрольный лист</h3>
+<ul>
+<li>Получить список адресов с веб-сайта в виде электронной таблицы</li>
+<li>загрузить таблицу в QGIS</li>
+<li>Выполнить геокодирование с использованием сервиса Nominatim</li>
+<li>Проанализировать результат, определить проблемы, мешающие геокодированию</li>
+<li>Исправить таблицу в соответсвии с выявленными проблемами</li>
+</ul>
+</div>
+<div id="geocoding-annotation" class="section level3" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Аннотация</h3>
+<p>Геокодирование (англ. <em>geocoding</em>) — это определение координат объектов по их географическим текстовым описаниям, которые, как правило, выражены в виде адресов и/или почтовых кодов. Геокодирование широко применяется в тех сферах, где входящая информация поступает массово, но не имеет прямой географической привязки. Примеры такой информации: места дорожно-транспортных происшествий, адреса недвижимости, IP-адреса отправителей и получателей сообщений. Для обеспечения геокодирования необходимо иметь обширную и постоянно поддерживаемую в актуальном состоянии базу пространственных данных, где каждому адресу сопоставлены географические координаты. Другой компонент геокодирования — подсистема парсинга адреса, которая преобразует поданную на вход текстовую строку в вид, пригодный для автоматического распознавания геокодером.</p>
+<p>Существует и противоположная операция — обратное геокодирование (англ. <em>reverse geocoding</em>), в ходе которого по заданным географическим координатам определяются почтовые или сетевые адреса.</p>
+<p>Оперативное и достоверное геокодирование представляет большой интерес для различных групп пользователей — от служб доставок до спасателей и полиции. В то же время, для обеспечения пригодности результатов геокодирования требуется создать и поддерживать в актуальном состоянии обширную базу пространственных данных, а также предусмотреть надёжный интерфейс для обращения к сервису. Это превращает геокодирование в конкурентную бизнес-услугу. Существует ряд коммерческих сервисов, предоставляющих услуги геокодирования: <a href="https://pickpoint.io/ru">PickPoint</a>, <a href="https://developer.mapquest.com/documentation/geocoding-api/">MapQuest</a>, <a href="https://locationiq.com/geocoding">LocationIQ</a>; почти у всех из них есть «демонстрационный» бесплатный режим с ограничением по количеству запросов. Крупные картографические интернет-сервисы, такие, как Google Maps или Яндекс.карты, предоставляют <a href="https://developers.google.com/maps/documentation/javascript/geocoding">свои</a> <a href="https://yandex.ru/dev/maps/geocoder/doc/desc/concepts/about.html">сервисы</a> геокодирования на похожих условиях. Из открытых решений популярностью пользуется сервис <a href="https://nominatim.org/">Nominatim</a>, использующий данные OpenStreetMap. Результаты геокодирования с помощью Nominatim по понятным причинам проигрывают в точности и оперативности результатам коммерческих сервисов, но всё же пригодны для использования в научных и учебных целей.</p>
+<p>Мы воспользуемся сервисом геокодирования Nominatim, чтобы нанести на карту точки, соответствующие объявлениям о продаже недвижимости, предоставленные сайтом <a href="https://www.cian.ru/">ЦИАН</a>.</p>
+</div>
+</div>
+<div id="geocoding-input" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Получение исходных данных</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>В качестве исходных данных в этом упражнении мы будем использовать выгрузку объявлений с сайта <a href="https://www.cian.ru/">ЦИАН</a>. Перед началом упражнения следует выбрать охват территории, на которую будет производиться выгрузка. На примерах, приведённых ниже, показаны микрорайоны Московский и Мервино города Рязань. В соответствии с указаниями преподавателя, ваш индивидуальный вариант может быть другим.</p>
+<ol style="list-style-type: decimal">
+<li><p>Откройте сайт <a href="https://www.cian.ru/">ЦИАН</a></p></li>
+<li><p>В выпадающих списках главной страницы выберите опции поиска, соответствующе следующему запросу: «<em>Купить квартиру на вторичном рынке, любой планировки, любой цены</em>»</p></li>
+<li><p>Нажмите на кнопку «Показать на карте». Отобразите карту таким образом, чтобы охват территории соответствал вашему варианту задания.</p>
+<p><img src="images/Ex08_Geocoding/cian01.png" /></p></li>
+<li><p>Нажмите кнопку «Список» в правой части экрана. Под заголовком списка найдите число объявлений, найденных в текущем охвате.</p>
+<p><img src="images/Ex08_Geocoding/cian02.png" /></p></li>
+<li><p>Для дальнейшей работы нам нужно, чтобы в вашей подборке было примерно 200 объявлений. Если в списке около 200 объявлений, переходите на следующий шаг инструкции. Если в списке меньше 150 или больше 250 объявлений, вернитесь в окно карты и измените экстент поиска, чтобы в него попало больше или меньше объявлений, а затем снова перейдите в окно списка.</p></li>
+<li><p>Найдите внизу списка кнопку «Сохранить файл в Excel» и нажмите на неё. Файл со списком будет загружен на ваш компьютер под именем <code>offers.xlsx</code></p>
+<p><img src="images/Ex08_Geocoding/cian03.png" /></p></li>
+<li><p>Создайте рабочую директорию и переместите в неё загруженный файл</p></li>
+<li><p>Откройте список любым табличным редактором (например, Microsoft Excel или LibreOffice Calc).</p>
+<p><img src="images/Ex08_Geocoding/list01.png" /></p></li>
+<li><p>Найдите в загруженном файле столбцы, в которых записаны следующие данные:</p></li>
+</ol>
+<ul>
+<li>Адрес квартиры</li>
+<li>Площадь квартиры</li>
+<li>Стоимость квартиры</li>
+</ul>
+<p>На следующих шагах вы выполните геокодирование адресов и соедините полученные пространственные объекты с текстовой информацией.</p>
+</div>
+<div id="geocoding-debug" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Тестирование работы сервиса геокодирования</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>Прежде чем начинать «пакетное» геокодирование всего списка, мы возьмём несколько отдельных адресов из него и проверим, насколько хорошо работает сервис распознавания адресов Nominatim. Для этого мы воспользуемся страницей интерфейса отладки Nominatim.</p>
+<ol style="list-style-type: decimal">
+<li><p>Откройте страницу интерфейса отладки Nominatim по <a href="https://nominatim.openstreetmap.org/ui/search.html">этой ссылке</a></p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim01.png" alt="" />
+<p class="caption">Интерфейс отладки Nominatim. Используется для тестирования распознавания отдельных адресов</p>
+</div></li>
+<li><p>Скопируйте любой адрес из вашей таблицы и вставьте его в строку поиска (<em>Search</em>). Нажмите кнопку <strong>Search</strong>, чтобы запустить поиск</p>
+<p>Дальнейшее поведение системы зависит от того, насколько успешно парсер смог «прочитать» адрес. Если вся строка адреса распознана корректно, то в окне карты будет отображён объект, соответствующий найденному адресу.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim02.png" alt="" />
+<p class="caption">Пример успешного геокодирования</p>
+</div>
+<p>Если с распознаванием адресов возникли какие-либо трудности, то их можно отследить по выдаче. На рисунке ниже в адресе <code>Рязанская область, Рязань, улица Костычева, 8к1</code> распознал всё, кроме номера дома, и выдал в качестве результата объект, соответствующий улице.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim03.png" alt="" />
+<p class="caption">Пример сомнительного результата</p>
+</div>
+<p>В этом примере достаточно поставить пробел между номером дома и номером корпуса (<code>8 к1</code>), и Nominatim отработает корректно.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim03.png" alt="" />
+<p class="caption">Пример результата после исправления входной строки</p>
+</div>
+<p>В худшем случае геокодер вообще не сможет определить адрес. В примере ниже (<code>Рязанская область, Рязань, улица Надежды Крупской, 11</code>) геокодер «сломался» уже на названии улицы.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim05.png" alt="" />
+<p class="caption">Адрес не распознан</p>
+</div>
+<p>В этом примере проблема кроется в названии улицы. В Рязани действительно есть улица, названная именем <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%BF%D1%81%D0%BA%D0%B0%D1%8F,_%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0">Надежды Крупской</a>, но в OpenStreetMap она называется <code>улица Крупской</code>. С точки зрения Nominatim, <code>улица Надежды Крупской</code> и <code>улица Крупской</code> — это разные улицы. Если изменить запрос на <code>Рязанская область, Рязань, улица Крупской, 11</code>, Nominatim выдаст корректный результат.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Nominatim06.png" alt="" />
+<p class="caption">После изменения названия улицы адрес распознан корректно</p>
+</div></li>
+<li><p>Подберите три аналогичных примера из вашего набора исходных данных и сделайте скриншоты выдачи сервиса отладки Nominatim.</p></li>
+</ol>
+<p><strong>Скриншот 1:</strong> успешное распознавание адреса сервисом Nominatim (в ответ на запрос выводится правильный дом)</p>
+<p><strong>Скриншот 2:</strong> неточное или неполное распознавание адреса (в ответ на запрос выводится улица, или неправильный дом, или правильный адрес, но в другом населённом пункте)</p>
+<p><strong>Скриншот 3:</strong> полностью неудачная попытка распознавания (пустая выдача)</p>
+<p>Мы рассмотрели некоторые потенциальные проблемы с распознаванием адресов, которые возникают при использовании сервиса Nominatim. Следует заметить, что другие, более «продвинутые» сервисы геокодирования могут автоматически распознавать и разрешать проблемы такого рода.</p>
+</div>
+<div id="geocoding-import" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Импорт списка адресов в QGIS</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>В предыдущих упражнениях вы импортировали табличную информацию в QGIS, пользуясь форматом Comma-Separated Values (CSV). В этом упражнении вы импортируете данные напрямую из таблицы Excel, пользуясь подключаемым модулем <strong>Spreadsheet Layers</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте проект QGIS и сохраните его в своей рабочей директории</p></li>
+<li><p>Используя функционал модуля QuickMapServices, подключите к проекту QGIS базовую карту OpenStreetMap.</p></li>
+<li><p>Установите модуль Spreadsheet Layers. Модуль доступен в репозитории QGIS, поэтому достаточно ввести его имя в строке поиска.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Spreadsheet01.png" alt="" />
+<p class="caption">Модуль Spreadsheet Layers в окне управления модулями QGIS</p>
+</div></li>
+<li><p>После установки модуля найдите опцию импорта табличных данных: меню «Слой» — «Добавить слой» — «Add Spreadsheet Layer».</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Spreadsheet02.png" alt="" />
+<p class="caption">Модуль Spreadsheet Layers в окне управления модулями QGIS</p>
+</div></li>
+<li><p>В открывшемся окне укажите путь к файлу Excel и страницу, с которой требуется загрузить данные. Выходной слой назовите по шаблону <code>offers-%Фамилия%</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Spreadsheet03.png" alt="" />
+<p class="caption">Инструмент загрузки табличных данных в QGIS</p>
+</div>
+<p>При необходимости на этом этапе можно изменить типы данных для столбцов, но в нашем упражнении такой необходимости нет.</p></li>
+<li><p>Нажмите OK, чтобы добавить слой к проекту QGIS.</p></li>
+<li><p>Откройте таблицу атрибутов слоя и убедитесь, что данные из таблицы Excel отображаются корректно.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/Spreadsheet04.png" alt="" />
+<p class="caption">Таблица атрибутов загруженного слоя</p>
+</div></li>
+</ol>
+</div>
+<div id="geocoding-batch-install" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Установка модуля пакетного геокодирования</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>Интерфейс отладки, который мы использовали на ранее, пригоден для геокодирования отдельных адресов, но неудобен для пакетного геокодирования, когда нужно распознавать несколько сотен адресов.</p>
+<p>Для решения задача пакетного геокодирования на базе QGIS и Nominatim разработано несколько модулей. Мы воспользуемся модулем <a href="https://github.com/NationalSecurityAgency/qgis-bulk-nominatim">Bulk Nominatim QGIS Plugin</a>. В отличие от модуля Spreadsheet Layers, этот модуль не содержится в репозитории QGIS, поэтому его придётся установить из ZIP-архива.</p>
+<ol style="list-style-type: decimal">
+<li><p>Перейдите на страницу модуля Bulk Nominatim QGIS Plugin на GitHub: <img src="https://github.com/NationalSecurityAgency/qgis-bulk-nominatim" /></p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/bulk-nominatim01.png" alt="" />
+<p class="caption">Bulk Nominatim на GitHub</p>
+</div></li>
+<li><p>Нажмите на кнопку «Code» и в открывшемся выпадающем списке выберите «Download ZIP».</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/bulk-nominatim02.png" alt="" />
+<p class="caption">Загрузка архива</p>
+</div></li>
+<li><p>Перенесите загруженный ZIP-архив в вашу рабочую директорию.</p></li>
+<li><p>Вернитесь в QGIS и установите модуль из ZIP-файла</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/bulk-nominatim03.png" alt="" />
+<p class="caption">Установка модуля из ZIP-файла</p>
+</div></li>
+</ol>
+<p>После установки модуля его инструменты будут доступны через меню «Модули» — «Nominatim GeoCoding» или при помощи кнопок <img src="images/Ex08_Geocoding/bulk-nominatim04.png" /> на панели инструменов.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/bulk-nominatim05.png" alt="" />
+<p class="caption">Инструменты модуля Bulk GeoCoding</p>
+</div>
+</div>
+<div id="geocoding-batch" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> Пакетное геокодирование</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>Теперь, когда вы установили инструмент для пакетного геокодирования, можно попытаться выполнить распознавание адресов при помощи Nominatim.</p>
+<ol style="list-style-type: decimal">
+<li><p>Откройте интерфейс настройки модуля Bulk Geocoding («Модули» — «Nominatim GeoCoding» — «Settings»). Установите максимальное число объектов для геокодирования (<em>Maximum Features to Geocode</em>) равным <span class="math inline">\(200\)</span>.</p></li>
+<li><p>Запустите инструмент Bulk GeoCoding. В открывшемся окне укажите исходный слой и поле, из которого будут взяты адреса.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/coding01.png" alt="" />
+<p class="caption">Настройки пакетного геокодирования</p>
+</div></li>
+<li><p>Убедитесь, что вы подключены к Интернету.</p></li>
+<li><p>Нажмите кнопку OK, чтобы запустить процесс пакетного геокодирования. Не закрывайте окно инструмента.</p>
+<p>Результат геокодирования будет представлен в виде временного точечного слоя.</p></li>
+<li><p>Когда инструмент завершит работу, обратите внимание на выдачу в поле Results. В этом поле отображаются адреса, которые не удалось распознать. Скопируйте эти адреса в отдельный текстовый документ и сохраните этот документ в вашу рабочую директорию.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/coding02.png" alt="" />
+<p class="caption">Нераспознанные адреса</p>
+</div></li>
+<li><p>Закройте окно инструмента и изучите распределение точек, которые были созданы в ходе геокодирования.</p>
+<p>На рисунке ниже все точки адресов, за исключением двух, группируются в северо-западной части карты. Две отлетающих точки попали в другие населённые пункты.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/coding03.png" alt="" />
+<p class="caption">Неправильно распознанные адреса</p>
+</div>
+<p>Но и среди точек, попавших в правильный населённый пункт, есть ситуации некорректного и неточного распознавания. При правильном распознавании точка устанавливается поверх здания, имеющего соответствующий адрес. Если точка располагается поверх линейного объекта, как на рисунке ниже, это тоже следует считать ошибкой: распознано название улицы, но не распознан номер дома.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/coding04.png" alt="" />
+<p class="caption">Неправильно распознанные адреса: точки установлены поверх улиц</p>
+</div></li>
+<li><p>Сделайте скриншот окна QGIS после первой попытки геокодирования</p>
+<p><strong>Скриншот 4:</strong> Результат геокодирования исходной таблицы адресов</p>
+<p>На следующих шагах мы постараемся систематизировать ситуации, которые приводят к некорректным распознаваниям, и внести правки в соответствующие записи. Строго говоря, правки можно сделать непосредственно в Excel, но, поскольку одной из наших задач является освоение геоинформационного ПО, мы воспользуемся возможностями QGIS.</p></li>
+<li><p>Сохраните слой <em>offers</em> (вашу таблицу с адресами) в формат GeoPackage. Для этого в контекстном меню слоя выберите «Экспорт» — «Сохранить объекты как…». В открывшемся окне
+укажите имя выходного файла (<code>geocoding_%Фамилия%</code>) и имя слоя (<code>input_table_%Фамилия%</code>). В разделе «Геометрия» обязательно установите тип «Без геометрии». Убедитесь, что опция «Добавить слой в проект» включена.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/save_table.png" alt="" />
+<p class="caption">Сохранение таблицы</p>
+</div></li>
+<li><p>После добавления слоя удалите из проекта старую таблицу, а новый слой переименуйте, убрав из названия имя выходного файла.</p></li>
+<li><p>Изучите списки адресов, которые не были геокодированы или были кодированы с ошибками. Определите возможные причины ошибок.</p>
+<p>В каждом наборе исходных данных причины ошибок могут быть разными. В демонстрационном наборе наиболее заметны следующие причины:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Несовпадения в названиях улиц. Например, Nominatim не распознаёт такие записи, как <code>улица Надежды Крупской</code> или <code>Улица Александра Полина</code>. Вместо них следует подставить <code>улица Крупской</code> и <code>улица Полина</code>, соответственно;</p></li>
+<li><p>Пунктуация в номерах домов. В OpenStreetMap литеры, корпуса, владения и другие «дополнительные» элементы номера дома традиционно вносятся через пробел, например <code>8 к2</code>. В исходной же таблице эти элементы написаны слитно (<code>8к2</code>).</p></li>
+</ol></li>
+<li><p>Используя <strong>калькулятор полей</strong>, отредактируйте поле адресов, чтобы привести адреса в вид, пригодный для использования с Nominatim.</p>
+<p>В приведённых выше примерах это делается следующим образом:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Проблема с полным названием улицы решается использованием строковой функции <code>replace</code>, которая заменяет одну подстроку другой:</li>
+</ol>
+<p><code>replace("Адрес", 'улица Надежды Крупской', 'улица Крупской')</code></p>
+<p><code>replace("Адрес", 'улица Александра Полина', 'улица Полина')</code></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Чтобы отделить номер корпуса от номера дома, замена с помощью <code>replace</code> уже не поможет, потому что нужно вставить пробел не перед каждой буквой <code>к</code>, а только перед теми, которые содержатся в номере дома. Здесь нам на помощь придут <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5_%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">регулярные выражения</a> и функция QGIS <code>regexp_replace</code>. Выражение, приведённое ниже, ищет вхождения буквы <code>к</code>, стоящие после любой цифры (<code>0 - 9</code>), и заменяет его на <code>\_к</code> (т.е. ставит пробел перед буквой):</li>
+</ol>
+<p><code>regexp_replace("Адрес", '(.*[0-9])к(.*)', '\\1 к\\2')</code></p>
+<p>Подробное изучение операторов и синтаксиса регулярных выражений выходит за рамки нашего курса.</p></li>
+<li><p>После внесения необходимых правок в поле «Адрес» удалите из списка слоёв предыдущий результат геокодирования, а затем выполните геокодирование повторно.</p></li>
+<li><p>Изучите новый результат геокодирования. Если из 200 имеющихся адресов корректно распознано менее 150, повторите шаги 11–12. Добейтесь корректного позициронирования по крайней мере 150 адресов.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/coding05.png" alt="" />
+<p class="caption">Сохранение таблицы</p>
+</div></li>
+<li><p>После получения пригодного результата перепроецируйте его в подходящую систему координат («Вектор» — «Управление данными» — «Перепроецировать слой…») и сохраните в тот же GeoPackage, где лежит исходная таблица</p></li>
+<li><p>Удалите временный слой с результатом распознавания из таблицы слоёв</p></li>
+<li><p>Запустите редактирование слоя точек и удалите все точки, которые находятся за пределами вашего участка. После удаления увеличьте изображение до охвата слоя и сделайте снимок экрана.</p></li>
+</ol>
+<p><strong>Скриншот 5:</strong> Результат геокодирования отредактированной таблицы адресов</p>
+</div>
+<div id="geocoding-mapping" class="section level2" number="12.7">
+<h2><span class="header-section-number">12.7</span> Картографирование плотности объявлений</h2>
+<p><a href="geocoding.html#geocoding">В начало упражнения ⇡</a></p>
+<p>В результате геокодирования вы получили набор точек, каждая из которых соответствует одному объявлению о продаже недвижимости. При этом точки объявлений с одинаковым адресом будут иметь полностью совпадающие координаты. Поэтому визуальное отображение адресов даёт искажённое представление о распределении продаваемой недвижимости по территории.</p>
+<p>Чтобы получить более достоверное распределение, можно перейти от дискретного представления явления (отдельные точки) к континуальному представлению (поле плотности). Для решения этой задачи применяется ядерная оценка плотности (<em>kernel density estimation</em>). Результатом ядерной оценки плотности является растр (регулярная сетка), каждая ячейка которой характеризует плотность явления или его ожидаемое количество.</p>
+<blockquote>
+<p>Примечание: результат ядерной оценки плотности зачастую называют «тепловой картой» или «теплокартой», поскольку при удачно подобранных графических средствах области высокой концентрации явления выглядят «яркими», «горячими», а области низкой концентрации — «тёмными», «холодными». Несмотря на широкое распространение этих названий, мы не рекомендуем пользоваться ими в географических исследованиях, чтобы избежать путаницы с картами климатических и метеорологических характеристик, где «тепло» и «холодно» используются в прямом смысле.</p>
+</blockquote>
+<p>Для выполнения ядерной оценки плотности в QGIS имеется инструмент <strong>Тепловая карта (оценка плотности ядер)</strong>. Его можно найти в панели инструментов анализа, в разделе «Интерполяция»</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/kde00.png" alt="" />
+<p class="caption">Инструмент ядерной оценки плотности в QGIS</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p>Запустите инструмент ядерной оценки плотности. В качестве исходного слоя задайте геокодированные точки</p></li>
+<li><p>Проверьте предлагаемое значение в поле «Радиус». Если возле поля «Радиус» изображён предупреждающий знак, а предлагаемая единица измерения — градусы, значит, ваш исходный слой сохранён в географической системе координат. Выполните перепроецирование слоя (шаг 14 предыдущего раздела).</p></li>
+<li><p>Если с единицами измерения всё в порядке, установите радиус равным 250 м. Это охват области, на которую будет «распределяться» плотность точек.</p></li>
+<li><p>Установите размер пиксела по X и по Y равным 5 м. Этого вполне достаточно для аппроксимации.</p></li>
+<li><p>Укажите, что результирующий слой (<em>Heatmap</em>) нужно сохранить в вашу рабочую директорию под именем <code>heatmap_%Фамилия%.tif</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/kde01.png" alt="" />
+<p class="caption">Настройки ядерной оценки плотности</p>
+</div></li>
+<li><p>Запустите инструмент ядерной оценки плотности и дождитесь, пока результат оценки будет добавлен к карте. После этого закройте инструмент ядерной оценки плотности.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/kde02.png" alt="" />
+<p class="caption">Результат ядерной оценки плотности</p>
+</div></li>
+<li><p>Поместите слой исходных точек над слоем ядерной оценки плотности.</p></li>
+<li><p>Откройте свойства слоя ядерной оценки плотности на вкладке «Стиль». Измените цветовую схему на «Одноканальное псевдоцветное». Округлите максимальное отображаемое значение вверх до ближайшего целого числа, кратного 5. Измените тип интерполяции на «Линейную», задайте точность подписи равной 0, режим классификации — «Равные интервалы». Установите число интервалов равным 5.</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/kde_symbology_01.png" alt="" />
+<p class="caption">Результат ядерной оценки плотности</p>
+</div></li>
+<li><p>Нажмите правой кнопкой на изображение шкалы (градиента) и активируйте опцию «Обратить цветовой ряд».</p></li>
+<li><p>Перейдите на вкладку «Прозрачность» и установите прозрачность слоя равной 50 %.</p>
+<p>В результате применения описанных настроек вы получите изображение ядерной оценки, аналогичное представленному ниже:</p>
+<div class="figure">
+<img src="images/Ex08_Geocoding/kde_symbology_02.png" alt="" />
+<p class="caption">Результат ядерной оценки плотности</p>
+</div></li>
+<li><p>Сделайте снимок экрана.</p></li>
+</ol>
+<p><strong>Скриншот 6:</strong> Ядерная оценка плотности объявлений о продаже недвижимости</p>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Создайте картографическое изображение на основе имеющихся пространственных данных. Создайте макет компоновки, добавьте на него картографическое изображение, легенду, масштабную линейку, название карты и сведения об авторстве. Для картографического изображения настройте градусную сетку. В легенде сохраните только те условные знаки, которые соответствуют тематическому содержанию карты.</p></li>
+<li><p>Экспортируйте карту в формат PNG</p></li>
+<li><p>Ответьте на вопросы контрольного листа</p></li>
+</ol>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="networks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manual-catalog.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

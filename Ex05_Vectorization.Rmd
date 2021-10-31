@@ -194,7 +194,7 @@
   
 ![](images/Ex05_Vectorization/query.gif)
 
-  ```{r, echo = FALSE}
+```{r, echo = FALSE}
 library(htmltools)
 
 shiny::actionButton("show_table_button", 

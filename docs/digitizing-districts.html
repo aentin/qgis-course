@@ -24,7 +24,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов" />
 
 
-<meta name="date" content="2021-10-31" />
+<meta name="date" content="2022-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -247,7 +247,7 @@
 <li class="chapter" data-level="11.6" data-path="networks.html"><a href="networks.html#networks-matrix"><i class="fa fa-check"></i><b>11.6</b> Работа с матрицей «источник-назначение»</a></li>
 </ul></li>
 <li class="part"><span><b>VI Геокодирование</b></span></li>
-<li class="chapter" data-level="12" data-path="geocoding.html"><a href="geocoding.html"><i class="fa fa-check"></i><b>12</b> Геокодирование</a>
+<li class="chapter" data-level="12" data-path="geocoding.html"><a href="geocoding.html"><i class="fa fa-check"></i><b>12</b> Адресное геокодирование и ядерная оценка плотности</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="geocoding.html"><a href="geocoding.html#geoding-intro"><i class="fa fa-check"></i><b>12.1</b> Введение</a>
 <ul>
@@ -450,7 +450,7 @@
 <p>Атрибутивный запрос представляет собой логическое выражение, которое применяется к кортежу базы данных (строке таблицы). Результатом вычисления логического выражения является либо логическая 1 (ИСТИНА), либо логический 0 (ЛОЖЬ). В выборку попадают объекты, для которых при вычислении выражения получено значение 1.</p>
 <p>В простейшем случае выражение состоит из проверки равенства. Например, выражение <code>"building" = 'house'</code> будет истинным для всех объектов, у которых в поле <code>building</code> записано значение <code>house</code>. Можно конструировать более сложные логические выражения с использованием операторов AND (И), OR (ИЛИ) и других. Например, выражение <code>"building" = 'house' AND "amenity" IS NOT NULL</code> будет истинным для объектов, у которых в поле <code>building</code> записано значение <code>house</code> и одновременно в поле <code>amenity</code> записано какое-либо значение, отличное от пустого (<code>NULL</code>). А запрос <code>"building" = 'garage' OR "building" = 'garages'</code> выберет из слоя зданий объекты, у которых в поле <code>building</code> записано значение <code>garage</code> или <code>garages</code>.</p>
 <blockquote>
-<p>Примечание 1: в QGIS названия полей обрамляются двойными кавычками ("), а строковые переменные — одинарными кавычками (’)
+<p>Примечание 1: в QGIS названия полей обрамляются двойными кавычками (“), а строковые переменные — одинарными кавычками (’)
 Примечание 2: в QGIS и в большинстве систем управления базами данных (СУБД) для работы с пустыми значениями (NULL) используются отдельные операторы. Например, выражение <code>"amenity" = NULL</code> будет воспринято как некорректное, вместо него следует писать <code>"amenity" IS NULL</code></p>
 </blockquote>
 <ol start="7" style="list-style-type: decimal">

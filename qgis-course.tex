@@ -1,15 +1,19 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
   12pt,
 ]{book}
+\title{Основы геоинформатики: практикум в QGIS}
+\author{Андрей Энтин, Тимофей Самсонов}
+\date{2021-11-13}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -42,10 +46,10 @@
   pdftitle={Основы геоинформатики: практикум в QGIS},
   pdfauthor={Андрей Энтин, Тимофей Самсонов},
   colorlinks=true,
-  linkcolor=Maroon,
-  filecolor=Maroon,
-  citecolor=Blue,
-  urlcolor=Blue,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs,array}
@@ -76,15 +80,11 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-
-\title{Основы геоинформатики: практикум в QGIS}
-\author{Андрей Энтин, Тимофей Самсонов}
-\date{2021-10-31}
 
 \begin{document}
 \maketitle
@@ -172,7 +172,7 @@
 \subsection*{macOS}\label{macos}}
 \addcontentsline{toc}{subsection}{macOS}
 
-По состоянию на 2021-10-31 для прохождения практикума рекомендуется использовать альтернативную сборку версии \href{https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg}{3.4.12}. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами \emph{DiskImageMounter}):
+По состоянию на 2021-11-13 для прохождения практикума рекомендуется использовать альтернативную сборку версии \href{https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg}{3.4.12}. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами \emph{DiskImageMounter}):
 
 \includegraphics{images/installation_instruction_mac/mac01.png}
 
@@ -2721,7 +2721,7 @@
 В простейшем случае выражение состоит из проверки равенства. Например, выражение \texttt{"building"\ =\ \textquotesingle{}house\textquotesingle{}} будет истинным для всех объектов, у которых в поле \texttt{building} записано значение \texttt{house}. Можно конструировать более сложные логические выражения с использованием операторов AND (И), OR (ИЛИ) и других. Например, выражение \texttt{"building"\ =\ \textquotesingle{}house\textquotesingle{}\ AND\ "amenity"\ IS\ NOT\ NULL} будет истинным для объектов, у которых в поле \texttt{building} записано значение \texttt{house} и одновременно в поле \texttt{amenity} записано какое-либо значение, отличное от пустого (\texttt{NULL}). А запрос \texttt{"building"\ =\ \textquotesingle{}garage\textquotesingle{}\ OR\ "building"\ =\ \textquotesingle{}garages\textquotesingle{}} выберет из слоя зданий объекты, у которых в поле \texttt{building} записано значение \texttt{garage} или \texttt{garages}.
 
 \begin{quote}
-Примечание 1: в QGIS названия полей обрамляются двойными кавычками ("), а строковые переменные --- одинарными кавычками (')
+Примечание 1: в QGIS названия полей обрамляются двойными кавычками (``), а строковые переменные --- одинарными кавычками (')
 Примечание 2: в QGIS и в большинстве систем управления базами данных (СУБД) для работы с пустыми значениями (NULL) используются отдельные операторы. Например, выражение \texttt{"amenity"\ =\ NULL} будет воспринято как некорректное, вместо него следует писать \texttt{"amenity"\ IS\ NULL}
 \end{quote}
 
@@ -3392,7 +3392,7 @@
   \includegraphics{images/Ex05/diagram2.png}
 
   \begin{quote}
-  \textbf{Важное замечание:} конечно, такой набор значков не является картографически корректным для создания легенды к абсолютной непрерывной шкале значков. По состоянию на 2021-10-31 ни один широко используемый ГИС-пакет не может сделать легенду к размерам кругов картодиаграммы согласно принятым картографическим правилам. Легенды к таким картам следует составлять или исправлять вручную.
+  \textbf{Важное замечание:} конечно, такой набор значков не является картографически корректным для создания легенды к абсолютной непрерывной шкале значков. По состоянию на 2021-11-13 ни один широко используемый ГИС-пакет не может сделать легенду к размерам кругов картодиаграммы согласно принятым картографическим правилам. Легенды к таким картам следует составлять или исправлять вручную.
   \end{quote}
 \end{enumerate}
 

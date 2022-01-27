@@ -75,6 +75,15 @@ overlay-sumarea-subtypes
 overlay-fieldcalc
 overlay-join
 overlay-resulting
+spatrelations
+spatrelations-intro
+spatrelations-control
+spatrelations-annotation
+spatrelations-vizual
+spatrelations-overlay
+spatrelations-join
+spatrelations-other
+spatrelations-symbology
 weighted-overlay
 weighted-overlay-intro
 weighted-overlay-control

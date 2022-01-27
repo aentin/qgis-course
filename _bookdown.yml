@@ -11,6 +11,7 @@ rmd_files:
     - "Ex05_Vectorization.Rmd"
     - "Ex05_RefAdm.Rmd"
     - "Ex06_VectorOverlay.Rmd"
+    - "Ex06_SpatRelations.Rmd"
     - "Ex12_RasterOverlay.Rmd"
     - "Ex13_HydroDEM.Rmd"
     - "Ex11_Networks.Rmd"

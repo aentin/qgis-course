@@ -1,6 +1,6 @@
 --- 
 title: "Основы геоинформатики: практикум в QGIS"
-author: "Андрей Энтин, Тимофей Самсонов"
+author: "Тимофей Самсонов, Андрей Карпачевский, Андрей Энтин"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -22,13 +22,6 @@ favicon: images/favicon.ico
 
 # Общие сведения {-}
 
-<!-- Вторая пересдача по курсу «Основы геоинформатики» назначена на пятницу 11 сентября, 17:00 по московскому времени. Зачёт будет проведён в форме устного собеседования в дистанционном режиме на платформе Zoom: [ссылка](https://us02web.zoom.us/j/87114028549?pwd=OEVacURRTXYrMkZLbTNoWkdvRExrQT09) -->
-
-<!-- Учебные материалы и вопросы для подготовки размещены на странице ниже.  -->
-
-<!-- Обращаем ваше внимание, что для получения зачёта необходимо выполнить все практические работы. Преподаватели, которые вели у вас практические занятия в весеннем семестре, больше не будут принимать отчёты о практических работах. Вместо них отчёты следует направлять инженеру кафедры картографии А.Л. Энтину на электронную почту [aentin@geogr.msu.ru](mailto:aentin@geogr.msu.ru), в теме письма обязательно указывайте "основы геоинформатики", а также вашу фамилию. -->
-
-
 > Если вы ищете практикум на основе __ArcGIS__, то он находится [__тут__](https://tsamsonov.github.io/arcgis-course/).
 
 ## Учебные материалы {-}
@@ -41,44 +34,22 @@ favicon: images/favicon.ico
 
 - __Практикум в QGIS__: Энтин А. Л., Самсонов Т. Е. _Основы геоинформатики: практикум в QGIS_. [__Website__](https://aentin.github.io/qgis-course/)
 
-- __Презентации__:
+<!-- - __Презентации__: -->
 
-  - [Привязка](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1VMkl568n2flOdyg?e=zjwgJt){target="_blank"}
+<!--   - [Привязка](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1VMkl568n2flOdyg?e=zjwgJt){target="_blank"} -->
 
-  - [Пространственное моделирование и пространственная интерполяция](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1X_f0g_iu-lbC-dg?e=mW6Jjb){target="_blank"}
+<!--   - [Пространственное моделирование и пространственная интерполяция](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1X_f0g_iu-lbC-dg?e=mW6Jjb){target="_blank"} -->
 
-  - [ГИС-проект](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1Umn-wlCou1CFBFQ?e=TqyBy5){target="_blank"}
+<!--   - [ГИС-проект](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1Umn-wlCou1CFBFQ?e=TqyBy5){target="_blank"} -->
 
-  - [Итоговая лекция по курсу](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1WdopazJmTuqeE8A?e=WeWhcG){target="_blank"}
-<!--   - *Фундаментальные понятия геоинформатики*: [__PDF__](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0) -->
-<!--   - *Географическая информация*: [__PDF__](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0) -->
-<!--   - *Программное обеспечение ГИС (17 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L) -->
-<!--   - *Обзор программных средств ГИС (17 апреля)*: [__PPT__](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu) -->
-<!--   - *Технологии пространственного моделирования (20 марта, 27 марта)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU) -->
-<!--   - *Основные этапы развития ГИС. Типы ГИС (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D) -->
-<!--   - *Проектирование ГИС. Разработка ГИС-проекта (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU) -->
-<!--   - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y) -->
-
-<!-- ## Программа зачета {-} -->
-
-<!-- Для подготовки к зачету следует использовать перечень вопросов, представленный ниже. Данный перечень можно также [__просмотреть__](https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing) непосредственно в _Google Docs_ или [__скачать__](https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pub?output=xlsx) в формате _Microsoft Excel_. -->
-
-<!-- ```{r, out.width = "690px", echo=FALSE} -->
-<!-- # tab = googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1XkEj_3ciispGcWGvSMhCuWBQhmZfvw0JpKXH3_YZemM/edit?usp=sharing") -->
-<!-- knitr::include_url('https://docs.google.com/spreadsheets/d/e/2PACX-1vQxLnmOdaCMSpLT-TL9t0F97mzlP-v8njteOoVm1NOijWYle9YQiv8ELWGmehVFNDyesQDyF9TPy63-/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false', height = '1938px') -->
-<!-- ``` -->
-<!-- Темы для подготовки составлены И. К. Лурье (лектор) и Т. Е. Самсоновым. -->
-
-<!-- Темы занятия: -->
-
-<!-- 1. Задачи пространственного моделирования -->
-<!-- 2. Способы моделирования -->
-<!-- 3. Подготовка исходных данных для создания модели -->
-<!-- 4. Методы интерполяции -->
-<!-- 5. Геостатистическая интерполяция и кригинг -->
-<!-- 2. Сопоставление методов -->
-<!-- 3. Применение пространственных моделей -->
-
+<!--   - [Итоговая лекция по курсу](https://1drv.ms/p/s!AmtmZDq3JgxHgZ1WdopazJmTuqeE8A?e=WeWhcG){target="_blank"} -->
+<!-- <!--   - *Фундаментальные понятия геоинформатики*: [__PDF__](https://www.dropbox.com/s/skfry975yev660o/GIS_Models_Referencing.pdf?dl=0) -->
+<!-- <!--   - *Географическая информация*: [__PDF__](https://www.dropbox.com/s/15x9c5a1zkk34ep/GIS_Information_Economics.pdf?dl=0) -->
+<!-- <!--   - *Программное обеспечение ГИС (17 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYyWa7tCh6cnSncZg?e=4uXt7L) -->
+<!-- <!--   - *Обзор программных средств ГИС (17 апреля)*: [__PPT__](https://1drv.ms/b/s!AmtmZDq3JgxHgZYzXaJpig-PVM3g0A?e=XrTnyu) -->
+<!-- <!--   - *Технологии пространственного моделирования (20 марта, 27 марта)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZUH2LWFrSxmy9FnEw?e=NGpBCU) -->
+<!-- <!--   - *Основные этапы развития ГИС. Типы ГИС (10 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYTeyK01FEjAt-08w?e=IXMy3D) --> <!--[__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZYS0k69BhHwrTxFzw?e=VL6xWU) -->
+<!-- <!--   - *Обзорная лекция (24 апреля)*: [__PPT__](https://1drv.ms/p/s!AmtmZDq3JgxHgZY1r1o6Vj4-J7ohlA?e=o6796y) -->
 
 ## Программное обеспечение для работы {-}
 
@@ -86,37 +57,35 @@ favicon: images/favicon.ico
 
 ### Windows {-}
 
-Скачайте с официального сайта последнюю стабильную версию QGIS (3.10). Выберите версию в зависимости от разрядности вашей системы: [64 bit](https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86_64.exe), [32 bit](https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86.exe).
+Скачайте с [официального сайта](https://qgis.org/ru/site/forusers/download.html) последнюю стабильную версию QGIS. По состоянию на 7 февраля 2022 г. это версия 3.16. [Скачать](https://qgis.org/downloads/QGIS-OSGeo4W-3.16.16-1.msi).
+
+Если на вашем компьютере уже установлена более старая версия QGIS, удалите её перед началом установки новой версии. Вы можете использовать старую версию QGIS для выполнения большинства заданий практикума, однако, если у вас возникнут технические проблемы, 
 
 Когда исполняемый файл загрузится, запустите его. Если потребуется, разрешите приложению вносить изменения на вашем устройстве. 
 
-Будет показано приветственное окно мастера установки.
+Будет показано приветственное окно мастера установки. Нажмите «Далее», чтобы перейти на следующий шаг.
 
 ![](images/installation_instruction_win/win01.png)
 
-Нажмите «Далее», чтобы перейти на следующий шаг
-
-На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки.
+На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки. Нажмите «Принимаю».
 
 ![](images/installation_instruction_win/win02.png)
 
-Нажмите «Принимаю».
-
-На следующем шаге выберите папку для установки. По возможности используйте расположение, предлагаемое по умолчанию.
+На следующем шаге выберите папку для установки и отметьте, нужно ли создавать ярлыки на рабочем столе и в меню «Пуск». По возможности используйте параметры, предлагаемые по умолчанию.
 
 ![](images/installation_instruction_win/win03.png)
 
-На следующем шаге предлагается выбрать дополнительные компоненты для установки. Снимите все флажки, кроме QGIS, и нажмите «Установить»
+На следующем шаге предлагается запустить процедуру установки. Нажмите «Install». Когда система выдаст запрос на внесение изменений, примите его.
 
 ![](images/installation_instruction_win/win04.png)
 
 После окончания установки ярлыки QGIS будут добавлены в меню "Пуск" и в отдельную папку QGIS на рабочем столе.
 
-![](images/installation_instruction_win/win05.png)
+<!-- ![](images/installation_instruction_win/win05.png) -->
 
 ### macOS {-}
 
-По состоянию на `r Sys.Date()` для прохождения практикума рекомендуется использовать альтернативную сборку версии [3.4.12](https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg). Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска  на компьютер (можно разрешить его сразу открыть средствами _DiskImageMounter_):
+По состоянию на 7 февраля 2022 г. для прохождения практикума рекомендуется использовать альтернативную сборку версии [3.4.12](https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg). Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска  на компьютер (можно разрешить его сразу открыть средствами _DiskImageMounter_):
 
 ![](images/installation_instruction_mac/mac01.png)
 

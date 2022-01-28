@@ -1,15 +1,19 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
   12pt,
 ]{book}
+\title{Основы геоинформатики: практикум в QGIS}
+\author{Тимофей Самсонов, Андрей Карпачевский, Андрей Энтин}
+\date{2022-01-28}
+
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -17,7 +21,7 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-  \setmainfont[]{PT Serif}
+  \setmainfont[]{Times New Roman}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -40,15 +44,16 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={Основы геоинформатики: практикум в QGIS},
-  pdfauthor={Андрей Энтин, Тимофей Самсонов},
+  pdfauthor={Тимофей Самсонов, Андрей Карпачевский, Андрей Энтин},
   colorlinks=true,
-  linkcolor=Maroon,
-  filecolor=Maroon,
-  citecolor=Blue,
-  urlcolor=Blue,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{longtable,booktabs}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -57,7 +62,7 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -75,12 +80,11 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-
-\title{Основы геоинформатики: практикум в QGIS}
-\author{Андрей Энтин, Тимофей Самсонов}
-\date{2022-01-27}
 
 \begin{document}
 \maketitle
@@ -111,19 +115,6 @@
   \textbf{Практикум в ArcGIS}: Самсонов Т. Е. \emph{Основы геоинформатики: практикум в ArcGIS}. --- Географический факультет МГУ Москва, 2018. --- 460 с. DOI: 10.5281/zenodo.1167857. \href{https://tsamsonov.github.io/arcgis-course/}{\textbf{Website}}
 \item
   \textbf{Практикум в QGIS}: Энтин А. Л., Самсонов Т. Е. \emph{Основы геоинформатики: практикум в QGIS}. \href{https://aentin.github.io/qgis-course/}{\textbf{Website}}
-\item
-  \textbf{Презентации}:
-
-  \begin{itemize}
-  \item
-    \href{https://1drv.ms/p/s!AmtmZDq3JgxHgZ1VMkl568n2flOdyg?e=zjwgJt}{Привязка}
-  \item
-    \href{https://1drv.ms/p/s!AmtmZDq3JgxHgZ1X_f0g_iu-lbC-dg?e=mW6Jjb}{Пространственное моделирование и пространственная интерполяция}
-  \item
-    \href{https://1drv.ms/p/s!AmtmZDq3JgxHgZ1Umn-wlCou1CFBFQ?e=TqyBy5}{ГИС-проект}
-  \item
-    \href{https://1drv.ms/p/s!AmtmZDq3JgxHgZ1WdopazJmTuqeE8A?e=WeWhcG}{Итоговая лекция по курсу}
-  \end{itemize}
 \end{itemize}
 
 \hypertarget{ux43fux440ux43eux433ux440ux430ux43cux43cux43dux43eux435-ux43eux431ux435ux441ux43fux435ux447ux435ux43dux438ux435-ux434ux43bux44f-ux440ux430ux431ux43eux442ux44b}{%
@@ -136,39 +127,35 @@
 \subsection*{Windows}\label{windows}}
 \addcontentsline{toc}{subsection}{Windows}
 
-Скачайте с официального сайта последнюю стабильную версию QGIS (3.10). Выберите версию в зависимости от разрядности вашей системы: \href{https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86_64.exe}{64 bit}, \href{https://qgis.org/downloads/QGIS-OSGeo4W-3.10.3-3-Setup-x86.exe}{32 bit}.
+Скачайте с \href{https://qgis.org/ru/site/forusers/download.html}{официального сайта} последнюю стабильную версию QGIS. По состоянию на 7 февраля 2022 г. это версия 3.16. \href{https://qgis.org/downloads/QGIS-OSGeo4W-3.16.16-1.msi}{Скачать}.
+
+Если на вашем компьютере уже установлена более старая версия QGIS, удалите её перед началом установки новой версии. Вы можете использовать старую версию QGIS для выполнения большинства заданий практикума, однако, если у вас возникнут технические проблемы,
 
 Когда исполняемый файл загрузится, запустите его. Если потребуется, разрешите приложению вносить изменения на вашем устройстве.
 
-Будет показано приветственное окно мастера установки.
+Будет показано приветственное окно мастера установки. Нажмите «Далее», чтобы перейти на следующий шаг.
 
 \includegraphics{images/installation_instruction_win/win01.png}
 
-Нажмите «Далее», чтобы перейти на следующий шаг
-
-На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки.
+На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки. Нажмите «Принимаю».
 
 \includegraphics{images/installation_instruction_win/win02.png}
 
-Нажмите «Принимаю».
-
-На следующем шаге выберите папку для установки. По возможности используйте расположение, предлагаемое по умолчанию.
+На следующем шаге выберите папку для установки и отметьте, нужно ли создавать ярлыки на рабочем столе и в меню «Пуск». По возможности используйте параметры, предлагаемые по умолчанию.
 
 \includegraphics{images/installation_instruction_win/win03.png}
 
-На следующем шаге предлагается выбрать дополнительные компоненты для установки. Снимите все флажки, кроме QGIS, и нажмите «Установить»
+На следующем шаге предлагается запустить процедуру установки. Нажмите «Install». Когда система выдаст запрос на внесение изменений, примите его.
 
 \includegraphics{images/installation_instruction_win/win04.png}
 
 После окончания установки ярлыки QGIS будут добавлены в меню ``Пуск'' и в отдельную папку QGIS на рабочем столе.
 
-\includegraphics{images/installation_instruction_win/win05.png}
-
 \hypertarget{macos}{%
 \subsection*{macOS}\label{macos}}
 \addcontentsline{toc}{subsection}{macOS}
 
-По состоянию на 2022-01-27 для прохождения практикума рекомендуется использовать альтернативную сборку версии \href{https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg}{3.4.12}. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами \emph{DiskImageMounter}):
+По состоянию на 7 февраля 2022 г. для прохождения практикума рекомендуется использовать альтернативную сборку версии \href{https://www.kyngchaos.com/files/software/qgis/QGIS-macOS-3.4.12-1.dmg}{3.4.12}. Перейдя по ссылке, необходимо согласиться сохранить образ установочного диска на компьютер (можно разрешить его сразу открыть средствами \emph{DiskImageMounter}):
 
 \includegraphics{images/installation_instruction_mac/mac01.png}
 
@@ -443,10 +430,6 @@
   \textbf{Рассчитайте коэффициент масштабирования по отношению к 1° долготы и 1° широты (на широте параллели касания проекции)}. После этого сверьтесь с результатом ниже:
 \end{enumerate}
 
-\begin{verbatim}
-## Warning: пакет 'htmltools' был собран под R версии 4.0.5
-\end{verbatim}
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{12}
@@ -703,7 +686,7 @@
 \begin{longtable}[]{@{}l@{}}
 \toprule
 \endhead
-\emph{Энтин А.Л., Самсонов Т.Е.} \textbf{Основы геоинформатики: практикум в QGIS}. М.: Географический факультет МГУ, 2022.\tabularnewline
+\emph{Энтин А.Л., Самсонов Т.Е.} \textbf{Основы геоинформатики: практикум в QGIS}. М.: Географический факультет МГУ, 2022. \\
 \bottomrule
 \end{longtable}
 
@@ -2721,7 +2704,7 @@
 В простейшем случае выражение состоит из проверки равенства. Например, выражение \texttt{"building"\ =\ \textquotesingle{}house\textquotesingle{}} будет истинным для всех объектов, у которых в поле \texttt{building} записано значение \texttt{house}. Можно конструировать более сложные логические выражения с использованием операторов AND (И), OR (ИЛИ) и других. Например, выражение \texttt{"building"\ =\ \textquotesingle{}house\textquotesingle{}\ AND\ "amenity"\ IS\ NOT\ NULL} будет истинным для объектов, у которых в поле \texttt{building} записано значение \texttt{house} и одновременно в поле \texttt{amenity} записано какое-либо значение, отличное от пустого (\texttt{NULL}). А запрос \texttt{"building"\ =\ \textquotesingle{}garage\textquotesingle{}\ OR\ "building"\ =\ \textquotesingle{}garages\textquotesingle{}} выберет из слоя зданий объекты, у которых в поле \texttt{building} записано значение \texttt{garage} или \texttt{garages}.
 
 \begin{quote}
-Примечание 1: в QGIS названия полей обрамляются двойными кавычками ("), а строковые переменные --- одинарными кавычками (')
+Примечание 1: в QGIS названия полей обрамляются двойными кавычками (``), а строковые переменные --- одинарными кавычками (')
 Примечание 2: в QGIS и в большинстве систем управления базами данных (СУБД) для работы с пустыми значениями (NULL) используются отдельные операторы. Например, выражение \texttt{"amenity"\ =\ NULL} будет воспринято как некорректное, вместо него следует писать \texttt{"amenity"\ IS\ NULL}
 \end{quote}
 
@@ -3392,7 +3375,7 @@
   \includegraphics{images/Ex05/diagram2.png}
 
   \begin{quote}
-  \textbf{Важное замечание:} конечно, такой набор значков не является картографически корректным для создания легенды к абсолютной непрерывной шкале значков. По состоянию на 2022-01-27 ни один широко используемый ГИС-пакет не может сделать легенду к размерам кругов картодиаграммы согласно принятым картографическим правилам. Легенды к таким картам следует составлять или исправлять вручную.
+  \textbf{Важное замечание:} конечно, такой набор значков не является картографически корректным для создания легенды к абсолютной непрерывной шкале значков. По состоянию на 2022-01-28 ни один широко используемый ГИС-пакет не может сделать легенду к размерам кругов картодиаграммы согласно принятым картографическим правилам. Легенды к таким картам следует составлять или исправлять вручную.
   \end{quote}
 \end{enumerate}
 
@@ -3765,9 +3748,6 @@
 \item
   Сохраните документ карты.
 \end{enumerate}
-
-\hypertarget{part-ux432ux435ux43aux442ux43eux440ux43dux44bux439-ux430ux43dux430ux43bux438ux437-1}{%
-\part{Векторный анализ}\label{part-ux432ux435ux43aux442ux43eux440ux43dux44bux439-ux430ux43dux430ux43bux438ux437-1}}
 
 \hypertarget{spatrelations}{%
 \chapter{Анализ пространственных соотношений}\label{spatrelations}}
@@ -4310,14 +4290,14 @@
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Старые значения, ° & Новые значения\tabularnewline
+Старые значения, ° & Новые значения \\
 \midrule
 \endhead
-0-3 & 9\tabularnewline
-3-6 & 10\tabularnewline
-6-9 & 8\tabularnewline
-9-18 & 6\tabularnewline
-\textgreater18 & \emph{NoData}\tabularnewline
+0-3 & 9 \\
+3-6 & 10 \\
+6-9 & 8 \\
+9-18 & 6 \\
+\textgreater18 & \emph{NoData} \\
 \bottomrule
 \end{longtable}
 
@@ -4405,19 +4385,19 @@ END
 
   \begin{longtable}[]{@{}ll@{}}
   \toprule
-  Тип землепользования & Баллы благоприятности\tabularnewline
+  Тип землепользования & Баллы благоприятности \\
   \midrule
   \endhead
-  Вырубки & 2\tabularnewline
-  Гидрологические объекты & 0\tabularnewline
-  Дороги и тропы & 1\tabularnewline
-  Заболоченные земли & 0\tabularnewline
-  Лесные поляны & 5\tabularnewline
-  Луга & 8\tabularnewline
-  Нет данных & 0\tabularnewline
-  Пашни & 4\tabularnewline
-  Сады & 2\tabularnewline
-  Фермерские хозяйства & 2\tabularnewline
+  Вырубки & 2 \\
+  Гидрологические объекты & 0 \\
+  Дороги и тропы & 1 \\
+  Заболоченные земли & 0 \\
+  Лесные поляны & 5 \\
+  Луга & 8 \\
+  Нет данных & 0 \\
+  Пашни & 4 \\
+  Сады & 2 \\
+  Фермерские хозяйства & 2 \\
   \bottomrule
   \end{longtable}
 
@@ -4478,13 +4458,13 @@ END
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Фактор & Вес\tabularnewline
+Фактор & Вес \\
 \midrule
 \endhead
-Крутизна склона & 0,15\tabularnewline
-Расстояние до дорог & 0,35\tabularnewline
-Расстояние до водотоков & 0,20\tabularnewline
-Землепользование & 0,30\tabularnewline
+Крутизна склона & 0,15 \\
+Расстояние до дорог & 0,35 \\
+Расстояние до водотоков & 0,20 \\
+Землепользование & 0,30 \\
 \bottomrule
 \end{longtable}
 
@@ -4880,16 +4860,16 @@ SAGA GRID --- нативный растровый формат SAGA. Он сос
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Значения атрибута \texttt{highway} & Пояснение\tabularnewline
+Значения атрибута \texttt{highway} & Пояснение \\
 \midrule
 \endhead
-construction & строящиеся дороги\tabularnewline
-cycleway & велодорожки\tabularnewline
-footway, pedestrian & пешеходные дороги и тротуары\tabularnewline
-path & тропы\tabularnewline
-proposed & планируемые дороги\tabularnewline
-raceway & гоночные треки\tabularnewline
-steps & лестницы\tabularnewline
+construction & строящиеся дороги \\
+cycleway & велодорожки \\
+footway, pedestrian & пешеходные дороги и тротуары \\
+path & тропы \\
+proposed & планируемые дороги \\
+raceway & гоночные треки \\
+steps & лестницы \\
 \bottomrule
 \end{longtable}
 
@@ -5010,19 +4990,19 @@ steps & лестницы\tabularnewline
 
 \begin{longtable}[]{@{}lrrrr@{}}
 \toprule
-№ п/п & Источник & Адрес & Назначение & Адрес\tabularnewline
+№ п/п & Источник & Адрес & Назначение & Адрес \\
 \midrule
 \endhead
-1 & ДК Станкозавода & Октябрьская улица, 5 & Соборная колокольня & улица Кремль, 10\tabularnewline
-2 & ДК Станкозавода & Октябрьская улица, 5 & Рязанский цирк & Лево-Лыбедская улица, 34\tabularnewline
-3 & ДК Станкозавода & Октябрьская улица, 5 & Вознесенский храм & Вознесенская улица, 26А\tabularnewline
-4 & ДК Станкозавода & Октябрьская улица, 5 & Рязанский городской центр детского творчества улица & Есенина, 46\tabularnewline
-5 & Рязань-1 & Вокзальная улица, 26А & Рязанский государственный радиотехничекий университет & улица Гагарина, 59/1\tabularnewline
-6 & Рязань-1 & Вокзальная улица, 26А & ТЦ ``Полетаевский'' & улица Гагарина, 164\tabularnewline
-7 & Муниципальный культурный центр & Первомайский проспект, 68/2 & Рязанский театр драмы & Театральная площадь, 7\tabularnewline
-8 & Муниципальный культурный центр & Первомайский проспект, 68/2 & Театр кукол & улица Есенина, 27\tabularnewline
-9 & Муниципальный культурный центр & Первомайский проспект, 68/2 & РИРО & улица Урицкого, 2А\tabularnewline
-10 & Муниципальный культурный центр & Первомайский проспект, 68/2 & НИИ газоразрядных приборов «Плазма» & улица Циолковского, 17\tabularnewline
+1 & ДК Станкозавода & Октябрьская улица, 5 & Соборная колокольня & улица Кремль, 10 \\
+2 & ДК Станкозавода & Октябрьская улица, 5 & Рязанский цирк & Лево-Лыбедская улица, 34 \\
+3 & ДК Станкозавода & Октябрьская улица, 5 & Вознесенский храм & Вознесенская улица, 26А \\
+4 & ДК Станкозавода & Октябрьская улица, 5 & Рязанский городской центр детского творчества улица & Есенина, 46 \\
+5 & Рязань-1 & Вокзальная улица, 26А & Рязанский государственный радиотехничекий университет & улица Гагарина, 59/1 \\
+6 & Рязань-1 & Вокзальная улица, 26А & ТЦ ``Полетаевский'' & улица Гагарина, 164 \\
+7 & Муниципальный культурный центр & Первомайский проспект, 68/2 & Рязанский театр драмы & Театральная площадь, 7 \\
+8 & Муниципальный культурный центр & Первомайский проспект, 68/2 & Театр кукол & улица Есенина, 27 \\
+9 & Муниципальный культурный центр & Первомайский проспект, 68/2 & РИРО & улица Урицкого, 2А \\
+10 & Муниципальный культурный центр & Первомайский проспект, 68/2 & НИИ газоразрядных приборов «Плазма» & улица Циолковского, 17 \\
 \bottomrule
 \end{longtable}
 

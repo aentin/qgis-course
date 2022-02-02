@@ -45,15 +45,6 @@ raster-reference-basemap
 raster-reference-accuracy
 raster-reference-frommap
 raster-reference-linear
-digitizing-districts
-digitizing-intro
-digitizing-control
-digitizing-basedata
-digitizing-new-geopackage
-digitizing-drawing
-digitizing-query
-digitizing-diagrams
-digitizing-layout
 map-ref-districts
 map-ref-districts-intro
 map-ref-economic-control

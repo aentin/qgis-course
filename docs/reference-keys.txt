@@ -42,8 +42,8 @@ raster-reference-intro
 raster-reference-control
 raster-reference-input
 raster-reference-basemap
-raster-reference-accuracy
 raster-reference-frommap
+raster-reference-accuracy
 raster-reference-linear
 map-ref-districts
 map-ref-districts-intro

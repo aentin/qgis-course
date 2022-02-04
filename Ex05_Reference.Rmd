@@ -2,7 +2,9 @@
 
 # Привязка графических материалов {#raster-reference}
 
-[Архив с данными и контрольным листом](https://github.com/aentin/qgis-course/raw/406fc27a0d2d4e39fbfbedd5241927582e934b78/files/Ex05.zip)
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/a65b77c3a8f3f122015846502ec8d0c76615f945/files/Ex05.zip)
+
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/a65b77c3a8f3f122015846502ec8d0c76615f945/files/Ex05_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
 ## Введение {#raster-reference-intro}
 

@@ -2,7 +2,9 @@
 
 # Анализ пространственных взаимосвязей {#overlay}
 
-[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZwTRaz2TTFXB0zi1A?e=2zaqzG){target="_blank"}
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex06.zip){target="_blank"}
+
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex06_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx){target="_blank"}
 
 ## Введение {#overlay-intro}
 

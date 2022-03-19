@@ -2,7 +2,9 @@
 
 # Оптимизация местоположения {#weighted-overlay}
 
-[Архив с данными и файлом отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZwUYSXODVsWhT8Cog?e=dTJpZD){target="_blank"}
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex07.zip)
+
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex07_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
 ## Введение {#weighted-overlay-intro}
 

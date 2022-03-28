@@ -97,7 +97,9 @@ hydrodem-annotation
 hydrodem-init
 hydrodem-preprocessing
 hydrodem-flowacc
+hydrodem-network
 hydrodem-basin
+hydrodem-mapping
 networks
 networks-intro
 networks-control

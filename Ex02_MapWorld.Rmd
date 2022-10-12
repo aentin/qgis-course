@@ -1,6 +1,6 @@
 # Создание политической карты мира {#map-design-world}
 
-[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex02_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx){target="_blank"}
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex02_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
 
 ## Введение {#map-design-world-intro}

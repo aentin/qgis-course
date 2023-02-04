@@ -20,10 +20,14 @@
   <meta name="twitter:description" content="Упражнение 1 Создание общегеографической карты | Основы геоинформатики: практикум в QGIS" />
   
 
-<meta name="author" content="Тимофей Самсонов, Андрей Карпачевский, Андрей Энтин" />
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
+<<<<<<< HEAD
 <meta name="date" content="2022-10-12" />
+=======
+<meta name="date" content="2023-02-03" />
+>>>>>>> master
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -261,6 +265,7 @@
 <li class="chapter" data-level="12.6" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch"><i class="fa fa-check"></i><b>12.6</b> Пакетное геокодирование</a></li>
 <li class="chapter" data-level="12.7" data-path="geocoding.html"><a href="geocoding.html#geocoding-mapping"><i class="fa fa-check"></i><b>12.7</b> Картографирование плотности объявлений</a></li>
 </ul></li>
+<<<<<<< HEAD
 <li class="part"><span><b>VII Веб-картографирование</b></span></li>
 <li class="chapter" data-level="13" data-path="web-map.html"><a href="web-map.html"><i class="fa fa-check"></i><b>13</b> Создание веб-карты</a>
 <ul>
@@ -294,6 +299,22 @@
 <li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
 <li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
 </ul></li>
+=======
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="manual-crs.html"><a href="manual-crs.html"><i class="fa fa-check"></i><b>B</b> Форматы описания систем координат</a></li>
+<li class="chapter" data-level="C" data-path="manual-plugins.html"><a href="manual-plugins.html"><i class="fa fa-check"></i><b>C</b> Установка модулей в QGIS</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-install"><i class="fa fa-check"></i><b>C.1</b> Установка модулей</a></li>
+<li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
+<li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
+</ul></li>
+>>>>>>> master
 <li class="chapter" data-level="D" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>D</b> Инструкция по регистрации в системе Мастер-тест</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -317,7 +338,8 @@
             <section class="normal" id="section-">
 <div id="map-design-general" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Упражнение 1</span> Создание общегеографической карты<a href="map-design-general.html#map-design-general" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><a href="https://1drv.ms/u/s!AmtmZDq3JgxHgZUGIl2IXikh_JmrhA?e=NdRmIe" target="_blank">Архив с данными и файлом отчёта</a></p>
+<p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex01.zip">Архив с исходными данными</a></p>
+<p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex01_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx">Контрольный лист</a></p>
 <div id="map-design-general-intro" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Введение<a href="map-design-general.html#map-design-general-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Цель задания</strong> — знакомство с моделями пространственных объектов и базой пространственных данных. Визуализация данных на карте. Оформление легенды и компоновки карты.</p>
@@ -349,15 +371,15 @@
 <p>Ряд действий в QGIS можно выполнить с помощью горячих клавиш. Так, для открытия Менеджера источников данных можно нажать <code>Ctrl+L</code>. Сведения о доступных горячих главишах отображаются во всплывающих подсказках при наведении курсора на иконку.</p>
 </blockquote>
 <p><img src="images/Ex01/DataSourceManager.png" /></p></li>
-<li><p>В менеджере источников данных в режиме браузера найдите вашу рабочую директорию, а в ней — каталог <code>Ex01_GeneralMap\raster_data</code>. В этом каталоге отображается единственный источник данных — <code>30n030e_20101117_gmted_mea075.tif</code>. Иконка <img src="images/Ex01/raster.png" /> и расширение <code>*.tif</code> (Tagged Image Tile Format) подсказывают вам, что этот источник представляет пространственные данные в растровой (регулярно-сеточной) модели.</p>
+<li><p>В менеджере источников данных в режиме браузера найдите вашу рабочую директорию, а в ней — каталог <code>Ex01\raster_data</code>. В этом каталоге отображается единственный источник данных — <code>30n030e_20101117_gmted_mea300.tif</code>. Иконка <img src="images/Ex01/raster.png" /> и расширение <code>*.tif</code> (Tagged Image Tile Format) подсказывают вам, что этот источник представляет пространственные данные в растровой (регулярно-сеточной) модели.</p>
 <p><img src="images/Ex01/DataSourceManager_tif.png" /></p>
 <blockquote>
 <p>Замечание 1: растр, с которым вы будете работать сейчас, сохранён в формате <a href="https://www.opengeospatial.org/standards/geotiff">GeoTIFF</a>. От «обычного» TIFF этот формат отличается тем, что сведения о пространственной привязке в GeoTIFF записываются непосредственно в файл с данными, в то время как «обычный» формат TIFF не поддерживает запись сведений о пространственной привязке, поэтому она хранится отдельно — в <a href="https://en.wikipedia.org/wiki/World_file">world-файле</a>. В дальнейшем вы часто будете работать и с тем, и с другим способом хранения пространственных данных.</p>
 </blockquote>
 <blockquote>
-<p>Замечание 2: файл <code>30n030e_20101117_gmted_mea075.tif</code> является фрагментом («тайлом») глобальной цифровой модели рельефа (ЦМР) <a href="https://www.usgs.gov/land-resources/eros/coastal-changes-and-impacts/gmted2010">GMTED2010</a>. Этот источник часто используется для геоинформационного анализа и картографирования. Загрузить тайлы GMTED2010 можно через сервис <a href="https://earthexplorer.usgs.gov/">EarthExplorer</a> геологической службы США.</p>
+<p>Замечание 2: файл <code>30n030e_20101117_gmted_mea300.tif</code> является фрагментом («тайлом») глобальной цифровой модели рельефа (ЦМР) <a href="https://www.usgs.gov/land-resources/eros/coastal-changes-and-impacts/gmted2010">GMTED2010</a>. Этот источник часто используется для геоинформационного анализа и картографирования. Загрузить тайлы GMTED2010 можно через сервис <a href="https://earthexplorer.usgs.gov/">EarthExplorer</a> геологической службы США.</p>
 </blockquote></li>
-<li><p>Дважды щёлкните левой кнопкой мыши на название файла <code>30n030e_20101117_gmted_mea075.tif</code> в менеджере источников данных. В панель слоёв (по умолчанию слева) добавится слой с названием <code>30n030e_20101117_gmted_mea075</code>. После добавления слоя можно закрыть окно Менеджера источников данных.</p></li>
+<li><p>Дважды щёлкните левой кнопкой мыши на название файла <code>30n030e_20101117_gmted_mea300.tif</code> в менеджере источников данных. В панель слоёв (по умолчанию слева) добавится слой с названием <code>30n030e_20101117_gmted_mea300</code>. После добавления слоя можно закрыть окно Менеджера источников данных.</p></li>
 <li><p>Сохраните проект QGIS в папку с материалами упражнения (на том же иерархическом уровне, где находятся папки <code>raster_data</code> и <code>vector_data</code>). Назовите его по шаблону <code>&lt;Ex01_%Фамилия%&gt;</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами. После сохранения проека сделайте снимок экрана и вставьте его в отчётный файл.</p></li>
 </ol>
 <p><kbd><strong>Снимок экрана №1.</strong> Окно QGIS после загрузки набора данных</kbd></p>
@@ -402,7 +424,7 @@
 </ol>
 <p>Если все сделано верно, изображение ЦМР должно приобрести форму сфероидической трапеции. Сделайте снимок экрана и вставьте его в отчётный файл.</p>
 <p><kbd><strong>Снимок экрана №2.</strong> Окно QGIS после изменения проекции</kbd></p>
-<p>Закройте интерфейс выбора системы координат и нажмите правой кнопкой на слой <code>30n030e_20101117_gmted_mea075</code> в таблице слоёв. В контекстном меню выберите <strong>Свойства…</strong> и в открывшемся окне перейдите на вкладку <strong>Информация</strong>. Вы видите, что проекция набора данных не изменилась. QGIS, как и большинство ГИС-пакетов, умеет трансформировать наборы данных для отображения их в целевой проекции. На жаргоне ГИС-специалистов это называется <em>«перепроецирование на лету» (reprojection on the fly)</em>.</p>
+<p>Закройте интерфейс выбора системы координат и нажмите правой кнопкой на слой <code>30n030e_20101117_gmted_mea300</code> в таблице слоёв. В контекстном меню выберите <strong>Свойства…</strong> и в открывшемся окне перейдите на вкладку <strong>Информация</strong>. Вы видите, что проекция набора данных не изменилась. QGIS, как и большинство ГИС-пакетов, умеет трансформировать наборы данных для отображения их в целевой проекции. На жаргоне ГИС-специалистов это называется <em>«перепроецирование на лету» (reprojection on the fly)</em>.</p>
 </div>
 <div id="map-design-general-navigation" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Навигация по карте<a href="map-design-general.html#map-design-general-navigation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -424,7 +446,7 @@
 <p><a href="map-design-general.html#map-design-general">В начало упражнения ⇡</a></p>
 <p>Изображение рельефа, которые вы видите, представляет собой так называемую аналитическую отмывку по высоте. Для аналитической отмывки используется шкала оттенков серого, применяемая по умолчанию. Мы будем использовать аналитическую отмывку по высоте вместе со светотеневой отмывкой.</p>
 <ol style="list-style-type: decimal">
-<li><p>Откройте свойства слоя <code>30n030e_20101117_gmted_mea075</code> и перейдите на вкладку <strong>Стиль</strong>.</p></li>
+<li><p>Откройте свойства слоя <code>30n030e_20101117_gmted_mea300</code> и перейдите на вкладку <strong>Стиль</strong>.</p></li>
 <li><p>Измените тип представления с <em>Одноканальное серое</em> на <em>Одноканальное псевдоцветное</em>.</p></li>
 <li><p>Установите минимальное значение равным <em>0</em>, а максимальное значение — <em>4000</em>.</p>
 <div class="figure">
@@ -442,9 +464,13 @@
 <img src="images/Ex01/style3.png" alt="" />
 <p class="caption">Настройки стиля 3</p>
 </div></li>
-<li><p>После нажатия OK были закрыты все окна, кроме окна свойств слоя <code>30n030e_20101117_gmted_mea075</code>. Нажмите <strong>OK</strong>, чтобы применить изменения символики и закрыть окно.</p>
+<li><p>После нажатия OK были закрыты все окна, кроме окна свойств слоя <code>30n030e_20101117_gmted_mea300</code>. Нажмите <strong>OK</strong>, чтобы применить изменения символики и закрыть окно.</p>
 <p>Вы успешно применили аналитическую отмывку по высоте к цифровой модели рельефа. Но для красочного, визуально привлекательного изображения этого недостаточно. Помимо аналитической отмывки по высоте, мы создадим светотеневую отмывку.</p></li>
+<<<<<<< HEAD
 <li><p>Щёлкните правой кнопкой мыши по слою <code>30n030e_20101117_gmted_mea075</code> в таблице слоёв и в контекстном меню нажмите <strong>Дублировать слой</strong>.</p>
+=======
+<li><p>Щёлкните правой кнопкой мыши по слою <code>30n030e_20101117_gmted_mea300</code> в таблице слоёв и в контекстном меню нажмите <strong>Дублировать слой</strong>.</p>
+>>>>>>> master
 <p>Дубликат слоя будет помещён в таблице слоёв ниже исходного слоя, выключен, а к его имени будет приписано “копия”.</p>
 <blockquote>
 <p><strong>Обратите внимание, что оба слоя используют один и тот же источник данных.</strong> Вы можете сделать сколько угодно слоёв с разными настройками визуализации на базе одного и того же набора пространственных данных. Но если вы измените используемый набор пространственных данных, это повлечёт за собой автоматическое изменение вида слоёв (но не настроек их визуализации).</p>
@@ -626,7 +652,7 @@ function button_handler() {
 <table>
 <tbody>
 <tr class="odd">
-<td><em>Энтин А.Л., Самсонов Т.Е.</em> <strong>Основы геоинформатики: практикум в QGIS</strong>. М.: Географический факультет МГУ, 2022.</td>
+<td><em>Энтин А.Л., Самсонов Т.Е.</em> <strong>Основы геоинформатики: практикум в QGIS</strong>. М.: Географический факультет МГУ, 2023.</td>
 </tr>
 </tbody>
 </table>

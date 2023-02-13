@@ -41,6 +41,8 @@ raster-reference
 raster-reference-intro
 raster-reference-control
 raster-reference-input
+raster-reference-select-coordinate-system
+raster-reference-topomap
 raster-reference-basemap
 raster-reference-frommap
 raster-reference-accuracy

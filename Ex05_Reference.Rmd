@@ -6,7 +6,7 @@
 
 [Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex05_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
-**Внимание! Ваш преподаватель может предоставить вам другие исходные данные для выполнения этого упражнения.** При возникновении противоречий следуйте указаниям преподавателя!
+**Внимание! Ваш преподаватель может предоставить вам другие исходные данные для выполнения этого упражнения**: [листы топографической карты](https://drive.google.com/drive/folders/1-NtO7MSvw7uX3O3pzXaxT8Z2qvGk1PJM?usp=sharing){target='blank'}, [спутниковые снимки](https://drive.google.com/drive/folders/1-PNy4EK3vydNuTYxAqBZe-MEFqQdYPUx?usp=sharing){target='blank'}. При возникновении противоречий следуйте указаниям преподавателя!
 
 ## Введение {#raster-reference-intro}
 

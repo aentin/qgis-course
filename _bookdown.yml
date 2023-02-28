@@ -8,6 +8,7 @@ rmd_files:
     - "Ex03_MapQuaternary.Rmd"
     - "Ex04_MapHumanGeography.Rmd"
     - "Ex05_Reference.Rmd"
+    - "Ex06_Vectorization.Rmd"
     - "Ex05_Vectorization.Rmd"
     #- "Ex05_RefAdm.Rmd"
     - "Ex06_VectorOverlay.Rmd"

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 6 Ручная векторизация растра | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
+
+
+<meta name="date" content="2023-02-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="raster-reference.html"/>
+<link rel="next" href="digitizing-districts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление изображения рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-crs"><i class="fa fa-check"></i><b>2.5</b> Настройка системы координат проекта</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-colorbrewer"><i class="fa fa-check"></i><b>2.6</b> Окраска стран в разные цвета</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-other-layers"><i class="fa fa-check"></i><b>2.7</b> Добавление других слоёв на карту</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-layout"><i class="fa fa-check"></i><b>2.8</b> Создание компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>4</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>4.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>4.2</b> Начало работы</a></li>
+<li class="chapter" data-level="4.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>4.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="4.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>4.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="4.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>4.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="4.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>4.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="4.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>4.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="4.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>4.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="5" data-path="raster-reference.html"><a href="raster-reference.html"><i class="fa fa-check"></i><b>5</b> Привязка графических материалов</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-input"><i class="fa fa-check"></i><b>5.2</b> Привязка растра по меткам координат</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-select-coordinate-system"><i class="fa fa-check"></i><b>5.2.1</b> Определение целевой системы координат</a></li>
+<li class="chapter" data-level="5.2.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-topomap"><i class="fa fa-check"></i><b>5.2.2</b> Привязка листа топографической карты</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-basemap"><i class="fa fa-check"></i><b>5.3</b> Добавление базовой карты</a></li>
+<li class="chapter" data-level="5.4" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-frommap"><i class="fa fa-check"></i><b>5.4</b> Использование координат с базовой карты</a></li>
+<li class="chapter" data-level="5.5" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-accuracy"><i class="fa fa-check"></i><b>5.5</b> Оценка точности привязки</a></li>
+<li class="chapter" data-level="5.6" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-linear"><i class="fa fa-check"></i><b>5.6</b> Интерактивная привязка растров на основе аффинного преобразования</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html"><i class="fa fa-check"></i><b>6</b> Ручная векторизация растра</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-basedata"><i class="fa fa-check"></i><b>6.2</b> Подготовка исходных данных</a></li>
+<li class="chapter" data-level="6.3" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-points"><i class="fa fa-check"></i><b>6.3</b> Создание точечных объектов</a></li>
+<li class="chapter" data-level="6.4" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-lines"><i class="fa fa-check"></i><b>6.4</b> Создание линейных объектов</a></li>
+<li class="chapter" data-level="6.5" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-polygons"><i class="fa fa-check"></i><b>6.5</b> Создание полигональных объектов</a></li>
+<li class="chapter" data-level="6.6" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-layout"><i class="fa fa-check"></i><b>6.6</b> Оформление макета компоновки</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="digitizing-districts.html"><a href="digitizing-districts.html"><i class="fa fa-check"></i><b>7</b> Векторизация карты-схемы из сети Интернет</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-basedata"><i class="fa fa-check"></i><b>7.2</b> Подготовка исходных данных</a></li>
+<li class="chapter" data-level="7.3" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-new-geopackage"><i class="fa fa-check"></i><b>7.3</b> Создание набора пространственных данных</a></li>
+<li class="chapter" data-level="7.4" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-drawing"><i class="fa fa-check"></i><b>7.4</b> Векторизация районов</a></li>
+<li class="chapter" data-level="7.5" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-query"><i class="fa fa-check"></i><b>7.5</b> Пространственные и атрибутивные запросы</a></li>
+<li class="chapter" data-level="7.6" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-diagrams"><i class="fa fa-check"></i><b>7.6</b> Визуализация слоя при помощи картодиаграмм</a></li>
+<li class="chapter" data-level="7.7" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-layout"><i class="fa fa-check"></i><b>7.7</b> Создание и экспорт макета компоновки</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="8" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>8</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>8.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>8.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="8.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>8.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="8.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>8.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="8.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>8.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="8.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>8.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="8.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>8.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="8.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>8.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="8.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>8.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="spatrelations.html"><a href="spatrelations.html"><i class="fa fa-check"></i><b>9</b> Анализ пространственных соотношений</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-intro"><i class="fa fa-check"></i><b>9.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-control"><i class="fa fa-check"></i><b>9.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="9.1.2" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-annotation"><i class="fa fa-check"></i><b>9.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-vizual"><i class="fa fa-check"></i><b>9.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="9.3" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-overlay"><i class="fa fa-check"></i><b>9.3</b> Расчёт площадей и оверлей</a></li>
+<li class="chapter" data-level="9.4" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-join"><i class="fa fa-check"></i><b>9.4</b> Соединение таблиц по ключевому полю</a></li>
+<li class="chapter" data-level="9.5" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-other"><i class="fa fa-check"></i><b>9.5</b> Расчёт площадей, не покрытых объектаи</a></li>
+<li class="chapter" data-level="9.6" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-symbology"><i class="fa fa-check"></i><b>9.6</b> Настройка символики</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="10" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>10</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>10.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>10.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="10.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>10.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="10.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>10.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>10.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="10.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>10.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="10.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>10.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>10.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="10.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>10.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>10.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>10.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="10.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>10.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="10.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>10.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>10.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="10.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>10.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>11</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>11.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>11.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="11.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>11.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>11.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="11.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>11.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="11.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>11.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="11.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-network"><i class="fa fa-check"></i><b>11.5</b> Создание растра водотоков на основе модели водосборной площади</a></li>
+<li class="chapter" data-level="11.6" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>11.6</b> Определение границ бассейна р. Оскол</a></li>
+<li class="chapter" data-level="11.7" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-mapping"><i class="fa fa-check"></i><b>11.7</b> Картографическое представление результата</a></li>
+</ul></li>
+<li class="part"><span><b>V Сетевой анализ</b></span></li>
+<li class="chapter" data-level="12" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>12</b> Анализ транспортных сетей</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="networks.html"><a href="networks.html#networks-intro"><i class="fa fa-check"></i><b>12.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="networks.html"><a href="networks.html#networks-control"><i class="fa fa-check"></i><b>12.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="12.1.2" data-path="networks.html"><a href="networks.html#networks-annotation"><i class="fa fa-check"></i><b>12.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="networks.html"><a href="networks.html#networks-init"><i class="fa fa-check"></i><b>12.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="12.3" data-path="networks.html"><a href="networks.html#networks-query"><i class="fa fa-check"></i><b>12.3</b> Выбор элементов дорожной сети</a></li>
+<li class="chapter" data-level="12.4" data-path="networks.html"><a href="networks.html#networks-route"><i class="fa fa-check"></i><b>12.4</b> Построение маршрута</a></li>
+<li class="chapter" data-level="12.5" data-path="networks.html"><a href="networks.html#networks-isochrones"><i class="fa fa-check"></i><b>12.5</b> Расчёт изохрон</a></li>
+<li class="chapter" data-level="12.6" data-path="networks.html"><a href="networks.html#networks-matrix"><i class="fa fa-check"></i><b>12.6</b> Работа с матрицей «источник-назначение»</a></li>
+</ul></li>
+<li class="part"><span><b>VI Геокодирование</b></span></li>
+<li class="chapter" data-level="13" data-path="geocoding.html"><a href="geocoding.html"><i class="fa fa-check"></i><b>13</b> Адресное геокодирование и ядерная оценка плотности</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="geocoding.html"><a href="geocoding.html#geoding-intro"><i class="fa fa-check"></i><b>13.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="geocoding.html"><a href="geocoding.html#geocoding-control"><i class="fa fa-check"></i><b>13.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="13.1.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-annotation"><i class="fa fa-check"></i><b>13.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-input"><i class="fa fa-check"></i><b>13.2</b> Получение исходных данных</a></li>
+<li class="chapter" data-level="13.3" data-path="geocoding.html"><a href="geocoding.html#geocoding-debug"><i class="fa fa-check"></i><b>13.3</b> Тестирование работы сервиса геокодирования</a></li>
+<li class="chapter" data-level="13.4" data-path="geocoding.html"><a href="geocoding.html#geocoding-import"><i class="fa fa-check"></i><b>13.4</b> Импорт списка адресов в QGIS</a></li>
+<li class="chapter" data-level="13.5" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch-install"><i class="fa fa-check"></i><b>13.5</b> Установка модуля пакетного геокодирования</a></li>
+<li class="chapter" data-level="13.6" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch"><i class="fa fa-check"></i><b>13.6</b> Пакетное геокодирование</a></li>
+<li class="chapter" data-level="13.7" data-path="geocoding.html"><a href="geocoding.html#geocoding-mapping"><i class="fa fa-check"></i><b>13.7</b> Картографирование плотности объявлений</a></li>
+</ul></li>
+<li class="part"><span><b>VII Веб-картографирование</b></span></li>
+<li class="chapter" data-level="14" data-path="web-map.html"><a href="web-map.html"><i class="fa fa-check"></i><b>14</b> Создание веб-карты</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="web-map.html"><a href="web-map.html#web-map-intro"><i class="fa fa-check"></i><b>14.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="web-map.html"><a href="web-map.html#web-map-checklist"><i class="fa fa-check"></i><b>14.1.1</b> Контольный лист</a></li>
+<li class="chapter" data-level="14.1.2" data-path="web-map.html"><a href="web-map.html#web-map-annotation"><i class="fa fa-check"></i><b>14.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="web-map.html"><a href="web-map.html#web-map-init"><i class="fa fa-check"></i><b>14.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="14.3" data-path="web-map.html"><a href="web-map.html#расчёт-среднего-качества-городской-среды-в-регионе"><i class="fa fa-check"></i><b>14.3</b> Расчёт среднего качества городской среды в регионе</a></li>
+<li class="chapter" data-level="14.4" data-path="web-map.html"><a href="web-map.html#оформление-карты"><i class="fa fa-check"></i><b>14.4</b> Оформление карты</a></li>
+<li class="chapter" data-level="14.5" data-path="web-map.html"><a href="web-map.html#подготовка-карты-к-публикации"><i class="fa fa-check"></i><b>14.5</b> Подготовка карты к публикации</a>
+<ul>
+<li class="chapter" data-level="14.5.1" data-path="web-map.html"><a href="web-map.html#перевод-названий-полей-на-русский-язык"><i class="fa fa-check"></i><b>14.5.1</b> Перевод названий полей на русский язык</a></li>
+<li class="chapter" data-level="14.5.2" data-path="web-map.html"><a href="web-map.html#настройки-мультимасштабного-отображения"><i class="fa fa-check"></i><b>14.5.2</b> Настройки мультимасштабного отображения</a></li>
+<li class="chapter" data-level="14.5.3" data-path="web-map.html"><a href="web-map.html#добавление-базовой-карты"><i class="fa fa-check"></i><b>14.5.3</b> Добавление базовой карты</a></li>
+</ul></li>
+<li class="chapter" data-level="14.6" data-path="web-map.html"><a href="web-map.html#публикация-карты"><i class="fa fa-check"></i><b>14.6</b> Публикация карты</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="manual-crs.html"><a href="manual-crs.html"><i class="fa fa-check"></i><b>B</b> Форматы описания систем координат</a></li>
+<li class="chapter" data-level="C" data-path="manual-plugins.html"><a href="manual-plugins.html"><i class="fa fa-check"></i><b>C</b> Установка модулей в QGIS</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-install"><i class="fa fa-check"></i><b>C.1</b> Установка модулей</a></li>
+<li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
+<li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>D</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="digitizing-topomap" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Упражнение 6</span> Ручная векторизация растра<a href="digitizing-topomap.html#digitizing-topomap" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex06.zip">Архив с исходными данными</a></p>
+<p>Контрольный лист: не требуется</p>
+<p><strong>Внимание! Ваш преподаватель может предоставить вам другие исходные данные для выполнения этого упражнения или скорректировать его задачи</strong>: <a href="https://drive.google.com/drive/folders/1-NtO7MSvw7uX3O3pzXaxT8Z2qvGk1PJM?usp=sharing" target="blank">листы топографической карты</a>. При возникновении противоречий следуйте указаниям преподавателя.</p>
+<div id="digitizing-topomap-intro" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Введение<a href="digitizing-topomap.html#digitizing-topomap-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Цель задания</strong> — освоение навыков создания векторных пространственных объектов разной геометрии путём векторизации растра.</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> Концептуальные модели представления пространственной информации, модели пространственных данных, модели пространственных объектов. Векторная модель пространственных данных. Системы координат и проекции карт, привязка геоизображений, трансформирование геоизображений. Векторизация растра.</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, панель слоёв, фрейм карты). Добавление источников пространственных данных в проект. Настройка символики и подписей объектов. Привязка растра. Создание макета, добавление карты и зарамочного оформления, экспорт макета.</p>
+<p><strong>Результат:</strong> Набор пространственных данных, созданный на основе фрагмента изображения топографической карты.</p>
+<div id="digitizing-topomap-control" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Контрольный лист<a href="digitizing-topomap.html#digitizing-topomap-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Привязать лист топографической карты</li>
+<li>Создать наборы пространственных данных, описывающие объекты точечной геометрии</li>
+<li>Создать наборы пространственных данных, описывающие объекты линейной геометрии</li>
+<li>Создать наборы пространственных данных, описывающие объекты полигональной геометрии</li>
+<li>Оформить картографическое изображение, создать макет компоновки</li>
+</ul>
+</div>
+</div>
+<div id="digitizing-topomap-basedata" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Подготовка исходных данных<a href="digitizing-topomap.html#digitizing-topomap-basedata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="digitizing-topomap.html#digitizing-topomap">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Загрузите архив с исходными данными и распакуйте его в вашу рабочую директорию.</p></li>
+<li><p>Создайте новый проект QGIS и сохраните его в ту же директорию, где находятся исходные данные.</p></li>
+<li><p>Привяжите лист топографической карты. Если вы испытываете затруднения с привязкой растра, сверьтесь с <span id="raster-reference">упражнением 5</span></p></li>
+<li><p>Увеличьте изображение до фрагмента территории к юго-западу от плотины Красноярской ГЭС, как показано на рисунке ниже. Вы будете работать с окрестностями посёлка, обозначенного на карте как «Шумиха» (квадраты 9850, 9852, 0050, 0852)</p></li>
+</ol>
+<p><img src="images/Ex06_Vectorization/target_area.png" /></p>
+<blockquote>
+<p>Квадрат на листе топографической карты указывают подписями (номерами) образующих его километровых линий: сначала нижней горизонтальной линии, а затем левой (западной) вертикальной линии. В примере выше топоним «Шумиха» находится в квадрате 9852.</p>
+</blockquote>
+</div>
+<div id="digitizing-topomap-points" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Создание точечных объектов<a href="digitizing-topomap.html#digitizing-topomap-points" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="digitizing-topomap.html#digitizing-topomap">В начало упражнения ⇡</a></p>
+<p>Чтобы начать создавать новые объекты в геоинформационной среде, необходимо сначала создать набор данных (базу данных), в которой эти объекты будут храниться. QGIS позволяет создавать и редактировать векторные пространственные данные во множестве различных форматов, но в качестве основного формата принят <strong>GeoPackage</strong>. Файл GeoPackage представляет собой базу данных SQLite с дополнительными функциями для хранения наборов пространственных данных. Вся необходимая информация хранится в единственном файле <code>*.gpkg</code>; в процессе работы создаются временные файлы. В одном файле может быть сохранено несколько наборов пространственных данных (иногда их также называют «таблицами», <em>tables</em>, или «слоями», <em>layers</em>)</p>
+<p>Мы начнём векторизацию с объектов точечной геометрии. На фрагменте листа их два типа: геодезические пункты и отметки высот. Также есть условный знак отдельно расположенных дворов, не выражающихся в масштабе карты, но его мы проигнорируем.</p>
+<p>Сначала мы создадим новый файл формата GeoPackage и одновременно новую таблицу в нём для хранения данных о пунктах геодезической сети, затем добавим ещё одну таблицу к уже существующему файлу GeoPackage.</p>
+<blockquote>
+<p>Обратитесь к «Условным знакам для топографических карт», чтобы идентифицировать нужные объекты на фрагменте листа карты.</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p>Запустите процедуру создания нового набора данных GeoPackage. Для этого нажмите кнопку «Создать слой GeoPackage…» (<img src="images/Ex06_Vectorization/button_new_geopackage.png" />) на панели менеджера источников данных или сочетание клавиш <code>Ctrl+Shift+N</code>.</p></li>
+<li><p>В открывшемся окне введите следующие параметры:</p>
+<ul>
+<li><strong>База данных:</strong> сохраните файл <code>*.gpkg</code> в домашний каталог вашего проекта. Назовите его по образцу <code>Ex06_topo_%Фамилия%.gpkg</code>, где %Фамилия% — ваша фамилия в латинской транслитерации;</li>
+<li><strong>Имя таблицы:</strong> geodetic_points;</li>
+<li><strong>Тип геометрии:</strong> точечная</li>
+<li>Чекбоксы «Include Z dimension» и «Include M values» оставьте выключенными;</li>
+<li><strong>Система координат</strong>: такая же, как система координат проекта.</li>
+</ul>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_geopackage_1.png" alt="" />
+<p class="caption">Окно создания нового файла GeoPackage</p>
+</div></li>
+<li><p>Помимо геометрии объектов, нам нужно будет хранить семантическую информацию. Для точечных объектов, представляющих пункты геодезической сети, на карте подписываются высоты их центров. Для хранения этой информации создайте новое поле с названием <code>center_elevation</code> типа «Десятичное число» (double), как показано на рисунке ниже.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_field.gif" alt="" />
+<p class="caption">Создание нового поля для набора данных</p>
+</div></li>
+<li><p>Проверьте правильность заполнения параметров. Если всё заполнено правильно, нажмите ОК. Новый слой будет добавлен в проект.</p></li>
+<li><p>Переименуйте добавленный слой в «Геодезические пункты». Если необходимо, измените условный знак слоя таким образом, чтобы он контрастировал с изображением листа топографической карты.</p></li>
+<li><p>Теперь мы готовы начинать векторизацию объектов. Для начала векторизации выберите слой «Геодезические пункты в таблице слоёв, а затем нажмите кнопку «Режим редактирования» (<img src="images/Ex06_Vectorization/button_editing.png" />) на панели инструментов редактирования. Альтернативный вариант: можно запустить режим редактирвоания из контекстного меню слоя.</p></li>
+<li><p>Нажмите на панели редактирования кнопку «Добавить точечный объект» (<img src="images/Ex06_Vectorization/button_new_point.png" />). Курсор примет вид мишени. Переместите курсор на любой из геодезических пунктов и нажмите левую кнопку мыши, чтобы установить новую точку в этом месте. Новая точка будет установлена, также будет открыто окно ввода атрибутов. Введите высоту знака, подписанную на топографической карте, и нажмите ОК. Повторите процедуру для всех оставшихся геодезических пунктов на карте.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_points.gif" alt="" />
+<p class="caption">Векторизация геодезических пунктов</p>
+</div></li>
+<li><p>По окончании ввода точек нажмите кнопку «Сохранить изменения» (<img src="images/Ex06_Vectorization/button_save_edits.png" />) на панели редактирования, а затем отключите режим редактирования.</p>
+<p><strong>Обратите внимание:</strong> сохранение изменений в наборах пространственных данных делается независимо от сохранения проекта! Вы должны самостоятельно сохранять правки в слоях после каждого серьёзного изменения. Если выйти из режима редактирования без сохранения изменений, система предложит сохранить их во всплывающем окне.</p></li>
+<li><p>Измените условный знак слоя геодезических пунктов таким образом, чтобы он максимально походил на условный знак, принятый на топографических картах. Настройте подписи для слоя геодезических пунктов.</p></li>
+<li><p>Теперь вы векторизуете отметки высот. Для этого вы создадите новую таблицу в уже существующем файле GeoPackage. В панели браузера раскройте содержимое папки «Домашний каталог проекта» и вызовите контекстное меню файла GeoPackage, созданного ранее. В контекстном меню выберите опцию «Новая таблица…»</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_geopackage_2.png" alt="" />
+<p class="caption">Создание новой таблицы в файле GeoPackage GeoPackage</p>
+</div></li>
+<li><p>Будет открыт интерфейс создания новой таблицы в существующем файле GeoPackage. Он визуально отличается от того, что вы использовали на первом шаге, но содержимое его точно такое же. Настройте параметры следующим образом</p>
+<ul>
+<li><strong>Имя таблицы:</strong> elevation_points;</li>
+<li><strong>Тип геометрии:</strong> точечная</li>
+<li><strong>Имя поля геометрии:</strong> оставьте значение <code>geom</code>, предлагаемое по умолчанию</li>
+<li>Чекбоксы «Include Z dimension» и «Include M values» оставьте выключенными;</li>
+<li><strong>Система координат</strong>: такая же, как система координат проекта.</li>
+<li>Добавьте поле <code>elevation</code> типа «Десятичное число» (Real) для записи отметок высот.</li>
+</ul>
+<p>Сверьтесь с изображением ниже, чтобы убедиться, что вы всё сделали правильно.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_geopackage_3.png" alt="" />
+<p class="caption">Настройки новой таблицы</p>
+</div></li>
+<li><p>Нажмите OK, чтобы завершить процесс создания новой таблицы.</p></li>
+<li><p>Новая таблица не добавляется в проект автоматически. Чтобы добавить новую таблицу в проект вручную, дважды щёлкните по её названию в панели браузера.</p></li>
+<li><p>Переименуйте добавленный слой в «Отметки высот»</p></li>
+<li><p>Векторизуйте отметки высот, находящиеся в пределах ваших квадратов.</p></li>
+<li><p>По окончании векторизации сохраните правки и измените стиль слоя таким образом, чтобы он максимально походил на изображение, принятое на топографических картах.</p></li>
+</ol>
+</div>
+<div id="digitizing-topomap-lines" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Создание линейных объектов<a href="digitizing-topomap.html#digitizing-topomap-lines" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="digitizing-topomap.html#digitizing-topomap">В начало упражнения ⇡</a></p>
+<p>Мы закончили векторизацию объектов точечной геометрии и можем переходить к более сложным объектам линейной геометрии. На нашем листе карты представлены следущие линейные объекты:</p>
+<ul>
+<li>Береговая линия;</li>
+<li>Реки и ручьи шириной менее 10 м (изображаются на карте «в одну линию»);</li>
+<li>Автодороги.</li>
+<li>Контуры растительного покрова и грунтов.</li>
+<li>Горизонтали</li>
+</ul>
+<p>Реки и ручьи, а также контуры растительного покрова и грунтов в пределах рассматриваемой территории не имеют значимой семантики. На береговой линии имеется участок, обозначенный знаком обрыва, но в рамках этого упражнения мы его проигнорируем. Автодороги в пределах участка бывают двух типов: автомобильные дороги с усовершенствованным покрытием (оранжевые) и автомобильные дороги без покрытия (белые). Для автодорог с усовершенствованным покрытием подписывается ширина дороги, ширина земляного полотна и материал покрытия, но мы не будем работать с ними в рамках настоящего упражнения. Горизонтали в пределах участка встречаются основные и утолщённые; кроме того, каждой горизонтали должно быть сопоставлено значение высоты.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте в файле GeoPackage четыре новых таблицы:</p>
+<ul>
+<li><code>coastline_lines</code> (береговая линия)</li>
+<li><code>rivers_lines</code> (реки и ручьи)</li>
+<li><code>vegetation_lines</code> (контуры растительного покрова и грунтов)</li>
+<li><code>roads_lines</code> (автодороги)</li>
+<li><code>contour_lines</code> (горизонтали)</li>
+</ul>
+<p>Тип геометрии для всех таблиц — «Линия», система координат — та же, что в проекте. Не создавайте полей таблицы атрибутов для этих объектов, мы добавим их позже.</p></li>
+<li><p>Добавьте в проект таблицу <code>rivers_lines</code> и переименуйте слой в «Реки и ручьи». Измените цвет линии слоя таким образом, чтобы он контрастировал с картографическим изображением.</p></li>
+<li><p>Начните векторизацию с водотоков, находящихся в северной части участка и впадающих непосредственно в водохранилище. Включите режим редактирования и нажмите кнопку «Добавить линейный объект» (<img src="images/Ex06_Vectorization/button_new_line.png" />). Векторизуйте водотоки по направлению от истока к устью, устанавливая новые узлы с помощью левой кнопки мыши. Чтобы завершить редактирование линии и перейти к следующей, нажмите правую кнопку мыши. Ошибочно установленные узлы можно удалить с помощью кнопки <em>Backspace</em>.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_lines.gif" alt="" />
+<p class="caption">Векторизация линий водотоков</p>
+</div></li>
+<li><p>Теперь перейдите к юго-западной части фрагмента, где несколько водотоков образуют древовидную сеть. Чтобы корректно векторизовать такие водотоки, необходимо использовать прилипание (снеппинг). Прилипание позволяет установить новый узел точно в координаты существующего узла. Включите панель «Инструменты прилипания», если она отключена.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/snapping_toolbar.png" alt="" />
+<p class="caption">Векторизация линий водотоков</p>
+</div></li>
+<li><p>Нажмите на панели инструментов прилипания кнопку «Разрешить прилипание» (<img src="images/Ex06_Vectorization/button_snapping_enable.png" />), чтобы активировать режим прилипания.</p></li>
+<li><p>Проверьте, что прилипание осуществляется ко всем слоям (вторая кнопка справа на панели).</p></li>
+<li><p>Укажите, к каким элементам следует осуществлять прилипание (третья кнопка слева на панели). Включите прилипание к вершинам и линиям.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/snapping_toolbar.png" alt="" />
+<p class="caption">Настройки прилипания</p>
+</div></li>
+<li><p>Векторизуйте систему водотоков, используя прилипание. Начните векторизацию с любого истока и закончите объект на первом по течению слиянии. Затем векторизуйте соседний объект, впадающий в то же место слияния; при установке последней точки убедитесь, что срабатывает прилипание к существующему объекту: целевое положение узла обозначается сиреневым квадратом. Ориентируйтесь на рисунок ниже:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_lines_snapping.gif" alt="" />
+<p class="caption">Векторизация линий водотоков с использованием прилипания</p>
+</div></li>
+<li><p>Векторизуйте все водотоки, которые хотя бы частично попадают в целевые квадраты. По окончании векторизации сохраните правки и измените внешний вид слоя таким образом, чтобы он максимально соответствовал изображению на топографической карте.</p></li>
+<li><p>Добавьте в проект таблицу <code>coastline_lines</code>. Переименуйте новый слой в «Береговая линия» и настройте для него контрастный условный знак.</p></li>
+<li><p>Начните векторизацию береговой линии. В ходе векторизации используйте прилипание, чтобы береговая линия точно стыковалась с реками и ручьями. Не пытайтесь векторизовать всю линию целиком: периодически завершайте объект, сохраняйте правки и начинайте создание нового объекта от последней установленной точки.</p>
+<blockquote>
+<p>Примечание: положение узлов уже созданного объекта можно изменять с помощью инструмента редактирования вершин в текущем слое (<img src="images/Ex06_Vectorization/button_edit_vertices.png" />)</p>
+</blockquote></li>
+<li><p>Теперь, когда вся береговая линия векторизована, нужно объединить её в один объект. Для этого нам потребуются инструменты с панели выбора объектов, а также с панели дополнительных инструментов оцифровки. Убедитесь, что обе эти панели включены</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/selection_toolbar.png" alt="" />
+<p class="caption">Панель выбора объектов</p>
+</div>
+<div class="figure">
+<img src="images/Ex06_Vectorization/additional_digitizing_toolbar.png" alt="" />
+<p class="caption">Панель дополнительных инструментов оцифровки</p>
+</div></li>
+<li><p>Используя инструмент «Выбрать объекты в прямоугольнике или точке» (<img src="images/Ex06_Vectorization/button_select_rectangle.png" />), обведите рамкой все объекты в слое «Береговая линия». Сами линии будут выделены жёлтым цветом, а их вершины — красными крестиками.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/after_selection.png" alt="" />
+<p class="caption">Выбор объектов в слое</p>
+</div></li>
+<li><p>Нажмите кнопку «Объединить выделенные объекты» (<img src="images/Ex06_Vectorization/button_merge_selected.png" />) на панели дополнительных инструментов оцифровки. В открывшемся окне будет предложено определить, что делать с атрибутами объектов. Оставьте все значения по умолчанию и нажмите OK. Все объекты в слое береговой линии будут объединены в один.</p></li>
+<li><p>Сохраните правки в слое «Береговая линия» и измените символику слоя так, чтобы результат максимально походил на изображение топографической карты.</p></li>
+<li><p>Добавьте на карту таблицу границ растительного покрова и грунтов, переименуйте слой в «Границы растительности» и векторизуйте объекты, попадающие на выбранные вами квадраты.</p>
+<blockquote>
+<p>Примечание: границы растительности могут образовывать замкнутые контура. Чтобы векторизовать такой контур, необходимо включить опцию самоприлипания (<img src="images/Ex06_Vectorization/button_self_snapping.png" />)</p>
+</blockquote></li>
+<li><p>После окончания векторизации линий границ измените символику слоя, чтобы она походила на изобравжение топографической карты.</p></li>
+<li><p>Добавьте в проект таблицу автодорог и переименуйте слой в «Автодороги». Как мы помним, для этого набора данных необходим дополнительный столбец таблицы атрибутов, который не был создан в момент создания самой таблицы. Мы добавим его на следующем шаге.</p></li>
+<li><p>Откройте таблицу атрибутов слоя автодорог и запустите редактирование этого слоя. В панели инструментов таблицы атрибутов нажмите кнопку «Новое поле» (<img src="images/Ex06_Vectorization/button_new_field.png" />) или комбинацию клавиш <code>Ctrl+W</code> на клавиатуре. Будет открыто окно добавления нового поля.</p>
+<blockquote>
+<p>Примечание: создание и удаление полей таблицы атрибутов — это изменение структуры базы данных. В большинстве программных средств ГИС эти операции делаются при <strong>выключенном</strong> режиме редактирования. QGIS представляет собой исключение из общего правила.</p>
+</blockquote></li>
+<li><p>Создайте поле <code>road_type</code> текстового типа. Размер (длину) поля можно не устанавливать.</p></li>
+<li><p>Закройте таблицу атрибутов и перейдите в основное окно QGIS. Векторизуйте участок дороги с усовершенствованным покрытием в северной части территории. По окончании векторизации введите необходимое значение атрибута.</p></li>
+<li><p>Векторизуйте дорогу без покрытия в населённом пункте, обозначенном как «Шумиха».</p></li>
+<li><p>Сохраните правки и измените стилистику слоя. Задайте разные условные знаки для дорог разного типа. Чтобы создать знак, похожий на изображение топографической карты, воспользуйтесь многослойными символами: верхний слой символа должен представлять собой линию оранжевого (или белого) цвета, нижний слой — более широкую линию чёрного цвета. Пример изображён на рисунке ниже:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/line_style.png" alt="" />
+<p class="caption">Настройка стиля линий для автодорог</p>
+</div></li>
+</ol>
+<p>После окончания векторизации автодорог отключите исходный растр и проверьте, как выглядит изображение слоёв вашего проекта. Для справки сверьтесь с изображением ниже:</p>
+<pre><code>![Настройка стиля линий для автодорог](images/Ex06_Vectorization/lines_finale.png)</code></pre>
+<ol start="24" style="list-style-type: decimal">
+<li><p>Добавьте на карту таблицу горизонталей, переименуйте слой в «Горизонтали» и добавьте необходимые столбцы таблицы атрибутов (<code>contour_type</code> для типа горизонтали, <code>contour_elevation</code> для высоты).</p></li>
+<li><p>Отключите прилипание, затем в панели инструментов оцифровки переключитесь на опцию «Оцифровка в потоковом режиме» или нажмите клавишу R на клавиатуре.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/lines_finale.png" alt="" />
+<p class="caption">Включение оцифровки в потоковом режиме в потоковом режиме</p>
+</div></li>
+<li><p>Векторизуйте горизонтали в пределах любого одного выбранного квадрата в потоковом режиме. Для этого установите курсор в стартовую точку, а затем медленно ведите курсор вдоль линии.</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_lines_tracing.gif" alt="" />
+<p class="caption">Векторизация линий водотоков с использованием прилипания</p>
+</div>
+<p>Если трассировка покажется вам неудобной, переключитесь обратно в режим векторизации по сегментам.</p></li>
+<li><p>После окончания векторизации горизонталей настройте их внешний вид аналогично изображению топографических карт, за исключением подписей.</p></li>
+</ol>
+</div>
+<div id="digitizing-topomap-polygons" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Создание полигональных объектов<a href="digitizing-topomap.html#digitizing-topomap-polygons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="digitizing-topomap.html#digitizing-topomap">В начало упражнения ⇡</a></p>
+<p>На нашем листе карты представлены следущие объекты полигональной геометрии:</p>
+<ul>
+<li>Площадные объекты гидрографии (водохранилище)</li>
+<li>Контура растительного покрова (леса)</li>
+<li>Здания и сооружения.</li>
+</ul>
+<p>В ходе выполнения упражнения мы проигнорируем условные знаки травяной и кустарниковой растительности.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте в файле GeoPackage три новых таблицы:</p>
+<ul>
+<li><code>water_polygons</code> (водохранилище)</li>
+<li><code>vegetation_polygons</code> (лесные массивы)</li>
+<li><code>building_polygons</code> (застройка населённых пунктов)</li>
+</ul>
+<p>Для таблиц <code>water_polygons</code> и <code>vegetation_polygons</code> установите тип геометрии «Полигональная» («Площадная»), для <code>building_polygons</code> — «Мультиполигон».</p>
+<p>Для водохранилища и населённых пунктов предусмотрите поле строкового (текстового) типа для хранения названия. Не используйте <code>name</code> в качестве названия этого поля, поскольку это зарезервированая системная переменная. Лучше назвать поле <code>water_name</code> и <code>buildings_name</code> соответственно.</p></li>
+<li><p>Добавьте таблицу векторных объектов гидрографии в проект и переименуйте слой в «Водохранилища».</p></li>
+<li><p>Начните векторизацию водохранилища. На предыдущих шагах мы уже векторизовали береговую линию, поэтому сейчас при создании полигонального объекта нам нужно будет точно повторить существующий контур. Для решения этой задачи существует специальная функция трассировки (<em>tracing</em>), она включается с помощью кнопки «Включить трассировку» на панели инструментов прилипания (<img src="images/Ex06_Vectorization/button_trace.png" />).</p></li>
+<li><p>Включив трассировку, установите первый узел создаваемого объекта водохранилища на береговой линии за пределами целевых квадратов. Затем проведите курсором вдоль береговой линии и установите новый узел на некотором удалении от первого. Если трассировка включена, все промежуточные узлы будут расставлены автоматически. Повторите эту операцию столько раз, сколько нужно для векторизации контура водохранилизща вдоль имеющейся береговой линии. Последний узел создаваемого полигона установите в акватории за пределами векторизуемых квадратов. Посмотрите изображение ниже, чтобы увидеть, как это делается:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/new_polygon_tracing.gif" alt="" />
+<p class="caption">Трассировка контура водохранилища вдоль береговой линии</p>
+</div></li>
+<li><p>Сохраните правки в слое водохранилищ и измените символы слоя на максимально близкие к изображению топографической карты. Как и для горизонталей, не включайте подписи.</p></li>
+<li><p>Добавьте в проект таблицу с контурами растительности. Переименуйте слой в «Растительность и грунты».</p></li>
+<li><p>Используя уже известный вам инструмент трассировки, векторизуйте границы лесных массивов. При этом пока не обращайте внимания на «дырки» внутри контуров леса — мы будем работать с ними на следующем шаге. В результате векторизации ваш проект должен принять вид, аналогичный показанному ниже:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/vegetation1.png" alt="" />
+<p class="caption">Контура лесных массивов без «дыр»</p>
+</div></li>
+<li><p>Теперь мы удалим незалесённые фрагменты из полигонов лесных массивов, ориентируясь на границы растительности, оцифрованные ранее. Найдите на панели дополнительных инструментов оцифровки и включите инструмент «Добавить кольцо» (<img src="images/Ex06_Vectorization/button_trace.png" />). Используя этот инструмент и включённую трассировку, очертите контур любой из «дыр» на участке, как показано на рисунке ниже:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/holes.gif" alt="" />
+<p class="caption">Создание «дыр» в полигонах</p>
+</div>
+<p>Повторите операцию для всех аналогичных контуров.</p></li>
+<li><p>Сохраните правки в слое растительности и измените символы слоя на максимально близкие к изображению топографической карты.</p></li>
+<li><p>Отключите все слои, кроме исходного растра листа топографической карты.</p></li>
+<li><p>Добавьте в проект таблицу со зданиями. Переименуйте слой в «Здания и сооружения»</p></li>
+<li><p>Включите режим редактирования для слоя зданий и сооружений и отключите прилипание.</p></li>
+<li><p>Векторизуйте самую крупную группу зданий в населённом пункте, подписанном как «Шумиха».</p></li>
+<li><p>Теперь мы векторизуем другие группы зданий в том же населённом пункте, но сделаем это так, чтобы новые контура не образовывали новые объекты, а добавлялись к предыдущему (используем мультиполигональную геометрию). Для этого выберите созданное здание с помощью инструмента выборки (<img src="images/Ex06_Vectorization/button_select_rectangle.png" />), а затем создайте новый фрагмент объекта с помощью инструмента «Добавить часть» (<img src="images/Ex06_Vectorization/button_add_part.png" />) с панели дополнительных инструментов оцифровки. Векторизуйте таким образом все здания в этом населённом пункте.</p></li>
+<li><p>Повторите аналогичные операции для других групп зданий в пределах векторизуемых квадратов. Каждая группа зданий должна быть самостоятельным объектом, все отдельные здания в пределах группы должны быть частями этого объекта.</p></li>
+<li><p>Сохраните правки в слое зданий и сооружений и измените символы слоя на максимально близкие к изображению топографической карты. Настройте подписи объектов.</p></li>
+</ol>
+</div>
+<div id="digitizing-topomap-layout" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Оформление макета компоновки<a href="digitizing-topomap.html#digitizing-topomap-layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="digitizing-topomap.html#digitizing-topomap">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Убедитесь, что режим редактирования выключен для всех векторных слоёв проекта.</p></li>
+<li><p>Отключите сканированное изображение топографической карты и включите все остальные слои</p></li>
+<li><p>Расположите слои в порядке, соответствующем отрисовке объектов на топографической карте. Если необходимо, ещё раз проверьте и скорректируйте настройки визуализации для слоёв. Ваше изображение должно выглядеть примерно так, как показано на рисунке ниже:</p>
+<div class="figure">
+<img src="images/Ex06_Vectorization/all_finale.png" alt="" />
+<p class="caption">Результаты векторизации фрагмента топографической карты</p>
+</div></li>
+<li><p>Создайте макет компоновки и оформите картографическое изображение в пределах векторизованных вами квадратов листа топографической карты. Добавьте на макет название, легенду, масштабную линейку и сведения об авторстве.</p></li>
+<li><p>Экспортируйте макет в графический файл.</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="raster-reference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="digitizing-districts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

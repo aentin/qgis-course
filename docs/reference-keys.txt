@@ -47,6 +47,14 @@ raster-reference-basemap
 raster-reference-frommap
 raster-reference-accuracy
 raster-reference-linear
+digitizing-topomap
+digitizing-topomap-intro
+digitizing-topomap-control
+digitizing-topomap-basedata
+digitizing-topomap-points
+digitizing-topomap-lines
+digitizing-topomap-polygons
+digitizing-topomap-layout
 digitizing-districts
 digitizing-intro
 digitizing-control

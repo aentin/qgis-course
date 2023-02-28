@@ -17,7 +17,7 @@ rmd_files:
     - "Ex13_HydroDEM.Rmd"
     - "Ex11_Networks.Rmd"
     - "Ex08_Geocoding.Rmd"
-    - "Ex14_WebMap.Rmd"
+    #- "Ex14_WebMap.Rmd"
     - "Man00_DataFormats.Rmd"
     - "Man01_CoordinateSystemReference.Rmd"
     - "Man02_InstallModules.Rmd"

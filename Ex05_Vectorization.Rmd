@@ -1,8 +1,8 @@
-# Векторизация карты-схемы из сети Интернет {#digitizing-districts}
+# Пространственные и атрибутивные запросы {#digitizing-districts}
 
-[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex06_1.zip)
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex07.zip)
 
-[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex06_1_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex07_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
 ## Введение {#digitizing-intro}
 

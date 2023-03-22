@@ -1,8 +1,8 @@
 # Гидрологическое моделирование на основе ЦМР {#hydrodem}
 
-[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex10.zip)
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex12.zip)
 
-[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex10_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx){target="_blank"}
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex12_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx){target="_blank"}
 
 ## Введение {#hydrodem-intro}
 

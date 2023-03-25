@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS</title>
+  <meta name="description" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
+  <meta name="github-repo" content="aentin/qgis-course" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
+  
+  <meta name="twitter:description" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
+  
+
+<meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
+
+
+<meta name="date" content="2023-03-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="digitizing-districts.html"/>
+<link rel="next" href="overlay.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Основы геоинформатики</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Общие сведения</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#учебные-материалы"><i class="fa fa-check"></i>Учебные материалы</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#программное-обеспечение-для-работы"><i class="fa fa-check"></i>Программное обеспечение для работы</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#windows"><i class="fa fa-check"></i>Windows</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#macos"><i class="fa fa-check"></i>macOS</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#linux"><i class="fa fa-check"></i>Linux</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Основы работы с QGIS</b></span></li>
+<li class="chapter" data-level="1" data-path="map-design-general.html"><a href="map-design-general.html"><i class="fa fa-check"></i><b>1</b> Создание общегеографической карты</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-intro"><i class="fa fa-check"></i><b>1.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-checklist"><i class="fa fa-check"></i><b>1.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-begin"><i class="fa fa-check"></i><b>1.2</b> Начало работы</a></li>
+<li class="chapter" data-level="1.3" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-projection"><i class="fa fa-check"></i><b>1.3</b> Настройка системы координат</a></li>
+<li class="chapter" data-level="1.4" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-navigation"><i class="fa fa-check"></i><b>1.4</b> Навигация по карте</a></li>
+<li class="chapter" data-level="1.5" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-relief"><i class="fa fa-check"></i><b>1.5</b> Оформление изображения рельефа</a></li>
+<li class="chapter" data-level="1.6" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-vector"><i class="fa fa-check"></i><b>1.6</b> Добавление векторных наборов данных</a></li>
+<li class="chapter" data-level="1.7" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-attributes"><i class="fa fa-check"></i><b>1.7</b> Использование атрибутов объектов при визуализации</a></li>
+<li class="chapter" data-level="1.8" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-labels"><i class="fa fa-check"></i><b>1.8</b> Подписи</a></li>
+<li class="chapter" data-level="1.9" data-path="map-design-general.html"><a href="map-design-general.html#map-design-general-layout"><i class="fa fa-check"></i><b>1.9</b> Настройка компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-design-world.html"><a href="map-design-world.html"><i class="fa fa-check"></i><b>2</b> Создание политической карты мира</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-intro"><i class="fa fa-check"></i><b>2.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-checklist"><i class="fa fa-check"></i><b>2.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-begin"><i class="fa fa-check"></i><b>2.2</b> Начало работы</a></li>
+<li class="chapter" data-level="2.3" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-input-data"><i class="fa fa-check"></i><b>2.3</b> Загрузка исходных данных</a></li>
+<li class="chapter" data-level="2.4" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-qgis-project"><i class="fa fa-check"></i><b>2.4</b> Создание ГИС-проекта и загрузка данных в проект</a></li>
+<li class="chapter" data-level="2.5" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-crs"><i class="fa fa-check"></i><b>2.5</b> Настройка системы координат проекта</a></li>
+<li class="chapter" data-level="2.6" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-colorbrewer"><i class="fa fa-check"></i><b>2.6</b> Окраска стран в разные цвета</a></li>
+<li class="chapter" data-level="2.7" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-other-layers"><i class="fa fa-check"></i><b>2.7</b> Добавление других слоёв на карту</a></li>
+<li class="chapter" data-level="2.8" data-path="map-design-world.html"><a href="map-design-world.html#map-design-world-layout"><i class="fa fa-check"></i><b>2.8</b> Создание компоновки карты</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html"><i class="fa fa-check"></i><b>3</b> Создание карты четвертичных отложений</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-intro"><i class="fa fa-check"></i><b>3.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-checklist"><i class="fa fa-check"></i><b>3.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-begin"><i class="fa fa-check"></i><b>3.2</b> Начало работы</a></li>
+<li class="chapter" data-level="3.3" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-data"><i class="fa fa-check"></i><b>3.3</b> Добавление данных в проект</a></li>
+<li class="chapter" data-level="3.4" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-classification"><i class="fa fa-check"></i><b>3.4</b> Применение готового стиля к слою</a></li>
+<li class="chapter" data-level="3.5" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-csv"><i class="fa fa-check"></i><b>3.5</b> Создание набора пространственных данных из таблицы с координатами</a></li>
+<li class="chapter" data-level="3.6" data-path="map-design-quaternary.html"><a href="map-design-quaternary.html#map-design-quaternary-final"><i class="fa fa-check"></i><b>3.6</b> Оформление карты</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="map-design-population.html"><a href="map-design-population.html"><i class="fa fa-check"></i><b>4</b> Создание социально-экономической карты</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-intro"><i class="fa fa-check"></i><b>4.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-checklist"><i class="fa fa-check"></i><b>4.1.1</b> Контольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-begin"><i class="fa fa-check"></i><b>4.2</b> Начало работы</a></li>
+<li class="chapter" data-level="4.3" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-change-crs"><i class="fa fa-check"></i><b>4.3</b> Изменение системы координат проекта</a></li>
+<li class="chapter" data-level="4.4" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-fill-color"><i class="fa fa-check"></i><b>4.4</b> Создание картограмм</a></li>
+<li class="chapter" data-level="4.5" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-symbols"><i class="fa fa-check"></i><b>4.5</b> Создание шкалы значков</a></li>
+<li class="chapter" data-level="4.6" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-labels"><i class="fa fa-check"></i><b>4.6</b> Добавление подписей значков</a></li>
+<li class="chapter" data-level="4.7" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-basemap"><i class="fa fa-check"></i><b>4.7</b> Настройка условных знаков географической основы</a></li>
+<li class="chapter" data-level="4.8" data-path="map-design-population.html"><a href="map-design-population.html#map-design-population-layout"><i class="fa fa-check"></i><b>4.8</b> Создание макета карты</a></li>
+</ul></li>
+<li class="part"><span><b>II Редактирование данных в ГИС</b></span></li>
+<li class="chapter" data-level="5" data-path="raster-reference.html"><a href="raster-reference.html"><i class="fa fa-check"></i><b>5</b> Привязка графических материалов</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-intro"><i class="fa fa-check"></i><b>5.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-control"><i class="fa fa-check"></i><b>5.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-input"><i class="fa fa-check"></i><b>5.2</b> Привязка растра по меткам координат</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-select-coordinate-system"><i class="fa fa-check"></i><b>5.2.1</b> Определение целевой системы координат</a></li>
+<li class="chapter" data-level="5.2.2" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-topomap"><i class="fa fa-check"></i><b>5.2.2</b> Привязка листа топографической карты</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-basemap"><i class="fa fa-check"></i><b>5.3</b> Добавление базовой карты</a></li>
+<li class="chapter" data-level="5.4" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-frommap"><i class="fa fa-check"></i><b>5.4</b> Использование координат с базовой карты</a></li>
+<li class="chapter" data-level="5.5" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-accuracy"><i class="fa fa-check"></i><b>5.5</b> Оценка точности привязки</a></li>
+<li class="chapter" data-level="5.6" data-path="raster-reference.html"><a href="raster-reference.html#raster-reference-linear"><i class="fa fa-check"></i><b>5.6</b> Интерактивная привязка растров на основе аффинного преобразования</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html"><i class="fa fa-check"></i><b>6</b> Ручная векторизация растра</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-intro"><i class="fa fa-check"></i><b>6.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-control"><i class="fa fa-check"></i><b>6.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-basedata"><i class="fa fa-check"></i><b>6.2</b> Подготовка исходных данных</a></li>
+<li class="chapter" data-level="6.3" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-points"><i class="fa fa-check"></i><b>6.3</b> Создание точечных объектов</a></li>
+<li class="chapter" data-level="6.4" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-lines"><i class="fa fa-check"></i><b>6.4</b> Создание линейных объектов</a></li>
+<li class="chapter" data-level="6.5" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-polygons"><i class="fa fa-check"></i><b>6.5</b> Создание полигональных объектов</a></li>
+<li class="chapter" data-level="6.6" data-path="digitizing-topomap.html"><a href="digitizing-topomap.html#digitizing-topomap-layout"><i class="fa fa-check"></i><b>6.6</b> Оформление макета компоновки</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="digitizing-districts.html"><a href="digitizing-districts.html"><i class="fa fa-check"></i><b>7</b> Пространственные и атрибутивные запросы</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-intro"><i class="fa fa-check"></i><b>7.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-control"><i class="fa fa-check"></i><b>7.1.1</b> Контрольный лист</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-basedata"><i class="fa fa-check"></i><b>7.2</b> Подготовка исходных данных</a></li>
+<li class="chapter" data-level="7.3" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-new-geopackage"><i class="fa fa-check"></i><b>7.3</b> Создание набора пространственных данных</a></li>
+<li class="chapter" data-level="7.4" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-drawing"><i class="fa fa-check"></i><b>7.4</b> Векторизация районов</a></li>
+<li class="chapter" data-level="7.5" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-query"><i class="fa fa-check"></i><b>7.5</b> Пространственные и атрибутивные запросы</a></li>
+<li class="chapter" data-level="7.6" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-diagrams"><i class="fa fa-check"></i><b>7.6</b> Визуализация слоя при помощи картодиаграмм</a></li>
+<li class="chapter" data-level="7.7" data-path="digitizing-districts.html"><a href="digitizing-districts.html#digitizing-layout"><i class="fa fa-check"></i><b>7.7</b> Создание и экспорт макета компоновки</a></li>
+</ul></li>
+<li class="part"><span><b>III Векторный анализ</b></span></li>
+<li class="chapter" data-level="8" data-path="geometry.html"><a href="geometry.html"><i class="fa fa-check"></i><b>8</b> Геометрические операции с векторными объектами</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="geometry.html"><a href="geometry.html#geometry-intro"><i class="fa fa-check"></i><b>8.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="geometry.html"><a href="geometry.html#geometry-control"><i class="fa fa-check"></i><b>8.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="8.1.2" data-path="geometry.html"><a href="geometry.html#geometry-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="geometry.html"><a href="geometry.html#geometry-dissolve"><i class="fa fa-check"></i><b>8.2</b> Объединение контуров схемы четвертичных отложений</a></li>
+<li class="chapter" data-level="8.3" data-path="geometry.html"><a href="geometry.html#geometry-buffer"><i class="fa fa-check"></i><b>8.3</b> Построение буферных зон постоянной ширины</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="geometry.html"><a href="geometry.html#geometry-buffer-constant"><i class="fa fa-check"></i><b>8.3.1</b> Буферные зоны постоянной ширины</a></li>
+<li class="chapter" data-level="8.3.2" data-path="geometry.html"><a href="geometry.html#geometry-buffer-variable"><i class="fa fa-check"></i><b>8.3.2</b> Построение буферных зон переменной ширины</a></li>
+<li class="chapter" data-level="8.3.3" data-path="geometry.html"><a href="geometry.html#geometry-buffer-other"><i class="fa fa-check"></i><b>8.3.3</b> Буферные зоны других объектов</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="geometry.html"><a href="geometry.html#geometry-selection"><i class="fa fa-check"></i><b>8.4</b> Сохранение выборки в новую таблицу</a></li>
+<li class="chapter" data-level="8.5" data-path="geometry.html"><a href="geometry.html#geometry-erase"><i class="fa fa-check"></i><b>8.5</b> Нахождение геометрической разности объектов</a></li>
+<li class="chapter" data-level="8.6" data-path="geometry.html"><a href="geometry.html#geometry-erase"><i class="fa fa-check"></i><b>8.6</b> Расчёт зональной статистики</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>9</b> Анализ пространственных взаимосвязей</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="overlay.html"><a href="overlay.html#overlay-intro"><i class="fa fa-check"></i><b>9.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="overlay.html"><a href="overlay.html#overlay-control"><i class="fa fa-check"></i><b>9.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="9.1.2" data-path="overlay.html"><a href="overlay.html#overlay-annotation"><i class="fa fa-check"></i><b>9.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="overlay.html"><a href="overlay.html#overlay-vectors"><i class="fa fa-check"></i><b>9.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="9.3" data-path="overlay.html"><a href="overlay.html#overlay-intersect"><i class="fa fa-check"></i><b>9.3</b> Оверлей слоев методом пересечения</a></li>
+<li class="chapter" data-level="9.4" data-path="overlay.html"><a href="overlay.html#overlay-merge"><i class="fa fa-check"></i><b>9.4</b> Слияние результатов пересечения с целью получения показателя пространственной связи</a></li>
+<li class="chapter" data-level="9.5" data-path="overlay.html"><a href="overlay.html#overlay-sumarea-subtypes"><i class="fa fa-check"></i><b>9.5</b> Объединение подтипов почв для подсчёта суммарной площади</a></li>
+<li class="chapter" data-level="9.6" data-path="overlay.html"><a href="overlay.html#overlay-fieldcalc"><i class="fa fa-check"></i><b>9.6</b> Расчёт площадей объектов</a></li>
+<li class="chapter" data-level="9.7" data-path="overlay.html"><a href="overlay.html#overlay-join"><i class="fa fa-check"></i><b>9.7</b> Соединение таблиц по названию подтипа почв</a></li>
+<li class="chapter" data-level="9.8" data-path="overlay.html"><a href="overlay.html#overlay-resulting"><i class="fa fa-check"></i><b>9.8</b> Вычисление результирующих значений показателя связи</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="spatrelations.html"><a href="spatrelations.html"><i class="fa fa-check"></i><b>10</b> Анализ пространственных соотношений</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-intro"><i class="fa fa-check"></i><b>10.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-control"><i class="fa fa-check"></i><b>10.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="10.1.2" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-annotation"><i class="fa fa-check"></i><b>10.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-vizual"><i class="fa fa-check"></i><b>10.2</b> Визуальный анализ векторных слоев</a></li>
+<li class="chapter" data-level="10.3" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-overlay"><i class="fa fa-check"></i><b>10.3</b> Расчёт площадей и оверлей</a></li>
+<li class="chapter" data-level="10.4" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-join"><i class="fa fa-check"></i><b>10.4</b> Соединение таблиц по ключевому полю</a></li>
+<li class="chapter" data-level="10.5" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-other"><i class="fa fa-check"></i><b>10.5</b> Расчёт площадей, не покрытых объектаи</a></li>
+<li class="chapter" data-level="10.6" data-path="spatrelations.html"><a href="spatrelations.html#spatrelations-symbology"><i class="fa fa-check"></i><b>10.6</b> Настройка символики</a></li>
+</ul></li>
+<li class="part"><span><b>IV Растровый анализ</b></span></li>
+<li class="chapter" data-level="11" data-path="weighted-overlay.html"><a href="weighted-overlay.html"><i class="fa fa-check"></i><b>11</b> Оптимизация местоположения</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-intro"><i class="fa fa-check"></i><b>11.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-control"><i class="fa fa-check"></i><b>11.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="11.1.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-annotation"><i class="fa fa-check"></i><b>11.1.2</b> Аннотация</a></li>
+<li class="chapter" data-level="11.1.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-warning"><i class="fa fa-check"></i><b>11.1.3</b> Прежде чем начать…</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-init"><i class="fa fa-check"></i><b>11.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="11.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-slopes"><i class="fa fa-check"></i><b>11.3</b> Расчет углов наклона</a></li>
+<li class="chapter" data-level="11.4" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-distances"><i class="fa fa-check"></i><b>11.4</b> Расчет расстояний</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-roads"><i class="fa fa-check"></i><b>11.4.1</b> Расстояния до дорог</a></li>
+<li class="chapter" data-level="11.4.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-streams"><i class="fa fa-check"></i><b>11.4.2</b> Водотоки</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass"><i class="fa fa-check"></i><b>11.5</b> Переклассификация наборов данных</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-distance"><i class="fa fa-check"></i><b>11.5.1</b> Переклассификация растров расстояний</a></li>
+<li class="chapter" data-level="11.5.2" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-reclass-slope"><i class="fa fa-check"></i><b>11.5.2</b> Переклассификация растра крутизны</a></li>
+<li class="chapter" data-level="11.5.3" data-path="weighted-overlay.html"><a href="weighted-overlay.html#преобразование-слоя-типов-землепользования-в-растровое-представление"><i class="fa fa-check"></i><b>11.5.3</b> Преобразование слоя типов землепользования в растровое представление</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-combination"><i class="fa fa-check"></i><b>11.6</b> Нахождение мест с наилучшей комбинацией факторов с помощью взвешенного оверлея</a></li>
+<li class="chapter" data-level="11.7" data-path="weighted-overlay.html"><a href="weighted-overlay.html#weighted-overlay-final-decision"><i class="fa fa-check"></i><b>11.7</b> Окончательный выбор участка</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="hydrodem.html"><a href="hydrodem.html"><i class="fa fa-check"></i><b>12</b> Гидрологическое моделирование на основе ЦМР</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-intro"><i class="fa fa-check"></i><b>12.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-control"><i class="fa fa-check"></i><b>12.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="12.1.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-annotation"><i class="fa fa-check"></i><b>12.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-init"><i class="fa fa-check"></i><b>12.2</b> Получение и подготовка исходных данных</a></li>
+<li class="chapter" data-level="12.3" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-preprocessing"><i class="fa fa-check"></i><b>12.3</b> Гидрологическая коррекция ЦМР</a></li>
+<li class="chapter" data-level="12.4" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-flowacc"><i class="fa fa-check"></i><b>12.4</b> Расчёт водосборной площади</a></li>
+<li class="chapter" data-level="12.5" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-network"><i class="fa fa-check"></i><b>12.5</b> Создание растра водотоков на основе модели водосборной площади</a></li>
+<li class="chapter" data-level="12.6" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-basin"><i class="fa fa-check"></i><b>12.6</b> Определение границ бассейна р. Оскол</a></li>
+<li class="chapter" data-level="12.7" data-path="hydrodem.html"><a href="hydrodem.html#hydrodem-mapping"><i class="fa fa-check"></i><b>12.7</b> Картографическое представление результата</a></li>
+</ul></li>
+<li class="part"><span><b>V Сетевой анализ</b></span></li>
+<li class="chapter" data-level="13" data-path="networks.html"><a href="networks.html"><i class="fa fa-check"></i><b>13</b> Анализ транспортных сетей</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="networks.html"><a href="networks.html#networks-intro"><i class="fa fa-check"></i><b>13.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="networks.html"><a href="networks.html#networks-control"><i class="fa fa-check"></i><b>13.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="13.1.2" data-path="networks.html"><a href="networks.html#networks-annotation"><i class="fa fa-check"></i><b>13.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="networks.html"><a href="networks.html#networks-init"><i class="fa fa-check"></i><b>13.2</b> Добавление исходных данных</a></li>
+<li class="chapter" data-level="13.3" data-path="networks.html"><a href="networks.html#networks-query"><i class="fa fa-check"></i><b>13.3</b> Выбор элементов дорожной сети</a></li>
+<li class="chapter" data-level="13.4" data-path="networks.html"><a href="networks.html#networks-route"><i class="fa fa-check"></i><b>13.4</b> Построение маршрута</a></li>
+<li class="chapter" data-level="13.5" data-path="networks.html"><a href="networks.html#networks-isochrones"><i class="fa fa-check"></i><b>13.5</b> Расчёт изохрон</a></li>
+<li class="chapter" data-level="13.6" data-path="networks.html"><a href="networks.html#networks-matrix"><i class="fa fa-check"></i><b>13.6</b> Работа с матрицей «источник-назначение»</a></li>
+</ul></li>
+<li class="part"><span><b>VI Геокодирование</b></span></li>
+<li class="chapter" data-level="14" data-path="geocoding.html"><a href="geocoding.html"><i class="fa fa-check"></i><b>14</b> Адресное геокодирование и ядерная оценка плотности</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="geocoding.html"><a href="geocoding.html#geoding-intro"><i class="fa fa-check"></i><b>14.1</b> Введение</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="geocoding.html"><a href="geocoding.html#geocoding-control"><i class="fa fa-check"></i><b>14.1.1</b> Контрольный лист</a></li>
+<li class="chapter" data-level="14.1.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-annotation"><i class="fa fa-check"></i><b>14.1.2</b> Аннотация</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="geocoding.html"><a href="geocoding.html#geocoding-input"><i class="fa fa-check"></i><b>14.2</b> Получение исходных данных</a></li>
+<li class="chapter" data-level="14.3" data-path="geocoding.html"><a href="geocoding.html#geocoding-debug"><i class="fa fa-check"></i><b>14.3</b> Тестирование работы сервиса геокодирования</a></li>
+<li class="chapter" data-level="14.4" data-path="geocoding.html"><a href="geocoding.html#geocoding-import"><i class="fa fa-check"></i><b>14.4</b> Импорт списка адресов в QGIS</a></li>
+<li class="chapter" data-level="14.5" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch-install"><i class="fa fa-check"></i><b>14.5</b> Установка модуля пакетного геокодирования</a></li>
+<li class="chapter" data-level="14.6" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch"><i class="fa fa-check"></i><b>14.6</b> Пакетное геокодирование</a></li>
+<li class="chapter" data-level="14.7" data-path="geocoding.html"><a href="geocoding.html#geocoding-mapping"><i class="fa fa-check"></i><b>14.7</b> Картографирование плотности объявлений</a></li>
+</ul></li>
+<li class="appendix"><span><b>Справочные сведения</b></span></li>
+<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
+<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
+<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="manual-crs.html"><a href="manual-crs.html"><i class="fa fa-check"></i><b>B</b> Форматы описания систем координат</a></li>
+<li class="chapter" data-level="C" data-path="manual-plugins.html"><a href="manual-plugins.html"><i class="fa fa-check"></i><b>C</b> Установка модулей в QGIS</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-install"><i class="fa fa-check"></i><b>C.1</b> Установка модулей</a></li>
+<li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
+<li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>D</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Основы геоинформатики: практикум в QGIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="geometry" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Упражнение 8</span> Геометрические операции с векторными объектами<a href="geometry.html#geometry" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex08.zip">Архив с исходными данными</a></p>
+<p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex08_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx">Контрольный лист</a></p>
+<div id="geometry-intro" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Введение<a href="geometry.html#geometry-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Цель задания</strong> — определить территории, непригодные для новогокапитального строительства, используя операции векторного анализа и оверлея.</p>
+<p><strong>Необходимая теоретическая подготовка:</strong> Буферные зоны, слияние (объединение по признаку), соединение таблиц, ключи соединения, векторный оверлей.</p>
+<p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер компоновок). Работа с векторными источниками пространственных данных. Настройка символики и подписей объектов. Владение базовыми ГИС-технологиями.</p>
+<p><strong>Исходные данные:</strong> База пространственных данных на территорию части Ленинградской области.</p>
+<p><strong>Результат:</strong> Карта-схема участков Ленинградской области, пригодных для сооружения нового промышленного объекта.</p>
+<div id="geometry-control" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Контрольный лист<a href="geometry.html#geometry-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Объединить контура карты четвертичных отложений</li>
+<li>Выбрать участки с грунтами, пригодными для строительства</li>
+<li>Построить буферные зоны вокруг объектов гидрографической сети</li>
+<li>Построить буферные зоны вокруг объектов дорожной сети</li>
+<li>Построить буферные зоны вокруг особо охраняемых природных территорий</li>
+<li>Получить контура застройки путём выбора объектов кадастрового деления</li>
+<li>Последовательно исключить из участков, пригодных для строительства, контура, образованные лимитирующими условиями</li>
+</ul>
+</div>
+<div id="geometry-annotation" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Аннотация<a href="geometry.html#geometry-annotation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Задание посвящено знакомству с пространственным анализом на основе векторных данных. Векторная модель представляет объекты в виде отдельных геометрических фигур с набором атрибутов. Она является объектно-ориентированной и удобна для анализа формы, размеров объектов, их взаимной конфигурации в пространстве. Используя векторное представление, можно рассчитывать длины и площади объектов, строить вокруг них буферные зоны, объединять объекты, имеющие одинаковые значения атрибутов.</p>
+<p>В этом задании вы изучите работу некоторых инструментов векторного анализа на примере задачи определения территорий, доступных для ведения нового капитального строительства. В рамках задания предполагается, что такое строительство может вестись только на территориях с грунтами, подходящими по литологическому составу, и не может производиться на территориях с теми или иными ограничениями: на землях особо охраняемых природных территорий и в их охранных зонах, в водоохранных зонах рек и озёр, а также на землях, уже занятых жилой застройкой. Следует отметить, что набор критериев, применяемых для решения этой задачи в реальной практике, значительно более обширен и детализирован, однако мы считаем сделанные упрощения допустимыми в методическом отношении.</p>
+</div>
+</div>
+<div id="geometry-dissolve" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Объединение контуров схемы четвертичных отложений<a href="geometry.html#geometry-dissolve" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте проект QGIS и сохраните его в своей рабочей директории.</p></li>
+<li><p>Добавьте в проект таблицу <code>q_deposit_polygon</code> из базы данных <code>LenObl.gpkg</code>.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/q_deposit_layer.png" alt="" />
+<p class="caption">Изображение слоя четвертичных отложений</p>
+</div></li>
+<li><p>Переименуйте слой в «Четвертичные отложения» и изучите таблицу атрибутов добавленного слоя.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/q_deposit_attribute_table.png" alt="" />
+<p class="caption">Таблица атрибутов набора данных о четвертичных отложениях</p>
+</div>
+<p>Вы можете заметить, что каждый контур схемы четвертичных отложений содержит разнообразную информацию, включая индекс с исходной карты, характеристику механического состава грунта и (для некоторых контуров) генезис рельефа. Для решения задачи нам достаточно знать только механический состав грунта. Мы можем объединить контура, имеющие одинаковый механический состав грунта («стереть границы») между ними, с помощью процедуры слияния (объединения по признаку).</p></li>
+<li><p>Запустите инструмент слияния («Вектор» — «Геоообработка» — «Объединение по признаку…»).</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/dissolve_location.png" alt="" />
+<p class="caption">Расположение инструмента слияния в меню QGIS</p>
+</div></li>
+<li><p>Настройте параметры инструмента слияния следующим образом:</p>
+<ul>
+<li><strong>Исходный слой:</strong> Четвертичные отложения</li>
+<li><strong>Поля классификации:</strong> выберите поле (столбец таблицы атрибутов), которое содержит информацию о механическом составе грунта</li>
+<li>Опцию <strong>Сохранять несовпадающие элементы раздельно</strong> оставьте выключенной</li>
+<li><strong>Объединённый слой:</strong> в выпадающем меню кнопки справа выберите вариант «Сохранить как GeoPackage…». Сохраните новый GeoPackage в вашу рабочую директорию под именем <code>Ex08_*Фамилия*</code>, где <em>Фамилия</em> — ваша фамилия. После указания имени GeoPackage появится всплывающее окно, где нужно будет указать имя созаваемой таблицы внутри нового GeoPackage. Введите имя <code>ground</code> и нажмите OK</li>
+</ul>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/dissolve_parameters.png" alt="" />
+<p class="caption">Параметры инструмента слияния</p>
+</div>
+<blockquote>
+<p>Примечание: сейчас мы фактически создаём новую базу данных, в которую будем записывать все результаты геоинформационного анализа, получаемые в ходе этого упражнения. В дальнейшем она будет часто упоминаться в упражнении под названием «созданная база данных».</p>
+</blockquote></li>
+<li><p>Запустите инструмент и дождитесь, когда результат работы будет добавлен в проект. Переименуйте новый слой в «Типы грунта».</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/dissolve_result.png" alt="" />
+<p class="caption">Результат слияния</p>
+</div></li>
+<li><p>Изобразите результат слияния способом качественного фона (символизация по уникальным значениям). Исходный слой четвертичных отложений отобразите при помощи тонкой обводки чёрного цвета без заливки. Расположите слой четвертичных отложений над слоем типов грунта и сделайте снимок экрана.</p></li>
+</ol>
+<p><kbd><strong>Снимок экрана №1.</strong> Результат слияния (объединения по признаку)</kbd></p>
+<p><strong>Вопрос №1</strong>: как был изменён исходный набор данных в ходе слияния?</p>
+</div>
+<div id="geometry-buffer" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Построение буферных зон постоянной ширины<a href="geometry.html#geometry-buffer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
+<p>По условию задания необходимо исключить из рассмотрения территории, находящиеся в водоохранных зонах. Согласно п. 4 <a href="http://www.consultant.ru/document/cons_doc_LAW_60683/4c65ff0f232195d8dccc08535d2c3923d5b67f1c/">статьи 65 Водного кодекса Российской Федерации</a>, ширина водоохранной зоны для рек или ручьёв различается в зависимости от их протяжённости от истока до устья, а согласно п. 6 той же статьи ширина водоохранной зоны для водоёмов небольшой площади составляет 50 м. Мы определим положение искомых территорий с помощью построения буферных зон.</p>
+<div id="geometry-buffer-constant" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Буферные зоны постоянной ширины<a href="geometry.html#geometry-buffer-constant" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте в проект таблицы <code>hydrography_line</code> и <code>hydrography_polygon</code> из исходного набора данных. Переименуйте слои в «Водотоки» и «Водоёмы» соответственно. Измените стили слоёв, чтобы сделать изображение похожим на изображение гидрографической сети на общегеографических картах. Слои четвертичных отложений и грунтов пока отключите.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/hydrography.png" alt="" />
+<p class="caption">Гидрографическая сеть изучаемой территории</p>
+</div></li>
+<li><p>Постройте буферные зоны радиусом 50 м вокруг водоёмов. Для этого запустите инструмент построения буферных зон («Вектор» — «Геообработка» — «Буфер…»).</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/buffer_location.png" alt="" />
+<p class="caption">Расположение инструмента построения буферных зон в меню QGIS</p>
+</div></li>
+<li><p>В окне инструмента введите следующие параметры:</p>
+<ul>
+<li><strong>Исходный слой:</strong> Водоёмы</li>
+<li><strong>Расстояние:</strong> 50 м</li>
+<li><strong>Результат буферизации</strong> сохраните в тот же GeoPackage, который вы создали на предыдущем шаге, под именем <code>hydrography_polygon_buffer_50m</code>.
+Для остальных параметров сохраните значения по умолчанию</li>
+</ul>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/buffer_permanent_parameters.png" alt="" />
+<p class="caption">Параметры инструмента построения буферных зон</p>
+</div></li>
+<li><p>Запустите инструмент и дождитесь, когда результат геообработки добавится в проект.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/buffer_constant_result.png" alt="" />
+<p class="caption">Результат построения буферных зон постоянной ширины</p>
+</div></li>
+</ol>
+</div>
+<div id="geometry-buffer-variable" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> Построение буферных зон переменной ширины<a href="geometry.html#geometry-buffer-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ширина водоохранной зоны для рек зависит от их протяжённости. Для рек протяжённостью до 10 км ширина составляет 50 м, от 10 до 50 км – 100 м, свыше 50 км — 200 м. Мы рассчитаем протяжённость каждой реки и запишем её в таблицу атрибутов, а затем используем калькулятор полей, чтобы задать для каждого объекта собственный размер буферной зоны.</p>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте атрибуты геометрии в таблицу атрибутов слоя «Водотоки». Для этого используйте инструмент «Добавить атрибуты геометрии…» («Вектор» — «Обработка геометрии» — «Добавить атрибуты геометрии…»). Этот инструмент создаёт новый набор данных, дополняя таблицу атрибутов характеристиками геометрии объектов. Сохраните новый набор данных в созданный ранее GeoPackage под именем <code>hydrography_line</code>.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/geometry_location.png" alt="" />
+<p class="caption">Расположение инструмента добавления информации о геометрии в меню QGIS</p>
+</div></li>
+<li><p>Когда результат обработки будет добавлен в проект QGIS, удалите «старый» слой водотоков, а «новый» переименуйте в «Водотоки» и настройте его символику.</p></li>
+<li><p>Откройте таблицу атрибутов слоя водотоков. Найдите поле length и определите, в каких единицах измеряется и в каких пределах изменяется длина водотоков.</p></li>
+<li><p>Теперь нам необходимо создать новое поле, в котором будет записан целевой радиус буферной зоны. Для этого мы воспользуемся калькулятором полей. Его можно вызвать комбинацией клавиш <code>Ctrl+I</code> или нажатием на кнопку <img src="images/Ex08_GeometricOperations/field_calculator_button.png" /> в панели инструментов или в таблице атрибутов.</p>
+<p>Калькулятор полей используется для вычисления новых значений атрибутов объектов на основе имеющихся пространственных и семантических характеристик. Его интерфейс аналогичен интерфейсу атрибутивного запроса.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/field_calculator_blank.png" alt="" />
+<p class="caption">Окно Калькулятора полей</p>
+</div></li>
+<li><p>В верхней части окна калькулятора полей задаётся целевое поле для записи вычисленных значений. Это может быть как новое поле, так и уже существующее поле. Если вам необходимо создать новое поле, то следует ввести его название и указать тип данных. Название поля должно быть записано латиницей, не включать пробелы и специальные символы, а также не должно начинаться с цифры. Поскольку вам предстоит рассчитать целевой радиус буферной зоны, назовите поле <code>buffer_radius</code>. Тип поля укажите самостоятельно.</p></li>
+<li><p>Основная часть окна калькулятора полей разделена на три формы. Левая форма служит непосредственно для ввода выражения. В центральной форме собраны все доступные функции, а также поля таблицы атрибутов. В правой форме отображается справка по функциям и вспомогательные формы для полей.</p>
+<p>Вам необходимо ввести выражение, которое будет выдавать разный результат в зависимости от значения в поле <code>length</code>. Для этого используется функция CASE из раздела «Условные».</p></li>
+<li><p>Разверните группу функций «Условные» в средней форме и дважды щёлкните по названию функции <strong>CASE</strong>. В конструктор формул добавится следующая строка:</p>
+<p><code>CASE WHEN condition THEN result END</code></p>
+<p>Это образец синтаксиса функции. Вместо <code>condition</code> подставляется условие, вместо <code>result</code> — результат вычисления. Инструкция <code>CASE</code> открывает блок условия, инструкция <code>END</code> закрывает его. Можно вынести эти инструкции в отдельные строки, а промежуточную часть скопировать и вставить несколько раз.</p>
+<pre><code>CASE 
+WHEN condition THEN result 
+WHEN condition THEN result 
+WHEN condition THEN result 
+END</code></pre>
+<p>Теперь будем заполнять выражение нужными значениями. Например, если длина водотока меньше 10 км (10 000 м), то радиус буферной зоны должен быть равен 50. Длина водотока записана в поле <code>length</code>, поэтому блок условия будет выглядеть так:</p>
+<p><code>WHEN "length" &lt;=10000 THEN 50</code></p>
+<p>Введите это условие, а затем все остальные необходимые условия по образцу. Если необходимо, вы также можете воспользоваться оператором ELSE, который обрабатывает все значения, не покрытые основным набором условий.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/field_calculator_filled.png" alt="" />
+<p class="caption">Окно Калькулятора полей после ввода необходимых условий</p>
+</div></li>
+<li><p>Нажмите ОК, чтобы выполнить расчёт. По окончании расчёта сохраните изменения в наборе и выключите режим редактирования. Посмотрите, что изменилось в таблице атрибутов.</p></li>
+<li><p>Теперь мы используем рассчитанные значения радиусов непосредственно для построения буферных зон. Запустите инструмент создания буферных зон и задайте слой водотоков в качестве исходного набора данных. Чтобы задать радиус поиска из поля, нажмите кнопку справа от поля «Расстояние» и выберите нужное поле в контекстном меню, как показано на рисунке ниже:</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/buffer_variable_parameters.png" alt="" />
+<p class="caption">Определение радиуса буфера на основе значения в поле таблицы атрибутов</p>
+</div></li>
+<li><p>Укажите, что выходные буферные зоны должны быть сохранены в созданный ранее GeoPackage под именем <code>hydrography_line_buffer_variable</code> и запустите расчёт буферных зон. Результат расчёта будет добавлен в проект.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/buffer_variable_result.png" alt="" />
+<p class="caption">Результат построения буферных зон постоянной ширины</p>
+</div></li>
+</ol>
+</div>
+<div id="geometry-buffer-other" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> Буферные зоны других объектов<a href="geometry.html#geometry-buffer-other" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте в проект таблицы автодорог (<code>roads_line</code>) и особо охраняемых природных территорий (<code>reserves_polygon</code>)</p></li>
+<li><p>Создайте вокруг автодорог буферные зоны шириной 50 м и сохраните их в созданный вами GeoPackage под именем <code>roads_buffer_50m</code>.</p></li>
+<li><p>Создайте вокруг особо охраняемых природных территорий буферные зоны шириной <a href="http://publication.pravo.gov.ru/Document/View/0001201502240019?rangeSize=10">1 км</a> и сохраните их в созданный вами GeoPackage под именем <code>reserves_buffer_1km</code>.</p></li>
+<li><p>Отключите все слои, кроме буферных зон, и сделайте снимок экрана.</p></li>
+</ol>
+<p><kbd><strong>Снимок экрана №2.</strong> Результат построения буферных зон</kbd></p>
+<p><strong>Вопрос №2</strong>: что такое буферная зона? Для каких типов геометрии может применяться построение буферных зон? Какой тип геометрии может иметь результат построения буферной зоны в QGIS?</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Объедините все построенные буферы в один набор пространственных данных. Для этого воспользуйтесь инструментом «Объединить векторные слои…» («Вектор» — «Управление данными»). Систему координат не задавайте, целевой слой назовите <code>buffer_merge</code>.</p>
+<p>![Расположение инструмента объединения векторных слоёв в QGIS(images/Ex08_GeometricOperations/merge_location.png)</p>
+<p>![Параметры инструмента объединения векторных слоёв (images/Ex08_GeometricOperations/merge_parameters.png)</p></li>
+<li><p>Удалите буферные зоны отдельных объектов из проекта, сохраните только объединённый слой буферных зон. Переименуйте этот слой в «Буферные зоны». Изучите таблицу атрибутов полученного слоя.</p></li>
+</ol>
+</div>
+</div>
+<div id="geometry-selection" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Сохранение выборки в новую таблицу<a href="geometry.html#geometry-selection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
+<p>В рамках задания мы должны исключить территории, уже занятые застройкой или предназначенные для застройки. Информацию о существующей застройке можно взять из разных источников. В этом упражнении мы воспользуемся кадастровой информацией.</p>
+<ol style="list-style-type: decimal">
+<li><p>Отключите слой буферных зон и добавьте в проект информацию о кадастровом делении (<code>cadastre_polygon</code>). Переименуйте новый слой в «Кадастр»</p></li>
+<li><p>Выберите в слое кадастрового деления объекты, обозначенные как <code>ГКН_УЧАСТКИ</code> и <code>ГКН_ГРАНИЦЫ</code>. Эти объекты ограничивают земли населённых пунктов.</p>
+<blockquote>
+<p>Примечание: если вы не помните, как сделать выборку объектов по значениям атрибутов, обратитесь к упражнению 7</p>
+</blockquote>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/selection_result.png" alt="" />
+<p class="caption">Результат выборки в слое кадастра</p>
+</div></li>
+<li><p>Сохраните выборку как новую таблицу пространственных данных. Для этого вызовите контекстное меню слоя «Кадастр» и найдите в нём опцию «Экспорт» — «Сохранить выбранные объекты как…»</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/save_selected_location.png" alt="" />
+<p class="caption">Опция сохранения выборки в отдельный слой в контекстном меню</p>
+</div></li>
+<li><p>В верхней части окна параметров сохранения укажите целевой формат (GeoPackage) и целевой файл (тот же файл, в который вы сохраняли все предыдущие результаты). В качестве имени слоя (таблицы) введите <code>settlements</code>.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/save_selected_parameters.png" alt="" />
+<p class="caption">Настройки параметров экспорта</p>
+</div></li>
+<li><p>После того, как новый слой будет добавлен в проект, переименуйте его в «Населённые пункты». Удалите слой «Кадастр» из проекта.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/new_layer.png" alt="" />
+<p class="caption">Слой населённых пунктов в окне проекта QGIS</p>
+</div>
+<blockquote>
+<p>Примечание: фактически ваш новый слой содержит информацию не только о землях населённых пунктов, но мелкими контурами в рамках задания можно пренебречь.</p>
+</blockquote></li>
+</ol>
+</div>
+<div id="geometry-erase" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Нахождение геометрической разности объектов<a href="geometry.html#geometry-erase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
+<p>Мы создали геометрические объекты, описывающие территории, непригодные для возведения нового здания (в условиях задачи). Теперь мы воспользуемся векторным оверлеем, чтобы исключить из контуров с пригодными грунтами те части, которые пересекаются с созданными объектами. Это реализуется с помощью операции геометрической разности (<em>difference</em>). Мы применим инструмент нахождения разности последовательно несколько раз, чтобы исключить все неподходящие территории. При этом мы не будем сохранять результат в явном виде на каждом шаге, а вместо этого воспользуемся временными слоями.</p>
+<pre><code>&gt;Примечание: в различном геоинформационном ПО необходимый инструмент может иметь разные названия. Например, в QGIS он называется «Разность» (*Difference*), а в ArcGIS — «Стирание» (*Erase*)</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Включите слой «Типы грунта»</p></li>
+<li><p>Выберите в слое «Типы грунта» контура, механический состав которых представлен суглинками и глинами.</p></li>
+<li><p>Запустите инструмент «Разность…» из группы инструментов геообработки.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/difference_location.png" alt="" />
+<p class="caption">Расположение инструмента вычитания в меню QGIS</p>
+</div></li>
+<li><p>В качестве исходного слоя («уменьшаемого») выберите «Типы грунта». Обязательно включите опцию «Только выделенные объекты». В качестве оверлейного слоя («вычитаемого») задайте «Населённые пункты». Проверьте, что результат будет сохранён во временный слой.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/difference_parameters.png" alt="" />
+<p class="caption">Параметры инструмента разности</p>
+</div>
+<p><strong>Важно:</strong> на этом шаге инструмент может не сработать из-за некорректной геометрии одного из входных объектов. Если инструмент выдаст сообщение об ошибке, закройте его и в основном окне QGIS откройте окно параметров. На вкладке «Анализ» в разделе «Общие» найдите опцию «Фильтрация ошибочных объектов» и выберите параметр «Пропустить (игнорировать) объекты с ошибочными геометриями». После выполнения упражнения верните изначальное значение этой опции.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/difference_parameters.png" alt="" />
+<p class="caption">Параметр игнорирования ошибок геометрии</p>
+</div></li>
+<li><p>После завершения работы инструмента в проект будет добавлен слой «Разность». Изучите геометрию объектов добавленного слоя, после этого отключите все остальные слои.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/difference1.png" alt="" />
+<p class="caption">Результат вычитания слоёв</p>
+</div></li>
+<li><p>Теперь вычтите из полученной разности слой буферных зон. Новый слой разности тоже будет иметь название «Разность». Не перепутайте эти слои!</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/difference2.png" alt="" />
+<p class="caption">Результат второго вычитания слоёв</p>
+</div></li>
+<li><p>Обратите внимание, что все объекты разностей наследуют геометрию от первого оверлейного слоя («уменьшаемого»). В нашем случае это приводит к тому, что в результирующем слое содержится небольшое число мультиполигонов (всего три). Мы бы хотели разделить эти объекты на простые полигоны. Для этого используется инструмент «Разбить составную геометрию».</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/multipart_to_singlepart_location.png" alt="" />
+<p class="caption">Расположение инструмента преобразования мультигеометрии в QGIS</p>
+</div></li>
+<li><p>Преобразуйте мультиполигоны в обычные полигоны с помощью инструмента «Разбить составную геометрию». Результат сохраните в ваш GeoPackage под именем <code>available_area</code>. Когда новый слой будет добавлен в проект, переименуйте его в «Доступные территории». Отключите остальные слои и сделайте снимок экрана.</p></li>
+</ol>
+<p><kbd><strong>Снимок экрана №3.</strong> Территории, пригодные для сооружения новых объектов</kbd></p>
+<p><strong>Вопрос №3</strong>: что такое оверлей? Какие функции векторного оверлея вы знаете? Как работает функция разности векторных объектов?</p>
+</div>
+<div id="geometry-erase" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Расчёт зональной статистики<a href="geometry.html#geometry-erase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
+<p>На заключительном шаге упражнения мы рассчитаем средние значения высот в пределах полученных контуров. Для этого мы воспользуемся фрагментом глобальной цифровой модели рельефа SRTM (исходное разрешение 3″) и инструментом расчёта зональной статистики</p>
+<ol style="list-style-type: decimal">
+<li><p>Добавьте в проект фрагмент цифровой модели рельефа (файл <code>srtm_fragment_project_crop.tif</code>). Переименуйте новый слой в «Цифровая модель рельефа».</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/dem_add.png" alt="" />
+<p class="caption">ЦМР добавлена в проект</p>
+</div></li>
+<li><p>Включите панель инструментов анализа, если она отключена. Это можно сделать с помощью кнопки <img src="images/Ex08_GeometricOperations/instruments_button.png" /> или сочетания клавиш <code>Ctrl+Alt+T</code>.</p></li>
+<li><p>В панели инструментов анализа с помощью строки поиска найдите инструмент «Зональная статистика»</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/zonal_statistics_location.png" alt="" />
+<p class="caption">Нахождение инструмента «Зональная статистика» в QGIS</p>
+</div></li>
+<li><p>Задайте в качестве исходного слоя «Доступные территории», а в качестве растрового слоя — цифровую модель рельефа. Введите префикс поля вывода <code>elevation_</code> (обратите внимание на нижнее подчёркивание), а результат сохраните в ваш GeoPackage под именем <code>available_area_zonal_statistics_elevation</code>.</p>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/zonal_stat_parameters.png" alt="" />
+<p class="caption">Настройки инструмента «Зональная статистика»</p>
+</div></li>
+<li><p>Когда результат обработки будет добавлен в проект, переименуйте слой в «Доступные территории (зональная статистика)». Изучите таблицу атрибутов этого слоя.</p></li>
+<li><p>Составьте схему территорий, доступных для строительства. Используйте слои, которые сочтёте необходимыми. Подпишите средние высоты в пределах крупных участков.</p></li>
+</ol>
+<p><kbd><strong>Итоговое картографическое изображение:</strong> Территории, пригодные для сооружения новых объектов</kbd></p>
+<p><strong>Вопрос №4</strong>: почти каждый шаг этого упражнения можно было выполнить другим путём или в другой последовательности. Напишите, какие шаги (этапы) работы вы могли бы сделать иначе (или в другом порядке) и получить тот же результат.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="digitizing-districts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="overlay.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["qgis-course.pdf", "qgis-course.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

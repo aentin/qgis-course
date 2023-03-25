@@ -64,6 +64,17 @@ digitizing-drawing
 digitizing-query
 digitizing-diagrams
 digitizing-layout
+geometry
+geometry-intro
+geometry-control
+geometry-annotation
+geometry-dissolve
+geometry-buffer
+geometry-buffer-constant
+geometry-buffer-variable
+geometry-buffer-other
+geometry-selection
+geometry-erase
 overlay
 overlay-intro
 overlay-control

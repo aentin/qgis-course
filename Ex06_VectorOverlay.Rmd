@@ -1,5 +1,3 @@
-# (PART) Векторный анализ {-}
-
 # Анализ пространственных взаимосвязей {#overlay}
 
 [Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex09.zip)

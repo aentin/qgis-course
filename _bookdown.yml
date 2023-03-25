@@ -11,6 +11,7 @@ rmd_files:
     - "Ex06_Vectorization.Rmd"
     - "Ex05_Vectorization.Rmd"
     #- "Ex05_RefAdm.Rmd"
+    - "Ex08_GeometricOperations.Rmd"
     - "Ex06_VectorOverlay.Rmd"
     - "Ex06_SpatRelations.Rmd"
     - "Ex12_RasterOverlay.Rmd"

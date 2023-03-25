@@ -197,7 +197,7 @@
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="geometry.html"><a href="geometry.html#geometry-selection"><i class="fa fa-check"></i><b>8.4</b> Сохранение выборки в новую таблицу</a></li>
 <li class="chapter" data-level="8.5" data-path="geometry.html"><a href="geometry.html#geometry-erase"><i class="fa fa-check"></i><b>8.5</b> Нахождение геометрической разности объектов</a></li>
-<li class="chapter" data-level="8.6" data-path="geometry.html"><a href="geometry.html#geometry-erase"><i class="fa fa-check"></i><b>8.6</b> Расчёт зональной статистики</a></li>
+<li class="chapter" data-level="8.6" data-path="geometry.html"><a href="geometry.html#geometry-zonal-stat"><i class="fa fa-check"></i><b>8.6</b> Расчёт зональной статистики</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="overlay.html"><a href="overlay.html"><i class="fa fa-check"></i><b>9</b> Анализ пространственных взаимосвязей</a>
 <ul>
@@ -336,7 +336,7 @@
 <p><a href="https://github.com/aentin/qgis-course/raw/master/files/Ex08_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx">Контрольный лист</a></p>
 <div id="geometry-intro" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Введение<a href="geometry.html#geometry-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Цель задания</strong> — определить территории, непригодные для новогокапитального строительства, используя операции векторного анализа и оверлея.</p>
+<p><strong>Цель задания</strong> — определить территории, непригодные для нового капитального строительства, используя операции векторного анализа и оверлея.</p>
 <p><strong>Необходимая теоретическая подготовка:</strong> Буферные зоны, слияние (объединение по признаку), соединение таблиц, ключи соединения, векторный оверлей.</p>
 <p><strong>Необходимая практическая подготовка:</strong> Знание основных компонент интерфейса QGIS (менеджер источников данных, таблица слоёв, фрейм карты, менеджер компоновок). Работа с векторными источниками пространственных данных. Настройка символики и подписей объектов. Владение базовыми ГИС-технологиями.</p>
 <p><strong>Исходные данные:</strong> База пространственных данных на территорию части Ленинградской области.</p>
@@ -499,8 +499,11 @@ END</code></pre>
 <p><strong>Вопрос №2</strong>: что такое буферная зона? Для каких типов геометрии может применяться построение буферных зон? Какой тип геометрии может иметь результат построения буферной зоны в QGIS?</p>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Объедините все построенные буферы в один набор пространственных данных. Для этого воспользуйтесь инструментом «Объединить векторные слои…» («Вектор» — «Управление данными»). Систему координат не задавайте, целевой слой назовите <code>buffer_merge</code>.</p>
-<p>![Расположение инструмента объединения векторных слоёв в QGIS(images/Ex08_GeometricOperations/merge_location.png)</p>
-<p>![Параметры инструмента объединения векторных слоёв (images/Ex08_GeometricOperations/merge_parameters.png)</p></li>
+<div class="figure">
+<img src="images/Ex08_GeometricOperations/merge_location.png" alt="" />
+<p class="caption">Расположение инструмента объединения векторных слоёв в QGIS</p>
+</div>
+<p>[Параметры инструмента объединения векторных слоёв] (images/Ex08_GeometricOperations/merge_parameters.png)</p></li>
 <li><p>Удалите буферные зоны отдельных объектов из проекта, сохраните только объединённый слой буферных зон. Переименуйте этот слой в «Буферные зоны». Изучите таблицу атрибутов полученного слоя.</p></li>
 </ol>
 </div>
@@ -582,8 +585,8 @@ END</code></pre>
 <p><kbd><strong>Снимок экрана №3.</strong> Территории, пригодные для сооружения новых объектов</kbd></p>
 <p><strong>Вопрос №3</strong>: что такое оверлей? Какие функции векторного оверлея вы знаете? Как работает функция разности векторных объектов?</p>
 </div>
-<div id="geometry-erase" class="section level2 hasAnchor" number="8.6">
-<h2><span class="header-section-number">8.6</span> Расчёт зональной статистики<a href="geometry.html#geometry-erase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="geometry-zonal-stat" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Расчёт зональной статистики<a href="geometry.html#geometry-zonal-stat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
 <p>На заключительном шаге упражнения мы рассчитаем средние значения высот в пределах полученных контуров. Для этого мы воспользуемся фрагментом глобальной цифровой модели рельефа SRTM (исходное разрешение 3″) и инструментом расчёта зональной статистики</p>
 <ol style="list-style-type: decimal">

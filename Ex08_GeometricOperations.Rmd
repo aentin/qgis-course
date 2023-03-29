@@ -156,7 +156,7 @@
     
 10. Укажите, что выходные буферные зоны должны быть сохранены в созданный ранее GeoPackage под именем `hydrography_line_buffer_variable` и запустите расчёт буферных зон. Результат расчёта будет добавлен в проект. 
 
-    ![Результат построения буферных зон постоянной ширины](images/Ex08_GeometricOperations/buffer_variable_result.png)
+    ![Результат построения буферных зон переменной ширины](images/Ex08_GeometricOperations/buffer_variable_result.png)
     
 ### Буферные зоны других объектов {#geometry-buffer-other}
 

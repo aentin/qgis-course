@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-03-27" />
+<meta name="date" content="2023-03-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -189,7 +189,7 @@
 <li class="chapter" data-level="8.1.2" data-path="geometry.html"><a href="geometry.html#geometry-annotation"><i class="fa fa-check"></i><b>8.1.2</b> Аннотация</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="geometry.html"><a href="geometry.html#geometry-dissolve"><i class="fa fa-check"></i><b>8.2</b> Объединение контуров схемы четвертичных отложений</a></li>
-<li class="chapter" data-level="8.3" data-path="geometry.html"><a href="geometry.html#geometry-buffer"><i class="fa fa-check"></i><b>8.3</b> Построение буферных зон постоянной ширины</a>
+<li class="chapter" data-level="8.3" data-path="geometry.html"><a href="geometry.html#geometry-buffer"><i class="fa fa-check"></i><b>8.3</b> Построение буферных зон</a>
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="geometry.html"><a href="geometry.html#geometry-buffer-constant"><i class="fa fa-check"></i><b>8.3.1</b> Буферные зоны постоянной ширины</a></li>
 <li class="chapter" data-level="8.3.2" data-path="geometry.html"><a href="geometry.html#geometry-buffer-variable"><i class="fa fa-check"></i><b>8.3.2</b> Построение буферных зон переменной ширины</a></li>
@@ -405,7 +405,7 @@
 <p><strong>Вопрос №1</strong>: как был изменён исходный набор данных в ходе слияния?</p>
 </div>
 <div id="geometry-buffer" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Построение буферных зон постоянной ширины<a href="geometry.html#geometry-buffer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">8.3</span> Построение буферных зон<a href="geometry.html#geometry-buffer" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="geometry.html#geometry">В начало упражнения ⇡</a></p>
 <p>По условию задания необходимо исключить из рассмотрения территории, находящиеся в водоохранных зонах. Согласно п. 4 <a href="http://www.consultant.ru/document/cons_doc_LAW_60683/4c65ff0f232195d8dccc08535d2c3923d5b67f1c/">статьи 65 Водного кодекса Российской Федерации</a>, ширина водоохранной зоны для рек или ручьёв различается в зависимости от их протяжённости от истока до устья, а согласно п. 6 той же статьи ширина водоохранной зоны для водоёмов небольшой площади составляет 50 м. Мы определим положение искомых территорий с помощью построения буферных зон.</p>
 <div id="geometry-buffer-constant" class="section level3 hasAnchor" number="8.3.1">

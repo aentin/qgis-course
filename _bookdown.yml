@@ -13,7 +13,7 @@ rmd_files:
     #- "Ex05_RefAdm.Rmd"
     - "Ex08_GeometricOperations.Rmd"
     - "Ex06_VectorOverlay.Rmd"
-    - "Ex06_SpatRelations.Rmd"
+    - "Ex10_SpatRelations.Rmd"
     - "Ex12_RasterOverlay.Rmd"
     - "Ex13_HydroDEM.Rmd"
     - "Ex11_Networks.Rmd"

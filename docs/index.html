@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-04-23" />
+<meta name="date" content="2023-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -333,7 +337,7 @@
 <div id="header">
 <h1 class="title">Основы геоинформатики: практикум в QGIS</h1>
 <p class="author"><em>Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский</em></p>
-<p class="date"><em>2023-04-23</em></p>
+<p class="date"><em>2023-09-17</em></p>
 </div>
 <div id="общие-сведения" class="section level1 unnumbered hasAnchor">
 <h1>Общие сведения<a href="index.html#общие-сведения" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -360,29 +364,29 @@
 <p>Если на вашем компьютере уже установлена более старая версия QGIS, удалите её перед началом установки новой версии. Вы можете использовать старую версию QGIS для выполнения большинства заданий практикума, однако, если у вас возникнут технические проблемы,</p>
 <p>Когда исполняемый файл загрузится, запустите его. Если потребуется, разрешите приложению вносить изменения на вашем устройстве.</p>
 <p>Будет показано приветственное окно мастера установки. Нажмите «Далее» (Next), чтобы перейти на следующий шаг.</p>
-<div class="figure">
-<img src="images/installation_instruction_win/win01.png" alt="" />
-<p class="caption">Окно мастера установки QGIS</p>
+<div class="float">
+<img src="images/installation_instruction_win/win01.png" alt="Окно мастера установки QGIS" />
+<div class="figcaption">Окно мастера установки QGIS</div>
 </div>
 <p>На следующем шаге будет показано лицензионное соглашение QGIS и другого программного обеспечения, входящего в пакет поставки. Установите галочку напротив опции «Я принимаю условия лицензионного соглашения» (I accept the terms in the License Agreement) и нажмите «Далее» (Next).</p>
-<div class="figure">
-<img src="images/installation_instruction_win/win02.png" alt="" />
-<p class="caption">Лицензионное соглашение</p>
+<div class="float">
+<img src="images/installation_instruction_win/win02.png" alt="Лицензионное соглашение" />
+<div class="figcaption">Лицензионное соглашение</div>
 </div>
 <p>На следующем шаге выберите папку для установки и отметьте, нужно ли создавать ярлыки на рабочем столе и в меню «Пуск». По возможности используйте параметры, предлагаемые по умолчанию.</p>
-<div class="figure">
-<img src="images/installation_instruction_win/win03.png" alt="" />
-<p class="caption">Опции установки</p>
+<div class="float">
+<img src="images/installation_instruction_win/win03.png" alt="Опции установки" />
+<div class="figcaption">Опции установки</div>
 </div>
 <p>На следующем шаге предлагается запустить процедуру установки. Нажмите «Install». Когда система выдаст запрос на внесение изменений, примите его.</p>
-<div class="figure">
-<img src="images/installation_instruction_win/win04.png" alt="" />
-<p class="caption">Запуск установки</p>
+<div class="float">
+<img src="images/installation_instruction_win/win04.png" alt="Запуск установки" />
+<div class="figcaption">Запуск установки</div>
 </div>
 <p>Дождитесь окончания установки</p>
-<div class="figure">
-<img src="images/installation_instruction_win/win05.png" alt="" />
-<p class="caption">Процесс установки</p>
+<div class="float">
+<img src="images/installation_instruction_win/win05.png" alt="Процесс установки" />
+<div class="figcaption">Процесс установки</div>
 </div>
 <p>После окончания установки может произойти так, что окно установщика будет смещено с дисплея целиком или частично. В этом случае кликните на иконку окна установщика в панели задач, а затем нажмите <strong>Enter</strong>.</p>
 <p>Когда установка будет завершена, вы сможете запустить QGIS одним из следующих способов:</p>
@@ -394,43 +398,43 @@
 <div id="macos" class="section level3 unnumbered hasAnchor">
 <h3>macOS<a href="index.html#macos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Скачайте с <a href="https://qgis.org/ru/site/forusers/download.html">официального сайта</a> образ диска QGIS последней вышедшей версии. По состоянию на 7 февраля 2023 г. это версия 3.28.3-1. <a href="https://qgis.org/downloads/macos/qgis-macos-pr.dmg">Скачать</a>.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac01.png" alt="" />
-<p class="caption">Страница загрузки QGIS для macOS</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac01.png" alt="Страница загрузки QGIS для macOS" />
+<div class="figcaption">Страница загрузки QGIS для macOS</div>
 </div>
 <p>После того как образ загрузится, запустите его. В открывшемся окне нажмите кнопку «Agree», чтобы принять условия лицензионного соглашения.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac02.png" alt="" />
-<p class="caption">Лицензионное соглашение</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac02.png" alt="Лицензионное соглашение" />
+<div class="figcaption">Лицензионное соглашение</div>
 </div>
 <p>Дождитесь, пока нужные файлы будут распакованы.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac03.png" alt="" />
-<p class="caption">Распаковка образа</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac03.png" alt="Распаковка образа" />
+<div class="figcaption">Распаковка образа</div>
 </div>
 <p>По окончании распаковки появится окно, в котором нужно будет перетащить значок QGIS в папку «Приложения» (<em>Applications</em>).</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac04.png" alt="" />
-<p class="caption">Окно установки</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac04.png" alt="Окно установки" />
+<div class="figcaption">Окно установки</div>
 </div>
 <p>Перетащите значок QGIS в папку «Приложения» (<em>Applications</em>). Это запустит процесс установки.</p>
 <p><img src="images/installation_instruction_mac/mac05.png" /></p>
 <p>Дождитесь, пока компьютер выполнит необходимые действия.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac06.png" alt="" />
-<p class="caption">Процедура установки</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac06.png" alt="Процедура установки" />
+<div class="figcaption">Процедура установки</div>
 </div>
 <p>Запустите приложение QGIS, чтобы убедиться в его работоспособности. Если установка выполнена корректно, откроется главное окно приложения.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac07.png" alt="" />
-<p class="caption">Главное окно приложения QGIS</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac07.png" alt="Главное окно приложения QGIS" />
+<div class="figcaption">Главное окно приложения QGIS</div>
 </div>
 <p>При первом запуске может потребоваться разрешение на использование приложений от сторонних разработчиков. В этом случае откройте настройки и включите соответствующую опцию.</p>
 <p><img src="images/installation_instruction_mac/mac08.png" alt="Настройки разрешений" />
 По окончании установки можно размонтировать («извлечь») образ диска QGIS.</p>
-<div class="figure">
-<img src="images/installation_instruction_mac/mac09.png" alt="" />
-<p class="caption">Извлечение виртуального образа с помощью контекстного меню</p>
+<div class="float">
+<img src="images/installation_instruction_mac/mac09.png" alt="Извлечение виртуального образа с помощью контекстного меню" />
+<div class="figcaption">Извлечение виртуального образа с помощью контекстного меню</div>
 </div>
 </div>
 <div id="linux" class="section level3 unnumbered hasAnchor">

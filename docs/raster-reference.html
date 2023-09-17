@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 5 Привязка графических материалов | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 5 Привязка графических материалов | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 5 Привязка графических материалов | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-04-23" />
+<meta name="date" content="2023-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -373,9 +377,9 @@
 <p>Привязка растра начинается с определения целевой системы координат. Сейчас мы работаем с топографической картой, изданной в 1990 г. в рамках системы топографического картографирования СССР. Топографические карты СССР составлялись в проекции Гаусса-Крюгера на основе датума СК-42, использующего эллипсоид Красовского, с разграфкой по 6-градусным зонам. Описание целевой системы координат должно включать все эти компоненты.</p>
 <ol style="list-style-type: decimal">
 <li><p>Перейдите на сайт <a href="https://spatialreference.org/">Spatialreference.org</a></p>
-<div class="figure">
-<img src="images/Ex05_Reference/spatialreference0.png" alt="" />
-<p class="caption">Стартовая страница сайта Spatialreference.org</p>
+<div class="float">
+<img src="images/Ex05_Reference/spatialreference0.png" alt="Стартовая страница сайта Spatialreference.org" />
+<div class="figcaption">Стартовая страница сайта Spatialreference.org</div>
 </div></li>
 <li><p>В правом верхнем углу в окне поиска введите <code>Pulkovo 1942 / Gauss-Kruger</code> и нажмите <em>Search</em>.</p>
 <blockquote>
@@ -385,31 +389,31 @@
 <p>Примечание 1: в описаниях систем координат орфография немецкого языка традиционно не соблюдается. Поэтому для поиска систем координат проекции Гаусса-Крюгера следует вводить именно <code>Gauss-Kruger</code>, а не <code>Gauss-Krüger</code> или <code>Gauss-Krueger</code>.</p>
 </blockquote></li>
 <li><p>В открывшемся окне используйте кнопку <em>Next Page</em>, чтобы переходить на следующие страницы и найти системы координат, соответствующие нужной вам зоне.</p>
-<div class="figure">
-<img src="images/Ex05_Reference/spatialreference1.png" alt="" />
-<p class="caption">Системы координат Гаусса-Крюгера на основе датума СК-42 на сайте Spatialreference.org</p>
+<div class="float">
+<img src="images/Ex05_Reference/spatialreference1.png" alt="Системы координат Гаусса-Крюгера на основе датума СК-42 на сайте Spatialreference.org" />
+<div class="figcaption">Системы координат Гаусса-Крюгера на основе датума СК-42 на сайте Spatialreference.org</div>
 </div>
 <p>Обратите внимание на три важных момента. Первое: для вашего листа карты подходит несколько разных систем координат. Второе: название соответствующей системы координат не обязательно содержит номер зоны. Вместо номера зоны может быть указан средний меридиан зоны (<em>Central Meridian</em>, CM). Центральный меридиан для своего номера зоны вы можете определить самостоятельно. Третье: среди описаний встречаются системы координат 3-градусных зон. Они тоже иногда используются, но ваша карта составлена на основе 6-градусной разграфки.</p></li>
 <li><p>Найдя нужные системы координат, откройте страницу каждой из них в новой вкладке браузера.</p></li>
 </ol>
 <button id="show_table_button" type="button" class="btn btn-default action-button" onclick="button_handler()">Показать подходящие описания проекций для листа карты o38-085.tif</button>
 <div id="resultContainer" hidden="true">EPSG:2498, EPSG:28408, EPSG:28468</div>
-<script type="text/javascript">
+<script>
 function button_handler() {
   document.getElementById('resultContainer').hidden = false;
 }
 </script>
-<div class="figure">
-<img src="images/Ex05_Reference/spatialreference2.png" alt="" />
-<p class="caption">Пример описания системы координат на сайте Spatialreference.org</p>
+<div class="float">
+<img src="images/Ex05_Reference/spatialreference2.png" alt="Пример описания системы координат на сайте Spatialreference.org" />
+<div class="figcaption">Пример описания системы координат на сайте Spatialreference.org</div>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Определите, чем отличаются эти системы координат друг от друга. При необходимости посмотрите описания систем координат в форматах Proj4 или ESRI WKT.</p></li>
 <li><p>Выберите подходящую систему координат для привязки.</p>
 <p>Прямоугольные координаты, подписываемые вдоль северной и южной рамок топографических карт СССР, формируются следующим образом. Берётся фактическое значение прямоугольной координаты, отсчитанное от среднего меридиана зоны, смещённого к востоку на 500 км (например, <code>348</code>). Слева к этому номеру приписывается номер зоны (например, <code>8</code>). Полученные числа (например, <code>8348</code>) обозначают координаты соответствующих линий сетки в километрах. Они подписываются целиком только в углах карты, а в остальных случаях пишется только последние две цифры числа (например, <code>48</code>). При описании таких координат в ГИС-среде может использоваться как полная форма записи, включающая номер зоны, так и сокращённая форма записи (англ. <em>truncated</em>), не включающая номер зоны. Отличия между вариантами будут заключаться в единственном параметре: смещении координаты X (<code>x_0</code> в Proj4, <code>false easting</code> в WKT). На наш взгляд, удобнее пользоваться полной формой записи.</p>
-<div class="figure">
-<img src="images/Ex05_Reference/mapframe.png" alt="" />
-<p class="caption">Фрагмент рамки карты</p>
+<div class="float">
+<img src="images/Ex05_Reference/mapframe.png" alt="Фрагмент рамки карты" />
+<div class="figcaption">Фрагмент рамки карты</div>
 </div></li>
 </ol>
 </div>
@@ -418,14 +422,14 @@ function button_handler() {
 <ol style="list-style-type: decimal">
 <li><p>Запустите QGIS и сохраните проект в вашу рабочую директорию</p></li>
 <li><p>В QGIS запустите инструмент для привязки растров («Слой» — «Привязка растров»)</p>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference0.png" alt="" />
-<p class="caption">Инструмент «Привязка растров…» в меню «Слой»</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference0.png" alt="Инструмент «Привязка растров…» в меню «Слой»" />
+<div class="figcaption">Инструмент «Привязка растров…» в меню «Слой»</div>
 </div></li>
 <li><p>Добавьте файл <code>o38-085.tif</code> в окно инструмента привязки. Можно перетащить файл из проводника или воспользоваться кнопкой <img src="images/Ex05_Reference/addRasterButton.png" /> на панели инструментов</p>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference1.png" alt="" />
-<p class="caption">Окно привязки растра с загруженным в него изображением</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference1.png" alt="Окно привязки растра с загруженным в него изображением" />
+<div class="figcaption">Окно привязки растра с загруженным в него изображением</div>
 </div></li>
 <li><p>В окне привязки по умолчанию активен инструмент добавления опорных точек <img src="images/Ex05_Reference/addPointButton.png" />. С помощью мыши увеличьте изображение северо-западного угла карты, найдите пересечение линий сетки и определите его координаты.</p></li>
 <li><p>Щёлкните левой кнопкой мыши по пересечению линий сетки, координаты которого вы определили. В появившемся окне введите координаты. Обратите внимание на следующие моменты:</p></li>
@@ -436,17 +440,17 @@ function button_handler() {
 <li><p>Непосредственно под формами ввода координат расположен выпадающий список, позволяющий выбрать систему координат. Убедитесь, что в этом поле выбрана нужная вам система координат.</p></li>
 </ul>
 <p>Сверьтесь с изображением ниже, чтобы убедиться, что вы всё делаете правильно:</p>
-<div class="figure">
-<img src="images/Ex05_Reference/FirstPoint.gif" alt="" />
-<p class="caption">Процесс добавления новой опорной точки</p>
+<div class="float">
+<img src="images/Ex05_Reference/FirstPoint.gif" alt="Процесс добавления новой опорной точки" />
+<div class="figcaption">Процесс добавления новой опорной точки</div>
 </div>
 <p>Чтобы включить подписи идентификаторов точек, зайдите в «Параметры» — «Настройки привязки растров»</p>
 <ol start="8" style="list-style-type: decimal">
 <li>Аналогичным образом добавьте ещё четыре опорных точки: три точки в других углах листа карты и одну точку в центре листа карты</li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference2.png" alt="" />
-<p class="caption">Окно привязки после расстановки пяти опорных точек</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference2.png" alt="Окно привязки после расстановки пяти опорных точек" />
+<div class="figcaption">Окно привязки после расстановки пяти опорных точек</div>
 </div>
 <ol start="10" style="list-style-type: decimal">
 <li><p>Изучите информацию, которая отображается в таблице внизу. «X источника» и «Y источника» — это координаты точек привязки на исходном растре, измеренные в пикселях растра от левого верхнего угла. «X назначения» и «Y назначения» — координаты на местности. В столбцах «dX», «dY» и «Невязка» будут отображаться несхождения в определении координат. Сейчас там отображаются нули, поскольку мы ещё не задали настройки трансформации.</p></li>
@@ -454,9 +458,9 @@ function button_handler() {
 <li><p>Самостоятельно определите значение параметра «Тип трансформации».</p></li>
 <li><p>Параметр «Метод интерполяции» установите в значение «Линейная»</p></li>
 <li><p>Чтобы установить целевую систему координат, нажмите кнопку <img src="images/Ex05_Reference/crsButton.png" /></p>
-<div class="figure">
-<img src="images/Ex05_Reference/CoordinateSystem.png" alt="" />
-<p class="caption">Окно выбора системы координат</p>
+<div class="float">
+<img src="images/Ex05_Reference/CoordinateSystem.png" alt="Окно выбора системы координат" />
+<div class="figcaption">Окно выбора системы координат</div>
 </div></li>
 <li><p>Выберите нужную систему координат по её названию или EPSG-коду и закройте окно выбора проекции, нажав <strong>OK</strong></p></li>
 <li><p>Теперь, когда вы задали параметры привязки, нужно указать, куда будет сохранён привязанный файл. Это задаётся настройкой «Целевой растр». Укажите, что растр нужно сохранить в папку <code>referenced_images</code> вашей рабочей директории под именем <code>o38-085_modified.tif</code>. Также нужно отметить опции «Сохранить контрольные точки», чтобы сохранить пары координат в отдельный файл, и «Открыть результат в QGIS», чтобы резульат привязки был автоматически прикреплён к открытому проекту. Остальные параметры оставьте по умолчанию.</p></li>
@@ -464,16 +468,16 @@ function button_handler() {
 <li><p>Изучите величины ошибок, которые отображаются в таблице внизу. Величины ошибок отображаются в пикселах исходного растра. Обычно в практике привязки стараются добиться, чтобы ошибка не превышала 0,5 пиксела (с рядом оговорок). В нашем же случае исходный картографический материал отсканирован с невысоким разрешением, и такой точности достичь не получится. Для учебного упражнения достаточно добиться точности порядка 1,5-2 пиксела. Если точность привязки какой-либо из ваших точек значительно превышает это пороговое значение, удалите точку и установите её заново.</p></li>
 <li><p>Когда величины ошибок станут приемлемыми, нажмите кнопку <img src="images/Ex05_Reference/beginButton.png" />. QGIS выполнит привязку и попытается добавить изображение к карте. Если при этом появится всплывающее окно выбора параметров трансформации, нажмите ОК.</p></li>
 <li><p>Закройте окно привязки растров. Окно QGIS примет вид, аналогичный представленному ниже:</p>
-<div class="figure">
-<img src="images/Ex05_Reference/QGIS1.png" alt="" />
-<p class="caption">Привязанное изображение в основном окне QGIS</p>
+<div class="float">
+<img src="images/Ex05_Reference/QGIS1.png" alt="Привязанное изображение в основном окне QGIS" />
+<div class="figcaption">Привязанное изображение в основном окне QGIS</div>
 </div>
 <blockquote>
 <p>Примечание: в новых версиях QGIS в момент добавления нового растра в проект может появиться всплывающее окно с запросом выбора параметров трансформации. Оно появляется, если система координат проекта и система координат добавляемого набора данных основаны на разных геодезических датумах (и если этот запрос не отключён в настройках QGIS). Обсуждение точности преобразований датумов выходит за рамки нашего курса. Если вы студент-картограф, обратитесь к преподавателю за более подробными разъяснениями; остальным же достаточночно принять настройки, предагаемые по умолчанию (нажать OK).</p>
 </blockquote>
-<div class="figure">
-<img src="images/Ex05_Reference/Warning.png" alt="" />
-<p class="caption">Предупреждение о преобразовании датумов</p>
+<div class="float">
+<img src="images/Ex05_Reference/Warning.png" alt="Предупреждение о преобразовании датумов" />
+<div class="figcaption">Предупреждение о преобразовании датумов</div>
 </div></li>
 </ol>
 </div>
@@ -486,32 +490,32 @@ function button_handler() {
 <ol style="list-style-type: decimal">
 <li>Модуль QuickMapService не включается в базовую поставку QGIS, его нужно установить отдельно. Для этого откройте меню «Модули» — «Управление и установка модулей…». Дождитесь, пока сведения о модулях загрузятся.</li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/modules01.png" alt="" />
-<p class="caption">Опция «Управление и установка модулей…» в меню «Модули»</p>
+<div class="float">
+<img src="images/Ex05_Reference/modules01.png" alt="Опция «Управление и установка модулей…» в меню «Модули»" />
+<div class="figcaption">Опция «Управление и установка модулей…» в меню «Модули»</div>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li><p>В открывшемся окне управления модулями начните вводить <code>QuickMap</code> в строке поиска. Модули будут отфильтрованы по названию.</p></li>
 <li><p>Выберите модуль QuickMapServices в списке и нажмите кнопку «Установить» внизу окна. Дождитесь, пока модуль загрузится и установится.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/modules02.png" alt="" />
-<p class="caption">Модуль QuickMapServices в окне работы с модулями</p>
+<div class="float">
+<img src="images/Ex05_Reference/modules02.png" alt="Модуль QuickMapServices в окне работы с модулями" />
+<div class="figcaption">Модуль QuickMapServices в окне работы с модулями</div>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li>После установки модуля его инструменты появляются в меню «Интернет» — «QuickMapServices». По умолчанию доступно небольшое число источников, но его можно увеличить. Для этого перейдите в настройки модуля и на вкладке «Загрузить сервисы» нажмите «Получить дополнительные источники данных». Подождите, пока дополнительные источники будут добавлены к модулю, и закройте настройки</li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/AddSources.gif" alt="" />
-<p class="caption">Включение дополнительных источников данных в модуле QuickMapServices</p>
+<div class="float">
+<img src="images/Ex05_Reference/AddSources.gif" alt="Включение дополнительных источников данных в модуле QuickMapServices" />
+<div class="figcaption">Включение дополнительных источников данных в модуле QuickMapServices</div>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Теперь вы можете добавить какую-нибудь базовую карту из сети Интернет, просто выбрав её в списке. Добавьте карты Google в проект.</p></li>
 <li><p>Включая и отключая изображение топографической карты в панели слоёв, оцените, насколько хорошо она ложится на базовую карту Google.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/Overlay.gif" alt="" />
-<p class="caption">Отображение топографической карты поверх карт Google</p>
+<div class="float">
+<img src="images/Ex05_Reference/Overlay.gif" alt="Отображение топографической карты поверх карт Google" />
+<div class="figcaption">Отображение топографической карты поверх карт Google</div>
 </div>
 <blockquote>
 <p>Для любознательных: обратите внимание на настройки прозрачности слоёв, а также на подключаемый модуль MapSwipe Tool.</p>
@@ -535,9 +539,9 @@ function button_handler() {
 <li><p>добавьте к новому проекту в качестве базовой карты любое покрытие космических снимков (например, Google Satellite). Обратите внимание, как изменилась система координат проекта.</p></li>
 <li><p>Переместитесь по карте на юг Российской Федерации, в окрестности города Махачкала</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference5.png" alt="" />
-<p class="caption">Окрестности Махачкалы на мозаике космических снимков Google</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference5.png" alt="Окрестности Махачкалы на мозаике космических снимков Google" />
+<div class="figcaption">Окрестности Махачкалы на мозаике космических снимков Google</div>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Откройте модуль привязки и загрузите в него изображение <code>DS1023-2087DF131_b_crop.tif</code>. Это фрагмент космического снимка, полученного в середине 1960-х со спутника системы CORONA (программа Keyhole)</p>
@@ -549,30 +553,30 @@ function button_handler() {
 </blockquote></li>
 <li><p>Изображение на космическом снимке повёрнуто относительно изображения базовой карты. Чтобы облегчить опознавание опорных точек, мы можем повернуть изображение в основном окне QIGS. Для этого найдите в нижней правой части окна QGIS настройку «Угол поворота» и введите значение <code>30</code>.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference7.png" alt="" />
-<p class="caption">Повёрнутое изображение в основном окне карты в сравнении с фрагментов спутникового снимка</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference7.png" alt="Повёрнутое изображение в основном окне карты в сравнении с фрагментов спутникового снимка" />
+<div class="figcaption">Повёрнутое изображение в основном окне карты в сравнении с фрагментов спутникового снимка</div>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li>Начните расстановку контрольных точек. Установите первую точку нажатием левой кнопки мыши. Затем, когда появится окно ввода координат, не вводите координаты вручную, а нажмите кнопку «С карты». Окна привязки и ввода координат будут свёрнуты, давая возможность найти соответственную точку на карте. Найдя точку, кликните по ней левой кнопкой мыши. Координаты точки (в системе координат проекта) будут считаны с карты и подставлены в интерфейс ввода.</li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/PointsFromMap.gif" alt="" />
-<p class="caption">Пример расстановки опорных точек на снимке с использованием базовой карты</p>
+<div class="float">
+<img src="images/Ex05_Reference/PointsFromMap.gif" alt="Пример расстановки опорных точек на снимке с использованием базовой карты" />
+<div class="figcaption">Пример расстановки опорных точек на снимке с использованием базовой карты</div>
 </div>
 <ol start="7" style="list-style-type: decimal">
 <li><p>Введите таким образом координаты 15-20 точек. Следите, чтобы точки были равномерно распределены по площади снимка и не выстраивались в одну линию.</p></li>
 <li><p>Настройте параметры привязки. Используйте полиномиальное преобразование 2-й степени. Такое преобразование иногда используется для космических снимков с сильными искажениями геометрии. Укажите, что изображение должно быть сохранено в папку <code>referenced_images</code> вашей рабочей директории.</p></li>
 <li><p>Проверьте ошибки положения точек. Поскольку исходное изображение характеризуется высокой зашумленностью и «зернитостью», в этом упражнении не нужно добиваться высокой точности привязки. Ошибка порядка 7-10 пикселов может считаться приемлемой.</p>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference7a.png" alt="" />
-<p class="caption">Расставленные опорные точки на базовой крарте и на снимке</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference7a.png" alt="Расставленные опорные точки на базовой крарте и на снимке" />
+<div class="figcaption">Расставленные опорные точки на базовой крарте и на снимке</div>
 </div></li>
 <li><p>Запустите привязку. Когда привязанное изображение добавится в проект, сравните его с базовой картой.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference8.png" alt="" />
-<p class="caption">Привязанное изображение в основном окне QGIS</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference8.png" alt="Привязанное изображение в основном окне QGIS" />
+<div class="figcaption">Привязанное изображение в основном окне QGIS</div>
 </div>
 <ol start="11" style="list-style-type: decimal">
 <li><p>Если привязанное изображение хорошо согласуется с базовой картой, закройте окно привязки. Если вы видите заметные смещения каких-либо элементов на привязанном изображении относительно базовой карты, вернитесь в окно привязки и отредактируйте опорные точки, а затем снова выполните трансформацию изображения.</p></li>
@@ -596,16 +600,16 @@ function button_handler() {
 <li><p>Настройте параметры привязки: алгоритм привязки, алгоритм трансформации, систему координат и т.д.</p></li>
 <li><p>Теперь добавьте ещё четыре опорные точки между «угловыми» и «центральной».</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference3.png" alt="" />
-<p class="caption">Дополнительные опорные точки</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference3.png" alt="Дополнительные опорные точки" />
+<div class="figcaption">Дополнительные опорные точки</div>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li>Когда вы добавите дополнительные точки, отключите их: снимите галочки в таблице возле их названий. Отключённые опорные точки перейдут в разряд <strong>контрольных</strong>: они не будут использоваться для вычисления параметров преобразования, но разность между теоретическим и фактическим значением координат для них будет рассчитана.</li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/RasterReference4.png" alt="" />
-<p class="caption">Отключение опорных точек:</p>
+<div class="float">
+<img src="images/Ex05_Reference/RasterReference4.png" alt="Отключение опорных точек:" />
+<div class="figcaption">Отключение опорных точек:</div>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li>Найдите максимальную ошибку привязки по контрольным точкам. Запишите её с точность до второго знака после запятой в отчётный файл.</li>
@@ -632,15 +636,15 @@ function button_handler() {
 </blockquote></li>
 <li><p>Установите модуль <strong>Freehand raster georeferencer</strong>.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex05_Reference/Freehand1.png" alt="" />
-<p class="caption">Панель инструментов Freehand raster georeferencer</p>
+<div class="float">
+<img src="images/Ex05_Reference/Freehand1.png" alt="Панель инструментов Freehand raster georeferencer" />
+<div class="figcaption">Панель инструментов Freehand raster georeferencer</div>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Увеличьте изображение в окне QGIS таким образом, чтобы охват базовой карты, отображающейся в окне QGIS, примерно соответствовал охвату схемы избирательных округов.</p>
-<div class="figure">
-<img src="images/Ex05_Reference/Freehand2.png" alt="" />
-<p class="caption">Целевой охват перед началом интерактивной привязки</p>
+<div class="float">
+<img src="images/Ex05_Reference/Freehand2.png" alt="Целевой охват перед началом интерактивной привязки" />
+<div class="figcaption">Целевой охват перед началом интерактивной привязки</div>
 </div></li>
 <li><p>Нажмите кнопку «Add Raster for Interactive Georeferencing» <img src="images/Ex05_Reference/Freehand3.png" />. В открывшемся диалоговом окне с помощью кнопки «Browse…» укажите путь к файлу <code>20_okrugov_27-04-2020_13-32-09.png</code>, а затем нажмите «Add New». Полупрозрачное изображнение отобразится поверх базовой карты.</p>
 <p><img src="images/Ex05_Reference/Freehand4.png" alt="Привязываемое изображение, добавленное в основное окно карты" />.</p></li>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 8 Геометрические операции с векторными объектами | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-04-23" />
+<meta name="date" content="2023-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -365,20 +369,20 @@
 <ol style="list-style-type: decimal">
 <li><p>Создайте проект QGIS и сохраните его в своей рабочей директории.</p></li>
 <li><p>Добавьте в проект таблицу <code>q_deposit_polygon</code> из базы данных <code>LenObl.gpkg</code>.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/q_deposit_layer.png" alt="" />
-<p class="caption">Изображение слоя четвертичных отложений</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/q_deposit_layer.png" alt="Изображение слоя четвертичных отложений" />
+<div class="figcaption">Изображение слоя четвертичных отложений</div>
 </div></li>
 <li><p>Переименуйте слой в «Четвертичные отложения» и изучите таблицу атрибутов добавленного слоя.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/q_deposit_attribute_table.png" alt="" />
-<p class="caption">Таблица атрибутов набора данных о четвертичных отложениях</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/q_deposit_attribute_table.png" alt="Таблица атрибутов набора данных о четвертичных отложениях" />
+<div class="figcaption">Таблица атрибутов набора данных о четвертичных отложениях</div>
 </div>
 <p>Вы можете заметить, что каждый контур схемы четвертичных отложений содержит разнообразную информацию, включая индекс с исходной карты, характеристику механического состава грунта и (для некоторых контуров) генезис рельефа. Для решения задачи нам достаточно знать только механический состав грунта. Мы можем объединить контура, имеющие одинаковый механический состав грунта («стереть границы») между ними, с помощью процедуры слияния (объединения по признаку).</p></li>
 <li><p>Запустите инструмент слияния («Вектор» — «Геоообработка» — «Объединение по признаку…»).</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/dissolve_location.png" alt="" />
-<p class="caption">Расположение инструмента слияния в меню QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/dissolve_location.png" alt="Расположение инструмента слияния в меню QGIS" />
+<div class="figcaption">Расположение инструмента слияния в меню QGIS</div>
 </div></li>
 <li><p>Настройте параметры инструмента слияния следующим образом:</p>
 <ul>
@@ -387,17 +391,17 @@
 <li>Опцию <strong>Сохранять несовпадающие элементы раздельно</strong> оставьте выключенной</li>
 <li><strong>Объединённый слой:</strong> в выпадающем меню кнопки справа выберите вариант «Сохранить как GeoPackage…». Сохраните новый GeoPackage в вашу рабочую директорию под именем <code>Ex08_*Фамилия*</code>, где <em>Фамилия</em> — ваша фамилия. После указания имени GeoPackage появится всплывающее окно, где нужно будет указать имя созаваемой таблицы внутри нового GeoPackage. Введите имя <code>ground</code> и нажмите OK</li>
 </ul>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/dissolve_parameters.png" alt="" />
-<p class="caption">Параметры инструмента слияния</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/dissolve_parameters.png" alt="Параметры инструмента слияния" />
+<div class="figcaption">Параметры инструмента слияния</div>
 </div>
 <blockquote>
 <p>Примечание: сейчас мы фактически создаём новую базу данных, в которую будем записывать все результаты геоинформационного анализа, получаемые в ходе этого упражнения. В дальнейшем она будет часто упоминаться в упражнении под названием «созданная база данных».</p>
 </blockquote></li>
 <li><p>Запустите инструмент и дождитесь, когда результат работы будет добавлен в проект. Переименуйте новый слой в «Типы грунта».</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/dissolve_result.png" alt="" />
-<p class="caption">Результат слияния</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/dissolve_result.png" alt="Результат слияния" />
+<div class="figcaption">Результат слияния</div>
 </div></li>
 <li><p>Изобразите результат слияния способом качественного фона (символизация по уникальным значениям). Исходный слой четвертичных отложений отобразите при помощи тонкой обводки чёрного цвета без заливки. Расположите слой четвертичных отложений над слоем типов грунта и сделайте снимок экрана.</p></li>
 </ol>
@@ -412,30 +416,29 @@
 <h3><span class="header-section-number">8.3.1</span> Буферные зоны постоянной ширины<a href="geometry.html#geometry-buffer-constant" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>Добавьте в проект таблицы <code>hydrography_line</code> и <code>hydrography_polygon</code> из исходного набора данных. Переименуйте слои в «Водотоки» и «Водоёмы» соответственно. Измените стили слоёв, чтобы сделать изображение похожим на изображение гидрографической сети на общегеографических картах. Слои четвертичных отложений и грунтов пока отключите.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/hydrography.png" alt="" />
-<p class="caption">Гидрографическая сеть изучаемой территории</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/hydrography.png" alt="Гидрографическая сеть изучаемой территории" />
+<div class="figcaption">Гидрографическая сеть изучаемой территории</div>
 </div></li>
 <li><p>Постройте буферные зоны радиусом 50 м вокруг водоёмов. Для этого запустите инструмент построения буферных зон («Вектор» — «Геообработка» — «Буфер…»).</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/buffer_location.png" alt="" />
-<p class="caption">Расположение инструмента построения буферных зон в меню QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/buffer_location.png" alt="Расположение инструмента построения буферных зон в меню QGIS" />
+<div class="figcaption">Расположение инструмента построения буферных зон в меню QGIS</div>
 </div></li>
 <li><p>В окне инструмента введите следующие параметры:</p>
 <ul>
 <li><strong>Исходный слой:</strong> Водоёмы</li>
 <li><strong>Расстояние:</strong> 50 м</li>
-<li><strong>Результат буферизации</strong> сохраните в тот же GeoPackage, который вы создали на предыдущем шаге, под именем <code>hydrography_polygon_buffer_50m</code>.
-Для остальных параметров сохраните значения по умолчанию</li>
+<li><strong>Результат буферизации</strong> сохраните в тот же GeoPackage, который вы создали на предыдущем шаге, под именем <code>hydrography_polygon_buffer_50m</code>. Для остальных параметров сохраните значения по умолчанию</li>
 </ul>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/buffer_permanent_parameters.png" alt="" />
-<p class="caption">Параметры инструмента построения буферных зон</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/buffer_permanent_parameters.png" alt="Параметры инструмента построения буферных зон" />
+<div class="figcaption">Параметры инструмента построения буферных зон</div>
 </div></li>
 <li><p>Запустите инструмент и дождитесь, когда результат геообработки добавится в проект.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/buffer_constant_result.png" alt="" />
-<p class="caption">Результат построения буферных зон постоянной ширины</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/buffer_constant_result.png" alt="Результат построения буферных зон постоянной ширины" />
+<div class="figcaption">Результат построения буферных зон постоянной ширины</div>
 </div></li>
 </ol>
 </div>
@@ -444,17 +447,17 @@
 <p>Ширина водоохранной зоны для рек зависит от их протяжённости. Для рек протяжённостью до 10 км ширина составляет 50 м, от 10 до 50 км – 100 м, свыше 50 км — 200 м. Мы рассчитаем протяжённость каждой реки и запишем её в таблицу атрибутов, а затем используем калькулятор полей, чтобы задать для каждого объекта собственный размер буферной зоны.</p>
 <ol style="list-style-type: decimal">
 <li><p>Добавьте атрибуты геометрии в таблицу атрибутов слоя «Водотоки». Для этого используйте инструмент «Добавить атрибуты геометрии…» («Вектор» — «Обработка геометрии» — «Добавить атрибуты геометрии…»). Этот инструмент создаёт новый набор данных, дополняя таблицу атрибутов характеристиками геометрии объектов. Сохраните новый набор данных в созданный ранее GeoPackage под именем <code>hydrography_line</code>.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/geometry_location.png" alt="" />
-<p class="caption">Расположение инструмента добавления информации о геометрии в меню QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/geometry_location.png" alt="Расположение инструмента добавления информации о геометрии в меню QGIS" />
+<div class="figcaption">Расположение инструмента добавления информации о геометрии в меню QGIS</div>
 </div></li>
 <li><p>Когда результат обработки будет добавлен в проект QGIS, удалите «старый» слой водотоков, а «новый» переименуйте в «Водотоки» и настройте его символику.</p></li>
 <li><p>Откройте таблицу атрибутов слоя водотоков. Найдите поле length и определите, в каких единицах измеряется и в каких пределах изменяется длина водотоков.</p></li>
 <li><p>Теперь нам необходимо создать новое поле, в котором будет записан целевой радиус буферной зоны. Для этого мы воспользуемся калькулятором полей. Его можно вызвать комбинацией клавиш <code>Ctrl+I</code> или нажатием на кнопку <img src="images/Ex08_GeometricOperations/field_calculator_button.png" /> в панели инструментов или в таблице атрибутов.</p>
 <p>Калькулятор полей используется для вычисления новых значений атрибутов объектов на основе имеющихся пространственных и семантических характеристик. Его интерфейс аналогичен интерфейсу атрибутивного запроса.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/field_calculator_blank.png" alt="" />
-<p class="caption">Окно Калькулятора полей</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/field_calculator_blank.png" alt="Окно Калькулятора полей" />
+<div class="figcaption">Окно Калькулятора полей</div>
 </div></li>
 <li><p>В верхней части окна калькулятора полей задаётся целевое поле для записи вычисленных значений. Это может быть как новое поле, так и уже существующее поле. Если вам необходимо создать новое поле, то следует ввести его название и указать тип данных. Название поля должно быть записано латиницей, не включать пробелы и специальные символы, а также не должно начинаться с цифры. Поскольку вам предстоит рассчитать целевой радиус буферной зоны, назовите поле <code>buffer_radius</code>. Тип поля укажите самостоятельно.</p></li>
 <li><p>Основная часть окна калькулятора полей разделена на три формы. Левая форма служит непосредственно для ввода выражения. В центральной форме собраны все доступные функции, а также поля таблицы атрибутов. В правой форме отображается справка по функциям и вспомогательные формы для полей.</p>
@@ -470,20 +473,20 @@ END</code></pre>
 <p>Теперь будем заполнять выражение нужными значениями. Например, если длина водотока меньше 10 км (10 000 м), то радиус буферной зоны должен быть равен 50. Длина водотока записана в поле <code>length</code>, поэтому блок условия будет выглядеть так:</p>
 <p><code>WHEN "length" &lt;=10000 THEN 50</code></p>
 <p>Введите это условие, а затем все остальные необходимые условия по образцу. Если необходимо, вы также можете воспользоваться оператором ELSE, который обрабатывает все значения, не покрытые основным набором условий.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/field_calculator_filled.png" alt="" />
-<p class="caption">Окно Калькулятора полей после ввода необходимых условий</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/field_calculator_filled.png" alt="Окно Калькулятора полей после ввода необходимых условий" />
+<div class="figcaption">Окно Калькулятора полей после ввода необходимых условий</div>
 </div></li>
 <li><p>Нажмите ОК, чтобы выполнить расчёт. По окончании расчёта сохраните изменения в наборе и выключите режим редактирования. Посмотрите, что изменилось в таблице атрибутов.</p></li>
 <li><p>Теперь мы используем рассчитанные значения радиусов непосредственно для построения буферных зон. Запустите инструмент создания буферных зон и задайте слой водотоков в качестве исходного набора данных. Чтобы задать радиус поиска из поля, нажмите кнопку справа от поля «Расстояние» и выберите нужное поле в контекстном меню, как показано на рисунке ниже:</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/buffer_variable_parameters.png" alt="" />
-<p class="caption">Определение радиуса буфера на основе значения в поле таблицы атрибутов</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/buffer_variable_parameters.png" alt="Определение радиуса буфера на основе значения в поле таблицы атрибутов" />
+<div class="figcaption">Определение радиуса буфера на основе значения в поле таблицы атрибутов</div>
 </div></li>
 <li><p>Укажите, что выходные буферные зоны должны быть сохранены в созданный ранее GeoPackage под именем <code>hydrography_line_buffer_variable</code> и запустите расчёт буферных зон. Результат расчёта будет добавлен в проект.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/buffer_variable_result.png" alt="" />
-<p class="caption">Результат построения буферных зон переменной ширины</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/buffer_variable_result.png" alt="Результат построения буферных зон переменной ширины" />
+<div class="figcaption">Результат построения буферных зон переменной ширины</div>
 </div></li>
 </ol>
 </div>
@@ -499,13 +502,13 @@ END</code></pre>
 <p><strong>Вопрос №2</strong>: что такое буферная зона? Для каких типов геометрии может применяться построение буферных зон? Какой тип геометрии может иметь результат построения буферной зоны в QGIS?</p>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Объедините все построенные буферы в один набор пространственных данных. Для этого воспользуйтесь инструментом «Объединить векторные слои…» («Вектор» — «Управление данными»). Систему координат не задавайте, целевой слой назовите <code>buffer_merge</code>.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/merge_location.png" alt="" />
-<p class="caption">Расположение инструмента объединения векторных слоёв в QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/merge_location.png" alt="Расположение инструмента объединения векторных слоёв в QGIS" />
+<div class="figcaption">Расположение инструмента объединения векторных слоёв в QGIS</div>
 </div>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/merge_parameters.png" alt="" />
-<p class="caption">Параметры инструмента объединения векторных слоёв</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/merge_parameters.png" alt="Параметры инструмента объединения векторных слоёв" />
+<div class="figcaption">Параметры инструмента объединения векторных слоёв</div>
 </div></li>
 <li><p>Удалите буферные зоны отдельных объектов из проекта, сохраните только объединённый слой буферных зон. Переименуйте этот слой в «Буферные зоны». Изучите таблицу атрибутов полученного слоя.</p></li>
 </ol>
@@ -521,24 +524,24 @@ END</code></pre>
 <blockquote>
 <p>Примечание: если вы не помните, как сделать выборку объектов по значениям атрибутов, обратитесь к упражнению 7</p>
 </blockquote>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/selection_result.png" alt="" />
-<p class="caption">Результат выборки в слое кадастра</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/selection_result.png" alt="Результат выборки в слое кадастра" />
+<div class="figcaption">Результат выборки в слое кадастра</div>
 </div></li>
 <li><p>Сохраните выборку как новую таблицу пространственных данных. Для этого вызовите контекстное меню слоя «Кадастр» и найдите в нём опцию «Экспорт» — «Сохранить выбранные объекты как…»</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/save_selected_location.png" alt="" />
-<p class="caption">Опция сохранения выборки в отдельный слой в контекстном меню</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/save_selected_location.png" alt="Опция сохранения выборки в отдельный слой в контекстном меню" />
+<div class="figcaption">Опция сохранения выборки в отдельный слой в контекстном меню</div>
 </div></li>
 <li><p>В верхней части окна параметров сохранения укажите целевой формат (GeoPackage) и целевой файл (тот же файл, в который вы сохраняли все предыдущие результаты). В качестве имени слоя (таблицы) введите <code>settlements</code>.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/save_selected_parameters.png" alt="" />
-<p class="caption">Настройки параметров экспорта</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/save_selected_parameters.png" alt="Настройки параметров экспорта" />
+<div class="figcaption">Настройки параметров экспорта</div>
 </div></li>
 <li><p>После того, как новый слой будет добавлен в проект, переименуйте его в «Населённые пункты». Удалите слой «Кадастр» из проекта.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/new_layer.png" alt="" />
-<p class="caption">Слой населённых пунктов в окне проекта QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/new_layer.png" alt="Слой населённых пунктов в окне проекта QGIS" />
+<div class="figcaption">Слой населённых пунктов в окне проекта QGIS</div>
 </div>
 <blockquote>
 <p>Примечание: фактически ваш новый слой содержит информацию не только о землях населённых пунктов, но мелкими контурами в рамках задания можно пренебречь.</p>
@@ -554,34 +557,34 @@ END</code></pre>
 <li><p>Включите слой «Типы грунта»</p></li>
 <li><p>Выберите в слое «Типы грунта» контура, механический состав которых представлен суглинками и глинами.</p></li>
 <li><p>Запустите инструмент «Разность…» из группы инструментов геообработки.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/difference_location.png" alt="" />
-<p class="caption">Расположение инструмента вычитания в меню QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/difference_location.png" alt="Расположение инструмента вычитания в меню QGIS" />
+<div class="figcaption">Расположение инструмента вычитания в меню QGIS</div>
 </div></li>
 <li><p>В качестве исходного слоя («уменьшаемого») выберите «Типы грунта». Обязательно включите опцию «Только выделенные объекты». В качестве оверлейного слоя («вычитаемого») задайте «Населённые пункты». Проверьте, что результат будет сохранён во временный слой.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/difference_parameters.png" alt="" />
-<p class="caption">Параметры инструмента разности</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/difference_parameters.png" alt="Параметры инструмента разности" />
+<div class="figcaption">Параметры инструмента разности</div>
 </div>
 <p><strong>Важно:</strong> на этом шаге инструмент может не сработать из-за некорректной геометрии одного из входных объектов. Если инструмент выдаст сообщение об ошибке, закройте его и в основном окне QGIS откройте окно параметров. На вкладке «Анализ» в разделе «Общие» найдите опцию «Фильтрация ошибочных объектов» и выберите параметр «Пропустить (игнорировать) объекты с ошибочными геометриями». После выполнения упражнения верните изначальное значение этой опции.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/Troubleshooting.png" alt="" />
-<p class="caption">Параметр игнорирования ошибок геометрии</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/Troubleshooting.png" alt="Параметр игнорирования ошибок геометрии" />
+<div class="figcaption">Параметр игнорирования ошибок геометрии</div>
 </div></li>
 <li><p>После завершения работы инструмента в проект будет добавлен слой «Разность». Изучите геометрию объектов добавленного слоя, после этого отключите все остальные слои.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/difference1.png" alt="" />
-<p class="caption">Результат вычитания слоёв</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/difference1.png" alt="Результат вычитания слоёв" />
+<div class="figcaption">Результат вычитания слоёв</div>
 </div></li>
 <li><p>Теперь вычтите из полученной разности слой буферных зон. Новый слой разности тоже будет иметь название «Разность». Не перепутайте эти слои!</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/difference2.png" alt="" />
-<p class="caption">Результат второго вычитания слоёв</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/difference2.png" alt="Результат второго вычитания слоёв" />
+<div class="figcaption">Результат второго вычитания слоёв</div>
 </div></li>
 <li><p>Обратите внимание, что все объекты разностей наследуют геометрию от первого оверлейного слоя («уменьшаемого»). В нашем случае это приводит к тому, что в результирующем слое содержится небольшое число мультиполигонов (всего три). Мы бы хотели разделить эти объекты на простые полигоны. Для этого используется инструмент «Разбить составную геометрию».</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/multipart_to_singlepart_location.png" alt="" />
-<p class="caption">Расположение инструмента преобразования мультигеометрии в QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/multipart_to_singlepart_location.png" alt="Расположение инструмента преобразования мультигеометрии в QGIS" />
+<div class="figcaption">Расположение инструмента преобразования мультигеометрии в QGIS</div>
 </div></li>
 <li><p>Преобразуйте мультиполигоны в обычные полигоны с помощью инструмента «Разбить составную геометрию». Результат сохраните в ваш GeoPackage под именем <code>available_area</code>. Когда новый слой будет добавлен в проект, переименуйте его в «Доступные территории». Отключите остальные слои и сделайте снимок экрана.</p></li>
 </ol>
@@ -594,20 +597,20 @@ END</code></pre>
 <p>На заключительном шаге упражнения мы рассчитаем средние значения высот в пределах полученных контуров. Для этого мы воспользуемся фрагментом глобальной цифровой модели рельефа SRTM (исходное разрешение 3″) и инструментом расчёта зональной статистики</p>
 <ol style="list-style-type: decimal">
 <li><p>Добавьте в проект фрагмент цифровой модели рельефа (файл <code>srtm_fragment_project_crop.tif</code>). Переименуйте новый слой в «Цифровая модель рельефа».</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/dem_add.png" alt="" />
-<p class="caption">ЦМР добавлена в проект</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/dem_add.png" alt="ЦМР добавлена в проект" />
+<div class="figcaption">ЦМР добавлена в проект</div>
 </div></li>
 <li><p>Включите панель инструментов анализа, если она отключена. Это можно сделать с помощью кнопки <img src="images/Ex08_GeometricOperations/instruments_button.png" /> или сочетания клавиш <code>Ctrl+Alt+T</code>.</p></li>
 <li><p>В панели инструментов анализа с помощью строки поиска найдите инструмент «Зональная статистика»</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/zonal_statistics_location.png" alt="" />
-<p class="caption">Нахождение инструмента «Зональная статистика» в QGIS</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/zonal_statistics_location.png" alt="Нахождение инструмента «Зональная статистика» в QGIS" />
+<div class="figcaption">Нахождение инструмента «Зональная статистика» в QGIS</div>
 </div></li>
 <li><p>Задайте в качестве исходного слоя «Доступные территории», а в качестве растрового слоя — цифровую модель рельефа. Введите префикс поля вывода <code>elevation_</code> (обратите внимание на нижнее подчёркивание). В списке статистик для расчёта укажите среднее, медиану, минимум, максимум и диапазон. Результат сохраните в ваш GeoPackage под именем <code>available_area_zonal_statistics_elevation</code>.</p>
-<div class="figure">
-<img src="images/Ex08_GeometricOperations/zonal_stat_parameters.png" alt="" />
-<p class="caption">Настройки инструмента «Зональная статистика»</p>
+<div class="float">
+<img src="images/Ex08_GeometricOperations/zonal_stat_parameters.png" alt="Настройки инструмента «Зональная статистика»" />
+<div class="figcaption">Настройки инструмента «Зональная статистика»</div>
 </div></li>
 <li><p>Когда результат обработки будет добавлен в проект, переименуйте слой в «Доступные территории (зональная статистика)». Изучите таблицу атрибутов этого слоя.</p></li>
 <li><p>Составьте схему территорий, доступных для строительства. Используйте слои, которые сочтёте необходимыми. Подпишите средние высоты в пределах крупных участков.</p></li>

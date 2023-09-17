@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 14 Адресное геокодирование и ядерная оценка плотности | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 14 Адресное геокодирование и ядерная оценка плотности | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 14 Адресное геокодирование и ядерная оценка плотности | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-04-23" />
+<meta name="date" content="2023-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -389,35 +393,35 @@
 <p>Прежде чем начинать «пакетное» геокодирование всего списка, мы возьмём несколько отдельных адресов из него и проверим, насколько хорошо работает сервис распознавания адресов Nominatim. Для этого мы воспользуемся страницей интерфейса отладки Nominatim.</p>
 <ol style="list-style-type: decimal">
 <li><p>Откройте страницу интерфейса отладки Nominatim по <a href="https://nominatim.openstreetmap.org/ui/search.html">этой ссылке</a></p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim01.png" alt="" />
-<p class="caption">Интерфейс отладки Nominatim. Используется для тестирования распознавания отдельных адресов</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim01.png" alt="Интерфейс отладки Nominatim. Используется для тестирования распознавания отдельных адресов" />
+<div class="figcaption">Интерфейс отладки Nominatim. Используется для тестирования распознавания отдельных адресов</div>
 </div></li>
 <li><p>Скопируйте любой адрес из вашей таблицы и вставьте его в строку поиска (<em>Search</em>). Нажмите кнопку <strong>Search</strong>, чтобы запустить поиск</p>
 <p>Дальнейшее поведение системы зависит от того, насколько успешно парсер смог «прочитать» адрес. Если вся строка адреса распознана корректно, то в окне карты будет отображён объект, соответствующий найденному адресу.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim02.png" alt="" />
-<p class="caption">Пример успешного геокодирования</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim02.png" alt="Пример успешного геокодирования" />
+<div class="figcaption">Пример успешного геокодирования</div>
 </div>
 <p>Если с распознаванием адресов возникли какие-либо трудности, то их можно отследить по выдаче. На рисунке ниже в адресе <code>Рязанская область, Рязань, улица Костычева, 8к1</code> распознал всё, кроме номера дома, и выдал в качестве результата объект, соответствующий улице.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim03.png" alt="" />
-<p class="caption">Пример сомнительного результата</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim03.png" alt="Пример сомнительного результата" />
+<div class="figcaption">Пример сомнительного результата</div>
 </div>
 <p>В этом примере достаточно поставить пробел между номером дома и номером корпуса (<code>8 к1</code>), и Nominatim отработает корректно.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim04.png" alt="" />
-<p class="caption">Пример результата после исправления входной строки</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim04.png" alt="Пример результата после исправления входной строки" />
+<div class="figcaption">Пример результата после исправления входной строки</div>
 </div>
 <p>В худшем случае геокодер вообще не сможет определить адрес. В примере ниже (<code>Рязанская область, Рязань, улица Надежды Крупской, 11</code>) геокодер «сломался» уже на названии улицы.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim05.png" alt="" />
-<p class="caption">Адрес не распознан</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim05.png" alt="Адрес не распознан" />
+<div class="figcaption">Адрес не распознан</div>
 </div>
 <p>В этом примере проблема кроется в названии улицы. В Рязани действительно есть улица, названная именем <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%BF%D1%81%D0%BA%D0%B0%D1%8F,_%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0">Надежды Крупской</a>, но в OpenStreetMap она называется <code>улица Крупской</code>. С точки зрения Nominatim, <code>улица Надежды Крупской</code> и <code>улица Крупской</code> — это разные улицы. Если изменить запрос на <code>Рязанская область, Рязань, улица Крупской, 11</code>, Nominatim выдаст корректный результат.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Nominatim06.png" alt="" />
-<p class="caption">После изменения названия улицы адрес распознан корректно</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Nominatim06.png" alt="После изменения названия улицы адрес распознан корректно" />
+<div class="figcaption">После изменения названия улицы адрес распознан корректно</div>
 </div></li>
 <li><p>Подберите три аналогичных примера из вашего набора исходных данных и сделайте скриншоты выдачи сервиса отладки Nominatim.</p></li>
 </ol>
@@ -434,26 +438,26 @@
 <li><p>Создайте проект QGIS и сохраните его в своей рабочей директории</p></li>
 <li><p>Используя функционал модуля QuickMapServices, подключите к проекту QGIS базовую карту OpenStreetMap.</p></li>
 <li><p>Установите модуль Spreadsheet Layers. Модуль доступен в репозитории QGIS, поэтому достаточно ввести его имя в строке поиска.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Spreadsheet01.png" alt="" />
-<p class="caption">Модуль Spreadsheet Layers в окне управления модулями QGIS</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Spreadsheet01.png" alt="Модуль Spreadsheet Layers в окне управления модулями QGIS" />
+<div class="figcaption">Модуль Spreadsheet Layers в окне управления модулями QGIS</div>
 </div></li>
 <li><p>После установки модуля найдите опцию импорта табличных данных: меню «Слой» — «Добавить слой» — «Add Spreadsheet Layer».</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Spreadsheet02.png" alt="" />
-<p class="caption">Модуль Spreadsheet Layers в окне управления модулями QGIS</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Spreadsheet02.png" alt="Модуль Spreadsheet Layers в окне управления модулями QGIS" />
+<div class="figcaption">Модуль Spreadsheet Layers в окне управления модулями QGIS</div>
 </div></li>
 <li><p>В открывшемся окне укажите путь к файлу Excel и страницу, с которой требуется загрузить данные. Выходной слой назовите по шаблону <code>offers-%Фамилия%</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Spreadsheet03.png" alt="" />
-<p class="caption">Инструмент загрузки табличных данных в QGIS</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Spreadsheet03.png" alt="Инструмент загрузки табличных данных в QGIS" />
+<div class="figcaption">Инструмент загрузки табличных данных в QGIS</div>
 </div>
 <p>При необходимости на этом этапе можно изменить типы данных для столбцов, но в нашем упражнении такой необходимости нет.</p></li>
 <li><p>Нажмите OK, чтобы добавить слой к проекту QGIS.</p></li>
 <li><p>Откройте таблицу атрибутов слоя и убедитесь, что данные из таблицы Excel отображаются корректно.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/Spreadsheet04.png" alt="" />
-<p class="caption">Таблица атрибутов загруженного слоя</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/Spreadsheet04.png" alt="Таблица атрибутов загруженного слоя" />
+<div class="figcaption">Таблица атрибутов загруженного слоя</div>
 </div></li>
 </ol>
 </div>
@@ -464,26 +468,26 @@
 <p>Для решения задача пакетного геокодирования на базе QGIS и Nominatim разработано несколько модулей. Мы воспользуемся модулем <a href="https://github.com/NationalSecurityAgency/qgis-bulk-nominatim">Bulk Nominatim QGIS Plugin</a>. В отличие от модуля Spreadsheet Layers, этот модуль не содержится в репозитории QGIS, поэтому его придётся установить из ZIP-архива.</p>
 <ol style="list-style-type: decimal">
 <li><p>Перейдите на <a href="https://github.com/NationalSecurityAgency/qgis-bulk-nominatim">страницу модуля Bulk Nominatim QGIS Plugin на GitHub</a>:</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/bulk-nominatim01.png" alt="" />
-<p class="caption">Bulk Nominatim на GitHub</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/bulk-nominatim01.png" alt="Bulk Nominatim на GitHub" />
+<div class="figcaption">Bulk Nominatim на GitHub</div>
 </div></li>
 <li><p>Нажмите на кнопку «Code» и в открывшемся выпадающем списке выберите «Download ZIP».</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/bulk-nominatim02.png" alt="" />
-<p class="caption">Загрузка архива</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/bulk-nominatim02.png" alt="Загрузка архива" />
+<div class="figcaption">Загрузка архива</div>
 </div></li>
 <li><p>Перенесите загруженный ZIP-архив в вашу рабочую директорию.</p></li>
 <li><p>Вернитесь в QGIS и установите модуль из ZIP-файла</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/bulk-nominatim03.png" alt="" />
-<p class="caption">Установка модуля из ZIP-файла</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/bulk-nominatim03.png" alt="Установка модуля из ZIP-файла" />
+<div class="figcaption">Установка модуля из ZIP-файла</div>
 </div></li>
 </ol>
 <p>После установки модуля его инструменты будут доступны через меню «Модули» — «Nominatim GeoCoding» или при помощи кнопок <img src="images/Ex08_Geocoding/bulk-nominatim04.png" /> на панели инструменов.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/bulk-nominatim05.png" alt="" />
-<p class="caption">Инструменты модуля Bulk GeoCoding</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/bulk-nominatim05.png" alt="Инструменты модуля Bulk GeoCoding" />
+<div class="figcaption">Инструменты модуля Bulk GeoCoding</div>
 </div>
 </div>
 <div id="geocoding-batch" class="section level2 hasAnchor" number="14.6">
@@ -492,41 +496,41 @@
 <p>Теперь, когда вы установили инструмент для пакетного геокодирования, можно попытаться выполнить распознавание адресов при помощи Nominatim.</p>
 <ol style="list-style-type: decimal">
 <li><p>Откройте интерфейс настройки модуля Bulk Geocoding («Модули» — «Nominatim GeoCoding» — «Settings»). Установите максимальное число объектов для геокодирования (<em>Maximum Features to Geocode</em>) равным <span class="math inline">\(200\)</span>.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding00.png" alt="" />
-<p class="caption">Настройки модуля Bulk GeoCoding</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding00.png" alt="Настройки модуля Bulk GeoCoding" />
+<div class="figcaption">Настройки модуля Bulk GeoCoding</div>
 </div></li>
 <li><p>Запустите инструмент Bulk GeoCoding. В открывшемся окне укажите исходный слой и поле, из которого будут взяты адреса.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding01.png" alt="" />
-<p class="caption">Настройки пакетного геокодирования</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding01.png" alt="Настройки пакетного геокодирования" />
+<div class="figcaption">Настройки пакетного геокодирования</div>
 </div></li>
 <li><p>Убедитесь, что вы подключены к Интернету.</p></li>
 <li><p>Нажмите кнопку OK, чтобы запустить процесс пакетного геокодирования. Не закрывайте окно инструмента.</p>
 <p>Результат геокодирования будет представлен в виде временного точечного слоя.</p></li>
 <li><p>Когда инструмент завершит работу, обратите внимание на выдачу в поле Results. В этом поле отображаются адреса, которые не удалось распознать. Скопируйте эти адреса в отдельный текстовый документ и сохраните этот документ в вашу рабочую директорию.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding02.png" alt="" />
-<p class="caption">Нераспознанные адреса</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding02.png" alt="Нераспознанные адреса" />
+<div class="figcaption">Нераспознанные адреса</div>
 </div></li>
 <li><p>Закройте окно инструмента и изучите распределение точек, которые были созданы в ходе геокодирования.</p>
 <p>На рисунке ниже все точки адресов, за исключением двух, группируются в северо-западной части карты. Две отлетающих точки попали в другие населённые пункты.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding03.png" alt="" />
-<p class="caption">Неправильно распознанные адреса: несколько точек «вылетело» далеко за пределы целевой территории</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding03.png" alt="Неправильно распознанные адреса: несколько точек «вылетело» далеко за пределы целевой территории" />
+<div class="figcaption">Неправильно распознанные адреса: несколько точек «вылетело» далеко за пределы целевой территории</div>
 </div>
 <p>Но и среди точек, попавших в правильный населённый пункт, есть ситуации некорректного и неточного распознавания. При правильном распознавании точка устанавливается поверх здания, имеющего соответствующий адрес. Если точка располагается поверх линейного объекта, как на рисунке ниже, это тоже следует считать ошибкой: распознано название улицы, но не распознан номер дома.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding04.png" alt="" />
-<p class="caption">Неправильно распознанные адреса: точки установлены поверх улиц</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding04.png" alt="Неправильно распознанные адреса: точки установлены поверх улиц" />
+<div class="figcaption">Неправильно распознанные адреса: точки установлены поверх улиц</div>
 </div></li>
 <li><p>Сделайте скриншот окна QGIS после первой попытки геокодирования. Покажите полный охват точечного слоя.</p>
 <p><kbd><strong>Скриншот 1:</strong> Результат геокодирования исходной таблицы адресов</kbd></p>
 <p>На следующих шагах мы постараемся систематизировать ситуации, которые приводят к некорректным распознаваниям, и внести правки в соответствующие записи. Строго говоря, правки можно сделать непосредственно в Excel, но, поскольку одной из наших задач является освоение геоинформационного ПО, мы воспользуемся возможностями QGIS.</p></li>
 <li><p>Сохраните слой под именем <code>offers</code> (вашу таблицу с адресами) в формат GeoPackage. Для этого в контекстном меню слоя выберите «Экспорт» — «Сохранить объекты как…». В открывшемся окне укажите имя выходного файла (<code>geocoding_%Фамилия%</code>) и имя слоя (<code>input_table_%Фамилия%</code>). В разделе «Геометрия» обязательно установите тип «Без геометрии». Убедитесь, что опция «Добавить слой в проект» включена.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/save_table.png" alt="" />
-<p class="caption">Сохранение таблицы</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/save_table.png" alt="Сохранение таблицы" />
+<div class="figcaption">Сохранение таблицы</div>
 </div></li>
 <li><p>После добавления слоя удалите из проекта старую таблицу, а новый слой переименуйте, убрав из названия имя выходного файла.</p></li>
 <li><p>Изучите списки адресов, которые не были геокодированы или были кодированы с ошибками. Определите возможные причины ошибок.</p>
@@ -549,9 +553,9 @@
 <p>Подробное изучение операторов и синтаксиса регулярных выражений выходит за рамки нашего курса.</p></li>
 <li><p>После внесения необходимых правок в поле «Адрес» удалите из списка слоёв предыдущий результат геокодирования, а затем выполните геокодирование повторно.</p></li>
 <li><p>Изучите новый результат геокодирования. Если из 200 имеющихся адресов корректно распознано менее 150, повторите шаги 11–12. Добейтесь корректного позициронирования по крайней мере 150 адресов.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/coding05.png" alt="" />
-<p class="caption">Сохранение таблицы</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/coding05.png" alt="Сохранение таблицы" />
+<div class="figcaption">Сохранение таблицы</div>
 </div></li>
 <li><p>После получения пригодного результата перепроецируйте его в подходящую систему координат («Вектор» — «Управление данными» — «Перепроецировать слой…») и сохраните в тот же GeoPackage, где лежит исходная таблица. Назовите его <code>points</code>.</p></li>
 <li><p>Удалите временный слой с результатом распознавания из таблицы слоёв</p></li>
@@ -568,9 +572,9 @@
 <p>Примечание: результат ядерной оценки плотности зачастую называют «тепловой картой» или «теплокартой», поскольку при удачно подобранных графических средствах области высокой концентрации явления выглядят «яркими», «горячими», а области низкой концентрации — «тёмными», «холодными». Несмотря на широкое распространение этих названий, мы не рекомендуем пользоваться ими в географических исследованиях, чтобы избежать путаницы с картами климатических и метеорологических характеристик, где «тепло» и «холодно» используются в прямом смысле.</p>
 </blockquote>
 <p>Для выполнения ядерной оценки плотности в QGIS имеется инструмент <strong>Тепловая карта (оценка плотности ядер)</strong>. Его можно найти в панели инструментов анализа, в разделе «Интерполяция»</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/kde00.png" alt="" />
-<p class="caption">Инструмент ядерной оценки плотности в QGIS</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/kde00.png" alt="Инструмент ядерной оценки плотности в QGIS" />
+<div class="figcaption">Инструмент ядерной оценки плотности в QGIS</div>
 </div>
 <ol style="list-style-type: decimal">
 <li><p>Запустите инструмент ядерной оценки плотности. В качестве исходного слоя задайте геокодированные точки</p></li>
@@ -578,27 +582,27 @@
 <li><p>Если с единицами измерения всё в порядке, установите радиус равным 250 м. Это охват области, на которую будет «распределяться» плотность точек.</p></li>
 <li><p>Установите размер пиксела по X и по Y равным 5 м. Этого вполне достаточно для аппроксимации.</p></li>
 <li><p>Укажите, что результирующий слой (<em>Heatmap</em>) нужно сохранить в вашу рабочую директорию под именем <code>heatmap_%Фамилия%.tif</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/kde01.png" alt="" />
-<p class="caption">Настройки ядерной оценки плотности</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/kde01.png" alt="Настройки ядерной оценки плотности" />
+<div class="figcaption">Настройки ядерной оценки плотности</div>
 </div></li>
 <li><p>Запустите инструмент ядерной оценки плотности и дождитесь, пока результат оценки будет добавлен к карте. После этого закройте инструмент ядерной оценки плотности.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/kde02.png" alt="" />
-<p class="caption">Результат ядерной оценки плотности</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/kde02.png" alt="Результат ядерной оценки плотности" />
+<div class="figcaption">Результат ядерной оценки плотности</div>
 </div></li>
 <li><p>Поместите слой исходных точек над слоем ядерной оценки плотности.</p></li>
 <li><p>Откройте свойства слоя ядерной оценки плотности на вкладке «Стиль». Измените цветовую схему на «Одноканальное псевдоцветное». Округлите максимальное отображаемое значение вверх до ближайшего целого числа, кратного 5. Измените тип интерполяции на «Линейную», задайте точность подписи равной 0, режим классификации — «Равные интервалы». Установите число интервалов, равное или пропорциональное максимальному значению.</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/kde_symbology_01.png" alt="" />
-<p class="caption">Результат ядерной оценки плотности</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/kde_symbology_01.png" alt="Результат ядерной оценки плотности" />
+<div class="figcaption">Результат ядерной оценки плотности</div>
 </div></li>
 <li><p>Нажмите правой кнопкой на изображение шкалы (градиента) и активируйте опцию «Инвертировать градиент».</p></li>
 <li><p>Перейдите на вкладку «Прозрачность» и установите прозрачность слоя равной 50 %.</p>
 <p>В результате применения описанных настроек вы получите изображение ядерной оценки, аналогичное представленному ниже:</p>
-<div class="figure">
-<img src="images/Ex08_Geocoding/kde_symbology_02.png" alt="" />
-<p class="caption">Результат ядерной оценки плотности</p>
+<div class="float">
+<img src="images/Ex08_Geocoding/kde_symbology_02.png" alt="Результат ядерной оценки плотности" />
+<div class="figcaption">Результат ядерной оценки плотности</div>
 </div></li>
 <li><p>Сделайте снимок экрана.</p></li>
 </ol>

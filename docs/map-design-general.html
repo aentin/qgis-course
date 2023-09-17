@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 1 Создание общегеографической карты | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 1 Создание общегеографической карты | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 1 Создание общегеографической карты | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2023-04-23" />
+<meta name="date" content="2023-09-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -360,28 +364,28 @@
 <ol style="list-style-type: decimal">
 <li><p>Скачайте архив с исходными данными для упражнения и распакуйте его в свою рабочую директорию. В вашей рабочей директории должна появиться папка <strong>Ex01</strong></p></li>
 <li><p>Запустите <strong>QGIS</strong>. Для запуска воспользуйтесь иконкой с названием <strong><code>QGIS Desktop ...</code></strong>, где <code>...</code> — номер версии QGIS, установленной на вашем компьютере.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/qgis_loading.png" alt="" />
-<p class="caption">Окно загрузки QGIS</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/qgis_loading.png" alt="Окно загрузки QGIS" />
+<div class="figcaption">Окно загрузки QGIS</div>
 </div></li>
 <li><p>В открывшемся окне QGIS нажмите кнопку <strong>Создать новый проект</strong> <img src="images/Ex01_MapGeneral/new_project_button.png" />, чтобы создать новый проект.</p></li>
 <li><p>Сохраните проект QGIS в папку Ex01, где лежат материалы к упражнению. Для этого нажмите иконку сохранения <img src="images/Ex01_MapGeneral/save_icon.png" />, в открывшемся окне проводника перейдите в папку Ex01 и введите название вашего проекта QGIS по шаблону: <code>&lt;Ex01_%Фамилия%&gt;</code>, где <code>%Фамилия%</code> — ваша фамилия латинскими буквами.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/save_project_path.png" alt="" />
-<p class="caption">Окно проводника с целевой директорией и именем проекта</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/save_project_path.png" alt="Окно проводника с целевой директорией и именем проекта" />
+<div class="figcaption">Окно проводника с целевой директорией и именем проекта</div>
 </div>
 <p>Окно QGIS должно принять вид, аналогичный показанному на изображении ниже</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/new_project.png" alt="" />
-<p class="caption">Окно QGIS после создания нового проекта</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/new_project.png" alt="Окно QGIS после создания нового проекта" />
+<div class="figcaption">Окно QGIS после создания нового проекта</div>
 </div>
 <blockquote>
 <p>Ряд действий в QGIS можно выполнить с помощью горячих клавиш. Так, для создания нового проекта можно нажать <code>Ctrl+N</code>, а для сохранения проекта — <code>Ctrl+S</code>. Сведения о доступных горячих главишах отображаются во всплывающих подсказках при наведении курсора на иконку.</p>
 </blockquote></li>
 <li><p>Найдите в рабочем окне QGIS панель браузера и разверните в нём домашний каталог проекта</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/browser_panel.png" alt="" />
-<p class="caption">Панель браузера в окне QGIS</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/browser_panel.png" alt="Панель браузера в окне QGIS" />
+<div class="figcaption">Панель браузера в окне QGIS</div>
 </div>
 <blockquote>
 <p>Домашний каталог проекта — это папка (каталог, директория), где сохранён проект, в котором вы работаете в настоящий момент.</p>
@@ -395,9 +399,9 @@
 &gt; Замечание 2: файл `30n030e_20101117_gmted_mea300.tif` является фрагментом («тайлом») глобальной цифровой модели рельефа (ЦМР) [GMTED2010](https://www.usgs.gov/land-resources/eros/coastal-changes-and-impacts/gmted2010). Этот источник часто используется для геоинформационного анализа и картографирования. Загрузить тайлы GMTED2010 можно через сервис [EarthExplorer](https://earthexplorer.usgs.gov/) геологической службы США.</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li><p>Дважды щёлкните левой кнопкой мыши на название файла <code>30n030e_20101117_gmted_mea300.tif</code> в окне браузера. В панель слоёв (по умолчанию она находится слева) добавится слой с названием <code>30n030e_20101117_gmted_mea300</code>.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen1.png" alt="" />
-<p class="caption">Окно QGIS после добавления нового растрового слоя</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen1.png" alt="Окно QGIS после добавления нового растрового слоя" />
+<div class="figcaption">Окно QGIS после добавления нового растрового слоя</div>
 </div></li>
 <li><p>Сохраните проект и сделайте снимок экрана.</p></li>
 </ol>
@@ -410,9 +414,9 @@
 <h2><span class="header-section-number">1.3</span> Настройка системы координат<a href="map-design-general.html#map-design-general-projection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="map-design-general.html#map-design-general">В начало упражнения ⇡</a></p>
 <p>В правом нижнем углу карты вы видите надпись <img src="images/Ex01_MapGeneral/pic02.png" alt="EPSG:4326" />. Нажмите на эту надпись, чтобы открыть интерфейс выбора системы координат проекта.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/Properties_CoordinateSystem.png" alt="" />
-<p class="caption">Свойства проекта: системы координат</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/Properties_CoordinateSystem.png" alt="Свойства проекта: системы координат" />
+<div class="figcaption">Свойства проекта: системы координат</div>
 </div>
 <p>В открывшемся окне вы видите более подробную информацию об используемой системе координат. Код <code>EPSG:4326</code> соответствует системе географических координат <strong>WGS 84</strong>. Термин «географическая система координат» (<em>geographic coordinate systems</em>) в ГИС означает, что координаты объектов и линейные параметры растров хранятся в виде широты и долготы. Альтернативный подход — проецированные системы координат (<em>projected coordinate systems</em>), где плановые координаты измеряются в метрических единицах.</p>
 <p>Система координат проекта была импортирована из первого (в нашем случае — пока единственного) загруженного источника пространственных данных. Система координат WGS 84 обычно не используется для картографирования, поэтому мы изменим систему координат проекта.</p>
@@ -432,9 +436,9 @@
 <li><p>В QGIS откройте меню <strong>Настройки</strong> — <strong>Пользовательские проекции…</strong></p></li>
 <li><p>Нажмите кнопку <strong>Добавить систему координат</strong> <img src="images/Ex01_MapGeneral/plus.png" /></p></li>
 <li><p>В полях для ввода ниже введите название проекции: <code>Azimuthal Equidistant (Caucasus)</code>, в поле <em>Формат</em> выберите <code>Proj</code>, в поле <em>Параметры</em> вставьте скопированную строку PROJ.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/NewCRS.png" alt="" />
-<p class="caption">Определение новой системы координат</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/NewCRS.png" alt="Определение новой системы координат" />
+<div class="figcaption">Определение новой системы координат</div>
 </div>
 <blockquote>
 <p>Замечание: формат PROJ помечен в QGIS как «Устарело, не рекомендуется», но тем не менее мы используем его в этом упражнении, потому что использование более нового и совершенного формата <a href="https://docs.geotools.org/stable/javadocs/org/opengis/referencing/doc-files/WKT.html">WKT</a> может привести к ошибкам QGIS на следующих шагах.</p>
@@ -444,14 +448,14 @@
 <p>Вы успешно добавили новую систему координат в пользовательский список. Теперь нужно применить её к проекту.</p></li>
 <li><p>Откройте интерфейс выбора системы координат. Это можно сделать нажатием на элемент в правом нижнем углу, или через меню <strong>Проект</strong> — <strong>Свойства…</strong> (вкладка <strong>Система координат</strong>).</p></li>
 <li><p>В открывшемся меню найдите в списке свою проекцию (для этого можно использовать поле “Фильтр” вверху окна), выберите её и нажмите <strong>ОК</strong>.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/NewCRS_window.png" alt="" />
-<p class="caption">Новая система координат в окне параметров проекта</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/NewCRS_window.png" alt="Новая система координат в окне параметров проекта" />
+<div class="figcaption">Новая система координат в окне параметров проекта</div>
 </div></li>
 <li><p>Если все сделано верно, изображение ЦМР должно приобрести форму сфероидической трапеции. Сделайте снимок экрана и вставьте его в отчётный файл.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen2.png" alt="" />
-<p class="caption">Проект с изменённой системой координат</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen2.png" alt="Проект с изменённой системой координат" />
+<div class="figcaption">Проект с изменённой системой координат</div>
 </div></li>
 <li><p>Сохраните проект и сделайте снимок экрана</p></li>
 </ol>
@@ -462,9 +466,9 @@
 <h2><span class="header-section-number">1.4</span> Навигация по карте<a href="map-design-general.html#map-design-general-navigation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="map-design-general.html#map-design-general">В начало упражнения ⇡</a></p>
 <p>Чтобы иметь возможность рассмотреть территорию картографирования более детально, потребуется увеличить масштаб и переместить изображение. Изучите функциональные возможности инструментов навигациии, которые расположены на панели инструментов <strong>Map Navigation</strong> (если панель отсутствует, щелкните на пустом поле среди панелей инструментов, и активируйте соответствующий пункт в меню):</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/NavigationPanel.png" alt="" />
-<p class="caption">Инструменты перемещения по карте</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/NavigationPanel.png" alt="Инструменты перемещения по карте" />
+<div class="figcaption">Инструменты перемещения по карте</div>
 </div>
 <p>Некоторые инструменты навигации могут быть задействованы независимо. Например, масштабирование выполняется прокруткой колеса мыши, а перемещение по карте — движением мыши с зажатой средней кнопкой.</p>
 <blockquote>
@@ -472,9 +476,9 @@
 </blockquote>
 <p>После того как инструменты навигации станут понятны, установите масштаб карты равным <span class="math inline">\(1:5~000~000\)</span>. Это можно сделать в элементе <em>Масштаб</em> в нижней панели QGIS. При этом достаточно ввести только знаменатель масштаба, выделив его двойным кликом и заменив на нужное значение без пробела (<code>5000000</code>).</p>
 <p>После этого переместите изображение таким образом, чтобы Кавказские горы занимали картографическое изображение целиком по ширине.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen_qgis_5M.png" alt="" />
-<p class="caption">Охват данных для продолжения работы над картой</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen_qgis_5M.png" alt="Охват данных для продолжения работы над картой" />
+<div class="figcaption">Охват данных для продолжения работы над картой</div>
 </div>
 </div>
 <div id="map-design-general-relief" class="section level2 hasAnchor" number="1.5">
@@ -485,29 +489,29 @@
 <li><p>Откройте свойства слоя <code>30n030e_20101117_gmted_mea300</code> и перейдите на вкладку <strong>Стиль</strong>.</p></li>
 <li><p>Измените тип представления с <em>Одноканальное серое</em> на <em>Одноканальное псевдоцветное</em>.</p></li>
 <li><p>Установите минимальное значение равным <em>0</em>, а максимальное значение — <em>4000</em>.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style1.png" alt="" />
-<p class="caption">Настройки стиля растра</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style1.png" alt="Настройки стиля растра" />
+<div class="figcaption">Настройки стиля растра</div>
 </div></li>
 <li><p>В строке выбора градиента («Градиент») нажмите правой кнопкой на шкалу и в открывшемся контекстном меню выберите опцию <strong>Создать новый градиент…</strong></p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style2.png" alt="" />
-<p class="caption">Создание нового градиента</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style2.png" alt="Создание нового градиента" />
+<div class="figcaption">Создание нового градиента</div>
 </div></li>
 <li><p>В появившемся всплывающем окне в ниспадающем списке выберите тип градиента <em>Каталог: cpt-city</em> (<a href="http://soliton.vm.bytemark.co.uk/pub/cpt-city/">подробнее о cpt-city</a>)</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style_catalog.png" alt="" />
-<p class="caption">Выбор каталога градиентов</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style_catalog.png" alt="Выбор каталога градиентов" />
+<div class="figcaption">Выбор каталога градиентов</div>
 </div></li>
 <li><p>В открывшемся каталоге в разделе <em>Topography</em> выберите градиент <em>c3t3</em> и нажмите <strong>OK</strong></p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style3.png" alt="" />
-<p class="caption">Выбор градиента</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style3.png" alt="Выбор градиента" />
+<div class="figcaption">Выбор градиента</div>
 </div></li>
 <li><p>После нажатия OK были закрыты все окна, кроме окна свойств слоя <code>30n030e_20101117_gmted_mea300</code>. Нажмите <strong>OK</strong>, чтобы применить изменения символики и закрыть окно свойств слоя. Окно проекта QGIS примет вид, аналогичный показанному на рисунке ниже.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen_qgis_color.png" alt="" />
-<p class="caption">Окно QGIS после применения стиля слоя</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen_qgis_color.png" alt="Окно QGIS после применения стиля слоя" />
+<div class="figcaption">Окно QGIS после применения стиля слоя</div>
 </div>
 <p>Вы успешно применили аналитическую отмывку по высоте к цифровой модели рельефа. Но для красочного, визуально привлекательного изображения этого недостаточно. Помимо аналитической отмывки по высоте, мы создадим светотеневую отмывку.</p></li>
 <li><p>Переименуйте слой <code>30n030e_20101117_gmted_mea300</code> в <code>Аналитическая отмывка</code>. Для этого откройте контекстное меню слоя (нажмите на слой в таблице слоёв правой кнопкой мыши) и выберите опцию «Переименовать слой».</p>
@@ -525,9 +529,9 @@
 </blockquote></li>
 <li><p>Откройте свойства слоя «Светотеневая отмывка» и перейдите на вкладку «Стиль».</p></li>
 <li><p>Измените способ визуализации на <em>Теневой рельеф</em> и нажмите <strong>Применить</strong>. При этом изменения будут применены, но окно свойств не закроется.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen_qgis_hillshade.png" alt="" />
-<p class="caption">Окно QGIS после применения стиля слоя «Светотеневая отмывка»</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen_qgis_hillshade.png" alt="Окно QGIS после применения стиля слоя «Светотеневая отмывка»" />
+<div class="figcaption">Окно QGIS после применения стиля слоя «Светотеневая отмывка»</div>
 </div>
 <p>На этом шаге вы видите изменения, произошедшие с вашим слоем. Во-первых, изображение светотеневой отмывки полностью закрыло изображение аналитической отмывки по высоте. Эту проблему можно решить, включив настройки прозрачности для слоя. Во-вторых, сама светотеневая отмывка выглядит очень тёмной. Это связано с несовпадением единиц измерения «по горизонтали» и «по вертикали» в исходном наборе данных: ячейки растра образут градусную сетку, а высотные отметки хранятся в метрах. Проблему можно решить двумя путями: трансформировать слой в проецированную систему координат или применить коэффициент масштабирования по оси Z (<em>Z-factor</em>). Мы пойдём вторым путём и будем изменять значение коэффициента масштабирования.</p>
 <blockquote>
@@ -537,7 +541,7 @@
 </ol>
 <button id="show_table_button" type="button" class="btn btn-default action-button" onclick="button_handler()">Показать Z-factor</button>
 <div id="resultContainer" hidden="true">0.000012</div>
-<script type="text/javascript">
+<script>
 function button_handler() {
   document.getElementById('resultContainer').hidden = false;
 }
@@ -546,9 +550,9 @@ function button_handler() {
 <li><p>Помимо переводного коэффициента между единицами измерения, нам нужно дополнительно масштабировать высоты по вертикали, чтобы отмывка выглядела более «рельефно». В разных случаях применяется дополнительный множитель в диапазоне от 1,5 до 10, мы воспользуемся коэффициентом <em>5</em>.</p></li>
 <li><p>Перемножьте оба коэффициента и введите полученное значение в качестве коэффициента масштабирования по оси Z для слоя «Светотеневая отмывка».</p></li>
 <li><p>Перейдите на вкладку <strong>Прозрачность</strong> и установите коэффициент непрозрачности для слоя равным 50 %. Примените изменения и закройте окно свойств слоя.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen3.png" alt="" />
-<p class="caption">Окно QGIS после изменения свойств светотеневой отмывки</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen3.png" alt="Окно QGIS после изменения свойств светотеневой отмывки" />
+<div class="figcaption">Окно QGIS после изменения свойств светотеневой отмывки</div>
 </div></li>
 <li><p>Сохраните проект и сделайте снимок экрана.</p></li>
 </ol>
@@ -562,9 +566,9 @@ function button_handler() {
 <h2><span class="header-section-number">1.6</span> Добавление векторных наборов данных<a href="map-design-general.html#map-design-general-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="map-design-general.html#map-design-general">В начало упражнения ⇡</a></p>
 <p>Раскройте содержимое папки <em>vector_data</em> в домашнем каталоге проекта</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/DefaultLocation.png" alt="" />
-<p class="caption">Содержимое папки vector_data</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/DefaultLocation.png" alt="Содержимое папки vector_data" />
+<div class="figcaption">Содержимое папки vector_data</div>
 </div>
 <p>Вы видите несколько источников данных, обозначенных символом <img src="images/Ex01_MapGeneral/vector.png" alt="Polygon" />. Это векторные наборы данных, представленные в формате <a href="https://desktop.arcgis.com/ru/arcmap/latest/manage-data/shapefiles/what-is-a-shapefile.htm">шейп-файлов</a>.</p>
 <p>Теперь откройте эту же директорию через Проводник Windows (или любой другой файловый менеджер). Сравните количество файлов в Проводнике с количеством доступных источников данных в браузере QGIS</p>
@@ -593,9 +597,9 @@ function button_handler() {
 <li><p>Добавьте к карте железные дороги и автодороги. Переименуйте слои и изобразите их линиями толщиной 0,26 мм. Для автодорог используйте красный цвет, для железных дорог — тёмно-серый (20 % светлоты).</p></li>
 </ol>
 <p>После всех операций окно QGIS должно принять вид, аналогичный изображению ниже.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen_qgis_water_roads.png" alt="" />
-<p class="caption">Окно QGIS после добавления слоёв гидрографической сети и путей сообщения</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen_qgis_water_roads.png" alt="Окно QGIS после добавления слоёв гидрографической сети и путей сообщения" />
+<div class="figcaption">Окно QGIS после добавления слоёв гидрографической сети и путей сообщения</div>
 </div>
 </div>
 <div id="map-design-general-attributes" class="section level2 hasAnchor" number="1.7">
@@ -605,32 +609,32 @@ function button_handler() {
 <ol style="list-style-type: decimal">
 <li><p>Добавьте к карте набор данных <code>adm_line</code>, переместите добавленный слой ниже всех линейных объектов и переименуйте его в «Границы».</p></li>
 <li><p>Вызовите контекстное меню слоя «Границы» и выберите опцию «Открыть таблицу атрибутов». Откроется таблица атрибутов источника данных.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/AttributeTable.png" alt="" />
-<p class="caption">Таблица атрибутов слоя «Границы»</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/AttributeTable.png" alt="Таблица атрибутов слоя «Границы»" />
+<div class="figcaption">Таблица атрибутов слоя «Границы»</div>
 </div>
 <p>Таблица атрибутов — это представление базы данных, связанной с набором пространственных объектов. База функционирует по общим правилам реляционной базы данных: каждый объект представляется одной «строкой», в каждом столбце (поле) одному объекту соответствует одно значение. Атрибуты играют важную роль в геоинформационных системах. На их основе происходит визуализация данных, также они участвуют в большинстве операций пространственного анализа. В этом упражнении вы используете атрибуты, чтобы присвоить различные стили объектам в одном слое.</p></li>
 <li><p>Закройте таблицу атрибутов.</p></li>
 <li><p>Откройте свойства слоя границ на вкладке <em>Стиль</em>.</p></li>
 <li><p>Измените тип визуализации с <em>Простая симолика</em> на <em>Символизация по уникальным значениям</em>. Эта настройка позволяет присваивать объектам различные стили в соответствии со значениями определённого атрибута.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style6.png" alt="" />
-<p class="caption">Способы визуализации векторных наборов пространственных данных</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style6.png" alt="Способы визуализации векторных наборов пространственных данных" />
+<div class="figcaption">Способы визуализации векторных наборов пространственных данных</div>
 </div></li>
 <li><p>В выпадающем списке <strong>Поле</strong> выберите столбец <code>L_TYPE</code>, по которому будет происходить классификация, и нажмите кнопку <strong>Классифицировать</strong> внизу формы.</p>
 <p>В форму добавились три записи. Две из них представляют фактически имеющиеся значения атрибутов, третья — «пустая» — предназначена для визуализации всех остальных значений (которых фактически нет в таблице на настоящий момент, но которые могут появиться позже в результате редактирования).</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style7.png" alt="" />
-<p class="caption">Рассчитанные классы с разными условными знаками</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style7.png" alt="Рассчитанные классы с разными условными знаками" />
+<div class="figcaption">Рассчитанные классы с разными условными знаками</div>
 </div></li>
 <li><p>Дважды щёлкните на значке, соответствующем классу <em>Границы государственные</em>. Откроется уже знакомый вам интерфейс настройки условных знаков. Обратите внимание на форму в левом верхнем углу: вы можете задать несколько слоёв для одного условного знака, используя опцию добавления слоёв (<img src="images/Ex01_MapGeneral/plus.png" />).</p>
 <blockquote>
 <p>Слои в таблице слоёв и слои условного знака — это две разные, не связанные между собой сущности.</p>
 </blockquote></li>
 <li><p>Создайте для государственных границ двухслойный знак. Нижний слой: линия серого цвета (75 % светлоты) шириной 1 мм, с плоскими концами (чтобы концы линии не «свешивались» в воду). Верхний слой: линия тёмно-серого цвета (светлота 20 %) толщиной 0,26 мм, штрихпунктирная, с плоскими концами.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/style8.png" alt="" />
-<p class="caption">Настройки визуализации линий границ</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/style8.png" alt="Настройки визуализации линий границ" />
+<div class="figcaption">Настройки визуализации линий границ</div>
 </div></li>
 <li><p>Создайте аналогичный знак для границ субъектов РФ. Нижний слой: линия серого цвета (75 % светлоты) шириной 0,8 мм, с плоскими концами. Верхний слой: линия тёмно-серого цвета (светлота 20 %) толщиной 0,26 мм, штриховая, с плоскими концами.</p></li>
 <li><p>Для прочих границ используйте однослойный условный знак: пунктирная линия тёмно-серого цвета.</p></li>
@@ -646,9 +650,9 @@ function button_handler() {
 <p>На общегеографических картах обычно приводятся высоты и названия горных вершин. В этом упражнении мы ограничимся названиями.</p>
 </blockquote></li>
 <li><p>Закройте таблицу атрибутов и откройте свойства слоя. Перейдите на вкладку «Подписи». Переключите режим подписей на <em>Обычные подписи</em> (подписывать объекты значением атрибута). В открывшемся меню в выпадающем списке «Подписывать значениями» выберите поле <code>NAME</code> — тексты подписей будут «считываться» из него.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/text1.png" alt="" />
-<p class="caption">Вкладка настройки текста</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/text1.png" alt="Вкладка настройки текста" />
+<div class="figcaption">Вкладка настройки текста</div>
 </div></li>
 <li><p>В поле <strong>Образец текста</strong> отображается пример подписи с теми настройками, которые заданы по умолчанию. Если вы будете менять настройки подписей (шрифт, форматирование, «гало» и др.), этот пример будет меняться. Сейчас мы последовательно пройдём по вкладкам настройки подписей, исправив необходимые параметры.</p>
 <ul>
@@ -658,9 +662,9 @@ function button_handler() {
 </ul>
 <p>Примените настройки подписей и закройте свойства слоя.</p></li>
 </ol>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/screen_qgis_points.png" alt="" />
-<p class="caption">Окно QGIS после добавления слоёв границ и отметок высот</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/screen_qgis_points.png" alt="Окно QGIS после добавления слоёв границ и отметок высот" />
+<div class="figcaption">Окно QGIS после добавления слоёв границ и отметок высот</div>
 </div>
 <ol start="8" style="list-style-type: decimal">
 <li><p>В каталоге <code>vector_data</code> остался незадействованный слой — населённые пункты (<code>population_points</code>). Добавьте его в проект, переименуйте и самостоятельно настройте условные знаки и подписи. Используйте параметр <em>уникальные значения</em> для того, чтобы отобразить города с разной численностью населения разными условными знаками.</p></li>
@@ -679,49 +683,49 @@ function button_handler() {
 <p>После ввода названия откроется окно компоновки (<em>Layout</em>)<br />
 <img src="images/Ex01_MapGeneral/Layout.png" alt="Новый макет компоновки" /></p></li>
 <li><p>Добавьте на лист картографическое изображение. Для этого используется инструмент <strong>Добавить карту</strong> из панели инструментов. Выберите инструмент и «растяните» прямоугольник карты на листе.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/button_AddMap.png" alt="" />
-<p class="caption">Инструмент добавления карты</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/button_AddMap.png" alt="Инструмент добавления карты" />
+<div class="figcaption">Инструмент добавления карты</div>
 </div></li>
 <li><p>После добавления элемента откроется панель его свойств. Изучите настройки, доступные в этой панели, а затем установите для карты знаменатель масштаба <em>4 000 000</em> и размеры <span class="math inline">\(237\times130\)</span> мм. В том же разделе, где устанавливаются размеры элемента, задайте для элемента карты положение по <span class="math inline">\(X = 30\)</span> мм и положение по <span class="math inline">\(Y = 30\)</span> мм.</p>
 <blockquote>
 <p>Положение элемента на листе отсчитывается от верхнего левого угла листа до точки привязки элемента.</p>
 </blockquote>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/Layout1.png" alt="" />
-<p class="caption">Картографическое изображение в макете компоновки</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/Layout1.png" alt="Картографическое изображение в макете компоновки" />
+<div class="figcaption">Картографическое изображение в макете компоновки</div>
 </div></li>
 <li><p>Добавьте к карте градусную сетку. Для этого в свойствах элемента найдите раздел <strong>Сетки</strong>, нажмите на кнопку <strong>Добавить новую сетку</strong>, а затем <strong>Настроить сетку…</strong> (<em>Modify Grid</em>). Откроется меню настройки сетки. Задайте для сетки проекцию WGS84, интервал по долготе — <span class="math inline">\(4°\)</span>, интервал по широте — <span class="math inline">\(2°\)</span>. Также уменьшите толщину линий сетки до <span class="math inline">\(0.1\)</span> мм. Для этого щёлкните левой кнокой мыши по элементу <em>Стиль линии</em> и выполните необходимые настройки в уже привычном для вас интерфейсе. Вернуться обратно к настройкам сетки можно, нажав на кнопку <em>Назад</em> в левом верхнем углу интерфейса.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/graticule.png" alt="" />
-<p class="caption">Панель настроек сетки</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/graticule.png" alt="Панель настроек сетки" />
+<div class="figcaption">Панель настроек сетки</div>
 </div></li>
 <li><p>Добавьте рамку сетки в виде простой линии. Для этого в свойствах элемента в разделе <strong>Рамка</strong> установите настройку <strong>Стиль области</strong>: <strong>Линия границы</strong></p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/graticule2.png" alt="" />
-<p class="caption">Панель настроек сетки</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/graticule2.png" alt="Панель настроек сетки" />
+<div class="figcaption">Панель настроек сетки</div>
 </div></li>
 <li><p>Включите отображение подписей координатной сетки. Для этого в настройках координатной сетки отметьте флажок <strong>Отображение координат</strong>. Настройте отображение подписей так, чтобы широта подписывалась только вдоль западной и восточной рамки, а долгота — только вдоль северной и южной. Используйте формат координат <strong>Десятичные с окончанием</strong> и нулевое число знаков после запятой (этот параметр в QGIS называется <strong>Точность координат</strong>).</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/graticule3.png" alt="" />
-<p class="caption">Панель настроек сетки</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/graticule3.png" alt="Панель настроек сетки" />
+<div class="figcaption">Панель настроек сетки</div>
 </div></li>
 <li><p>Вернитесь к макету и передвиньте картографическое изображение внутри элемента таким образом, чтобы вместилась вся основная часть Главного Кавказского хребта. Можно ориентироваться на города: в северо-западном углу карты должен отображаться Краснодар, в юго-восточном — Баку. При необходимости можно уменьшить масштаб карты.</p>
 <blockquote>
 <p>Для перемещения карты внутри фрейма используется инструмент <strong>Перемещение содержимого элемента</strong> <img src="images/Ex01_MapGeneral/move_element.png" />.</p>
 </blockquote></li>
 <li><p>Добавьте на лист название карты. Для этого <strong>вставьте новую надпись</strong> и разместите её над элементом карты. Введите название карты «Кавказские горы», используйте выключку (горизонтальное выравнивание) по центру, настройте параметры шрифта на своё усмотрение (заголовки обычно набираются прописными буквами с разреженным кернингом).</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/Layout3.png" alt="" />
-<p class="caption">Макет компоновки после добавления названия</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/Layout3.png" alt="Макет компоновки после добавления названия" />
+<div class="figcaption">Макет компоновки после добавления названия</div>
 </div></li>
 <li><p>Добавьте на лист масштабную линейку с помощью кнопки <strong>Добавить масштабную линейку</strong> <img src="images/Ex01_MapGeneral/add_scalebar.png" />. Переместите линейку в юго-западный угол карты, установите для неё отображение фона и границы. Если необходимо, уменьшите высоту линейки, кегль шрифта и отступы подписей, чтобы линейка смотрелась более компактно.</p></li>
 <li><p>Добавьте на лист легенду с помощью кнопки <strong>Добавить легенду</strong> <img src="images/Ex01_MapGeneral/add_legend.png" />. Легенда будет собрана автоматически на основе тех настроек визуализации, которые применены для слоёв карты.</p></li>
 <li><p>Отредактируйте легенду. Для этого сначала выключите автообновление (<em>Auto update</em>) элементов легенды, чтобы сделать список элементов доступным для редактирования. Сохраните в легенде только условные знаки населённых пунктов и границ, а также переименуйте неинформативные или пустые подписи.</p></li>
 <li><p>Добавьте обводку для элемента легенды и разместите легенду в северо-восточном углу карты.</p>
-<div class="figure">
-<img src="images/Ex01_MapGeneral/Layout4.png" alt="" />
-<p class="caption">Макет компоновки после добавления масштабной линейки и легенды</p>
+<div class="float">
+<img src="images/Ex01_MapGeneral/Layout4.png" alt="Макет компоновки после добавления масштабной линейки и легенды" />
+<div class="figcaption">Макет компоновки после добавления масштабной линейки и легенды</div>
 </div></li>
 <li><p>Добавьте ещё один текстовый элемент и впишите в него сведения об авторстве.</p></li>
 <li><p>Экспортируйте получившуюся карту в изображение формата PNG («Макет» — «Экспорт в изображение…» или специальная кнопка на главной панели инструментов макета).</p></li>

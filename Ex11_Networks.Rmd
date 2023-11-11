@@ -2,7 +2,9 @@
 
 # Анализ транспортных сетей {#networks}
 
-[Архив с данными и файл отчёта](https://1drv.ms/u/s!AmtmZDq3JgxHgZ0j1tgKv_d1ElUpow?e=s0gsKz){target="_blank"}
+[Архив с исходными данными](https://github.com/aentin/qgis-course/raw/master/files/Ex13.zip)
+
+[Контрольный лист](https://github.com/aentin/qgis-course/raw/master/files/Ex13_%D0%BE%D1%82%D1%87%D1%91%D1%82.docx)
 
 ## Введение {#networks-intro}
 

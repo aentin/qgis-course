@@ -122,6 +122,7 @@ hydrodem-fill
 hydrodem-flowacc
 hydrodem-basin
 hydrodem-network
+hydrodem-watersheds
 hydrodem-mapping
 networks
 networks-intro

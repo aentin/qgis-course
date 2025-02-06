@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS</title>
   <meta name="description" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Упражнение 2 Создание политической карты мира | Основы геоинформатики: практикум в QGIS" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2024-04-15" />
+<meta name="date" content="2025-02-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -301,21 +301,7 @@
 <li class="chapter" data-level="14.6" data-path="geocoding.html"><a href="geocoding.html#geocoding-batch"><i class="fa fa-check"></i><b>14.6</b> Пакетное геокодирование</a></li>
 <li class="chapter" data-level="14.7" data-path="geocoding.html"><a href="geocoding.html#geocoding-mapping"><i class="fa fa-check"></i><b>14.7</b> Картографирование плотности объявлений</a></li>
 </ul></li>
-<li class="appendix"><span><b>Справочные сведения</b></span></li>
-<li class="chapter" data-level="A" data-path="manual-catalog.html"><a href="manual-catalog.html"><i class="fa fa-check"></i><b>A</b> Форматы пространственных данных</a>
-<ul>
-<li class="chapter" data-level="A.1" data-path="manual-catalog.html"><a href="manual-catalog.html#manual-dataformats-shapefile"><i class="fa fa-check"></i><b>A.1</b> Шейп-файлы</a></li>
-<li class="chapter" data-level="A.2" data-path="manual-catalog.html"><a href="manual-catalog.html#geopackage"><i class="fa fa-check"></i><b>A.2</b> GeoPackage</a></li>
-<li class="chapter" data-level="A.3" data-path="manual-catalog.html"><a href="manual-catalog.html#базы-геоданных-esri"><i class="fa fa-check"></i><b>A.3</b> Базы геоданных ESRI</a></li>
-</ul></li>
-<li class="chapter" data-level="B" data-path="manual-crs.html"><a href="manual-crs.html"><i class="fa fa-check"></i><b>B</b> Форматы описания систем координат</a></li>
-<li class="chapter" data-level="C" data-path="manual-plugins.html"><a href="manual-plugins.html"><i class="fa fa-check"></i><b>C</b> Установка модулей в QGIS</a>
-<ul>
-<li class="chapter" data-level="C.1" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-install"><i class="fa fa-check"></i><b>C.1</b> Установка модулей</a></li>
-<li class="chapter" data-level="C.2" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-update"><i class="fa fa-check"></i><b>C.2</b> Обновление модулей</a></li>
-<li class="chapter" data-level="C.3" data-path="manual-plugins.html"><a href="manual-plugins.html#manual-plugins-uninstall"><i class="fa fa-check"></i><b>C.3</b> Удаление модулей</a></li>
-</ul></li>
-<li class="chapter" data-level="D" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>D</b> Инструкция по регистрации в системе Мастер-тест</a></li>
+<li class="chapter" data-level="15" data-path="mastertest.html"><a href="mastertest.html"><i class="fa fa-check"></i><b>15</b> Инструкция по регистрации в системе Мастер-тест</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -376,7 +362,7 @@
 <p><img src="images/Ex01_WorldMap/NaturalEarthDownloadPage.png" /></p></li>
 <li><p>Скачайте набор данных <code>Admin 0 – Countries</code>. На ваш компьютер будет загружен архив в формате <a href="https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT">ZIP</a>. Этот формат поддерживается большинством современных программ для архивирования и разархивирования файлов.</p></li>
 <li><p>Распакуйте содержимое архива в папку <code>data</code>, созданную на предыдущем шаге. Сам архив можно удалить.</p>
-<p>Содержимое архива составляют пространственные данные в виде <a href="manual-catalog.html#manual-dataformats-shapefile">шейп-файла ESRI</a>, а также несколько сопроводительных файлов</p>
+<p>Содержимое архива составляют пространственные данные в виде <a href="#manual-dataformats-shapefile">шейп-файла ESRI</a>, а также несколько сопроводительных файлов</p>
 <p><img src="images/Ex01_WorldMap/Shapefile.png" /></p>
 <blockquote>
 <p>Шейп-файлы были базовым форматом ГИС-пакета ArcView и за счёт этого получили очень широкое распространение. Шейп-файлы не такие функциональные, как базы геоданных ESRI (современный базовый формат для продуктов линейки ArcGIS) или GeoPackage, но тем не менее их продолжают активно использовать. Многие особенности шейп-файлов обусловлены спецификой и возможностями компьютеров начала 90-х гг. В частности, геометрия набора данных хранится отдельно (в файле <code>.shp</code>), семантика — отдельно (в формате <a href="https://en.wikipedia.org/wiki/DBase">dBase</a>, <code>.dbf</code>), а для быстрого поиска по пространственным данным используется индекс-файл (<code>.shx</code>). Эти три файла — обязательные компоненты шейп-файла. Помимо них, отдельно могут быть записаны сведения о проекции (<code>.prj</code>), кодировке (<code>.cpg</code>) и многое другое. Основным файлом, тем не менее, считается <code>.shp</code>, а все остальные на компьютерном сленге называются <a href="https://en.wikipedia.org/wiki/Sidecar_file"><em>sidecar</em>-файлами</a>. Все файлы в составе шейп-файла имеют одинаковые имена, но разные расширения.</p>

@@ -20,9 +20,9 @@ rmd_files:
     - "Ex11_Networks.Rmd"
     - "Ex08_Geocoding.Rmd"
     #- "Ex14_WebMap.Rmd"
-    - "Man00_DataFormats.Rmd"
-    - "Man01_CoordinateSystemReference.Rmd"
-    - "Man02_InstallModules.Rmd"
+    #- "Man00_DataFormats.Rmd"
+    #- "Man01_CoordinateSystemReference.Rmd"
+    #- "Man02_InstallModules.Rmd"
     - "instruction.Rmd"
 delete_merged_file: true
 language:

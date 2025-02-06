@@ -143,13 +143,4 @@ geocoding-import
 geocoding-batch-install
 geocoding-batch
 geocoding-mapping
-manual-catalog
-manual-dataformats-shapefile
-geopackage
-базы-геоданных-esri
-manual-crs
-manual-plugins
-manual-plugins-install
-manual-plugins-update
-manual-plugins-uninstall
 mastertest

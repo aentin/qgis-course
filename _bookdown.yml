@@ -9,7 +9,7 @@ rmd_files:
     - "Ex04_MapHumanGeography.Rmd"
     - "Ex05_Reference.Rmd"
     - "Ex06_Vectorization.Rmd"
-    - "Ex05_Vectorization.Rmd"
+    - "Ex07_Queries.Rmd"
     #- "Ex05_RefAdm.Rmd"
     - "Ex08_GeometricOperations.Rmd"
     - "Ex06_VectorOverlay.Rmd"

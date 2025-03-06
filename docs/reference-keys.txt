@@ -76,6 +76,7 @@ geometry-buffer-other
 geometry-selection
 geometry-erase
 geometry-zonal-stat
+geometry-final
 overlay
 overlay-intro
 overlay-control

@@ -93,6 +93,7 @@ spatrelations-intro
 spatrelations-control
 spatrelations-annotation
 spatrelations-vizual
+spatrelations-area
 spatrelations-overlay
 spatrelations-join
 spatrelations-other

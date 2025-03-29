@@ -10,7 +10,6 @@ rmd_files:
     - "Ex05_Reference.Rmd"
     - "Ex06_Vectorization.Rmd"
     - "Ex07_Queries.Rmd"
-    #- "Ex05_RefAdm.Rmd"
     - "Ex08_GeometricOperations.Rmd"
     - "Ex09_VectorOverlay.Rmd"
     - "Ex10_SpatRelations.Rmd"
@@ -23,7 +22,7 @@ rmd_files:
     #- "Man00_DataFormats.Rmd"
     #- "Man01_CoordinateSystemReference.Rmd"
     #- "Man02_InstallModules.Rmd"
-    - "instruction.Rmd"
+    # - "instruction.Rmd"
 delete_merged_file: true
 language:
   label:

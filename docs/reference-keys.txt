@@ -121,6 +121,7 @@ hydrodem-annotation
 hydrodem-init
 hydrodem-preprocessing
 hydrodem-fill
+hydrodem-flowdir
 hydrodem-flowacc
 hydrodem-basin
 hydrodem-network
@@ -145,4 +146,3 @@ geocoding-import
 geocoding-batch-install
 geocoding-batch
 geocoding-mapping
-mastertest

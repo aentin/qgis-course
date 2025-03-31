@@ -15,7 +15,7 @@ rmd_files:
     - "Ex10_SpatRelations.Rmd"
     - "Ex11_RasterOverlay.Rmd"
     - "Ex12_HydroDEM.Rmd"
-    - "Ex11_Networks.Rmd"
+    - "Ex13_Networks.Rmd"
     - "Ex08_Geocoding.Rmd"
     #- "Ex14_WebMap.Rmd"
     #- "Man00_DataFormats.Rmd"

@@ -23,7 +23,7 @@
 <meta name="author" content="Андрей Энтин, Тимофей Самсонов, Андрей Карпачевский" />
 
 
-<meta name="date" content="2025-03-29" />
+<meta name="date" content="2025-03-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -513,12 +513,14 @@
 <p><img src="images/Ex11_RasterOverlay/distance_to_roads_classes.png" /></p></li>
 </ol>
 <p><kbd>В отчёт: снимок экрана №4 – классифицированный растр расстояний до дорог</kbd></p>
-<pre><code>&gt; В качестве альтернативного инструмента на этом этапе следует воспользоваться `Raster Calculator` (SAGA). Введите формулу `ifelse((10 - (g1 - 50) / 100) &gt; 0, (10 - (g1 - 50) / 100), 0)` и установите тип данных беззнаковый целочисленный 2-байтовый (Unsigned 2 byte integer).</code></pre>
+<blockquote>
+<p>В качестве альтернативного инструмента на этом этапе следует воспользоваться <code>Raster Calculator</code> (SAGA). Введите формулу <code>ifelse((10 - (g1 - 50) / 100) &gt; 0, (10 - (g1 - 50) / 100), 0)</code> и установите тип данных беззнаковый целочисленный 2-байтовый (Unsigned 2 byte integer).</p>
+</blockquote>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Аналогичным образом переклассифицируйте расстояния до водотоков. Назовите выходной файл <code>distance_to_water_classes.tif</code>, а слой в QGIS — «Расстояния до водотоков (классы)». Сделайте снимок экрана</p>
 <p><img src="images/Ex11_RasterOverlay/distance_to_water_classes.png" /></p></li>
 </ol>
-<p><kbd>В отчёт: снимок экрана №5 – классифицированный растр расстояний до дорог</kbd></p>
+<p><kbd>В отчёт: снимок экрана №5 – классифицированный растр расстояний до водотоков</kbd></p>
 </div>
 <div id="weighted-overlay-reclass-slope" class="section level3 hasAnchor" number="11.5.2">
 <h3><span class="header-section-number">11.5.2</span> Переклассификация растра крутизны<a href="weighted-overlay.html#weighted-overlay-reclass-slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -650,7 +652,9 @@ END</code></pre>
 <li><p>Запустите расчёт. Изучите таблицу атрибутов после окончания расчёта — в ней должен появиться новый столбец. Сделайте снимок экрана с таблицей атрибутов.</p></li>
 </ol>
 <p><kbd>В отчёт: снимок экрана №7 – таблица атрибутов слоя типов землепользования</kbd></p>
-<pre><code>К сожалению, инструменты растеризации, доступные в QGIS, не умеют работать с виртуальными полями, поэтому мы сохраним полученный набор данных в более простой формат — шейп-файл.</code></pre>
+<blockquote>
+<p>К сожалению, инструменты растеризации, доступные в QGIS, не умеют работать с виртуальными полями, поэтому мы сохраним полученный набор данных в более простой формат — шейп-файл.</p>
+</blockquote>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Закройте таблицу атрибутов. В панели слоёв нажмите правой кнопкой мыши на слое <em>LandUse</em> и выберите опцию «Экспорт» — «Сохранить объекты как…». Сохраните слой в формате ESRI Shapefile под именем <code>Land_Type_Rank</code> в папку <code>processing</code>.</p>
 <p><img src="images/Ex11_RasterOverlay/save_esri_shapefile.png" /></p>

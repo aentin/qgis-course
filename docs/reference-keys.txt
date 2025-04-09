@@ -142,7 +142,6 @@ geocoding-control
 geocoding-annotation
 geocoding-input
 geocoding-debug
-geocoding-import
-geocoding-batch-install
 geocoding-batch
+geocoding-kde
 geocoding-mapping

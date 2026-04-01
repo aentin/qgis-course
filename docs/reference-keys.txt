@@ -102,7 +102,6 @@ weighted-overlay
 weighted-overlay-intro
 weighted-overlay-control
 weighted-overlay-annotation
-weighted-overlay-warning
 weighted-overlay-init
 weighted-overlay-slopes
 weighted-overlay-distances
